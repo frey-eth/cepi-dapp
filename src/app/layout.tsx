@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`font-mona_sans ${monaSans.className}`}>{children}</body>
+      <body className={`font-mona_sans ${monaSans.className} bg-[#000]`}>{children}</body>
     </html>
   )
 }
