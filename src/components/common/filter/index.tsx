@@ -1,6 +1,6 @@
 'use client'
-import eclipse from '@/icons/filters/Ellipse.svg'
-import filter from '@/icons/filters/Filter.svg'
+import eclipse from '@/icons/filters/ellipse.svg'
+import filter from '@/icons/filters/filter.svg'
 import sort from '@/icons/filters/sorting.svg'
 import vector from '@/icons/filters/vector.svg'
 import Image from 'next/image'
@@ -12,7 +12,7 @@ const Filter = () => {
     setIsActive(!isActive)
   }
   return (
-    <div className='flex h-[50px] w-full items-center justify-between'>
+    <div className='relative flex h-[50px] w-full items-center justify-between'>
       <div className='flex h-full w-[156px] items-center justify-between rounded-lg bg-[#18181B52] p-[6px]'>
         <div className=' h-[38px] rounded-[4px] bg-[#FFFFFF0A] px-4 py-3 shadow-inner'>
           <div className='text-[14px] font-medium  leading-[14px] text-white'>Lend</div>
