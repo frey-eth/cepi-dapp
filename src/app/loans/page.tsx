@@ -1,5 +1,6 @@
 'use client'
 import BtnSupply from '@/components/common/button/btn-supply'
+import Filter from '@/components/common/filter'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
 import bgGlobalPool from '@/images/global-pool/Noise.png'
@@ -196,6 +197,7 @@ const Loans = () => {
     <main className='relative mx-auto mt-60 h-[398px] w-[1288px] rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-lg'>
       <Image src={bgGlobalPool} alt='bg' fill priority />
       <div>
+        <Filter />
         <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
         <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
       </div>
