@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 const Filter = () => {
   const [isActive, setIsActive] = useState(false)
+  const [selectAction, setSelectAction] = useState('Lend')
 
   const toggleSwitch = () => {
     setIsActive(!isActive)
@@ -14,13 +15,23 @@ const Filter = () => {
   return (
     <div className='flex h-[50px] w-full items-center justify-between'>
       <div className='flex h-full w-[156px] items-center justify-between rounded-lg bg-[#18181B52] p-[6px]'>
-        <div className=' h-[38px] rounded-[4px] bg-[#FFFFFF0A] px-4 py-3 shadow-inner'>
+        <button
+          onClick={() => {
+            setSelectAction('Lend')
+          }}
+          className={` ${selectAction === 'Lend' ? 'bg-[#FFFFFF0A] shadow-inner' : 'bg-transparent'} h-[38px] rounded-[4px]  px-4 py-3 `}
+        >
           <div className='text-[14px] font-medium  leading-[14px] text-white'>Lend</div>
-        </div>
-        <div className=' h-[38px] rounded-[4px] bg-transparent px-4 py-3 '>
+        </button>
+        <button
+          onClick={() => {
+            setSelectAction('Borrow')
+          }}
+          className={`${selectAction === 'Borrow' ? 'bg-[#FFFFFF0A] shadow-inner' : 'bg-transparent'} h-[38px] rounded-[4px]  px-4 py-3 `}
+        >
           {' '}
-          <div className='text-[14px] font-medium  leading-[14px] text-white'>Borrow</div>
-        </div>
+          <div className={` text-[14px] font-medium  leading-[14px] text-white`}>Borrow</div>
+        </button>
       </div>
       <div className='flex gap-4'>
         <div className='flex items-center justify-start gap-2 bg-transparent '>
