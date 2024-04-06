@@ -1,3 +1,4 @@
+import Header from '@/components/common/header'
 import bgLayout from '@/images/layout/bg-layout.png'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
@@ -49,7 +50,10 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`font-mona_sans ${monaSans.className} relative bg-[#000]`}>
         <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority />
-        <main className='relative'>{children}</main>
+        <main className='relative'>
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   )
