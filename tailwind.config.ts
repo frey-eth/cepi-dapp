@@ -15,6 +15,10 @@ const config: Config = {
       fontFamily: {
         mono: ['var(--font-mona-sans)'],
       },
+      boxShadow: {
+        inner: '1px 1px 0px 0px #FFFFFF29 inset',
+        inner2: '0px 0px 8px 0px #FFFFFF14 inset',
+      },
     },
   },
   plugins: [],
