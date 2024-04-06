@@ -1,7 +1,8 @@
+import bgLayout from '@/images/layout/bg-layout.png'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import Image from 'next/image'
 import './globals.css'
-
 const monaSans = localFont({
   src: [
     {
@@ -46,7 +47,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`font-mona_sans ${monaSans.className} bg-[#000]`}>{children}</body>
+      <body className={`font-mona_sans ${monaSans.className} relative bg-[#000]`}>
+        <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority />
+        <main className='relative'>{children}</main>
+      </body>
     </html>
   )
 }
