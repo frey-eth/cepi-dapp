@@ -15,7 +15,15 @@ import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
-  const { openModal, modalData, handleOpenModal, handleCloseModal } = useModal()
+  const {
+    isOpen: openModal,
+    data: modalData,
+    handleOpen: handleOpenModal,
+    handleClose: handleCloseModal,
+    isLoading: isLoadingModal,
+    isSuccess: isSuccessModal,
+    handleSupply: handleSupplyModal,
+  } = useModal()
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -216,7 +224,14 @@ const Loans = () => {
           <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
         </div>
       </section>
-      <Modal data={modalData} isOpen={openModal} handleClose={handleCloseModal} />
+      <Modal
+        data={modalData}
+        isOpen={openModal}
+        handleClose={handleCloseModal}
+        isLoading={isLoadingModal}
+        isSuccess={isSuccessModal}
+        handleSupply={handleSupplyModal}
+      />
     </main>
   )
 }
