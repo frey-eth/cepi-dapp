@@ -18,11 +18,11 @@ const AssetsToBorrow = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className=' text-left'>Assets</p>,
+        header: () => <p className=' pl-6 text-left'>Assets</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 '>
+            <div className='flex items-center justify-start space-x-3 pl-6 '>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
@@ -121,8 +121,8 @@ const AssetsToBorrow = () => {
     <div className='w-full p-6'>
       <div className=' mx-auto flex  flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
         <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
-        <div className='w-full'>
-          <Table columns={columns} data={data} className='  w-full   ' />
+        <div className='table-custom h-[170px] w-full overflow-y-auto'>
+          <Table className='w-full overflow-y-auto' columns={columns} data={data} />
         </div>
       </div>
     </div>
