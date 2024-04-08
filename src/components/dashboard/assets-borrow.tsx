@@ -10,7 +10,7 @@ import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo } from 'react'
-import { AssetsBorrow } from '../../../../types/table'
+import { AssetsBorrow } from '../../../types/table'
 
 const AssetsToBorrow = () => {
   const columns = useMemo<ColumnDef<AssetsBorrow>[]>(
@@ -118,7 +118,7 @@ const AssetsToBorrow = () => {
     },
   ]
   return (
-    <div className='w-full p-6'>
+    <div className='w-full'>
       <div className=' mx-auto flex  flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
         <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
         <div className='table-custom h-[170px] w-full overflow-y-auto'>

@@ -17,11 +17,6 @@ const navbars = [
     title: 'Loans',
     href: '/loans',
   },
-  {
-    id: 3,
-    title: 'Lotteries',
-    href: '/lotteries',
-  },
 ]
 
 const Header = () => {
