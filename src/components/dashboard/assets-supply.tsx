@@ -129,7 +129,7 @@ const AssetsSupply = () => {
   ]
 
   return (
-    <div className='relative h-[300px] w-[608px]'>
+    <div className='relative h-[300px] w-full lg:w-[608px]'>
       <Image src={bgAssets} alt='background' fill priority />
       <div className='relative p-4'>
         <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
@@ -137,8 +137,8 @@ const AssetsSupply = () => {
           <Checkbox checked={checked} setChecked={setChecked} />
           <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
         </div>
-        <div className='table-custom h-[170px] w-full overflow-y-auto'>
-          <Table className='w-full overflow-y-auto' columns={columns} data={data} />
+        <div className='table-custom h-[170px] w-full overflow-auto'>
+          <Table className='w-[576px] md:w-full' columns={columns} data={data} />
         </div>
       </div>
     </div>

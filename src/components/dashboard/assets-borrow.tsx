@@ -3,6 +3,7 @@ import BtnBorrow from '@/components/common/button/btn-borrow'
 import BtnDetail from '@/components/common/button/btn-detail'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
+import bgAssets from '@/images/portfolio/assets-supply.png'
 import ic_dai from '@/images/portfolio/dai.svg'
 import ic_usdc from '@/images/portfolio/sol.svg'
 import ic_usdt from '@/images/portfolio/usdt.svg'
@@ -116,13 +117,30 @@ const AssetsToBorrow = () => {
       available: 2.71,
       apy: 22.64,
     },
+    {
+      asset: {
+        icon: ic_dai,
+        name: 'DAI',
+      },
+      available: 2.71,
+      apy: 34.98,
+    },
+    {
+      asset: {
+        icon: ic_usdc,
+        name: 'USDC',
+      },
+      available: 2.71,
+      apy: 22.64,
+    },
   ]
   return (
-    <div className='w-full'>
-      <div className=' mx-auto flex  flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
+    <div className='relative h-[300px] w-full lg:w-[608px]'>
+      <Image src={bgAssets} alt='background' fill priority />
+      <div className='relative mx-auto flex h-full flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
         <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
-        <div className='table-custom h-[170px] w-full overflow-y-auto'>
-          <Table className='w-full overflow-y-auto' columns={columns} data={data} />
+        <div className='table-custom h-[236px] w-full overflow-y-auto'>
+          <Table className='w-[576px] md:w-full' columns={columns} data={data} />
         </div>
       </div>
     </div>

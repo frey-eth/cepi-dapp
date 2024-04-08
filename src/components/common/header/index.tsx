@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <main>
-      <section className='mx-auto flex h-[72px] w-full items-center justify-between py-4 lg:max-w-[1440px] lg:px-[100px]'>
+      <section className='mx-auto flex h-[72px] w-full items-center justify-between px-4 py-4 lg:max-w-[1440px] lg:px-[100px]'>
         <section className='flex w-[752px] items-center gap-x-10'>
           <Link href={'/'}>
             <figure>
@@ -32,7 +32,7 @@ const Header = () => {
             </figure>
           </Link>
 
-          <nav className='flex items-center space-x-4'>
+          <nav className='hidden items-center space-x-4 lg:flex'>
             {navbars.map((item, index) => {
               return (
                 <Link href={item.href} key={index} className='group relative px-4 py-2'>
@@ -45,7 +45,7 @@ const Header = () => {
             })}
           </nav>
         </section>
-        <section className='flex items-center space-x-4'>
+        <section className='hidden items-center space-x-4 lg:flex'>
           <BtnCollectReward />
           <BtnConnect />
         </section>

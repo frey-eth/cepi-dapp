@@ -15,8 +15,8 @@ const Footer = () => {
     setIsActiveShow(!isActiveShow)
   }
   return (
-    <div className=' flex h-8 items-center justify-between px-[100px] py-4'>
-      <div className='flex items-center gap-10'>
+    <div className='flex h-8 flex-wrap items-center justify-center gap-4 px-4 py-4  lg:justify-between lg:gap-0 lg:px-[100px]'>
+      <div className='flex items-center gap-4 lg:gap-10'>
         <div className='flex items-center gap-5'>
           <div className='text-[14px] font-medium  leading-[14px] text-white'>Lite</div>
           <button
