@@ -7,13 +7,17 @@ import { useMemo } from 'react'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_upDown from '@/icons/up.svg'
 import Dental from './dental'
-const Supply = () => {
+const Supply = ({ type }: { type: string }) => {
   const columns = useMemo<ColumnDef<ISupply>[]>(
     () => [
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='pl-6 text-left'>Assets</p>,
+        header: () => (
+          <div className='mx-2 flex flex-row items-center gap-2 pl-6 text-left'>
+            Assets <Image src={ic_upDown} alt='icon sort' sizes='16' />
+          </div>
+        ),
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
@@ -88,20 +92,27 @@ const Supply = () => {
       apy: 2.16,
     },
   ]
+
   return (
     <div className='flex w-[608px] flex-col gap-4 rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
-      <div className=' text-xl font-medium leading-5 text-white'>Your supplies</div>
-      <div className='flex h-[26px] flex-row gap-2'>
-        <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
-          Balance <div className='text-sm font-medium text-white'>$3.31</div>
-        </div>
-        <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
-          APY <div className='text-sm font-medium text-white'>2.16%</div>
-        </div>
-        <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
-          Collateral <div className='text-sm font-medium text-white'>$3.31</div>
-        </div>
+      <div className=' text-xl font-medium leading-5 text-white'>
+        {type == 'supply' ? 'Your supplies' : 'Your Borrow'}
       </div>
+      {type == 'supply' ? (
+        <div className='flex h-[26px] flex-row gap-2'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
+            Balance <div className='text-sm font-medium text-white'>$3.31</div>
+          </div>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
+            APY <div className='text-sm font-medium text-white'>2.16%</div>
+          </div>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
+            Collateral <div className='text-sm font-medium text-white'>$3.31</div>
+          </div>
+        </div>
+      ) : (
+        <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
+      )}
       <Table columns={columns} data={data} />
     </div>
   )
