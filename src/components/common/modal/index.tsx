@@ -1,40 +1,24 @@
 'use client'
 
 import { Dialog, Transition } from '@headlessui/react'
+import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import './style.css'
 
-// import group from '@/images/modal/Group.svg'
-// import solana from '@/images/modal/Solana.svg'
-// import wallet from '@/images/modal/Wallet.png'
-// import background from '@/images/modal/backgroud.png'
-// import eye from '@/images/modal/eye-open.png'
-// import setting from '@/images/modal/settings.svg'
+import group from '@/images/modal/Group.svg'
+import wallet from '@/images/modal/Wallet.png'
+import background from '@/images/modal/backgroud.png'
+import eye from '@/images/modal/eye-open.png'
+import setting from '@/images/modal/settings.svg'
+import { GlobalPool } from '../../../../types/table'
 
-// interface ModalProps {
-//   isOpen: boolean
-//   handleClose: () => void
-//   data: {
-//     asset: string
-//     apy: number
-//     currency: string
-//     image?: string
-//   }
-// }
-
-export const Modal = ({
-  isOpen,
-  handleClose,
-  data,
-}: {
+export interface ModalProps {
   isOpen: boolean
   handleClose: () => void
-  data: {
-    asset: string
-    apy: number
-    currency: string
-  }
-}) => {
+  data?: GlobalPool
+}
+
+export const Modal = ({ isOpen, handleClose, data }: ModalProps) => {
   const walletBalance = 0.21
   const [supply, setSupply] = useState<string>('')
 
@@ -68,7 +52,7 @@ export const Modal = ({
                 <div
                   className='w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white'
                   style={{
-                    // backgroundImage: `url(${background.src})`,
+                    backgroundImage: `url(${background.src})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -79,9 +63,10 @@ export const Modal = ({
                     <h5 className='flex-1 text-start text-sm font-bold leading-[14px] text-[#ffffff99]'>Your supply</h5>
                     <div className='flex items-center gap-[16px]'>
                       <div className='flex items-center gap-[8px]'>
-                        {/* <Image src={wallet} width={20} height={20} alt='image' className='object-cover' /> */}
+                        <Image src={wallet} width={20} height={20} alt='image' className='object-cover' />
                         <p className='text-sm font-normal leading-[10px]'>
-                          {walletBalance} {data.currency}
+                          {/* !!!! Need currency */}
+                          {walletBalance} {data?.asset.name}
                         </p>
                       </div>
                       <button
@@ -98,13 +83,19 @@ export const Modal = ({
                     <label className='flex w-full items-center gap-2 rounded-xl bg-black p-[12px]'>
                       {/*  */}
                       <div className='flex h-[44px] w-[36%] min-w-[149px] items-center justify-center gap-2 rounded-lg bg-[#18181B] px-4 py-[6px]'>
-                        {/* <Image src={data.image} width={32} height={32} alt='image' className='object-cover' /> */}
+                        <Image
+                          src={data?.asset.icon ?? group}
+                          width={32}
+                          height={32}
+                          alt='image'
+                          className='object-cover'
+                        />
                         <div className='flex-1'>
                           <p className='w-full text-start text-sm font-medium leading-[14px] text-white'>
-                            {data.asset}
+                            {data?.asset.name}
                           </p>
                           <p className='mt-[2px] w-full text-start text-xs font-normal leading-[14px] text-[#00E585]'>
-                            {data.apy} APY
+                            {data?.apy}% APY
                           </p>
                         </div>
                       </div>
@@ -134,7 +125,7 @@ export const Modal = ({
                     <button
                       type='button'
                       className='flex w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
-                      // onClick={handleClose}
+                      onClick={handleClose}
                       disabled={supply === '' || parseFloat(supply) === 0}
                     >
                       Supply
@@ -145,13 +136,13 @@ export const Modal = ({
                   <div className='mt-6 flex w-full items-center'>
                     <div className='flex-1 text-start'>
                       <button className='flex items-center gap-2 rounded-full px-4 py-2'>
-                        {/* <Image src={eye} alt='setting' width={20} height={20} className='object-cover' /> */}
+                        <Image src={eye} alt='setting' width={20} height={20} className='object-cover' />
                         <span className='text-sm font-normal leading-[14px] text-[#848895]'>View details</span>
-                        {/* <Image src={group} alt='setting' width={20} height={20} className='object-cover' /> */}
+                        <Image src={group} alt='setting' width={20} height={20} className='object-cover' />
                       </button>
                     </div>
                     <button className='flex items-center gap-2 rounded-full border border-[#FFFFFF24] px-3 py-2'>
-                      {/* <Image src={setting} alt='setting' width={20} height={20} className='object-cover' /> */}
+                      <Image src={setting} alt='setting' width={20} height={20} className='object-cover' />
                       <span className='text-sm font-normal leading-[14px] text-[#8F9399]'>Setting</span>
                     </button>
                   </div>
@@ -164,29 +155,3 @@ export const Modal = ({
     </Transition>
   )
 }
-
-// export function ButtonModalTest() {
-//   const [open, setOpen] = useState(false)
-//   return (
-//     <>
-//       <div className='flex h-[100svh] w-[100svw]  '>
-//         <button
-//           onClick={() => setOpen(true)}
-//           className='mx-auto my-auto h-fit rounded-lg bg-white p-4 font-mona text-sm font-medium leading-[14px] text-black'
-//         >
-//           Suplly
-//         </button>
-//       </div>
-//       <Modal
-//         data={{
-//           asset: 'Solana',
-//           apy: 0.13,
-//           // image: solana,
-//           currency: 'SOL',
-//         }}
-//         isOpen={open}
-//         handleClose={() => setOpen(false)}
-//       />
-//     </>
-//   )
-// }

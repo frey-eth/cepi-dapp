@@ -1,6 +1,8 @@
 'use client'
 import BtnSupply from '@/components/common/button/btn-supply'
 import Filter from '@/components/common/filter'
+import { Modal } from '@/components/common/modal'
+import useModal from '@/components/common/modal/hook/useModal'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
 import bgGlobalPool from '@/images/global-pool/Noise.png'
@@ -13,6 +15,8 @@ import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
+  const { openModal, modalData, handleOpenModal, handleCloseModal } = useModal()
+
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
       {
@@ -143,13 +147,22 @@ const Loans = () => {
         id: 'btn',
         accessorKey: '',
         header: '',
-        cell: () => {
-          return <BtnSupply />
+        cell: (info) => {
+          return (
+            <BtnSupply
+              onClick={() => {
+                const data = info.row.original
+                handleOpenModal({
+                  ...data,
+                })
+              }}
+            />
+          )
         },
         footer: (props) => props.column.id,
       },
     ],
-    []
+    [handleOpenModal]
   )
   const data: GlobalPool[] = [
     {
@@ -200,6 +213,7 @@ const Loans = () => {
         <Filter />
         <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
         <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
+        <Modal data={modalData} isOpen={openModal} handleClose={handleCloseModal} />
       </div>
     </main>
   )

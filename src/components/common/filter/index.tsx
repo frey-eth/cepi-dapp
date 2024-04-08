@@ -39,7 +39,7 @@ const Filter = () => {
             className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
             onClick={toggleSwitch}
           >
-            <div className={`ml-[2px]  ${isActive ? 'translate-x-[16px] transform' : ''}`}>
+            <div className={`ml-[2px] transition-transform ${isActive ? 'translate-x-[16px] ' : ''}`}>
               <Image src={eclipse} alt='switch_icon' />
             </div>
           </button>
