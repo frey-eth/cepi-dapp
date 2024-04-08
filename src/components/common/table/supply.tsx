@@ -6,8 +6,36 @@ import { ISupply } from '../../../../types/table'
 import { useMemo } from 'react'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_upDown from '@/icons/up.svg'
+import non_token from '@/icons/nonToken.svg'
 import Dental from './dental'
 const Supply = ({ type }: { type: string }) => {
+  const data: ISupply[] = [
+    {
+      asset: {
+        icon: ic_solana,
+        name: 'Solana',
+      },
+      balance: {
+        amount: '0.0010000',
+        value: 3.31,
+      },
+      apy: 2.16,
+    },
+  ]
+
+  const nonData: ISupply[] = [
+    {
+      asset: {
+        icon: non_token,
+        name: '--',
+      },
+      balance: {
+        amount: '--',
+      },
+      apy: undefined,
+    },
+  ]
+
   const columns = useMemo<ColumnDef<ISupply>[]>(
     () => [
       {
@@ -50,9 +78,11 @@ const Supply = ({ type }: { type: string }) => {
             <figure className='flex items-center justify-center'>
               <div className='flex flex-col gap-[6px]'>
                 <div className='text-start'>{balanceAmount.toLocaleString()}</div>
-                <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
-                  ${balanceValue.toLocaleString()}
-                </div>
+                {balanceValue && (
+                  <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
+                    ${balanceValue?.toLocaleString()}
+                  </div>
+                )}
               </div>
             </figure>
           )
@@ -71,27 +101,17 @@ const Supply = ({ type }: { type: string }) => {
           )
         },
         cell: (info) => {
-          return <Dental percent={Number(info.getValue())} />
+          return info.getValue() ? (
+            <Dental percent={Number(info.getValue())} />
+          ) : (
+            <span className={'text-[#00E585]'}>--</span>
+          )
         },
         footer: (props) => props.column.id,
       },
     ],
     []
   )
-
-  const data: ISupply[] = [
-    {
-      asset: {
-        icon: ic_solana,
-        name: 'Solana',
-      },
-      balance: {
-        amount: '0.0010000',
-        value: 3.31,
-      },
-      apy: 2.16,
-    },
-  ]
 
   return (
     <div className='flex w-[608px] flex-col gap-4 rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
@@ -113,7 +133,7 @@ const Supply = ({ type }: { type: string }) => {
       ) : (
         <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
       )}
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data.length > 0 ? data : nonData} />
     </div>
   )
 }

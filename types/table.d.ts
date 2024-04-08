@@ -21,9 +21,9 @@ export type ISupply = {
   }
   balance: {
     amount: string
-    value: number
+    value?: number
   }
-  apy: number
+  apy?: number
 }
 
 export type AssetsBorrow = {
