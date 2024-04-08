@@ -14,7 +14,6 @@ import Image from 'next/image'
 import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
-import Supply from '@/components/common/table/supply'
 const Loans = () => {
   const { openModal, modalData, handleOpenModal, handleCloseModal } = useModal()
 
@@ -208,15 +207,16 @@ const Loans = () => {
   ]
 
   return (
-    <main className='relative mx-auto mt-60 h-[398px] w-[1288px] rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-lg'>
-      <Image src={bgGlobalPool} alt='bg' fill priority />
-      <Supply type='borrow' />
-      <section>
-        <Filter />
-        <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-        <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
-        <Modal data={modalData} isOpen={openModal} handleClose={handleCloseModal} />
+    <main className='mx-auto h-[calc(100vh-104px)] w-[1288px] pt-10'>
+      <section className=' backdrop-blur-lg relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6'>
+        <Image src={bgGlobalPool} alt='bg' fill priority />
+        <div className='relative'>
+          <Filter />
+          <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
+          <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
+        </div>
       </section>
+      <Modal data={modalData} isOpen={openModal} handleClose={handleCloseModal} />
     </main>
   )
 }
