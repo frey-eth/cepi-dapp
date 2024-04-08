@@ -210,9 +210,6 @@ const Loans = () => {
     <main className='mx-auto h-[calc(100vh-104px)] w-[1288px] pt-10'>
       <section className=' backdrop-blur-lg relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6'>
         <Image src={bgGlobalPool} alt='bg' fill priority />
-        {/* <div className='flex w-full flex-row'>
-          <Supply type='supply' /> <Supply type='borrow' />
-        </div> */}
         <div className='relative'>
           <Filter />
           <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>

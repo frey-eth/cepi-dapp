@@ -114,7 +114,7 @@ const Supply = ({ type }: { type: string }) => {
   )
 
   return (
-    <div className='table-custom flex w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+    <div className='flex h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
       <div className=' text-xl font-medium leading-5 text-white'>
         {type == 'supply' ? 'Your supplies' : 'Your Borrow'}
       </div>
@@ -133,7 +133,9 @@ const Supply = ({ type }: { type: string }) => {
       ) : (
         <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
       )}
-      <Table columns={columns} data={data.length > 0 ? data : nonData} />
+      <div className='table-custom h-[170px] w-full overflow-y-auto'>
+        <Table className='w-full overflow-y-auto' columns={columns} data={data.length > 0 ? data : nonData} />
+      </div>
     </div>
   )
 }
