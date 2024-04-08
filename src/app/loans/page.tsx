@@ -207,14 +207,15 @@ const Loans = () => {
   ]
 
   return (
-    <main className='relative mx-auto mt-60 h-[398px] w-[1288px] rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-lg'>
-      <Image src={bgGlobalPool} alt='bg' fill priority />
-      <div>
+    <main className='relative mx-auto flex h-[calc(100vh-104px)] w-[1288px] flex-col gap-8 py-4'>
+      <section className='mx-auto h-[56px] w-[462px]'></section>
+      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-lg'>
+        <Image src={bgGlobalPool} alt='bg' fill priority />
         <Filter />
         <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
         <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
         <Modal data={modalData} isOpen={openModal} handleClose={handleCloseModal} />
-      </div>
+      </section>
     </main>
   )
 }

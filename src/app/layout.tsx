@@ -1,9 +1,11 @@
+import Footer from '@/components/common/footer'
 import Header from '@/components/common/header'
 import bgLayout from '@/images/layout/bg-layout.png'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Image from 'next/image'
 import './globals.css'
+import '@/styles/index.scss'
 const monaSans = localFont({
   src: [
     {
@@ -53,6 +55,7 @@ export default function RootLayout({
         <main className='relative'>
           <Header />
           {children}
+          <Footer />
         </main>
       </body>
     </html>

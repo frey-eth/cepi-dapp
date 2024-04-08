@@ -69,7 +69,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className }: Table<T>) 
             </tr>
           ))}
         </thead>
-        <tbody>
+        <tbody className='h-[100px] overflow-y-hidden'>
           {table
             .getRowModel()
             .rows.slice(0, 10)
