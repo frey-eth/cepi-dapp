@@ -1,5 +1,5 @@
 'use client'
-import logo from '@/images/header/Logo.png'
+import logo from '@/images/header/Logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <main>
-      <section className='mx-auto flex w-full items-center justify-between py-4 lg:max-w-[1440px] lg:px-[100px]'>
+      <section className='mx-auto flex h-[72px] w-full items-center justify-between py-4 lg:max-w-[1440px] lg:px-[100px]'>
         <section className='flex w-[752px] items-center gap-x-10'>
           <Link href={'/'}>
             <figure>

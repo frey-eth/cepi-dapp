@@ -1,5 +1,11 @@
+import Portfolio from '@/components/portfolilo'
+
 const Lotteries = () => {
-  return <div>Lotteries</div>
+  return (
+    <div>
+      <Portfolio />
+    </div>
+  )
 }
 
 export default Lotteries

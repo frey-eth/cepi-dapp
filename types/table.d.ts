@@ -14,6 +14,16 @@ export type GlobalPool = {
   walletAmt: number
 }
 
+export type AssetSupply = {
+  asset: {
+    icon: StaticImport | string
+    name: string
+  }
+  walletBalance: number
+  apy: number
+  isCollateral: boolean
+}
+
 export type ISupply = {
   asset: {
     icon: StaticImport | string
