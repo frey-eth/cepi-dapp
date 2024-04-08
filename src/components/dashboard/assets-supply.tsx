@@ -137,7 +137,7 @@ const AssetsSupply = () => {
           <Checkbox checked={checked} setChecked={setChecked} />
           <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
         </div>
-        <div className='table-custom h-[170px] w-full overflow-auto'>
+        <div className='table-custom h-[170px] w-full overflow-y-auto'>
           <Table className='w-[576px] md:w-full' columns={columns} data={data} />
         </div>
       </div>
