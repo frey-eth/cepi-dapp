@@ -14,6 +14,7 @@ import Image from 'next/image'
 import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
+import Supply from '@/components/common/table/supply'
 const Loans = () => {
   const { openModal, modalData, handleOpenModal, handleCloseModal } = useModal()
 
@@ -209,6 +210,7 @@ const Loans = () => {
   return (
     <main className='relative mx-auto mt-60 h-[398px] w-[1288px] rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-lg'>
       <Image src={bgGlobalPool} alt='bg' fill priority />
+      <Supply type='borrow' />
       <div>
         <Filter />
         <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
