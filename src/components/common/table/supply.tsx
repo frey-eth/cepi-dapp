@@ -114,7 +114,7 @@ const Supply = ({ type }: { type: string }) => {
   )
 
   return (
-    <div className='flex w-[608px] flex-col gap-4 rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+    <div className='flex w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
       <div className=' text-xl font-medium leading-5 text-white'>
         {type == 'supply' ? 'Your supplies' : 'Your Borrow'}
       </div>
