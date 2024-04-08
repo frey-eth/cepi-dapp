@@ -13,3 +13,15 @@ export type GlobalPool = {
   utilization: number
   walletAmt: number
 }
+
+export type ISupply = {
+  asset: {
+    icon: StaticImport | string
+    name: string
+  }
+  balance: {
+    amount: string
+    value: number
+  }
+  apy: number
+}
