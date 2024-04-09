@@ -1,10 +1,12 @@
 import Footer from '@/components/common/footer'
 import Header from '@/components/common/header'
+import bgLayout from '@/images/layout/bg-layout.png'
 import SolanaProvider from '@/provider/solana-provider'
 import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 // import Image from 'next/image'
+import Image from 'next/image'
 import './globals.css'
 const monaSans = localFont({
   src: [
@@ -50,9 +52,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`font-mona_sans ${monaSans.className}`}>
+        <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority />
         <SolanaProvider>
-          <main className='relative bg-[#000]'>
-            {/* <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority /> */}
+          <main className='relative'>
             <Header />
             <section className='h-full lg:min-h-[calc(100vh-104px)]'>{children}</section>
             <Footer />
