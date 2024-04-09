@@ -51,12 +51,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`font-mona_sans ${monaSans.className}`}>
+      <body className={`font-mona_sans ${monaSans.className} relative h-full min-h-screen`}>
         <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority />
         <SolanaProvider>
           <main className='relative'>
             <Header />
-            <section className='h-full lg:min-h-[calc(100vh-104px)]'>{children}</section>
+            <section className='h-full lg:min-h-[calc(100vh-130px)]'>{children}</section>
             <Footer />
           </main>
         </SolanaProvider>
