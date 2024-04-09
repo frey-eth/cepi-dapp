@@ -17,15 +17,7 @@ import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
-  const {
-    isOpen: openModal,
-    data: modalData,
-    handleOpen: handleOpenModal,
-    handleClose: handleCloseModal,
-    isLoading: isLoadingModal,
-    isSuccess: isSuccessModal,
-    handleSupply: handleSupplyModal,
-  } = useModal()
+  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -171,7 +163,8 @@ const Loans = () => {
               onClick={() => {
                 const data = info.row.original
                 handleOpenModal({
-                  ...data,
+                  data: data,
+                  type: 'supply',
                 })
               }}
             />
@@ -226,7 +219,7 @@ const Loans = () => {
   ]
 
   return (
-    <main className='mx-auto h-[calc(100vh-104px)] w-full pt-10 lg:w-[1288px]'>
+    <main className='mx-auto h-full w-full pt-10 lg:w-[1288px]'>
       <div className='mb-8 w-full'>
         <div className='relative mx-auto w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
           <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
@@ -253,14 +246,7 @@ const Loans = () => {
           </div>
         </div>
       </section>
-      <Modal
-        data={modalData}
-        isOpen={openModal}
-        handleClose={handleCloseModal}
-        isLoading={isLoadingModal}
-        isSuccess={isSuccessModal}
-        handleSupply={handleSupplyModal}
-      />
+      <Modal {...modalProps} />
     </main>
   )
 }
