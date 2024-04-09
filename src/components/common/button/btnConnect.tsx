@@ -1,5 +1,24 @@
+'use client'
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useWalletModal } from '@solana/wallet-adapter-react-ui'
+import { addressFormatter } from '../../../../utils/libs/fortmat'
+
 const BtnConnect = () => {
-  return <button className='rounded-lg bg-gradient-connect px-4 py-2 text-base text-[#fff]'>Connect Wallet</button>
+  const { setVisible } = useWalletModal()
+  const { publicKey, disconnect } = useWallet()
+  const connect = () => {
+    if (publicKey) {
+      disconnect()
+      return
+    }
+    setVisible(true)
+  }
+
+  return (
+    <div onClick={connect} className='cursor-pointer rounded-lg bg-gradient-connect px-4 py-2 text-base text-[#fff]'>
+      {publicKey ? addressFormatter(publicKey.toBase58() as string) : 'Connect Wallet'}
+    </div>
+  )
 }
 
 export default BtnConnect
