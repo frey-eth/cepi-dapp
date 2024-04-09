@@ -1,14 +1,12 @@
 import AssetsToBorrow from '@/components/dashboard/assets-borrow'
 import AssetsSupply from '@/components/dashboard/assets-supply'
 import Supply from '@/components/dashboard/supply'
-import bgGlobalPool from '@/images/global-pool/Noise.png'
-import Image from 'next/image'
 
 const DashBoard = () => {
   return (
-    <main className='mx-auto w-full p-4 lg:mb-10 lg:w-[1288px] lg:py-5'>
-      <section className='relative h-full w-full overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-lg lg:p-6'>
-        <Image src={bgGlobalPool} alt='bg' fill priority />
+    <main className='mx-auto h-full w-full p-4 lg:mb-10 lg:w-[1288px] lg:py-5'>
+      <section className='relative h-full w-full overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] lg:p-6'>
+        {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
         <section className='relative h-full'>
           <h2 className='mb-6 text-2xl font-medium text-[#fff]'>Portfolio</h2>
           <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>

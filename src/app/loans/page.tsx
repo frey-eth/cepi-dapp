@@ -5,7 +5,6 @@ import { Modal } from '@/components/common/modal'
 import useModal from '@/components/common/modal/hook/useModal'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
-import bgGlobalPool from '@/images/global-pool/Noise.png'
 import arrowRight from '@/images/global-pool/arrowright.svg'
 import backpack from '@/images/global-pool/backPack.png'
 import ic_finger from '@/images/global-pool/finger.png'
@@ -236,8 +235,8 @@ const Loans = () => {
         </div>
       </div>
 
-      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-lg'>
-        <Image src={bgGlobalPool} alt='bg' fill priority />
+      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-[75px]'>
+        {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
         <div className='relative'>
           <Filter />
           <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
