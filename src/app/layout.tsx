@@ -56,7 +56,7 @@ export default function RootLayout({
         <SolanaProvider>
           <main className='relative'>
             <Header />
-            <section className='h-full lg:min-h-[calc(100vh-126px)]'>{children}</section>
+            <section className='h-full lg:min-h-[calc(100vh-130px)]'>{children}</section>
             <Footer />
           </main>
         </SolanaProvider>
