@@ -10,7 +10,8 @@ export interface ModalProps {
   data?: DataModalType
   isLoading: boolean
   isSuccess: boolean
-  handleSupply?: () => void
+  handleSupply: () => void
+  handleExit: () => void
 }
 
 const useModal = (
@@ -30,6 +31,10 @@ const useModal = (
 
   const handleClose = () => {
     setIsOpen(false)
+  }
+
+  const handleExit = () => {
+    setIsOpen(false)
     setIsSuccess(false)
     setTimeout(() => setData(undefined), 300)
   }
@@ -45,7 +50,6 @@ const useModal = (
 
       setTimeout(() => {
         setIsLoading(false)
-        setData(undefined)
         setIsSuccess(true)
       }, 300)
     }, 3000)
@@ -59,6 +63,7 @@ const useModal = (
     handleOpen,
     handleClose,
     handleSupply,
+    handleExit,
   }
 }
 

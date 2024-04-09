@@ -17,15 +17,7 @@ import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
-  const {
-    isOpen: openModal,
-    data: modalData,
-    handleOpen: handleOpenModal,
-    handleClose: handleCloseModal,
-    isLoading: isLoadingModal,
-    isSuccess: isSuccessModal,
-    handleSupply: handleSupplyModal,
-  } = useModal()
+  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -254,14 +246,7 @@ const Loans = () => {
           </div>
         </div>
       </section>
-      <Modal
-        data={modalData}
-        isOpen={openModal}
-        handleClose={handleCloseModal}
-        isLoading={isLoadingModal}
-        isSuccess={isSuccessModal}
-        handleSupply={handleSupplyModal}
-      />
+      <Modal {...modalProps} />
     </main>
   )
 }
