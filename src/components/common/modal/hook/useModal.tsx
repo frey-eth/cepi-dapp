@@ -1,19 +1,29 @@
 'use client'
 import { useState } from 'react'
-import { ModalProps } from '..'
-import { GlobalPool } from '../../../../../types/table'
+import { AssetSupply, AssetsBorrow, GlobalPool } from '../../../../../types/table'
+
+export type DataModalType = { data: GlobalPool | AssetSupply | AssetsBorrow; type: 'supply' | 'borrow' }
+
+export interface ModalProps {
+  isOpen: boolean
+  handleClose: () => void
+  data?: DataModalType
+  isLoading: boolean
+  isSuccess: boolean
+  handleSupply?: () => void
+}
 
 const useModal = (
   supplyAction?: () => void
 ): ModalProps & {
-  handleOpen: (data: GlobalPool) => void
+  handleOpen: (data: DataModalType) => void
 } => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
-  const [data, setData] = useState<GlobalPool | undefined>()
+  const [data, setData] = useState<DataModalType | undefined>()
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleOpen = (data: GlobalPool) => {
+  const handleOpen = (data: DataModalType) => {
     setIsOpen(true)
     setData(data)
   }

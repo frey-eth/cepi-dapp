@@ -8,10 +8,23 @@ import { useMemo, useState } from 'react'
 import { AssetSupply } from '../../../types/table'
 import Checkbox from '../checkbox'
 import BtnSupply from '../common/button/btn-supply'
+import { Modal } from '../common/modal'
+import useModal from '../common/modal/hook/useModal'
 import Table from '../common/table'
 import Dental from '../common/table/dental'
 const AssetsSupply = () => {
   const [checked, setChecked] = useState(false)
+
+  const {
+    isOpen: openModal,
+    data: modalData,
+    handleOpen: handleOpenModal,
+    handleClose: handleCloseModal,
+    isLoading: isLoadingModal,
+    isSuccess: isSuccessModal,
+    handleSupply: handleSupplyModal,
+  } = useModal()
+
   const columns = useMemo<ColumnDef<AssetSupply>[]>(
     () => [
       {
@@ -67,13 +80,23 @@ const AssetsSupply = () => {
         accessorKey: '',
         header: '',
         enableSorting: false,
-        cell: () => {
-          return <BtnSupply />
+        cell: (info) => {
+          return (
+            <BtnSupply
+              onClick={() => {
+                const data = info.row.original
+                handleOpenModal({
+                  data: data,
+                  type: 'supply',
+                })
+              }}
+            />
+          )
         },
         footer: (props) => props.column.id,
       },
     ],
-    []
+    [handleOpenModal]
   )
   const [sorting, setSorting] = useState<SortingState>([])
 
@@ -117,25 +140,35 @@ const AssetsSupply = () => {
   ]
 
   return (
-    <div className='relative h-[300px] w-full lg:w-[608px]'>
-      <Image src={bgAssets} alt='background' fill priority />
-      <div className='relative p-4'>
-        <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
-        <div className='my-4 flex items-center space-x-3'>
-          <Checkbox checked={checked} setChecked={setChecked} />
-          <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
-        </div>
-        <div className='table-custom h-[170px] w-full overflow-y-auto'>
-          <Table
-            className='w-[576px] md:w-full'
-            columns={columns}
-            data={data}
-            sorting={sorting}
-            setSorting={setSorting}
-          />
+    <>
+      <div className='relative h-[300px] w-full lg:w-[608px]'>
+        <Image src={bgAssets} alt='background' fill priority />
+        <div className='relative p-4'>
+          <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
+          <div className='my-4 flex items-center space-x-3'>
+            <Checkbox checked={checked} setChecked={setChecked} />
+            <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
+          </div>
+          <div className='table-custom h-[170px] w-full overflow-y-auto'>
+            <Table
+              className='w-[576px] md:w-full'
+              columns={columns}
+              data={data}
+              sorting={sorting}
+              setSorting={setSorting}
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <Modal
+        data={modalData}
+        isOpen={openModal}
+        handleClose={handleCloseModal}
+        isLoading={isLoadingModal}
+        isSuccess={isSuccessModal}
+        handleSupply={handleSupplyModal}
+      />
+    </>
   )
 }
 

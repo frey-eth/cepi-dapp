@@ -171,7 +171,8 @@ const Loans = () => {
               onClick={() => {
                 const data = info.row.original
                 handleOpenModal({
-                  ...data,
+                  data: data,
+                  type: 'supply',
                 })
               }}
             />

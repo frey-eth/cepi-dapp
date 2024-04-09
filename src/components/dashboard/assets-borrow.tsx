@@ -12,8 +12,20 @@ import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo } from 'react'
 import { AssetsBorrow } from '../../../types/table'
+import { Modal } from '../common/modal'
+import useModal from '../common/modal/hook/useModal'
 
 const AssetsToBorrow = () => {
+  const {
+    isOpen: openModal,
+    data: modalData,
+    handleOpen: handleOpenModal,
+    handleClose: handleCloseModal,
+    isLoading: isLoadingModal,
+    isSuccess: isSuccessModal,
+    handleSupply: handleSupplyModal,
+  } = useModal()
+
   const columns = useMemo<ColumnDef<AssetsBorrow>[]>(
     () => [
       {
@@ -83,10 +95,18 @@ const AssetsToBorrow = () => {
         accessorKey: '',
         header: '',
         enableSorting: false,
-        cell: () => {
+        cell: (info) => {
           return (
             <div className=' flex items-center justify-end gap-2'>
-              <BtnBorrow />
+              <BtnBorrow
+                onClick={() => {
+                  const data = info.row.original
+                  handleOpenModal({
+                    data: data,
+                    type: 'borrow',
+                  })
+                }}
+              />
               <BtnDetail />
             </div>
           )
@@ -94,7 +114,7 @@ const AssetsToBorrow = () => {
         footer: (props) => props.column.id,
       },
     ],
-    []
+    [handleOpenModal]
   )
   const data: AssetsBorrow[] = [
     {
@@ -139,15 +159,25 @@ const AssetsToBorrow = () => {
     },
   ]
   return (
-    <div className='relative h-[300px] w-full lg:w-[608px]'>
-      <Image src={bgAssets} alt='background' fill priority />
-      <div className='relative mx-auto flex h-full flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
-        <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
-        <div className='table-custom h-[236px] w-full overflow-y-auto'>
-          <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+    <>
+      <div className='relative h-[300px] w-full lg:w-[608px]'>
+        <Image src={bgAssets} alt='background' fill priority />
+        <div className='relative mx-auto flex h-full flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
+          <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
+          <div className='table-custom h-[236px] w-full overflow-y-auto'>
+            <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+          </div>
         </div>
       </div>
-    </div>
+      <Modal
+        data={modalData}
+        isOpen={openModal}
+        handleClose={handleCloseModal}
+        isLoading={isLoadingModal}
+        isSuccess={isSuccessModal}
+        handleSupply={handleSupplyModal}
+      />
+    </>
   )
 }
 

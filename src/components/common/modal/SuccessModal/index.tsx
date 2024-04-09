@@ -36,7 +36,7 @@ const SuccessModal = ({ isOpen, handleClose }: { isOpen: boolean; handleClose: (
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='modal-border w-full max-w-md transform overflow-hidden rounded-3xl shadow-xl transition-all'>
+              <Dialog.Panel className='modal-border w-full max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-md'>
                 <div
                   className='w-full rounded-3xl bg-black p-6 text-white'
                   style={{
