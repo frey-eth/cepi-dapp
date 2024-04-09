@@ -51,7 +51,7 @@ const AssetsToBorrow = () => {
         accessorKey: 'available',
         header: () => {
           return (
-            <figure className='flex items-center justify-end space-x-2'>
+            <figure className='flex items-center justify-center space-x-2'>
               <span>Available</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' />
             </figure>
@@ -60,7 +60,7 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <figure className='flex flex-col items-end justify-end space-x-2 text-right'>
+            <figure className='flex flex-col items-center justify-center space-x-2 text-right'>
               <span>{Number(info.getValue()).toLocaleString()}</span>
               <span className='text-[#8F9399]'>${Number(info.getValue()).toLocaleString()}</span>
             </figure>
@@ -82,7 +82,7 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <div className='items-end justify-end space-x-2 text-right'>
+            <div className='flex justify-center'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
