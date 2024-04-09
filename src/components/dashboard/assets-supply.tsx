@@ -117,7 +117,7 @@ const AssetsSupply = () => {
   ]
 
   return (
-    <div className='relative h-[300px] w-full lg:w-[608px]'>
+    <div className='relative h-[300px] w-full'>
       <Image src={bgAssets} alt='background' fill priority />
       <div className='relative p-4'>
         <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>

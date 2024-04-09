@@ -139,7 +139,7 @@ const AssetsToBorrow = () => {
     },
   ]
   return (
-    <div className='relative h-[300px] w-full lg:w-[608px]'>
+    <div className='relative h-[300px] w-full'>
       <Image src={bgAssets} alt='background' fill priority />
       <div className='relative mx-auto flex h-full flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
         <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
