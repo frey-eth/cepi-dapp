@@ -1,4 +1,7 @@
 'use client'
+import ic_upDown from '@/icons/up.svg'
+
+import ic_denta from '@/images/portfolio/denta.svg'
 import {
   ColumnDef,
   SortingState,
@@ -7,6 +10,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table'
+import Image from 'next/image'
 import { Dispatch, SetStateAction } from 'react'
 
 interface Table<T> {
@@ -42,7 +46,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className }: Table<T>) 
                     {header.isPlaceholder ? null : (
                       <>
                         <div
-                          className={`relative z-10 text-sm font-normal text-[#C6C6C6] ${header.column.getCanSort() ? 'cursor-pointer' : ''}`}
+                          className={`relative z-10 flex items-center gap-2 text-sm font-normal text-[#C6C6C6] ${header.column.getCanSort() ? 'cursor-pointer' : ''}`}
                           onClick={header.column.getToggleSortingHandler()}
                           title={
                             header.column.getCanSort()
@@ -56,9 +60,13 @@ const Table = <T,>({ data, columns, sorting, setSorting, className }: Table<T>) 
                         >
                           {flexRender(header.column.columnDef.header, header.getContext())}
                           {{
-                            asc: ' 🔼',
-                            desc: ' 🔽',
+                            asc: <Image src={ic_upDown} alt='icon' />,
+                            desc: <Image src={ic_upDown} className='rotate-180' alt='icon' />,
                           }[header.column.getIsSorted() as string] ?? null}
+                          {header.column.getCanSort() && header.column.getNextSortingOrder() === 'desc' && (
+                            <Image src={ic_denta} alt='icon' />
+                          )}
+                          {/*  */}
                         </div>
                         <span className={`absolute left-0 top-0 h-full w-full rounded-lg bg-[rgba(0,0,0,0.32)]`}></span>
                       </>

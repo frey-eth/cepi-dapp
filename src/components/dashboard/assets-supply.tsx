@@ -2,8 +2,7 @@
 import ic_solana from '@/images/global-pool/sol.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import icCheck from '@/images/portfolio/check.svg'
-import ic_denta from '@/images/portfolio/denta.svg'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { AssetSupply } from '../../../types/table'
@@ -18,7 +17,7 @@ const AssetsSupply = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='pl-6 text-left'>Assets</p>,
+        header: () => <span className='mx-2 gap-2 pl-6 text-left'>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
@@ -30,18 +29,14 @@ const AssetsSupply = () => {
             </div>
           )
         },
+        sortingFn: (rowA, rowB) => rowB.original.asset.name.localeCompare(rowA.original.asset.name),
         footer: (props) => props.column.id,
       },
       {
         id: 'walletBalance',
         accessorKey: 'walletBalance',
         header: () => {
-          return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <span>Wallet balance</span>
-              <Image src={ic_denta} alt='icon alert' sizes='16' />
-            </figure>
-          )
+          return <span>Wallet balance</span>
         },
         cell: (info) => info.getValue(),
         footer: (props) => props.column.id,
@@ -50,12 +45,7 @@ const AssetsSupply = () => {
         id: 'apy',
         accessorKey: 'apy',
         header: () => {
-          return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <span>APY</span>
-              <Image src={ic_denta} alt='icon alert' sizes='16' />
-            </figure>
-          )
+          return <span>APY</span>
         },
         cell: (info) => <Dental percent={Number(info.getValue())} />,
         footer: (props) => props.column.id,
@@ -63,13 +53,9 @@ const AssetsSupply = () => {
       {
         id: 'isCollateral',
         accessorKey: 'isCollateral',
+        enableSorting: false,
         header: () => {
-          return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <span>Can be collateral</span>
-              <Image src={ic_denta} alt='icon alert' sizes='16' />
-            </figure>
-          )
+          return <span>Can be collateral</span>
         },
         cell: (info) => {
           return (info.getValue() as boolean) ? <Image src={icCheck} className='mx-auto' alt='check' /> : ''
@@ -80,6 +66,7 @@ const AssetsSupply = () => {
         id: 'btn',
         accessorKey: '',
         header: '',
+        enableSorting: false,
         cell: () => {
           return <BtnSupply />
         },
@@ -88,6 +75,7 @@ const AssetsSupply = () => {
     ],
     []
   )
+  const [sorting, setSorting] = useState<SortingState>([])
 
   const data: AssetSupply[] = [
     {
@@ -104,7 +92,7 @@ const AssetsSupply = () => {
         icon: ic_solana,
         name: 'Solana',
       },
-      walletBalance: 0.0087386,
+      walletBalance: 0.0087385,
       apy: -2.16,
       isCollateral: false,
     },
@@ -113,8 +101,8 @@ const AssetsSupply = () => {
         icon: ic_solana,
         name: 'Solana',
       },
-      walletBalance: 0.0087386,
-      apy: 2.16,
+      walletBalance: 0.0087384,
+      apy: 2.15,
       isCollateral: true,
     },
     {
@@ -122,8 +110,8 @@ const AssetsSupply = () => {
         icon: ic_solana,
         name: 'Solana',
       },
-      walletBalance: 0.0087386,
-      apy: -2.16,
+      walletBalance: 0.0087383,
+      apy: -2.15,
       isCollateral: false,
     },
   ]
@@ -138,7 +126,13 @@ const AssetsSupply = () => {
           <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
         </div>
         <div className='table-custom h-[170px] w-full overflow-y-auto'>
-          <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+          <Table
+            className='w-[576px] md:w-full'
+            columns={columns}
+            data={data}
+            sorting={sorting}
+            setSorting={setSorting}
+          />
         </div>
       </div>
     </div>

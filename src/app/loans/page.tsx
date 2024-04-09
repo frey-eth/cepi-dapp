@@ -44,6 +44,7 @@ const Loans = () => {
             </div>
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -65,6 +66,7 @@ const Loans = () => {
             </figure>
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -81,6 +83,7 @@ const Loans = () => {
         cell: (info) => {
           return <Dental percent={Number(info.getValue())} />
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -95,6 +98,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{info.getValue() as string}%</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -109,6 +113,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{kFormatter(Number(info.getValue()))}</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -123,6 +128,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{kFormatter(Number(info.getValue()))}</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -137,6 +143,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{info.getValue() as string}%</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -151,6 +158,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>${Number(info.getValue()).toLocaleString()}</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -169,6 +177,7 @@ const Loans = () => {
             />
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
     ],
@@ -217,7 +226,7 @@ const Loans = () => {
   ]
 
   return (
-    <main className='mx-auto h-[calc(100vh-104px)] w-[1288px] pt-10'>
+    <main className='mx-auto h-[calc(100vh-104px)] w-full pt-10 lg:w-[1288px]'>
       <div className='mb-8 w-full'>
         <div className='relative mx-auto w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
           <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
@@ -239,7 +248,9 @@ const Loans = () => {
         <div className='relative'>
           <Filter />
           <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-          <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
+          <div className='table-custom h-[170px] w-full overflow-y-auto'>
+            <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+          </div>
         </div>
       </section>
       <Modal

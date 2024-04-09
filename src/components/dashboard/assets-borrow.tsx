@@ -31,6 +31,7 @@ const AssetsToBorrow = () => {
             </div>
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -44,6 +45,7 @@ const AssetsToBorrow = () => {
             </figure>
           )
         },
+        enableSorting: false,
         cell: (info) => {
           return (
             <figure className='flex flex-col items-end justify-end space-x-2 text-right'>
@@ -65,6 +67,7 @@ const AssetsToBorrow = () => {
             </figure>
           )
         },
+        enableSorting: false,
         cell: (info) => {
           return (
             <div className='items-end justify-end space-x-2 text-right'>
@@ -79,6 +82,7 @@ const AssetsToBorrow = () => {
         id: 'btn',
         accessorKey: '',
         header: '',
+        enableSorting: false,
         cell: () => {
           return (
             <div className=' flex items-center justify-end gap-2'>
