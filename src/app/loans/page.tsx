@@ -7,8 +7,10 @@ import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
 import arrowRight from '@/images/global-pool/arrowright.svg'
 import backpack from '@/images/global-pool/backPack.png'
+import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_finger from '@/images/global-pool/finger.png'
 import ic_solana from '@/images/global-pool/sol.svg'
+import ic_usdc from '@/images/global-pool/usdc.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -191,8 +193,8 @@ const Loans = () => {
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'Solana',
+        icon: ic_bonk,
+        name: 'Bonk',
       },
       price: 1000,
       apy: 70,
@@ -204,8 +206,8 @@ const Loans = () => {
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'Solana',
+        icon: ic_usdc,
+        name: 'USDC',
       },
       price: 1000,
       apy: 70,
@@ -218,15 +220,15 @@ const Loans = () => {
   ]
 
   return (
-    <main className='mx-auto h-full w-full pt-10 lg:w-[1288px]'>
+    <main className='mx-auto h-full w-full p-4 pt-10 lg:w-[1288px]'>
       <div className='mb-8 w-full'>
-        <div className='relative mx-auto w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
+        <div className='relative mx-auto w-full max-w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
           <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
 
           <div className='relative z-[5]'>
             <button className='flex w-full items-center gap-2 rounded-lg bg-[#111112] p-4'>
               <Image src={backpack} alt='icon alert' width={24} height={24} className='object-cover' />
-              <span className='flex-1 text-start text-sm font-medium leading-[14px] text-white'>
+              <span className='flex-1 text-start text-sm font-medium leading-[24px] text-white'>
                 5% points boost for Backpack users!
               </span>
               <Image src={arrowRight} alt='icon alert' width={24} height={24} className='object-cover' />

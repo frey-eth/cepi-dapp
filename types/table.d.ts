@@ -22,6 +22,7 @@ export type AssetSupply = {
   walletBalance: number
   apy: number
   isCollateral: boolean
+  isError?: boolean
 }
 
 export type ISupply = {

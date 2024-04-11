@@ -24,7 +24,7 @@ const SuccessModal = ({
   return (
     <BaseModal isOpen={isOpen} handleClose={handleClose}>
       <div className='w-full'>
-        <Dialog.Panel className='modal-border mx-auto w-full max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-md'>
+        <Dialog.Panel className='modal-border mx-auto w-full max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-[462px]'>
           <div
             className='w-full rounded-3xl bg-black p-6 text-white'
             style={{
