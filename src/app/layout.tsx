@@ -6,9 +6,9 @@ import '@/styles/index.scss'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 // import Image from 'next/image'
+import BottomNavigation from '@/components/common/bottom_navigation'
 import Image from 'next/image'
 import './globals.css'
-import BottomNavigation from '@/components/common/bottom_navigation'
 const monaSans = localFont({
   src: [
     {
