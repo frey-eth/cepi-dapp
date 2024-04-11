@@ -68,7 +68,9 @@ const Table = <T,>({ data, columns, sorting, setSorting, className }: Table<T>) 
                           )}
                           {/*  */}
                         </div>
-                        <span className={`absolute left-0 top-0 h-full w-full rounded-lg bg-[rgba(0,0,0,0.32)]`}></span>
+                        {/* <span
+                          className={`absolute left-0 top-0 -z-10 h-full w-full rounded-lg bg-[rgba(0,0,0,0.32)]`}
+                        ></span> */}
                       </>
                     )}
                   </th>
