@@ -237,7 +237,7 @@ const Loans = () => {
         </div>
       </div>
 
-      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-[75px]'>
+      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:p-6'>
         {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
         <div className='relative flex flex-col gap-16 md:gap-0'>
           <Filter />
