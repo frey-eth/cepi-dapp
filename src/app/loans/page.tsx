@@ -243,7 +243,7 @@ const Loans = () => {
           <Filter />
           <div>
             <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-            <div className='table-custom h-[170px] w-full overflow-y-auto'>
+            <div className='table-custom h-[230px] w-full overflow-y-auto'>
               <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
             </div>
           </div>
