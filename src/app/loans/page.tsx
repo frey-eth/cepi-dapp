@@ -7,8 +7,10 @@ import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
 import arrowRight from '@/images/global-pool/arrowright.svg'
 import backpack from '@/images/global-pool/backPack.png'
+import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_finger from '@/images/global-pool/finger.png'
 import ic_solana from '@/images/global-pool/sol.svg'
+import ic_usdc from '@/images/global-pool/usdc.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -191,8 +193,8 @@ const Loans = () => {
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'Solana',
+        icon: ic_bonk,
+        name: 'Bonk',
       },
       price: 1000,
       apy: 70,
@@ -204,8 +206,8 @@ const Loans = () => {
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'Solana',
+        icon: ic_usdc,
+        name: 'USDC',
       },
       price: 1000,
       apy: 70,
@@ -240,7 +242,7 @@ const Loans = () => {
         <div className='relative'>
           <Filter />
           <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-          <div className='table-custom h-[170px] w-full overflow-y-auto'>
+          <div className='table-custom h-[300px] w-full overflow-y-auto'>
             <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
           </div>
         </div>

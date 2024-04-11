@@ -120,7 +120,7 @@ const AssetsToBorrow = () => {
     {
       asset: {
         icon: ic_dai,
-        name: 'DAI',
+        name: 'Bonk',
       },
       available: 2.71,
       apy: 34.98,
@@ -136,7 +136,7 @@ const AssetsToBorrow = () => {
     {
       asset: {
         icon: ic_dai,
-        name: 'DAI',
+        name: 'Bonk',
       },
       available: 2.71,
       apy: 34.98,

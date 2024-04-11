@@ -1,5 +1,9 @@
 'use client'
+import ic_alert from '@/icons/alert-triangle-light.svg'
+import ic_bonk from '@/images/global-pool/bonk.svg'
+import ic_finger from '@/images/global-pool/finger.png'
 import ic_solana from '@/images/global-pool/sol.svg'
+import ic_usdc from '@/images/global-pool/usdc.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import icCheck from '@/images/portfolio/check.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
@@ -43,7 +47,16 @@ const AssetsSupply = () => {
         header: () => {
           return <span>Wallet balance</span>
         },
-        cell: (info) => info.getValue(),
+        cell: (info) => {
+          const { isError } = info.row.original
+          return (
+            <figure className='flex items-center justify-center space-x-2'>
+              <span>${Number(info.getValue()).toLocaleString()}</span>
+              <Image src={ic_finger} alt='finger' />
+              {isError && <Image src={ic_alert} alt='finger' />}
+            </figure>
+          )
+        },
         footer: (props) => props.column.id,
       },
       {
@@ -58,7 +71,7 @@ const AssetsSupply = () => {
       {
         id: 'isCollateral',
         accessorKey: 'isCollateral',
-        enableSorting: false,
+        // enableSorting: false,
         header: () => {
           return <span>Can be collateral</span>
         },
@@ -101,11 +114,12 @@ const AssetsSupply = () => {
       walletBalance: 0.0087386,
       apy: 2.16,
       isCollateral: true,
+      isError: true,
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'Solana',
+        icon: ic_bonk,
+        name: 'Bonk',
       },
       walletBalance: 0.0087385,
       apy: -2.16,
@@ -113,8 +127,8 @@ const AssetsSupply = () => {
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'Solana',
+        icon: ic_usdc,
+        name: 'USDC',
       },
       walletBalance: 0.0087384,
       apy: 2.15,
@@ -136,11 +150,14 @@ const AssetsSupply = () => {
       <div className='relative h-[300px] w-full'>
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative py-4 pl-4 md:p-4'>
-          <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
-          <div className='my-4 flex items-center space-x-3'>
-            <Checkbox checked={checked} setChecked={setChecked} />
-            <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
+          <div className='flex flex-col justify-between lg:flex-row lg:items-center'>
+            <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
+            <div className='my-4 flex items-center space-x-3'>
+              <Checkbox checked={checked} setChecked={setChecked} />
+              <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
+            </div>
           </div>
+
           <div className='table-custom h-[170px] w-full overflow-y-auto'>
             <Table
               className='w-[576px] md:w-full'
