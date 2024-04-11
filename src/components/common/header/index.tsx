@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BtnCollectReward from '../button/btn-collect-reward'
+import BtnMenu from '../button/btn-menu'
 import BtnConnect from '../button/btnConnect'
 
 const navbars = [
@@ -48,6 +49,9 @@ const Header = () => {
         <section className='hidden items-center space-x-4 lg:flex'>
           <BtnCollectReward />
           <BtnConnect />
+        </section>
+        <section className='  space-x-4 md:hidden'>
+          <BtnMenu />
         </section>
       </section>
     </main>

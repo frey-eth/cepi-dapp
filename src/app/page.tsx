@@ -10,10 +10,14 @@ const DashBoard = () => {
         <section className='relative h-full'>
           <h2 className='mb-6 text-2xl font-medium text-[#fff]'>Portfolio</h2>
           <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
-            <Supply type='supply' />
-            <Supply type='borrow' />
-            <AssetsSupply />
-            <AssetsToBorrow />
+            <div className='flex flex-col gap-6'>
+              <Supply type='supply' />
+              <AssetsSupply />
+            </div>
+            <div className='flex flex-col gap-6'>
+              <Supply type='borrow' />
+              <AssetsToBorrow />
+            </div>
           </div>
         </section>
       </section>

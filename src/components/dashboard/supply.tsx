@@ -95,14 +95,14 @@ const Supply = ({ type }: { type: string }) => {
         {type == 'supply' ? 'Your supplies' : 'Your Borrows'}
       </div>
       {type == 'supply' ? (
-        <div className='flex h-[26px] flex-row gap-2'>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
+        <div className='grid h-[26px] w-full grid-cols-3 gap-[6px]'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px] text-[12px] font-normal leading-[14px] text-[#8F9399] md:text-sm'>
             Balance <div className='text-sm font-medium text-white'>$3.31</div>
           </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]   text-[12px] font-normal leading-[14px] text-[#8F9399] md:text-sm'>
             APY <div className='text-sm font-medium text-white'>2.16%</div>
           </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] py-[6px]  text-[12px] font-normal leading-[14px] text-[#8F9399] md:px-2 md:text-sm'>
             Collateral <div className='text-sm font-medium text-white'>$3.31</div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const Supply = ({ type }: { type: string }) => {
       )}
       <div className='table-custom h-[170px] w-full overflow-y-auto'>
         <Table
-          className='w-[576px] md:w-full'
+          className='w-[318px] md:w-[576px] lg:w-full'
           columns={columns}
           data={data}
           sorting={sorting}

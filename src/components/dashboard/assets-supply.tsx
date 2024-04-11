@@ -135,7 +135,7 @@ const AssetsSupply = () => {
     <>
       <div className='relative h-[300px] w-full'>
         <Image src={bgAssets} alt='background' fill priority />
-        <div className='relative p-4'>
+        <div className='relative py-4 pl-4 md:p-4'>
           <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
           <div className='my-4 flex items-center space-x-3'>
             <Checkbox checked={checked} setChecked={setChecked} />
