@@ -158,7 +158,7 @@ const AssetsSupply = () => {
             </div>
           </div>
 
-          <div className='table-custom h-[220px] w-full overflow-y-auto'>
+          <div className='table-custom h-[230px] w-full overflow-y-auto'>
             <Table
               className='w-[576px] md:w-full'
               columns={columns}
