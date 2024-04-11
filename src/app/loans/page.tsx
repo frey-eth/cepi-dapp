@@ -237,11 +237,13 @@ const Loans = () => {
 
       <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-[75px]'>
         {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
-        <div className='relative'>
+        <div className='relative flex flex-col gap-16 md:gap-0'>
           <Filter />
-          <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-          <div className='table-custom h-[170px] w-full overflow-y-auto'>
-            <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+          <div>
+            <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
+            <div className='table-custom h-[170px] w-full overflow-y-auto'>
+              <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+            </div>
           </div>
         </div>
       </section>
