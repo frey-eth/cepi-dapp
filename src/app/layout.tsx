@@ -43,6 +43,10 @@ const monaSans = localFont({
 export const metadata: Metadata = {
   title: 'Blonkfi',
   description: 'Blonkfi',
+  openGraph: {
+    title: 'Blonkfi',
+    description: 'Blonkfi',
+  },
 }
 
 export default function RootLayout({
