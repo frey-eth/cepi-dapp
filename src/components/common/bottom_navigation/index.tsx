@@ -94,7 +94,7 @@ const BottomNavigation = () => {
         <Link
           href={item.href}
           onClick={() => setCurrentTab(item.id)}
-          className=' flex w-1/2 flex-col items-center justify-center gap-[6px] text-sm font-normal'
+          className={`flex w-1/2 flex-col items-center justify-center gap-[6px] text-sm font-normal ${currentTab === item.id && 'text-[#FFD02B]'}`}
           key={item.id}
         >
           {currentTab === item.id && (
@@ -102,7 +102,7 @@ const BottomNavigation = () => {
               <Image src={rectangle} alt='rectangle' />
             </div>
           )}
-          <div className={`h-6 w-6 ${currentTab === item.id && 'text-[#FFD02B]'}`}>{item.icon}</div>
+          <div className={`h-6 w-6 `}>{item.icon}</div>
           {item.title}
         </Link>
       ))}
