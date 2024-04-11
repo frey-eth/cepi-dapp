@@ -43,10 +43,13 @@ const monaSans = localFont({
 export const metadata: Metadata = {
   title: 'Blonkfi',
   description: 'Blonkfi',
-  metadataBase: new URL(String(process.env.NEXT_PUBLIC_APP_HOST)),
+  metadataBase: new URL(String(process.env.REACT_APP_HOST)),
   openGraph: {
     title: 'Blonkfi',
     description: 'Blonkfi',
+    siteName: 'Blonkfi',
+    url: String(process.env.REACT_APP_HOST),
+    type: 'website',
   },
 }
 
