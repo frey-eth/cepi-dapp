@@ -26,11 +26,11 @@ const AssetsSupply = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <span className='mx-2 gap-2 pl-6 text-left'>Assets</span>,
+        header: () => <span className='mx-2 gap-2 text-left lg:pl-6'>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 pl-6'>
+            <div className='flex items-center justify-start space-x-3 lg:pl-6'>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
@@ -147,7 +147,7 @@ const AssetsSupply = () => {
 
   return (
     <>
-      <div className='relative h-[300px] w-full'>
+      <div className='relative h-[340px] w-full'>
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative py-4 pl-4 md:p-4'>
           <div className='flex flex-col justify-between lg:flex-row lg:items-center'>
@@ -158,7 +158,7 @@ const AssetsSupply = () => {
             </div>
           </div>
 
-          <div className='table-custom h-[170px] w-full overflow-y-auto'>
+          <div className='table-custom h-[220px] w-full overflow-y-auto'>
             <Table
               className='w-[576px] md:w-full'
               columns={columns}
