@@ -1,5 +1,7 @@
 'use client'
+import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
+
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -76,8 +78,8 @@ const Supply = ({ type }: { type: string }) => {
     },
     {
       asset: {
-        icon: ic_solana,
-        name: 'ETH',
+        icon: ic_bonk,
+        name: 'Bonk',
       },
       balance: {
         amount: '0.0010000',
