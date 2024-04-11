@@ -1,7 +1,7 @@
 'use client'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
-
+import non_token from '@/icons/nonToken.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -41,9 +41,11 @@ const Supply = ({ type }: { type: string }) => {
             <figure className='flex items-center justify-start'>
               <div className='flex flex-col gap-[6px]'>
                 <div className='text-start'>{balanceAmount.toLocaleString()}</div>
-                <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
-                  ${balanceValue?.toLocaleString()}
-                </div>
+                {balanceValue && (
+                  <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
+                    ${balanceValue?.toLocaleString()}
+                  </div>
+                )}
               </div>
             </figure>
           )
@@ -56,7 +58,11 @@ const Supply = ({ type }: { type: string }) => {
         accessorKey: 'apy',
         header: () => <p>APY</p>,
         cell: (info) => {
-          return <Dental percent={Number(info.getValue())} />
+          return info.getValue() ? (
+            <Dental percent={Number(info.getValue())} />
+          ) : (
+            <p className={`text-left text-[#00E585]`}>--</p>
+          )
         },
         footer: (props) => props.column.id,
       },
@@ -89,6 +95,19 @@ const Supply = ({ type }: { type: string }) => {
     },
   ]
 
+  const nonData: ISupply[] = [
+    {
+      asset: {
+        icon: non_token,
+        name: '--',
+      },
+      balance: {
+        amount: '--',
+      },
+      apy: undefined,
+    },
+  ]
+
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
@@ -115,7 +134,7 @@ const Supply = ({ type }: { type: string }) => {
         <Table
           className='w-[318px] md:w-[576px] lg:w-full'
           columns={columns}
-          data={data}
+          data={type == 'supply' ? data : nonData}
           sorting={sorting}
           setSorting={setSorting}
         />
