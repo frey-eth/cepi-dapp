@@ -8,6 +8,7 @@ import localFont from 'next/font/local'
 // import Image from 'next/image'
 import Image from 'next/image'
 import './globals.css'
+import BottomNavigation from '@/components/common/bottom_navigation'
 const monaSans = localFont({
   src: [
     {
@@ -58,6 +59,7 @@ export default function RootLayout({
             <Header />
             <section className='h-fit lg:min-h-[calc(100vh-130px)]'>{children}</section>
             <Footer />
+            <BottomNavigation />
           </main>
         </SolanaProvider>
       </body>

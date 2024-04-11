@@ -1,7 +1,7 @@
 'use client'
+import non_token from '@/icons/nonToken.svg'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
-import non_token from '@/icons/nonToken.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -95,6 +95,7 @@ const Supply = ({ type }: { type: string }) => {
     },
   ]
 
+  // if data = [] use this!!!!!
   const nonData: ISupply[] = [
     {
       asset: {
