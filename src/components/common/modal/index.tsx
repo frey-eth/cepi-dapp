@@ -68,7 +68,7 @@ export const Modal = ({
   return (
     <>
       <BaseModal isOpen={isOpen} handleClose={handleClose}>
-        <Dialog.Panel className='modal-border w-full  max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-md'>
+        <Dialog.Panel className='modal-border w-full  max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-[462px]'>
           <div
             className='w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white'
             style={{
@@ -200,7 +200,7 @@ export const Modal = ({
             <div className='mt-6'>
               <button
                 type='button'
-                className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
+                className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 transition-all duration-300 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
                 onClick={() => {
                   handleSupply && handleSupply()
                 }}
@@ -210,7 +210,7 @@ export const Modal = ({
                   className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'
                   style={{ scale: loading ? 0 : 1 }}
                 >
-                  Supply
+                  {displayData?.title == 'supply' ? 'Supply' : 'Borrow'}
                 </span>
                 <Image
                   src={spinner}
