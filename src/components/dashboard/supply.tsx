@@ -99,15 +99,15 @@ const Supply = ({ type }: { type: string }) => {
         {type == 'supply' ? 'Your supplies' : 'Your Borrows'}
       </div>
       {type == 'supply' ? (
-        <div className='flex h-[26px] flex-row gap-2'>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
-            Balance <div className='text-sm font-medium text-white'>$3.31</div>
+        <div className='flex h-[26px] flex-row gap-1 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center md:gap-2 md:text-sm'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
+            Balance <div className='font-medium text-white'>$3.31</div>
           </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
-            APY <div className='text-sm font-medium text-white'>2.16%</div>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
+            APY <div className=' font-medium text-white'>2.16%</div>
           </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px] text-sm font-normal leading-[14px] text-[#8F9399]'>
-            Collateral <div className='text-sm font-medium text-white'>$3.31</div>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
+            Collateral <div className='font-medium text-white'>$3.31</div>
           </div>
         </div>
       ) : (
