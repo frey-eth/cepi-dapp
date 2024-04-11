@@ -2,6 +2,7 @@
 import non_token from '@/icons/nonToken.svg'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
+import ic_usdc from '@/images/global-pool/usdc.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -14,11 +15,11 @@ const Supply = ({ type }: { type: string }) => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <span className='mx-2 gap-2 pl-6 text-left'>Assets</span>,
+        header: () => <span className='mx-2 gap-2 text-left lg:pl-6'>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 pl-6'>
+            <div className='flex items-center justify-start space-x-3 lg:pl-6'>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
@@ -93,6 +94,17 @@ const Supply = ({ type }: { type: string }) => {
       },
       apy: 2.15,
     },
+    {
+      asset: {
+        icon: ic_usdc,
+        name: 'USDC',
+      },
+      balance: {
+        amount: '0.0010000',
+        value: 3.3,
+      },
+      apy: 2.15,
+    },
   ]
 
   // if data = [] use this!!!!!
@@ -112,7 +124,7 @@ const Supply = ({ type }: { type: string }) => {
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
-    <div className='flex h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+    <div className='flex h-[340px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
       <div className=' text-xl font-medium leading-5 text-white'>
         {type == 'supply' ? 'Your supplies' : 'Your Borrows'}
       </div>
@@ -131,7 +143,7 @@ const Supply = ({ type }: { type: string }) => {
       ) : (
         <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
       )}
-      <div className='table-custom h-[170px] w-full overflow-y-auto'>
+      <div className='table-custom h-[220px] w-full overflow-y-auto'>
         <Table
           className='w-[318px] md:w-[576px] lg:w-full'
           columns={columns}
