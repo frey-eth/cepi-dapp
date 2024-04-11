@@ -13,8 +13,8 @@ const Filter = () => {
     setIsActive(!isActive)
   }
   return (
-    <div className='relative  mx-auto flex h-[50px] w-[350px] flex-col items-center justify-between gap-3  md:w-full md:flex-row'>
-      <div className=' flex h-full  w-[350px] items-center justify-between  '>
+    <div className='relative   flex h-[50px] w-[350px] flex-wrap items-center gap-3 md:w-full  md:flex-row '>
+      <div className='flex w-[350px] items-center justify-between md:w-[795px] '>
         <div className='flex h-full w-[156px] items-center justify-between rounded-lg bg-[#18181B52] p-[6px] '>
           <button
             onClick={() => {
@@ -33,7 +33,8 @@ const Filter = () => {
             <div className={` text-[14px] font-medium  leading-[14px] text-white`}>Borrow</div>
           </button>
         </div>
-        <div className='flex items-center justify-start gap-2 bg-transparent md:hidden '>
+
+        <div className=' flex  items-center justify-start gap-2 bg-transparent '>
           <button
             className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
             onClick={toggleSwitch}
@@ -45,45 +46,29 @@ const Filter = () => {
           <div className='text-[14px] font-normal leading-[14px] text-white'>Filter my positions</div>
         </div>
       </div>
-      <div className='flex gap-4'>
-        <div className='hidden w-full items-center justify-start gap-2 bg-transparent lg:flex '>
-          <button
-            className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
-            onClick={toggleSwitch}
-          >
-            <div className={`ml-[2px] transition-transform ${isActive ? 'translate-x-[16px] ' : ''}`}>
-              <Image src={eclipse} alt='switch_icon' />
-            </div>
+
+      <div className='flex w-[350px]  items-center gap-4 md:w-[400px] '>
+        <div className='flex w-[134px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-3 py-3 md:w-[180px] md:px-4'>
+          <div className='flex  items-center gap-2'>
+            <button>
+              <Image src={filter} alt='filter' />
+            </button>
+            <div className='text-[14px] font-normal leading-[14px] text-white'> All pools</div>
+          </div>
+          <button>
+            <Image src={vector} alt='vector' />
           </button>
-          <div className='text-[14px] font-normal leading-[14px] text-white'>Filter my positions</div>
         </div>
-        <div className='flex w-[350px] items-center gap-3 md:w-full'>
-          {' '}
-          <div className='flex w-[150px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-4 py-3 md:w-[180px]'>
-            <div className='flex  items-center gap-2'>
-              <button>
-                <Image src={filter} alt='filter' />
-              </button>
-              <div className='text-[14px] font-normal leading-[14px] text-white'> All pools</div>
-            </div>
+        <div className='flex w-[200px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-3 py-3 md:w-[230px] md:px-4 '>
+          <div className='flex items-center gap-2 '>
             <button>
-              {' '}
-              <Image src={vector} alt='vector' />
+              <Image src={sort} alt='sort' />
             </button>
+            <div className='text-[14px] font-normal leading-[14px] text-white'>$ highest to lowest</div>
           </div>
-          <div className='flex w-[230px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-4 py-3'>
-            <div className='flex items-center gap-2 '>
-              <button>
-                {' '}
-                <Image src={sort} alt='sort' />
-              </button>
-              <div className='text-[14px] font-normal leading-[14px] text-white'>$ highest to lowest</div>
-            </div>
-            <button>
-              {' '}
-              <Image src={vector} alt='vector' />
-            </button>
-          </div>
+          <button>
+            <Image src={vector} alt='vector' />
+          </button>
         </div>
       </div>
     </div>
