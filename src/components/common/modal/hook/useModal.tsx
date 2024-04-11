@@ -1,21 +1,70 @@
 'use client'
 import { useState } from 'react'
-import { GlobalPool } from '../../../../../types/table'
+import { AssetSupply, AssetsBorrow, GlobalPool } from '../../../../../types/table'
 
-const useModal = () => {
-  const [openModal, setOpenModal] = useState<boolean>(false)
-  const [modalData, setModalData] = useState<GlobalPool | undefined>()
+export type DataModalType = { data: GlobalPool | AssetSupply | AssetsBorrow; type: 'supply' | 'borrow' }
 
-  const handleOpenModal = (data: GlobalPool) => {
-    setOpenModal(true)
-    setModalData(data)
+export interface ModalProps {
+  isOpen: boolean
+  handleClose: () => void
+  data?: DataModalType
+  isLoading: boolean
+  isSuccess: boolean
+  handleSupply: () => void
+  handleExit: () => void
+}
+
+const useModal = (
+  supplyAction?: () => void
+): ModalProps & {
+  handleOpen: (data: DataModalType) => void
+} => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [data, setData] = useState<DataModalType | undefined>()
+  const [isLoading, setIsLoading] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleOpen = (data: DataModalType) => {
+    setIsOpen(true)
+    setData(data)
   }
 
-  const handleCloseModal = () => {
-    setOpenModal(false)
-    setTimeout(() => setModalData(undefined), 300)
+  const handleClose = () => {
+    setIsOpen(false)
   }
-  return { openModal, modalData, handleOpenModal, handleCloseModal }
+
+  const handleExit = () => {
+    setIsOpen(false)
+    setIsSuccess(false)
+    setTimeout(() => setData(undefined), 300)
+  }
+
+  const handleSupply = () => {
+    setIsLoading(true)
+
+    // TODO: call api
+    supplyAction && supplyAction()
+
+    setTimeout(() => {
+      setIsOpen(false)
+
+      setTimeout(() => {
+        setIsLoading(false)
+        setIsSuccess(true)
+      }, 300)
+    }, 3000)
+  }
+
+  return {
+    isOpen,
+    data,
+    isLoading,
+    isSuccess,
+    handleOpen,
+    handleClose,
+    handleSupply,
+    handleExit,
+  }
 }
 
 export default useModal

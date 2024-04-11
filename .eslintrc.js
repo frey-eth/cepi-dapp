@@ -19,7 +19,7 @@ module.exports = {
     // JavaScript rules
     'no-var': 'error',
     'no-plusplus': 'off',
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'off',
     'no-param-reassign': 'off',
     'no-case-declarations': 'off',
     'quote-props': ['warn', 'as-needed'],

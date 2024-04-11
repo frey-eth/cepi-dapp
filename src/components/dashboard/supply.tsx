@@ -1,9 +1,8 @@
 'use client'
-import ic_upDown from '@/icons/up.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { ISupply } from '../../../types/table'
 import Dental from '../common/table/dental'
 import Table from '../common/table/index'
@@ -13,11 +12,7 @@ const Supply = ({ type }: { type: string }) => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => (
-          <div className='mx-2 flex flex-row items-center gap-2 pl-6 text-left'>
-            Assets <Image src={ic_upDown} alt='icon sort' sizes='16' />
-          </div>
-        ),
+        header: () => <span className='mx-2 gap-2 pl-6 text-left'>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
@@ -29,25 +24,19 @@ const Supply = ({ type }: { type: string }) => {
             </div>
           )
         },
+        sortingFn: (rowA, rowB) => rowB.original.asset.name.localeCompare(rowA.original.asset.name),
         footer: (props) => props.column.id,
       },
       {
         id: 'balance',
         accessorKey: 'balance',
-        header: () => {
-          return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <span>Balance</span>
-              <Image src={ic_upDown} alt='icon sort' sizes='16' />
-            </figure>
-          )
-        },
+        header: () => <p className='text-center'>Balance</p>,
         cell: (info) => {
           const balanceAmount = info.row.original.balance.amount
           const balanceValue = info.row.original.balance.value
 
           return (
-            <figure className='flex items-center justify-center'>
+            <figure className='flex items-center justify-start'>
               <div className='flex flex-col gap-[6px]'>
                 <div className='text-start'>{balanceAmount.toLocaleString()}</div>
                 <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
@@ -57,19 +46,13 @@ const Supply = ({ type }: { type: string }) => {
             </figure>
           )
         },
+        sortingFn: (rowA, rowB) => Number(rowA.original.balance.value) - Number(rowB.original.balance.value),
         footer: (props) => props.column.id,
       },
       {
         id: 'apy',
         accessorKey: 'apy',
-        header: () => {
-          return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <span>APY</span>
-              <Image src={ic_upDown} alt='icon sort' sizes='16' />
-            </figure>
-          )
-        },
+        header: () => <p>APY</p>,
         cell: (info) => {
           return <Dental percent={Number(info.getValue())} />
         },
@@ -91,7 +74,20 @@ const Supply = ({ type }: { type: string }) => {
       },
       apy: 2.16,
     },
+    {
+      asset: {
+        icon: ic_solana,
+        name: 'ETH',
+      },
+      balance: {
+        amount: '0.0010000',
+        value: 3.3,
+      },
+      apy: 2.15,
+    },
   ]
+
+  const [sorting, setSorting] = useState<SortingState>([])
 
   return (
     <div className='flex h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
@@ -114,7 +110,13 @@ const Supply = ({ type }: { type: string }) => {
         <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
       )}
       <div className='table-custom h-[170px] w-full overflow-y-auto'>
-        <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+        <Table
+          className='w-[318px] md:w-[576px] lg:w-full'
+          columns={columns}
+          data={data}
+          sorting={sorting}
+          setSorting={setSorting}
+        />
       </div>
     </div>
   )

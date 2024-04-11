@@ -5,7 +5,8 @@ import { Modal } from '@/components/common/modal'
 import useModal from '@/components/common/modal/hook/useModal'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
-import bgGlobalPool from '@/images/global-pool/Noise.png'
+import arrowRight from '@/images/global-pool/arrowright.svg'
+import backpack from '@/images/global-pool/backPack.png'
 import ic_finger from '@/images/global-pool/finger.png'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
@@ -15,7 +16,7 @@ import { useMemo } from 'react'
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
-  const { openModal, modalData, handleOpenModal, handleCloseModal } = useModal()
+  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -34,6 +35,7 @@ const Loans = () => {
             </div>
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -55,6 +57,7 @@ const Loans = () => {
             </figure>
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -71,6 +74,7 @@ const Loans = () => {
         cell: (info) => {
           return <Dental percent={Number(info.getValue())} />
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -85,6 +89,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{info.getValue() as string}%</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -99,6 +104,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{kFormatter(Number(info.getValue()))}</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -113,6 +119,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{kFormatter(Number(info.getValue()))}</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -127,6 +134,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>{info.getValue() as string}%</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -141,6 +149,7 @@ const Loans = () => {
           )
         },
         cell: (info) => <span>${Number(info.getValue()).toLocaleString()}</span>,
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -153,12 +162,14 @@ const Loans = () => {
               onClick={() => {
                 const data = info.row.original
                 handleOpenModal({
-                  ...data,
+                  data: data,
+                  type: 'supply',
                 })
               }}
             />
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
     ],
@@ -207,16 +218,34 @@ const Loans = () => {
   ]
 
   return (
-    <main className='mx-auto h-[calc(100vh-104px)] w-[1288px] pt-10'>
-      <section className=' backdrop-blur-lg relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6'>
-        <Image src={bgGlobalPool} alt='bg' fill priority />
+    <main className='mx-auto h-full w-full pt-10 lg:w-[1288px]'>
+      <div className='mb-8 w-full'>
+        <div className='relative mx-auto w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
+          <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
+
+          <div className='relative z-[5]'>
+            <button className='flex w-full items-center gap-2 rounded-lg bg-[#111112] p-4'>
+              <Image src={backpack} alt='icon alert' width={24} height={24} className='object-cover' />
+              <span className='flex-1 text-start text-sm font-medium leading-[14px] text-white'>
+                5% points boost for Backpack users!
+              </span>
+              <Image src={arrowRight} alt='icon alert' width={24} height={24} className='object-cover' />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-6 backdrop-blur-[75px]'>
+        {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
         <div className='relative'>
           <Filter />
           <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-          <Table columns={columns} data={data} className='relative mx-auto w-[1240px]' />
+          <div className='table-custom h-[170px] w-full overflow-y-auto'>
+            <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+          </div>
         </div>
       </section>
-      <Modal data={modalData} isOpen={openModal} handleClose={handleCloseModal} />
+      <Modal {...modalProps} />
     </main>
   )
 }

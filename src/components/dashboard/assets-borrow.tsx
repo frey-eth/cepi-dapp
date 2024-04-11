@@ -12,8 +12,12 @@ import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo } from 'react'
 import { AssetsBorrow } from '../../../types/table'
+import { Modal } from '../common/modal'
+import useModal from '../common/modal/hook/useModal'
 
 const AssetsToBorrow = () => {
+  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
+
   const columns = useMemo<ColumnDef<AssetsBorrow>[]>(
     () => [
       {
@@ -31,6 +35,7 @@ const AssetsToBorrow = () => {
             </div>
           )
         },
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -38,15 +43,16 @@ const AssetsToBorrow = () => {
         accessorKey: 'available',
         header: () => {
           return (
-            <figure className='flex items-center justify-end space-x-2'>
+            <figure className='flex items-center justify-center space-x-2'>
               <span>Available</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' />
             </figure>
           )
         },
+        enableSorting: false,
         cell: (info) => {
           return (
-            <figure className='flex flex-col items-end justify-end space-x-2 text-right'>
+            <figure className='flex flex-col items-center justify-center space-x-2 text-right'>
               <span>{Number(info.getValue()).toLocaleString()}</span>
               <span className='text-[#8F9399]'>${Number(info.getValue()).toLocaleString()}</span>
             </figure>
@@ -65,9 +71,10 @@ const AssetsToBorrow = () => {
             </figure>
           )
         },
+        enableSorting: false,
         cell: (info) => {
           return (
-            <div className='items-end justify-end space-x-2 text-right'>
+            <div className='flex justify-center'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
@@ -79,10 +86,19 @@ const AssetsToBorrow = () => {
         id: 'btn',
         accessorKey: '',
         header: '',
-        cell: () => {
+        enableSorting: false,
+        cell: (info) => {
           return (
             <div className=' flex items-center justify-end gap-2'>
-              <BtnBorrow />
+              <BtnBorrow
+                onClick={() => {
+                  const data = info.row.original
+                  handleOpenModal({
+                    data: data,
+                    type: 'borrow',
+                  })
+                }}
+              />
               <BtnDetail />
             </div>
           )
@@ -90,7 +106,7 @@ const AssetsToBorrow = () => {
         footer: (props) => props.column.id,
       },
     ],
-    []
+    [handleOpenModal]
   )
   const data: AssetsBorrow[] = [
     {
@@ -135,15 +151,18 @@ const AssetsToBorrow = () => {
     },
   ]
   return (
-    <div className='relative h-[300px] w-full lg:w-[608px]'>
-      <Image src={bgAssets} alt='background' fill priority />
-      <div className='relative mx-auto flex h-full flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] p-4 '>
-        <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
-        <div className='table-custom h-[236px] w-full overflow-y-auto'>
-          <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+    <>
+      <div className='relative h-[300px] w-full'>
+        <Image src={bgAssets} alt='background' fill priority />
+        <div className='relative flex h-full flex-col gap-4 rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] py-4 pl-4 md:mx-auto md:p-4 '>
+          <div className='text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>Assets to borrow</div>
+          <div className='table-custom h-[236px] w-full overflow-y-auto'>
+            <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+          </div>
         </div>
       </div>
-    </div>
+      <Modal {...modalProps} />
+    </>
   )
 }
 
