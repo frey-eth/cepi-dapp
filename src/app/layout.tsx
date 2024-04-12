@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   description: 'Blonkfi',
   metadataBase: new URL(String(process.env.REACT_APP_HOST)),
   openGraph: {
-    title: 'Blonkfi',
-    description: 'Blonkfi',
+    title: 'Global pool',
+    description: 'Global pool Blonkfi',
     siteName: 'Blonkfi',
     url: String(process.env.REACT_APP_HOST),
     type: 'website',
