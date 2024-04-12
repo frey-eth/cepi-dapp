@@ -1,7 +1,6 @@
 'use client'
 import ic_alert from '@/icons/alert-triangle-light.svg'
 import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_finger from '@/images/global-pool/finger.png'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_usdc from '@/images/global-pool/usdc.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
@@ -52,8 +51,8 @@ const AssetsSupply = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>${Number(info.getValue()).toLocaleString()}</span>
-              <Image src={ic_finger} alt='finger' />
-              {isError && <Image src={ic_alert} alt='finger' />}
+
+              {isError && <Image src={ic_alert} alt='alert' />}
             </figure>
           )
         },
