@@ -3,7 +3,6 @@ import logo from '@/images/header/Logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import BtnCollectReward from '../button/btn-collect-reward'
 import BtnConnect from '../button/btnConnect'
 
 const navbars = [
@@ -46,7 +45,7 @@ const Header = () => {
           </nav>
         </section>
         <section className='flex items-center space-x-4'>
-          <BtnCollectReward />
+          {/* <BtnCollectReward /> */}
           <BtnConnect />
         </section>
       </section>
