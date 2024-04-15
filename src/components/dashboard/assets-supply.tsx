@@ -25,11 +25,11 @@ const AssetsSupply = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <span className='mx-2 gap-2 text-left lg:pl-6'>Assets</span>,
+        header: () => <span className='mx-2 gap-2 text-left'>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 lg:pl-6'>
+            <div className='flex items-center justify-start space-x-3'>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
@@ -37,7 +37,7 @@ const AssetsSupply = () => {
             </div>
           )
         },
-        sortingFn: (rowA, rowB) => rowB.original.asset.name.localeCompare(rowA.original.asset.name),
+        enableSorting: false,
         footer: (props) => props.column.id,
       },
       {
@@ -49,10 +49,11 @@ const AssetsSupply = () => {
         cell: (info) => {
           const { isError } = info.row.original
           return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <span>${Number(info.getValue()).toLocaleString()}</span>
-
-              {isError && <Image src={ic_alert} alt='alert' />}
+            <figure className=''>
+              <p className='mx-auto flex w-[70px] items-center space-x-2'>
+                <span className='block text-left'>${Number(info.getValue()).toLocaleString()}</span>
+                {isError && <Image src={ic_alert} alt='alert' />}
+              </p>
             </figure>
           )
         },

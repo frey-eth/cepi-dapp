@@ -23,11 +23,11 @@ const AssetsToBorrow = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className=' text-left lg:pl-6'>Assets</p>,
+        header: () => <p className=' w-[140px] text-left'>Assets</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 lg:pl-6 '>
+            <div className='flex w-[140px] items-center justify-start space-x-3 '>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
@@ -43,7 +43,7 @@ const AssetsToBorrow = () => {
         accessorKey: 'available',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-end space-x-2'>
               <span>Available</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' />
             </figure>
@@ -52,9 +52,11 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <figure className='flex flex-col items-center justify-center space-x-2 text-right'>
-              <span>{Number(info.getValue()).toLocaleString()}</span>
-              <span className='text-[#8F9399]'>${Number(info.getValue()).toLocaleString()}</span>
+            <figure className='flex min-w-[40px] flex-col items-end justify-center space-x-2 text-right lg:pr-3'>
+              <p>
+                <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
+                <span className='text-[#8F9399]'>${Number(info.getValue()).toLocaleString()}</span>
+              </p>
             </figure>
           )
         },
@@ -74,7 +76,7 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <div className='flex justify-center'>
+            <div className='flex justify-end lg:pr-3'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
