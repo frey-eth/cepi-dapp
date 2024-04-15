@@ -49,8 +49,8 @@ const Filter = () => {
 
       <div className='flex w-[350px]  items-center gap-4 md:w-[400px] '>
         <div className='flex w-[134px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-3 py-3 md:w-[180px] md:px-4'>
-          <div className='flex  items-center gap-2'>
-            <button>
+          <div className='flex  items-center justify-between gap-2'>
+            <button className='flex h-5 w-5 items-center justify-center'>
               <Image src={filter} alt='filter' />
             </button>
             <div className='text-[14px] font-normal leading-[14px] text-white'> All pools</div>
@@ -60,11 +60,11 @@ const Filter = () => {
           </button>
         </div>
         <div className='flex w-[200px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-3 py-3 md:w-[230px] md:px-4 '>
-          <div className='flex items-center gap-2 '>
-            <button>
+          <div className='flex items-center justify-between gap-2 '>
+            <button className='flex h-5 w-5 items-center justify-center'>
               <Image src={sort} alt='sort' />
             </button>
-            <div className='text-[14px] font-normal leading-[14px] text-white'>$ highest to lowest</div>
+            <div className='text-[14px] font-normal leading-[14px] text-white'>$ Highest to lowest</div>
           </div>
           <button>
             <Image src={vector} alt='vector' />

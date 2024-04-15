@@ -52,7 +52,7 @@ const Loans = () => {
         },
         cell: (info) => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-start space-x-2'>
               <span>${Number(info.getValue()).toLocaleString()}</span>
               {/* <Image src={ic_finger} alt='finger' /> */}
             </figure>
@@ -89,7 +89,7 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span>{info.getValue() as string}%</span>,
+        cell: (info) => <span className='flex items-center justify-start space-x-2'>{info.getValue() as string}%</span>,
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -104,7 +104,9 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span>{kFormatter(Number(info.getValue()))}</span>,
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}</span>
+        ),
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -119,7 +121,9 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span>{kFormatter(Number(info.getValue()))}</span>,
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}</span>
+        ),
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -134,7 +138,7 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span>{info.getValue() as string}%</span>,
+        cell: (info) => <span className='flex items-center justify-start space-x-2'>{info.getValue() as string}%</span>,
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -149,7 +153,9 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span>${Number(info.getValue()).toLocaleString()}</span>,
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2'>${Number(info.getValue()).toLocaleString()}</span>
+        ),
         enableSorting: false,
         footer: (props) => props.column.id,
       },
