@@ -130,13 +130,13 @@ const Supply = ({ type }: { type: string }) => {
       </div>
       {type == 'supply' ? (
         <div className='flex h-[26px] w-full flex-row gap-2 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center sm:text-sm'>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
             Balance <div className='font-medium text-white '>$3.31</div>
           </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
             APY <div className=' font-medium text-white '>2.16%</div>
           </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
+          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
             Collateral <div className='font-medium text-white '>$3.31</div>
           </div>
         </div>
