@@ -124,28 +124,28 @@ const Supply = ({ type }: { type: string }) => {
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
-    <div className='flex h-[340px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+    <div className='flex h-[340px] max-h-[216px] w-full flex-col  gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
       <div className=' text-xl font-medium leading-5 text-white'>
         {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
       </div>
       {type == 'supply' ? (
-        <div className='flex h-[26px] flex-row gap-1 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center md:gap-2 md:text-sm'>
+        <div className='flex h-[26px] w-full flex-row gap-2 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center sm:text-sm'>
           <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
-            Balance <div className='font-medium text-white'>$3.31</div>
+            Balance <div className='font-medium text-white '>$3.31</div>
           </div>
           <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
-            APY <div className=' font-medium text-white'>2.16%</div>
+            APY <div className=' font-medium text-white '>2.16%</div>
           </div>
           <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border px-2 py-[6px]'>
-            Collateral <div className='font-medium text-white'>$3.31</div>
+            Collateral <div className='font-medium text-white '>$3.31</div>
           </div>
         </div>
       ) : (
         <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
       )}
-      <div className='table-custom h-[230px] w-full overflow-y-auto'>
+      <div className='table-custom h-[106px] w-full overflow-y-auto'>
         <Table
-          className='w-[318px] md:w-[576px] lg:w-full'
+          className='w-[350px] sm:w-full'
           columns={columns}
           data={type == 'supply' ? data : nonData}
           sorting={sorting}
