@@ -15,11 +15,11 @@ const Supply = ({ type }: { type: string }) => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <span className='mx-2 gap-2 text-left lg:pl-6'>Assets</span>,
+        header: () => <span className='mx-2 gap-2 text-left '>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 lg:pl-6'>
+            <div className='flex items-center justify-start space-x-3 '>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
@@ -124,8 +124,8 @@ const Supply = ({ type }: { type: string }) => {
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
-    <div className='flex h-[340px] max-h-[216px] w-full flex-col  gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
-      <div className=' text-xl font-medium leading-5 text-white'>
+    <div className='flex h-[340px] max-h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+      <div className='text-xl font-medium leading-5 text-white'>
         {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
       </div>
       {type == 'supply' ? (
@@ -145,7 +145,7 @@ const Supply = ({ type }: { type: string }) => {
       )}
       <div className='table-custom h-[106px] w-full overflow-y-auto'>
         <Table
-          className='w-[350px] sm:w-full'
+          className='w-full'
           columns={columns}
           data={type == 'supply' ? data : nonData}
           sorting={sorting}
