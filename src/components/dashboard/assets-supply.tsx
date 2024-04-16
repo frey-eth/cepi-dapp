@@ -76,7 +76,7 @@ const AssetsSupply = () => {
         },
         cell: (info) => {
           return (info.getValue() as boolean) ? (
-            <div className='flex max-w-[100px] items-center justify-center'>
+            <div className='mx-auto flex max-w-[100px] items-center justify-center'>
               <Image src={icCheck} className='mx-auto  ' alt='check' />
             </div>
           ) : (
