@@ -3,6 +3,7 @@ import non_token from '@/icons/nonToken.svg'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_usdc from '@/images/global-pool/usdc.svg'
+import bgAssets from '@/images/portfolio/assets-supply.png'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -124,33 +125,36 @@ const Supply = ({ type }: { type: string }) => {
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
-    <div className='flex h-[340px] max-h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
-      <div className='text-xl font-medium leading-5 text-white'>
-        {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
-      </div>
-      {type == 'supply' ? (
-        <div className='flex h-[26px] w-full flex-row items-center gap-2 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center sm:text-sm'>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
-            Balance <div className='font-medium  text-white'>$3.31</div>
-          </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
-            APY <div className='font-medium text-white '>2.16%</div>
-          </div>
-          <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
-            Collateral <div className='font-medium text-white '>$3.31</div>
-          </div>
+    <div className='relative flex h-[340px] max-h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+      <Image src={bgAssets} alt='background' fill />
+      <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden'>
+        <div className='text-xl font-medium leading-5 text-white'>
+          {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
         </div>
-      ) : (
-        <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
-      )}
-      <div className='table-custom h-[106px] w-full overflow-y-auto'>
-        <Table
-          className='w-full'
-          columns={columns}
-          data={type == 'supply' ? data : nonData}
-          sorting={sorting}
-          setSorting={setSorting}
-        />
+        {type == 'supply' ? (
+          <div className='flex h-[26px] w-full flex-row items-center gap-2 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center sm:text-sm'>
+            <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
+              Balance <div className='font-medium  text-white'>$3.31</div>
+            </div>
+            <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
+              APY <div className='font-medium text-white '>2.16%</div>
+            </div>
+            <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
+              Collateral <div className='font-medium text-white '>$3.31</div>
+            </div>
+          </div>
+        ) : (
+          <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
+        )}
+        <div className='table-custom h-[106px] w-full overflow-y-auto'>
+          <Table
+            className='w-full'
+            columns={columns}
+            data={type == 'supply' ? data : nonData}
+            sorting={sorting}
+            setSorting={setSorting}
+          />
+        </div>
       </div>
     </div>
   )
