@@ -127,7 +127,7 @@ const Supply = ({ type }: { type: string }) => {
   return (
     <div className='relative flex h-[340px] max-h-[216px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
       <Image src={bgAssets} alt='background' fill />
-      <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden'>
+      <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-xl font-medium leading-5 text-white'>
           {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
         </div>
