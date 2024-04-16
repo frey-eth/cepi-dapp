@@ -44,9 +44,10 @@ export const Modal = ({
   useEffect(() => {
     if (data) {
       const d = data.data
+
       const dData: DataDisplayType = {
         title: data.type,
-        walletBalance: 'walletBalance' in d ? d?.walletBalance : 10,
+        walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 10,
         assetIcon: d?.asset?.icon ?? group,
         assetName: d?.asset?.name,
         currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
