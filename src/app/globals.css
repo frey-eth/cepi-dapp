@@ -27,3 +27,25 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #5e5c64;
 }
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 400;
+  src: url('/font/HelveticaNeue/HelveticaNeueBlack.otf') format('woff2');
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 500;
+  src: url('/font/HelveticaNeue/HelveticaNeueMedium.otf') format('woff2');
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 700;
+  src: url('/font/HelveticaNeue/HelveticaNeueHeavy.otf') format('woff2');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-weight: 700;
+  src: url('/font/HelveticaNeue/HelveticaNeueBold.otf') format('woff2');
+}

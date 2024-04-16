@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         mono: ['var(--font-mona-sans)'],
+        helveticaNeue: 'HelveticaNeue, sans-serif',
       },
       boxShadow: {
         inner: '1px 1px 0px 0px #FFFFFF29 inset',
