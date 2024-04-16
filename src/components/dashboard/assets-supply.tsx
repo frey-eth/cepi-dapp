@@ -145,9 +145,9 @@ const AssetsSupply = () => {
     <>
       <div className='relative h-[304px] w-full bg-[#0B0D10CC]'>
         {/* <Image src={bgAssets} alt='background' fill priority /> */}
-        <div className='relative py-4 pl-4 md:p-4'>
+        <div className='relative py-4 pl-4 font-helveticaNeue md:p-4 '>
           <div className='flex flex-col justify-between lg:flex-row lg:items-center'>
-            <h2 className='font-helveticaNeue text-xl font-medium text-[#fff]'>Assets to supply</h2>
+            <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
             <div className='my-4 flex items-center space-x-3'>
               <Checkbox checked={checked} setChecked={setChecked} />
               <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
