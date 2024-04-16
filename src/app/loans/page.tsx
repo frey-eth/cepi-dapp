@@ -226,34 +226,37 @@ const Loans = () => {
 
   return (
     <main className='mx-auto h-full w-full p-4 pt-10 lg:w-[1288px]'>
-      <div className='mb-8 w-full'>
-        <div className='relative mx-auto w-full max-w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
-          <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
+      <div className='h-full w-full lg:min-h-[728px]'>
+        <div className='mb-8 w-full'>
+          <div className='relative mx-auto w-full max-w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
+            <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
 
-          <div className='relative z-[5]'>
-            <button className='flex w-full items-center gap-2 rounded-lg bg-[#111112] p-4'>
-              <Image src={backpack} alt='icon alert' width={24} height={24} className='object-cover' />
-              <span className='flex-1 text-start text-sm font-medium leading-[24px] text-white'>
-                5% points boost for Backpack users!
-              </span>
-              <Image src={arrowRight} alt='icon alert' width={24} height={24} className='object-cover' />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:p-6'>
-        {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
-        <div className='relative flex flex-col gap-16 md:gap-0'>
-          <Filter />
-          <div>
-            <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-            <div className='table-custom h-[230px] w-full overflow-y-auto'>
-              <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+            <div className='relative z-[5]'>
+              <button className='flex w-full items-center gap-2 rounded-lg bg-[#111112] p-4'>
+                <Image src={backpack} alt='icon alert' width={24} height={24} className='object-cover' />
+                <span className='flex-1 text-start text-sm font-medium leading-[24px] text-white'>
+                  5% points boost for Backpack users!
+                </span>
+                <Image src={arrowRight} alt='icon alert' width={24} height={24} className='object-cover' />
+              </button>
             </div>
           </div>
         </div>
-      </section>
+
+        <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:p-6'>
+          {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
+          <div className='relative flex flex-col gap-16 md:gap-0'>
+            <Filter />
+            <div>
+              <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
+              <div className='table-custom h-[230px] w-full overflow-y-auto'>
+                <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <Modal {...modalProps} />
     </main>
   )
