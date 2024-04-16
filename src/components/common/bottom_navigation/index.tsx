@@ -1,8 +1,6 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import rectangle from '@/icons/rectangle.svg'
 
 const DashBoardIcon = () => {
   return (
@@ -97,11 +95,11 @@ const BottomNavigation = () => {
           className={`flex w-1/2 flex-col items-center justify-center gap-[6px] text-sm font-normal ${currentTab === item.id && 'text-[#FFD02B]'}`}
           key={item.id}
         >
-          {currentTab === item.id && (
+          {/* {currentTab === item.id && (
             <div className='absolute top-0 w-[89px]'>
               <Image src={rectangle} alt='rectangle' />
             </div>
-          )}
+          )} */}
           <div className={`h-6 w-6 `}>{item.icon}</div>
           {item.title}
         </Link>
