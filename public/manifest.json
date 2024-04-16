@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "blonkfi",
-  "short_name": "blonkfi",
-  "description": "Blonkfi",
+  "name": "BlonkFi",
+  "short_name": "BlonkFi",
+  "description": "BlonkFi",
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
