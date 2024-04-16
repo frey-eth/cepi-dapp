@@ -132,15 +132,24 @@ const Supply = ({ type }: { type: string }) => {
           {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
         </div>
         {type == 'supply' ? (
-          <div className='flex h-[26px] w-full flex-row items-center gap-2 text-xs font-normal leading-[14px] text-[#8F9399] max-md:justify-center sm:text-sm'>
-            <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
-              Balance <div className='font-medium  text-white'>$3.31</div>
+          <div className='flex h-[26px] w-full flex-row items-center gap-2 leading-[14px] max-sm:justify-between'>
+            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
+              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
+                Balance
+              </div>
+              <span className='text-[14px] font-medium text-white'>$3.31</span>
             </div>
-            <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
-              APY <div className='font-medium text-white '>2.16%</div>
+            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
+              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
+                APY
+              </div>
+              <span className='text-[14px] font-medium text-white'>$3.31</span>
             </div>
-            <div className='flex h-full flex-row items-center justify-between gap-[10px] rounded border border-[#3C3937] px-2 py-[6px]'>
-              Collateral <div className='font-medium text-white '>$3.31</div>
+            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
+              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
+                Collateral
+              </div>
+              <span className='text-[14px] font-medium text-white'>$3.31</span>
             </div>
           </div>
         ) : (
