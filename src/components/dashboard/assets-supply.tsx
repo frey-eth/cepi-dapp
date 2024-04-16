@@ -50,7 +50,7 @@ const AssetsSupply = () => {
           const { isError } = info.row.original
           return (
             <figure className=''>
-              <p className='mx-auto flex w-[70px] items-center space-x-2'>
+              <p className='flex w-[70px] items-center justify-start space-x-2'>
                 <span className='block text-left'>${Number(info.getValue()).toLocaleString()}</span>
                 {isError && <Image src={ic_alert} alt='alert' />}
               </p>
@@ -76,7 +76,13 @@ const AssetsSupply = () => {
           return <span>Can be collateral</span>
         },
         cell: (info) => {
-          return (info.getValue() as boolean) ? <Image src={icCheck} className='mx-auto' alt='check' /> : ''
+          return (info.getValue() as boolean) ? (
+            <div className='flex max-w-[100px] items-center justify-center'>
+              <Image src={icCheck} className='mx-auto  ' alt='check' />
+            </div>
+          ) : (
+            ''
+          )
         },
         footer: (props) => props.column.id,
       },
@@ -109,7 +115,7 @@ const AssetsSupply = () => {
     {
       asset: {
         icon: ic_solana,
-        name: 'Solana',
+        name: 'SOL',
       },
       walletBalance: 0.0087386,
       apy: 2.16,
@@ -119,7 +125,7 @@ const AssetsSupply = () => {
     {
       asset: {
         icon: ic_bonk,
-        name: 'Bonk',
+        name: 'BONK',
       },
       walletBalance: 0.0087385,
       apy: -2.16,
@@ -133,15 +139,6 @@ const AssetsSupply = () => {
       walletBalance: 0.0087384,
       apy: 2.15,
       isCollateral: true,
-    },
-    {
-      asset: {
-        icon: ic_solana,
-        name: 'Solana',
-      },
-      walletBalance: 0.0087383,
-      apy: -2.15,
-      isCollateral: false,
     },
   ]
 

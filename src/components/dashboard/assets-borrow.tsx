@@ -52,7 +52,7 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <figure className='flex min-w-[40px] flex-col items-end justify-center space-x-2 text-right lg:pr-3'>
+            <figure className='flex w-[70px] items-center justify-start space-x-2'>
               <p>
                 <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
                 <span className='text-[#8F9399]'>${Number(info.getValue()).toLocaleString()}</span>
@@ -76,7 +76,7 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <div className='flex justify-end lg:pr-3'>
+            <div className='flex w-[70px] items-center justify-start space-x-2'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
@@ -114,7 +114,7 @@ const AssetsToBorrow = () => {
     {
       asset: {
         icon: ic_usdt,
-        name: 'USDT',
+        name: 'SOL',
       },
       available: 2.71,
       apy: 7.03,
@@ -122,23 +122,7 @@ const AssetsToBorrow = () => {
     {
       asset: {
         icon: ic_dai,
-        name: 'Bonk',
-      },
-      available: 2.71,
-      apy: 34.98,
-    },
-    {
-      asset: {
-        icon: ic_usdc,
-        name: 'USDC',
-      },
-      available: 2.71,
-      apy: 22.64,
-    },
-    {
-      asset: {
-        icon: ic_dai,
-        name: 'Bonk',
+        name: 'BONK',
       },
       available: 2.71,
       apy: 34.98,
