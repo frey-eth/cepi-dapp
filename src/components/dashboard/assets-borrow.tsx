@@ -23,15 +23,21 @@ const AssetsToBorrow = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className=' w-[140px] text-left'>Assets</p>,
+        header: () => <p className='w-[100px] text-left md:w-[140px] '>Assets</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
+          // const apy = info.row.original.apy
           return (
-            <div className='flex w-[140px] items-center justify-start space-x-3 '>
+            <div className='flex w-[100px] items-center justify-start space-x-3 md:w-[140px] '>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span>{name}</span>
+              <div className='flex flex-col items-start justify-start font-normal'>
+                <div>{name}</div>
+                <div className='md:hidden'>
+                  <Dental percent={Number(info.row.original.apy)} />
+                </div>
+              </div>
             </div>
           )
         },
@@ -43,7 +49,7 @@ const AssetsToBorrow = () => {
         accessorKey: 'available',
         header: () => {
           return (
-            <figure className='flex items-center justify-end space-x-2'>
+            <figure className='flex items-center justify-start space-x-2'>
               <span>Available</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' />
             </figure>
@@ -67,7 +73,7 @@ const AssetsToBorrow = () => {
         accessorKey: 'apy',
         header: () => {
           return (
-            <figure className='flex items-center justify-end space-x-2'>
+            <figure className='hidden items-center justify-end space-x-2 md:flex'>
               <span>APY, variable</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' />
             </figure>
@@ -76,7 +82,7 @@ const AssetsToBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <div className='flex w-[70px] items-center justify-start space-x-2'>
+            <div className='hidden w-[70px] items-center justify-start space-x-2 md:flex'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
@@ -138,14 +144,14 @@ const AssetsToBorrow = () => {
   ]
   return (
     <>
-      <div className='relative h-[340px] w-full'>
+      <div className='relative h-[340px] w-[382px] font-helveticaNeue  md:w-full'>
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative flex h-full flex-col rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] py-4 pl-4 md:mx-auto md:p-4 '>
           <div className='flex h-[50px] items-center text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>
             Assets to borrow
           </div>
-          <div className='table-custom h-[230px] w-full overflow-y-auto'>
-            <Table className='w-[576px] md:w-full' columns={columns} data={data} />
+          <div className='table-custom h-[230px] w-[350px] overflow-y-auto md:w-full'>
+            <Table className='w-[350px] md:w-full' columns={columns} data={data} />
           </div>
         </div>
       </div>
