@@ -3,7 +3,7 @@ import Header from '@/components/common/header'
 import bgLayout from '@/images/layout/bg-layout.png'
 import SolanaProvider from '@/provider/solana-provider'
 import '@/styles/index.scss'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 // import Image from 'next/image'
 import BottomNavigation from '@/components/common/bottom_navigation'
@@ -41,6 +41,7 @@ const monaSans = localFont({
   display: 'swap',
 })
 export const metadata: Metadata = {
+  applicationName: 'BlonkFi',
   title: 'Blonkfi',
   description: 'Blonkfi',
   metadataBase: new URL(String(process.env.REACT_APP_HOST)),
@@ -51,6 +52,18 @@ export const metadata: Metadata = {
     url: String(process.env.REACT_APP_HOST),
     type: 'website',
   },
+  manifest: './manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Blonkfi',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+}
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF',
 }
 
 export default function RootLayout({
