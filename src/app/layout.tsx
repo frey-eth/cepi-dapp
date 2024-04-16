@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`font-mona_sans ${monaSans.className} relative h-full min-h-screen`}>
+      <body className={`relative h-full min-h-screen font-mono ${monaSans.variable}`}>
         <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority />
         <SolanaProvider>
           <main className='relative'>

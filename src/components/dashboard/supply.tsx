@@ -146,7 +146,7 @@ const Supply = ({ type }: { type: string }) => {
         ) : (
           <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
         )}
-        <div className='table-custom h-[106px] w-full overflow-y-auto'>
+        <div className='table-custom h-[104px] w-full overflow-y-auto'>
           <Table
             className='w-full'
             columns={columns}
