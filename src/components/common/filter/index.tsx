@@ -13,7 +13,7 @@ const Filter = () => {
     setIsActive(!isActive)
   }
   return (
-    <div className='relative   flex h-[50px] w-[350px] flex-wrap items-center gap-3 md:w-full  md:flex-row '>
+    <div className='relative flex  h-[50px] w-[350px] flex-wrap items-center gap-3 font-helveticaNeue md:w-full  md:flex-row '>
       <div className='flex w-[350px] items-center justify-between md:w-[795px] '>
         <div className='flex h-full w-[156px] items-center justify-between rounded-lg bg-[#18181B52] p-[6px] '>
           <button
