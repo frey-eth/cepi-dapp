@@ -20,7 +20,7 @@ const Filter = () => {
             onClick={() => {
               setSelectAction('Lend')
             }}
-            className={` ${selectAction === 'Lend' ? 'bg-[#FFFFFF0A] shadow-inner' : 'bg-transparent'} h-[38px] rounded-[4px]  px-4 py-3 `}
+            className={` ${selectAction === 'Lend' ? 'bg-[#FFFFFF0A] shadow-[1px_1px_0px_0px_rgba(255,255,255,0.16)_inset,_0px_0px_8px_0px_rgba(255,255,255,0.08)_inset]' : 'bg-transparent'} h-[38px] rounded-[4px]  px-4 py-3 `}
           >
             <div className='text-[14px] font-medium  leading-[14px] text-white'>Lend</div>
           </button>

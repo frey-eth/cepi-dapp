@@ -14,6 +14,7 @@ import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo } from 'react'
+
 import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
@@ -72,14 +73,18 @@ const Loans = () => {
         accessorKey: 'apy',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='hidden items-center justify-center space-x-2 md:flex'>
               <span>APY</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' />
             </figure>
           )
         },
         cell: (info) => {
-          return <Dental percent={Number(info.getValue())} />
+          return (
+            <div className='hidden md:block'>
+              <Dental percent={Number(info.getValue())} />
+            </div>
+          )
         },
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -171,15 +176,17 @@ const Loans = () => {
         header: '',
         cell: (info) => {
           return (
-            <BtnSupply
-              onClick={() => {
-                const data = info.row.original
-                handleOpenModal({
-                  data: data,
-                  type: 'supply',
-                })
-              }}
-            />
+            <div className=' '>
+              <BtnSupply
+                onClick={() => {
+                  const data = info.row.original
+                  handleOpenModal({
+                    data: data,
+                    type: 'supply',
+                  })
+                }}
+              />
+            </div>
           )
         },
         enableSorting: false,
@@ -256,7 +263,7 @@ const Loans = () => {
             <div>
               <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
               <div className='table-custom h-[236px] w-full overflow-y-auto'>
-                <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
+                <Table columns={columns} data={data} className=' custom-table relative w-[1000px] lg:w-full' />
               </div>
             </div>
           </div>
