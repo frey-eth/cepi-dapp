@@ -25,7 +25,7 @@ const AssetsSupply = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <span className='mx-2 gap-2 text-left'>Assets</span>,
+        header: () => <span className=' gap-2 text-left'>Assets</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
