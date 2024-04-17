@@ -133,24 +133,22 @@ const Supply = ({ type }: { type: string }) => {
         </div>
         {type == 'supply' ? (
           <div className='flex h-[26px] w-full flex-row items-center gap-2 leading-[14px] max-sm:justify-between'>
-            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
-              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
+            <p className='flex h-full flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
+              <span className='h-[14px] text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>
                 Balance
-              </div>
-              <span className='text-[14px] font-medium text-white'>$3.31</span>
-            </div>
-            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
-              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
-                APY
-              </div>
-              <span className='text-[14px] font-medium text-white'>$3.31</span>
-            </div>
-            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
-              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
+              </span>
+              <span className='h-[14px] text-[14px] font-medium leading-4 text-white'>$3.31</span>
+            </p>
+            <p className='flex h-full flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
+              <span className='h-[14px] text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>APY</span>
+              <span className='h-[14px] text-[14px] font-medium leading-4 text-white'>$3.31</span>
+            </p>
+            <p className='flex h-full flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
+              <span className='h-[14px] text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>
                 Collateral
-              </div>
-              <span className='text-[14px] font-medium text-white'>$3.31</span>
-            </div>
+              </span>
+              <span className='h-[14px] text-[14px] font-medium leading-4 text-white'>$3.31</span>
+            </p>
           </div>
         ) : (
           <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
