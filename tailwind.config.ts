@@ -12,6 +12,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-connect': 'linear-gradient(82.55deg, #ED048A 5.78%, #FEE10A 94.22%)',
+        'gradient-btn': 'linear-gradient(79deg, #FF8041 -7.12%, #FEE10A 100.93%)',
       },
       fontFamily: {
         mono: ['var(--font-mona-sans)'],
