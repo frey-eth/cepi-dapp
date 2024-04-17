@@ -133,22 +133,16 @@ const Supply = ({ type }: { type: string }) => {
         </div>
         {type == 'supply' ? (
           <div className='flex h-[26px] w-full flex-row items-center gap-2 leading-[14px] max-sm:justify-between'>
-            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
-              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
-                Balance
-              </div>
+            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  text-[14px] font-[400] text-[#8F9399] max-sm:w-[111px] max-sm:text-[12px]'>
+              Balance
               <span className='text-[14px] font-medium text-white'>$3.31</span>
             </div>
-            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
-              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
-                APY
-              </div>
+            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  text-[14px] font-[400] text-[#8F9399] max-sm:w-[111px] max-sm:text-[12px]'>
+              APY
               <span className='text-[14px] font-medium text-white'>$3.31</span>
             </div>
-            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
-              <div className='flex items-center justify-center text-[14px] font-[400] text-[#8F9399] max-sm:text-[12px]'>
-                Collateral
-              </div>
+            <div className='flex h-full flex-row items-center justify-center gap-[10px] rounded border border-[#3C3937] px-2  text-[14px] font-[400] text-[#8F9399] max-sm:w-[111px] max-sm:text-[12px]'>
+              Collateral
               <span className='text-[14px] font-medium text-white'>$3.31</span>
             </div>
           </div>
