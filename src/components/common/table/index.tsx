@@ -39,7 +39,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className }: Table<T>) 
       <table className={`${className}`}>
         <thead className='relative'>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr className='h-[56px] rounded-lg' key={headerGroup.id}>
+            <tr className='relative h-[56px] rounded-lg' key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
                   <th key={header.id} colSpan={header.colSpan}>
@@ -69,7 +69,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className }: Table<T>) 
                           {/*  */}
                         </div>
                         {/* <span
-                          className={`absolute left-0 top-0 -z-10 h-full w-full rounded-lg bg-[rgba(0,0,0,0.32)]`}
+                          className={`absolute left-0 top-0 z-10 h-full w-full rounded-lg bg-[rgba(0,0,0,0.32)]`}
                         ></span> */}
                         {/* // */}
                       </>

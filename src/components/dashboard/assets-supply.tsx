@@ -144,7 +144,7 @@ const AssetsSupply = () => {
 
   return (
     <>
-      <div className='relative h-[340px] w-full'>
+      <div className='relative h-[340px] w-full lg:h-[300px]'>
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative py-4 pl-4 md:p-4'>
           <div className='flex flex-col justify-between lg:flex-row lg:items-center'>
@@ -155,7 +155,7 @@ const AssetsSupply = () => {
             </div>
           </div>
 
-          <div className='table-custom h-[230px] w-full overflow-y-auto'>
+          <div className='table-custom h-[230px] w-full overflow-y-auto lg:h-[206px]'>
             <Table
               className='w-[576px] md:w-full'
               columns={columns}

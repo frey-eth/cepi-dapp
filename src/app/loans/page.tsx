@@ -24,15 +24,21 @@ const Loans = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='pl-6 text-left'>Assets</p>,
+        header: () => <p className='text-left'>Assets</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 pl-6'>
+            <div className='flex items-center justify-start space-x-3'>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span>{name}</span>
+              <span className='hidden lg:block'>{name}</span>
+              <div className='flex flex-col items-start justify-start font-normal lg:hidden'>
+                <div>{name}</div>
+                <div className='md:hidden'>
+                  <Dental percent={Number(info.row.original.apy)} />
+                </div>
+              </div>
             </div>
           )
         },
@@ -249,7 +255,7 @@ const Loans = () => {
             <Filter />
             <div>
               <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
-              <div className='table-custom h-[230px] w-full overflow-y-auto'>
+              <div className='table-custom h-[236px] w-full overflow-y-auto'>
                 <Table columns={columns} data={data} className='w-[1000px] lg:w-full' />
               </div>
             </div>
