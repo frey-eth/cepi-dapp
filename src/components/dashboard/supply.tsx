@@ -141,7 +141,7 @@ const Supply = ({ type }: { type: string }) => {
             </p>
             <p className='flex h-full flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
               <span className='h-[14px] text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>APY</span>
-              <span className='h-[14px] text-[14px] font-medium leading-4 text-white'>$3.31</span>
+              <span className='h-[14px] text-[14px] font-medium leading-4 text-white'>2.16%</span>
             </p>
             <p className='flex h-full flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2  max-sm:w-[111px]'>
               <span className='h-[14px] text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>
