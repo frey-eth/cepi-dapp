@@ -13,8 +13,8 @@ const Filter = () => {
     setIsActive(!isActive)
   }
   return (
-    <div className='relative flex  h-[50px] w-[350px] flex-wrap items-center gap-3 font-helveticaNeue md:w-full  md:flex-row '>
-      <div className='flex w-[350px] items-center justify-between md:w-[795px] '>
+    <div className='relative flex h-[50px] w-full  flex-wrap items-center gap-3 font-helveticaNeue md:w-full  md:flex-row '>
+      <div className='flex w-full  items-center justify-between  md:w-[795px] '>
         <div className='flex h-full w-[156px] items-center justify-between rounded-lg bg-[#18181B52] p-[6px] '>
           <button
             onClick={() => {
@@ -34,7 +34,7 @@ const Filter = () => {
           </button>
         </div>
 
-        <div className=' flex  items-center justify-start gap-2 bg-transparent '>
+        <div className=' flex  items-center justify-start gap-1 bg-transparent '>
           <button
             className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
             onClick={toggleSwitch}
@@ -43,12 +43,12 @@ const Filter = () => {
               <Image src={eclipse} alt='switch_icon' />
             </div>
           </button>
-          <div className='text-[14px] font-normal leading-[14px] text-white'>Filter my positions</div>
+          <div className='w-fit text-end text-[14px] font-normal leading-[14px] text-white'>Filter my positions</div>
         </div>
       </div>
 
-      <div className='flex w-[350px]  items-center gap-4 md:w-[400px] '>
-        <div className='flex w-[134px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-3 py-3 md:w-[180px] md:px-4'>
+      <div className='flex w-full   items-center gap-4 md:w-[400px] '>
+        <div className='flex w-[134px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 md:w-[180px] md:px-4'>
           <div className='flex  items-center justify-between gap-2'>
             <button className='flex h-5 w-5 items-center justify-center'>
               <Image src={filter} alt='filter' />

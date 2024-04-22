@@ -256,14 +256,19 @@ const Loans = () => {
           </div>
         </div>
 
-        <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:p-6'>
+        <section className='relative h-[450px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:h-[398px] md:p-6'>
           {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
           <div className='relative flex flex-col gap-16 md:gap-0'>
             <Filter />
             <div>
               <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
               <div className='table-custom h-[236px] w-full overflow-y-auto'>
-                <Table columns={columns} data={data} className=' custom-table relative w-[1000px] lg:w-full' />
+                <Table
+                  hasResponsive
+                  columns={columns}
+                  data={data}
+                  className=' custom-table relative w-[1000px] lg:w-full'
+                />
               </div>
             </div>
           </div>
