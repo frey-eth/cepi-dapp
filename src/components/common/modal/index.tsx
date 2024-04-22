@@ -102,7 +102,7 @@ export const Modal = ({
 
             {/*  */}
             <div className='mt-2'>
-              <label className='flex w-full items-center gap-2 rounded-xl bg-black p-[12px]'>
+              <label className='flex w-full items-center gap-2 rounded-xl border-[0.6px] border-[#FFFFFF14] bg-black p-[12px]'>
                 {/*  */}
                 <div
                   className='flex h-[44px] w-[36%] min-w-[149px] items-center justify-center gap-2 rounded-lg px-4 py-[6px]'
@@ -137,46 +137,53 @@ export const Modal = ({
                   </div>
                 </div>
                 {/*  */}
-                <input
-                  value={inputAmt}
-                  onChange={(e) => {
-                    const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')
-                    if (value === '') {
-                      setInputAmt('')
-                      return
-                    }
+                <div className='flex-1'>
+                  <input
+                    value={inputAmt}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')
+                      if (value === '') {
+                        setInputAmt('')
+                        return
+                      }
 
-                    if (!displayData) {
-                      return
-                    }
+                      if (!displayData) {
+                        return
+                      }
 
-                    if (parseFloat(value) > displayData.walletBalance) {
-                      setInputAmt(displayData.walletBalance.toString())
-                    } else {
-                      setInputAmt(value)
-                    }
-                  }}
-                  type='text'
-                  pattern='[0-9\/]*'
-                  className='block flex-1 bg-transparent text-end text-base font-medium leading-4 text-white focus:outline-none'
-                  placeholder='0'
-                />
+                      if (parseFloat(value) > displayData.walletBalance) {
+                        setInputAmt(displayData.walletBalance.toString())
+                      } else {
+                        setInputAmt(value)
+                      }
+                    }}
+                    type='text'
+                    pattern='[0-9\/]*'
+                    className='w-full bg-transparent text-end text-base font-medium leading-4 text-white focus:outline-none'
+                    placeholder='0'
+                  />
+                </div>
               </label>
             </div>
 
             {/*  */}
             {displayData?.title == 'supply' && (
               <div
-                className='w-full overflow-hidden transition-all duration-300'
-                style={{
-                  height: inputAmt === '' || parseFloat(inputAmt) === 0 ? '0px' : '56px',
-                }}
+                className={`w-full overflow-hidden transition-all duration-300 ${
+                  inputAmt === '' || parseFloat(inputAmt) === 0
+                    ? 'h-0'
+                    : 'h-[86px] min-[385px]:h-[72px] min-[530px]:h-[56px]'
+                }`}
               >
                 <div className='mt-4 flex w-full items-center gap-3 rounded-xl bg-[#BF83491A] px-4 py-3'>
                   <Image src={alert} alt='setting' width={16} height={16} className='object-cover' />
-                  <p className='flex-1 text-sm font-medium leading-[14px] text-[#BF8349]'>
-                    The oracle data for this bank is stale - Read more
-                  </p>
+                  <div className='flex flex-1 flex-col items-start gap-1 text-start text-sm font-medium leading-[14px] text-[#BF8349] min-[530px]:flex-row min-[530px]:items-center'>
+                    <p className='text-inherit'>The oracle data for this bank is stale</p>
+                    <p className='hidden text-inherit min-[530px]:!block'> - </p>
+                    <a href='' className='text-inherit underline'>
+                      Read more
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
