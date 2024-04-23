@@ -5,8 +5,6 @@ import { Modal } from '@/components/common/modal'
 import useModal from '@/components/common/modal/hook/useModal'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
-import arrowRight from '@/images/global-pool/arrowright.svg'
-import backpack from '@/images/global-pool/backPack.png'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_usdc from '@/images/global-pool/usdc.svg'
@@ -240,23 +238,7 @@ const Loans = () => {
   return (
     <main className='mx-auto h-full w-full p-4 pt-10 lg:w-[1288px]'>
       <div className='h-full w-full lg:min-h-[728px]'>
-        <div className='mb-8 w-full'>
-          <div className='relative mx-auto w-full max-w-[462px] overflow-hidden rounded-lg p-[1px] transition-all duration-300 '>
-            <div className='  pointer-events-none absolute left-[-20%] top-[20%] z-[1] h-[60%] w-[140%] animate-[spin_10s_linear_infinite] bg-[conic-gradient(transparent,_270deg,_white,_transparent)]'></div>
-
-            <div className='relative z-[5]'>
-              <button className='flex w-full items-center gap-2 rounded-lg bg-[#111112] p-4'>
-                <Image src={backpack} alt='icon alert' width={24} height={24} className='object-cover' />
-                <span className='flex-1 text-start text-sm font-medium leading-[24px] text-white'>
-                  5% points boost for Backpack users!
-                </span>
-                <Image src={arrowRight} alt='icon alert' width={24} height={24} className='object-cover' />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <section className='relative h-[450px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:h-[398px] md:p-6'>
+        <section className='relative h-[398px] overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:p-6'>
           {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
           <div className='relative flex flex-col gap-16 md:gap-0'>
             <Filter />
