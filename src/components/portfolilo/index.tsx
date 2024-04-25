@@ -19,7 +19,7 @@ const Portfolio = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='pl-6 text-left'>Assets</p>,
+        header: () => <p className='pl-6 text-left'>Asset</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (

@@ -23,7 +23,7 @@ const AssetsToBorrow = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='w-[100px] text-left md:w-[140px] '>Assets</p>,
+        header: () => <p className='w-[100px] text-left md:w-[140px] '>Asset</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           // const apy = info.row.original.apy

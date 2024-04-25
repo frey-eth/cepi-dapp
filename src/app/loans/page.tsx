@@ -23,7 +23,7 @@ const Loans = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='text-left'>Assets</p>,
+        header: () => <p className='text-left'>Asset</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
