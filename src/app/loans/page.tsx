@@ -243,7 +243,7 @@ const Loans = () => {
           <div className='relative flex flex-col gap-4 md:gap-0'>
             <Filter />
             <div>
-              <span className='my-4 block text-2xl font-medium text-[#FFF]'>Global Pool</span>
+              <span className='block text-2xl font-medium text-[#FFF] md:my-4'>Global Pool</span>
               <div className='table-custom h-[236px] w-full overflow-y-auto'>
                 <Table
                   hasResponsive
