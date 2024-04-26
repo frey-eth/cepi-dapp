@@ -13,8 +13,8 @@ const Filter = () => {
     setIsActive(!isActive)
   }
   return (
-    <div className='relative flex h-[50px] w-full  flex-wrap items-center gap-3 font-helveticaNeue md:w-full  md:flex-row '>
-      <div className='flex w-full  items-center justify-between  md:w-[795px] '>
+    <div className='relative flex w-full flex-wrap  items-center gap-3 font-helveticaNeue md:h-[50px] md:w-full  md:flex-row '>
+      <div className='flex w-full  flex-wrap items-center justify-between md:w-[795px] '>
         <div className='flex h-full w-[156px] items-center justify-between rounded-lg bg-[#18181B52] p-[6px] '>
           <button
             onClick={() => {
@@ -47,13 +47,13 @@ const Filter = () => {
         </div>
       </div>
 
-      <div className='flex w-full   items-center gap-4 md:w-[400px] '>
+      <div className='flex w-full flex-wrap items-center justify-between gap-1 md:w-[400px]   md:flex-nowrap md:gap-4 '>
         <div className='flex w-[134px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 md:w-[180px] md:px-4'>
           <div className='flex  items-center justify-between gap-2'>
-            <button className='flex h-5 w-5 items-center justify-center'>
+            <button className='flex h-3 w-5 items-center justify-center md:h-5'>
               <Image src={filter} alt='filter' />
             </button>
-            <div className='text-[14px] font-normal leading-[14px] text-white'> All pools</div>
+            <div className='text-[14px]  font-normal leading-[14px] text-white'> All pools</div>
           </div>
           <button>
             <Image src={vector} alt='vector' />
@@ -61,7 +61,7 @@ const Filter = () => {
         </div>
         <div className='flex w-[200px] items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-3 py-3 md:w-[230px] md:px-4 '>
           <div className='flex items-center justify-between gap-2 '>
-            <button className='flex h-5 w-5 items-center justify-center'>
+            <button className='flex h-4  w-5 items-center justify-center md:h-5'>
               <Image src={sort} alt='sort' />
             </button>
             <div className='text-[14px] font-normal leading-[14px] text-white'>$ Highest to lowest</div>
