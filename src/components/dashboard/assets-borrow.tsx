@@ -5,7 +5,7 @@ import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import ic_dai from '@/images/portfolio/dai.svg'
-import ic_usdc from '@/images/portfolio/sol.svg'
+import ic_usdc from '@/images/portfolio/usdc.svg'
 import ic_usdt from '@/images/portfolio/usdt.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
@@ -23,25 +23,19 @@ const AssetsToBorrow = () => {
       {
         id: 'assets',
         accessorKey: 'assets',
-        header: () => <p className='w-[100px] text-left md:w-[140px] '>Asset</p>,
+        header: () => <span className=' gap-2 text-left'>Asset</span>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
-          // const apy = info.row.original.apy
           return (
-            <div className='flex w-[100px] items-center justify-start space-x-3 md:w-[140px] '>
+            <div className='flex items-center justify-start space-x-3'>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <div className='flex flex-col items-start justify-start font-normal'>
-                <div>{name}</div>
-                <div className='md:hidden'>
-                  <Dental percent={Number(info.row.original.apy)} />
-                </div>
-              </div>
+              <span>{name}</span>
             </div>
           )
         },
-        enableSorting: false,
+        sortingFn: (rowA, rowB) => rowB.original.asset.name.localeCompare(rowA.original.asset.name),
         footer: (props) => props.column.id,
       },
       {

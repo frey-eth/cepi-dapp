@@ -7,7 +7,7 @@ import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
-import ic_usdc from '@/images/global-pool/usdc.svg'
+import ic_usdc from '@/images/portfolio/usdc.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -32,7 +32,7 @@ const Loans = () => {
                 <Image src={icon} alt='icon' />
               </figure>
               <span className='hidden lg:block'>{name}</span>
-              <div className='flex flex-col items-start justify-start font-normal lg:hidden'>
+              <div className='flex flex-col items-center justify-start font-normal lg:hidden'>
                 <div>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />

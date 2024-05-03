@@ -2,9 +2,9 @@
 import ic_alert from '@/icons/alert-triangle-light.svg'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
-import ic_usdc from '@/images/global-pool/usdc.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import icCheck from '@/images/portfolio/check.svg'
+import ic_usdc from '@/images/portfolio/usdc.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -37,7 +37,7 @@ const AssetsSupply = () => {
             </div>
           )
         },
-        enableSorting: false,
+        sortingFn: (rowA, rowB) => rowB.original.asset.name.localeCompare(rowA.original.asset.name),
         footer: (props) => props.column.id,
       },
       {
@@ -51,7 +51,7 @@ const AssetsSupply = () => {
           return (
             <figure className=''>
               <p className='flex w-[70px] items-center justify-start space-x-2'>
-                <span className='block text-left'>${Number(info.getValue()).toLocaleString()}</span>
+                <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
                 {isError && <Image src={ic_alert} alt='alert' />}
               </p>
             </figure>

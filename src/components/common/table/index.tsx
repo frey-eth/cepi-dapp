@@ -96,7 +96,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                 //const secondHalfCells = visibleCells.slice(-1)
                 return (
                   <>
-                    <tr key={row.id} className=' border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
+                    <tr key={row.id} className=' h-[60px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
                       {firstHalfCells.map((cell) => {
                         return (
                           <td key={cell.id} className=' py-2 text-center text-sm font-medium text-[#fff]'>
@@ -133,12 +133,12 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
 
                   const secondHalfCells = visibleCells.slice(-1)
                   return (
-                    <tr key={row.id} className='border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
+                    <tr key={row.id} className='h-[60px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
                       {secondHalfCells.map((cell) => {
                         return (
                           <td
                             key={cell.id}
-                            className='  py-[11px] text-center text-sm  font-medium text-[#fff] md:py-[3px] '
+                            className='  py-[11px] text-center text-sm  font-medium text-[#fff] md:py-[4px] '
                           >
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                           </td>
