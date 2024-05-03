@@ -17,6 +17,7 @@ import SuccessModal from './SuccessModal'
 import { ModalProps } from './hook/useModal'
 
 import info from '@/images/modal/alert-circle-light.svg'
+import { useBalance } from '../../../../public/hook/useBalance'
 import BaseModal from './BaseModal'
 
 export type DataDisplayType = {
@@ -39,6 +40,8 @@ export const Modal = ({
   handleExit,
 }: ModalProps) => {
   const [inputAmt, setInputAmt] = useState<string>('')
+
+  const { balance } = useBalance()
 
   const [displayData, setDisplayData] = useState<DataDisplayType | undefined>()
   useEffect(() => {
@@ -88,7 +91,7 @@ export const Modal = ({
                 <div className='flex items-center gap-[8px]'>
                   <Image src={wallet} width={20} height={20} alt='image' className='object-cover' />
                   <p className='text-sm font-normal leading-[10px]'>
-                    {displayData?.walletBalance} {displayData?.currency}
+                    {balance} {displayData?.currency}
                   </p>
                 </div>
                 <button
