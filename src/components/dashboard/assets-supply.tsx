@@ -144,10 +144,10 @@ const AssetsSupply = () => {
 
   return (
     <>
-      <div className='relative h-[340px] w-full lg:h-[300px]'>
+      <div className='relative h-[340px] w-full font-helveticaNeue lg:h-[320px]'>
         <Image src={bgAssets} alt='background' fill priority />
-        <div className='relative py-4 pl-4 md:p-4'>
-          <div className='flex flex-col justify-between lg:flex-row lg:items-center'>
+        <div className='relative py-4 pl-2 md:mx-auto md:px-4 md:py-2'>
+          <div className='flex flex-col justify-between md:h-[50px] lg:flex-row lg:items-center'>
             <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
             <div className='my-4 flex items-center space-x-3'>
               <Checkbox checked={checked} setChecked={setChecked} />
@@ -155,7 +155,7 @@ const AssetsSupply = () => {
             </div>
           </div>
 
-          <div className='table-custom h-[230px] w-full overflow-y-auto lg:h-[206px]'>
+          <div className='table-custom h-[230px] w-full overflow-y-auto lg:h-[240px]'>
             <Table
               className='w-[576px] md:w-full'
               columns={columns}

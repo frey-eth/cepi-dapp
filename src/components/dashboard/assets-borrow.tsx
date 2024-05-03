@@ -8,9 +8,9 @@ import ic_dai from '@/images/portfolio/dai.svg'
 import ic_usdc from '@/images/portfolio/usdc.svg'
 import ic_usdt from '@/images/portfolio/usdt.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
-import { ColumnDef } from '@tanstack/react-table'
+import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { AssetsBorrow } from '../../../types/table'
 import { Modal } from '../common/modal'
 import useModal from '../common/modal/hook/useModal'
@@ -110,6 +110,9 @@ const AssetsToBorrow = () => {
     ],
     [handleOpenModal]
   )
+
+  const [sorting, setSorting] = useState<SortingState>([])
+
   const data: AssetsBorrow[] = [
     {
       asset: {
@@ -138,14 +141,21 @@ const AssetsToBorrow = () => {
   ]
   return (
     <>
-      <div className='relative h-[340px] w-full font-helveticaNeue lg:h-[300px]'>
+      <div className='relative h-[340px] w-full font-helveticaNeue lg:h-[320px]'>
         <Image src={bgAssets} alt='background' fill priority />
-        <div className='relative flex h-full flex-col rounded-[8px] border border-solid border-[#00000052] bg-[#0B0D10CC] py-4 pl-4 md:mx-auto md:p-4 '>
-          <div className='flex h-[50px] items-center text-[20px] font-medium leading-[20px] text-[#FFFFFF]'>
-            Assets to borrow
+        <div className='relative py-4 pl-4 md:mx-auto md:px-4 md:py-2 '>
+          <div className='flex h-[50px] flex-col justify-between lg:flex-row lg:items-center'>
+            <h2 className='text-xl font-medium text-[#fff]'>Assets to borrow</h2>
           </div>
-          <div className='table-custom h-[230px] w-full overflow-y-auto'>
-            <Table className='w-[350px] md:w-full' columns={columns} data={data} />
+
+          <div className='table-custom h-[230px] w-full overflow-y-auto lg:h-[240px]'>
+            <Table
+              className='w-[350px] md:w-full'
+              columns={columns}
+              data={data}
+              sorting={sorting}
+              setSorting={setSorting}
+            />
           </div>
         </div>
       </div>
