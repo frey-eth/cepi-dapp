@@ -33,7 +33,7 @@ const AssetsSupply = () => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span>{name}</span>
+              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal '>{name}</span>
             </div>
           )
         },
@@ -51,7 +51,7 @@ const AssetsSupply = () => {
           return (
             <figure className=''>
               <p className='flex w-[70px] items-center justify-start space-x-2'>
-                <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
+                <span className='block text-left'>${Number(info.getValue()).toLocaleString()}</span>
                 {isError && <Image src={ic_alert} alt='alert' />}
               </p>
             </figure>
@@ -117,7 +117,7 @@ const AssetsSupply = () => {
         icon: ic_solana,
         name: 'SOL',
       },
-      walletBalance: 0.0087386,
+      walletBalance: 216.38,
       apy: 2.16,
       isCollateral: true,
       isError: true,
@@ -127,7 +127,7 @@ const AssetsSupply = () => {
         icon: ic_bonk,
         name: 'BONK',
       },
-      walletBalance: 0.0087385,
+      walletBalance: 216.38,
       apy: -2.16,
       isCollateral: false,
     },
@@ -136,7 +136,7 @@ const AssetsSupply = () => {
         icon: ic_usdc,
         name: 'USDC',
       },
-      walletBalance: 0.0087384,
+      walletBalance: 216.38,
       apy: 2.15,
       isCollateral: true,
     },

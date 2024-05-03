@@ -20,11 +20,11 @@ const Supply = ({ type }: { type: string }) => {
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3 '>
+            <div className='flex items-center justify-start  space-x-3 '>
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span>{name}</span>
+              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal '>{name}</span>
             </div>
           )
         },

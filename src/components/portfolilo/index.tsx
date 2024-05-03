@@ -27,7 +27,9 @@ const Portfolio = () => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span>{name}</span>
+              <span className='mt-[3px] flex items-center justify-center font-helveticaNeue text-[14px] font-normal '>
+                {name}
+              </span>
             </div>
           )
         },

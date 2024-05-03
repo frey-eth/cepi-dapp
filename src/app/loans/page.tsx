@@ -29,9 +29,9 @@ const Loans = () => {
           return (
             <div className='flex items-center justify-start space-x-3'>
               <figure>
-                <Image src={icon} alt='icon' />
+                <Image src={icon} alt='icon' width={24} height={24} />
               </figure>
-              <span className='hidden lg:block'>{name}</span>
+              <span className=' mt-[3px] hidden font-helveticaNeue text-[14px] font-normal lg:block'>{name}</span>
               <div className='flex flex-col items-center justify-start font-normal lg:hidden'>
                 <div>{name}</div>
                 <div className='md:hidden'>
@@ -114,7 +114,7 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}</span>
+          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -131,7 +131,7 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}</span>
+          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,

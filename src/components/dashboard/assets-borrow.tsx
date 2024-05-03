@@ -31,7 +31,7 @@ const AssetsToBorrow = () => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span>{name}</span>
+              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal '>{name}</span>
             </div>
           )
         },
