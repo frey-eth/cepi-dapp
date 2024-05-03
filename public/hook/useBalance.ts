@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 export function useBalance(token_address?: string) {
   const [balance, setBalance] = useState(0)
+  const [address, setAddress] = useState('')
 
   const { connection } = useConnection()
   const { publicKey } = useWallet()
@@ -33,6 +34,8 @@ export function useBalance(token_address?: string) {
   return useMemo(() => {
     return {
       balance,
+      address,
+      setAddress,
     }
   }, [balance])
 }

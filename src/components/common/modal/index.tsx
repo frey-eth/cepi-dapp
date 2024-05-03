@@ -28,8 +28,8 @@ export type DataDisplayType = {
   currency: string
   apy: number
   available: number
+  address_token?: string
 }
-
 export const Modal = ({
   isOpen,
   handleClose,
@@ -41,9 +41,8 @@ export const Modal = ({
 }: ModalProps) => {
   const [inputAmt, setInputAmt] = useState<string>('')
 
-  const { balance } = useBalance()
-
   const [displayData, setDisplayData] = useState<DataDisplayType | undefined>()
+  const { balance } = useBalance(displayData?.address_token)
   useEffect(() => {
     if (data) {
       const d = data.data
@@ -56,6 +55,7 @@ export const Modal = ({
         currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
         apy: d?.apy,
         available: 'available' in d ? d?.available : 7.41,
+        address_token: '',
       }
       setDisplayData(dData)
     } else {
