@@ -41,11 +41,12 @@ const Supply = ({ type }: { type: string }) => {
 
           return (
             <figure className='flex items-center justify-start'>
-              <div className='flex flex-col gap-[6px]'>
+              <div className='flex flex-row items-center gap-[6px]'>
                 <div className='text-start'>{balanceAmount.toLocaleString()}</div>
                 {balanceValue && (
                   <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
-                    ${balanceValue?.toLocaleString()}
+                    {'('}${balanceValue?.toLocaleString()}
+                    {')'}
                   </div>
                 )}
               </div>
@@ -125,7 +126,7 @@ const Supply = ({ type }: { type: string }) => {
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
-    <div className='relative flex h-[340px] max-h-[224px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+    <div className='relative flex h-[340px] max-h-[318px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-xl font-medium leading-5 text-white'>
@@ -153,7 +154,7 @@ const Supply = ({ type }: { type: string }) => {
         ) : (
           <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
         )}
-        <div className='table-custom h-[116px] w-full overflow-y-auto'>
+        <div className='table-custom h-[270px] w-full overflow-y-auto'>
           <Table
             className='w-full'
             columns={columns}

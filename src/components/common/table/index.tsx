@@ -96,10 +96,10 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                 //const secondHalfCells = visibleCells.slice(-1)
                 return (
                   <>
-                    <tr key={row.id} className=' h-[60px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
+                    <tr key={row.id} className=' h-[52px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
                       {firstHalfCells.map((cell) => {
                         return (
-                          <td key={cell.id} className=' py-2 text-center text-sm font-medium text-[#fff]'>
+                          <td key={cell.id} className='  text-center text-sm font-medium text-[#fff]'>
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                           </td>
                         )
@@ -133,12 +133,12 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
 
                   const secondHalfCells = visibleCells.slice(-1)
                   return (
-                    <tr key={row.id} className='h-[60px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
+                    <tr key={row.id} className='h-[52px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
                       {secondHalfCells.map((cell) => {
                         return (
                           <td
                             key={cell.id}
-                            className='  py-[11px] text-center text-sm  font-medium text-[#fff] md:py-[4px] '
+                            className='  py-[6px] text-center text-sm  font-medium text-[#fff] md:py-[4px] '
                           >
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                           </td>

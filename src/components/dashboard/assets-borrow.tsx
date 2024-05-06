@@ -45,7 +45,15 @@ const AssetsToBorrow = () => {
           return (
             <figure className='flex items-center justify-start space-x-2'>
               <span>Available</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+
+              <div className='group'>
+                <Image src={ic_alert} alt='icon alert' sizes='16' />
+                <div className='absolute left-[83%] top-[23px] hidden h-2 w-2 -translate-x-1/2 -rotate-45 transform border-r-4 border-t-4 border-solid border-[#101828] group-hover:block md:left-[68%]  md:top-[24px]'></div>
+                <div className='absolute -left-20  top-7 z-50 hidden h-fit w-[362px] rounded-lg bg-[#101828] p-4 group-hover:block md:top-7'>
+                  This is the total amount available for you to borrow. You can borrow based on your collateral and
+                  until the borrow cap is reached
+                </div>
+              </div>
             </figure>
           )
         },
@@ -141,7 +149,7 @@ const AssetsToBorrow = () => {
   ]
   return (
     <>
-      <div className='relative h-[340px] w-full font-helveticaNeue lg:h-[320px]'>
+      <div className='relative h-[340px] w-full font-helveticaNeue lg:h-[300px]'>
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative py-4 pl-4 md:mx-auto md:px-4 md:py-2 '>
           <div className='flex h-[50px] flex-col justify-between lg:flex-row lg:items-center'>

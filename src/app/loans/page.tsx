@@ -32,8 +32,8 @@ const Loans = () => {
                 <Image src={icon} alt='icon' width={24} height={24} />
               </figure>
               <span className=' mt-[3px] hidden font-helveticaNeue text-[14px] font-normal lg:block'>{name}</span>
-              <div className='flex flex-col items-center justify-start font-normal lg:hidden'>
-                <div>{name}</div>
+              <div className='flex flex-col  font-normal lg:hidden'>
+                <div className='text-left'>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />
                 </div>
@@ -113,12 +113,15 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
-        ),
+        cell: (info) => {
+          const depositValue = Number(info.getValue()).toFixed(2)
+
+          return <span className='flex items-center justify-start space-x-2'>{depositValue}</span>
+        },
         enableSorting: false,
         footer: (props) => props.column.id,
       },
+
       {
         id: 'globalLimit',
         accessorKey: 'globalLimit',
@@ -202,7 +205,7 @@ const Loans = () => {
       price: 216.38,
       apy: 0.13,
       weight: 65,
-      deposit: 919.15,
+      deposit: 100.0,
       globalLimit: 300.77,
       utilization: 10.29,
       walletAmt: 0.0,
@@ -215,7 +218,7 @@ const Loans = () => {
       price: 216.38,
       apy: 0.13,
       weight: 65,
-      deposit: 919.15,
+      deposit: 100,
       globalLimit: 300.77,
       utilization: 10.29,
       walletAmt: 0.0,
@@ -228,7 +231,7 @@ const Loans = () => {
       price: 216.38,
       apy: 0.13,
       weight: 65,
-      deposit: 919.15,
+      deposit: 100,
       globalLimit: 300.77,
       utilization: 10.29,
       walletAmt: 0.0,
@@ -238,7 +241,7 @@ const Loans = () => {
   return (
     <main className='mx-auto h-full w-full p-4 pt-10 lg:w-[1288px]'>
       <div className='h-full w-full lg:min-h-[728px]'>
-        <section className='table-custom relative h-[450px] overflow-y-auto rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:h-[398px] md:overflow-hidden md:p-6'>
+        <section className='table-custom relative h-[400px] overflow-y-auto rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:h-[398px] md:overflow-hidden md:p-6'>
           {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
           <div className='relative flex flex-col gap-4 md:gap-0'>
             <Filter />
