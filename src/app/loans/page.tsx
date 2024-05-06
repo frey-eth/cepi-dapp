@@ -241,8 +241,9 @@ const Loans = () => {
   return (
     <main className='mx-auto h-full w-full p-4 pt-10 lg:w-[1288px]'>
       <div className='h-full w-full lg:min-h-[728px]'>
-        <section className='table-custom relative h-[400px] overflow-y-auto rounded-2xl bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur-[75px] md:h-[398px] md:overflow-hidden md:p-6'>
+        <section className='table-custom relative h-[400px] overflow-y-auto rounded-2xl bg-[rgba(255,255,255,0.06)] p-4  md:h-[398px] md:overflow-hidden md:p-6'>
           {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
+          <div className='absolute inset-0 backdrop-blur-[75px]'></div>
           <div className='relative flex flex-col gap-4 md:gap-0'>
             <Filter />
             <div>

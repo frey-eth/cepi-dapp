@@ -52,7 +52,7 @@ const Filter = () => {
           </button>
         </div>
         <div
-          className='relative flex  w-[180px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 md:hidden md:w-[180px] md:px-4'
+          className='relative flex  w-[180px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3  md:hidden md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >
           <div className='flex  items-center justify-between gap-2'>
@@ -65,7 +65,14 @@ const Filter = () => {
             <Image src={vector} alt='vector' />
           </button>
           {showSelection && (
-            <div className='absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2 md:w-[180px] '>
+            <div
+              style={{
+                borderRadius: '8px',
+                background: 'rgba(255, 255, 255, 0.10)',
+                backdropFilter: ' blur(20px)',
+              }}
+              className='absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2  md:w-[180px] '
+            >
               {valueFilter.map((value, index) => (
                 <button
                   key={index}
@@ -112,7 +119,7 @@ const Filter = () => {
         </div>
 
         <div
-          className='relative hidden  w-[134px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 md:flex md:w-[180px] md:px-4'
+          className='relative hidden  w-[180px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3  md:flex md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >
           <div className='flex  items-center justify-between gap-2'>
@@ -125,7 +132,14 @@ const Filter = () => {
             <Image src={vector} alt='vector' />
           </button>
           {showSelection && (
-            <div className='absolute left-0 top-12 z-10 flex w-[134px] flex-col items-center justify-between rounded-[8px] bg-white bg-opacity-10 p-2 backdrop-blur-2xl  md:w-[180px] '>
+            <div
+              style={{
+                borderRadius: '8px',
+                background: 'rgba(255, 255, 255, 0.10)',
+                backdropFilter: ' blur(20px)',
+              }}
+              className='absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2  md:w-[180px] '
+            >
               {valueFilter.map((value, index) => (
                 <button
                   key={index}
