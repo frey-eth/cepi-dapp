@@ -76,9 +76,8 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
               style={{
                 borderRadius: '8px',
                 background: 'rgba(255, 255, 255, 0.10)',
-                backdropFilter: ' blur(20px)',
               }}
-              className='absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2  md:w-[180px] '
+              className='backdropFilter absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2  md:w-[180px] '
             >
               {valueFilter.map((value, index) => (
                 <button

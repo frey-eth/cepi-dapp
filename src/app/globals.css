@@ -28,6 +28,16 @@ html {
   background: #5e5c64;
 }
 
+.backdrop {
+  -webkit-backdrop-filter: blur(75px); /* Add this line first, it fixes blur for Safari*/
+  backdrop-filter: blur(75px);
+}
+
+.backdropFilter {
+  -webkit-backdrop-filter: blur(20px); /* Add this line first, it fixes blur for Safari*/
+  backdrop-filter: blur(20px);
+}
+
 @font-face {
   font-family: 'HelveticaNeue';
   font-weight: 400;
