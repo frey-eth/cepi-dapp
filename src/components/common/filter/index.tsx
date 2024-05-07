@@ -1,6 +1,7 @@
 'use client'
 import check from '@/icons/filters/check.svg'
 import eclipse from '@/icons/filters/ellipse.svg'
+import eclipseBlue from '@/icons/filters/ellipse_blue.svg'
 import filter from '@/icons/filters/filter.svg'
 import vector from '@/icons/filters/vector.svg'
 
@@ -106,7 +107,11 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
               onClick={toggleSwitchUSD}
             >
               <div className={`ml-[2px] transition-transform ${isActiveUSD ? 'translate-x-[16px] ' : ''}`}>
-                <Image src={eclipse} alt='switch_icon' />
+                {isActiveUSD ? (
+                  <Image src={eclipseBlue} alt='switch_icon' />
+                ) : (
+                  <Image src={eclipse} alt='switch_icon' />
+                )}
               </div>
             </button>
             <div className='w-fit text-end text-[14px] font-normal leading-[14px] text-white'>USD Denominated</div>
@@ -117,7 +122,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
               onClick={toggleSwitch}
             >
               <div className={`ml-[2px] transition-transform ${isActive ? 'translate-x-[16px] ' : ''}`}>
-                <Image src={eclipse} alt='switch_icon' />
+                {isActive ? <Image src={eclipseBlue} alt='switch_icon' /> : <Image src={eclipse} alt='switch_icon' />}
               </div>
             </button>
             <div className='w-fit text-end text-[14px] font-normal leading-[14px] text-white'>Filter my positions</div>

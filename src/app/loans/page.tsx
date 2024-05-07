@@ -453,6 +453,7 @@ const Loans = () => {
             <Filter selectAction={selectAction} setSelectAction={setSelectAction} />
             <div>
               <span className='block text-2xl font-medium text-[#FFF] md:my-4'>Global Pool</span>
+
               <div className='table-custom h-[236px] w-full overflow-y-auto'>
                 {selectAction === 'Lend' ? (
                   <Table
