@@ -60,7 +60,7 @@ const Loans = () => {
         cell: (info) => {
           return (
             <figure className='flex items-center justify-start space-x-2'>
-              <span>${Number(info.getValue()).toLocaleString()}</span>
+              <span>${Number(info.getValue()).toFixed(2)}</span>
               {/* <Image src={ic_finger} alt='finger' /> */}
             </figure>
           )
@@ -116,9 +116,9 @@ const Loans = () => {
           )
         },
         cell: (info) => {
-          const depositValue = Number(info.getValue()).toFixed(2)
-
-          return <span className='flex items-center justify-start space-x-2'>{depositValue}</span>
+          return (
+            <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+          )
         },
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -239,7 +239,7 @@ const Loans = () => {
         cell: (info) => {
           return (
             <figure className='flex items-center justify-start space-x-2'>
-              <span>${Number(info.getValue()).toLocaleString()}</span>
+              <span>${Number(info.getValue()).toFixed(2)}</span>
               {/* <Image src={ic_finger} alt='finger' /> */}
             </figure>
           )
@@ -368,12 +368,12 @@ const Loans = () => {
         icon: ic_solana,
         name: 'Solana',
       },
-      price: 216.38,
-      apy: 0.13,
+      price: 154.08,
+      apy: 0.14,
       weight: 65,
-      deposit: 100.0,
-      globalLimit: 300.77,
-      utilization: 10.29,
+      deposit: 552.5,
+      globalLimit: 200,
+      utilization: 10.55,
       walletAmt: 0.0,
     },
     {
@@ -382,9 +382,9 @@ const Loans = () => {
         name: 'Bonk',
       },
       price: 216.38,
-      apy: 0.13,
-      weight: 65,
-      deposit: 100,
+      apy: 0.02,
+      weight: 50,
+      deposit: 119.17,
       globalLimit: 300.77,
       utilization: 10.29,
       walletAmt: 0.0,
@@ -394,12 +394,12 @@ const Loans = () => {
         icon: ic_usdc,
         name: 'USDC',
       },
-      price: 216.38,
-      apy: 0.13,
-      weight: 65,
-      deposit: 100,
-      globalLimit: 300.77,
-      utilization: 10.29,
+      price: 1,
+      apy: 8.63,
+      weight: 100,
+      deposit: 61.21,
+      globalLimit: 200,
+      utilization: 83.87,
       walletAmt: 0.0,
     },
   ]
@@ -410,12 +410,12 @@ const Loans = () => {
         icon: ic_solana,
         name: 'Solana',
       },
-      price: 216.38,
-      apy: 0.13,
+      price: 154.08,
+      apy: 0.15,
       ltv: 65,
       available: 300.77,
       total_borrow: 10.29,
-      utilization: 0.0,
+      utilization: 30.08,
     },
     {
       asset: {
@@ -423,23 +423,23 @@ const Loans = () => {
         name: 'Bonk',
       },
       price: 216.38,
-      apy: 0.13,
-      ltv: 65,
-      available: 300.77,
-      total_borrow: 10.29,
-      utilization: 0.0,
+      apy: 5.07,
+      ltv: 77,
+      available: 333.14,
+      total_borrow: 166.87,
+      utilization: 2.25,
     },
     {
       asset: {
         icon: ic_usdc,
         name: 'USDC',
       },
-      price: 216.38,
-      apy: 0.13,
-      ltv: 65,
-      available: 300.77,
+      price: 1,
+      apy: 12.03,
+      ltv: 80,
+      available: 988,
       total_borrow: 10.29,
-      utilization: 0.0,
+      utilization: 83.87,
     },
   ]
 
