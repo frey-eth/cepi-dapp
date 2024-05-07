@@ -1,7 +1,6 @@
 import solana from '@/images/modal/Solana.svg'
 import background from '@/images/modal/backgroud.png'
 import check from '@/images/modal/check.gif'
-import checkBlink from '@/images/modal/checkBlink.gif'
 import confeti from '@/images/modal/confeti.gif'
 import share from '@/images/modal/share.svg'
 import { Dialog } from '@headlessui/react'
@@ -37,9 +36,9 @@ const SuccessModal = ({
             {/*  */}
             <div className='relative mt-[14px] flex w-full flex-col items-center'>
               <Image src={check} alt='check' width={80} height={80} />
-              <div className='absolute left-0 top-[-88px] flex w-full items-center justify-center'>
+              {/* <div className='absolute left-0 top-[-88px] flex w-full items-center justify-center'>
                 <Image src={checkBlink} alt='check' width={235} height={235} className='object-cover' />
-              </div>
+              </div> */}
               <p className='absolute bottom-[-16px] left-0 w-full text-center text-base font-medium leading-4 text-white'>
                 Deposit Completed
               </p>

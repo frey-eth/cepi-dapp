@@ -92,9 +92,9 @@ const Supply = ({ type }: { type: string }) => {
       },
       balance: {
         amount: '0.0010000',
-        value: 3.3,
+        value: 3.31,
       },
-      apy: 2.15,
+      apy: 2.16,
     },
     {
       asset: {
@@ -103,9 +103,9 @@ const Supply = ({ type }: { type: string }) => {
       },
       balance: {
         amount: '0.0010000',
-        value: 3.3,
+        value: 3.31,
       },
-      apy: 2.15,
+      apy: 2.16,
     },
   ]
 

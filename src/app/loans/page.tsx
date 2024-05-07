@@ -11,12 +11,14 @@ import ic_usdc from '@/images/portfolio/usdc.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
-import { GlobalPool } from '../../../types/table'
+import BtnBorrow from '@/components/common/button/btn-borrow'
+import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
 const Loans = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
+  const [selectAction, setSelectAction] = useState('Lend')
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -166,7 +168,7 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>${Number(info.getValue()).toLocaleString()}</span>
+          <span className='flex items-center justify-start space-x-2'>${Number(info.getValue()).toFixed(2)}</span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -184,6 +186,170 @@ const Loans = () => {
                   handleOpenModal({
                     data: data,
                     type: 'supply',
+                  })
+                }}
+              />
+            </div>
+          )
+        },
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+    ],
+    [handleOpenModal]
+  )
+
+  const columnsBorrow = useMemo<ColumnDef<GlobalPoolBorrow>[]>(
+    () => [
+      {
+        id: 'assets',
+        accessorKey: 'assets',
+        header: () => <p className='text-left'>Asset</p>,
+        cell: (info) => {
+          const { icon, name } = info.row.original.asset
+          return (
+            <div className='flex items-center justify-start space-x-3'>
+              <figure>
+                <Image src={icon} alt='icon' width={24} height={24} />
+              </figure>
+              <span className=' mt-[3px] hidden font-helveticaNeue text-[14px] font-normal lg:block'>{name}</span>
+              <div className='flex flex-col  font-normal lg:hidden'>
+                <div className='text-left'>{name}</div>
+                <div className='md:hidden'>
+                  <Dental percent={Number(info.row.original.apy)} />
+                </div>
+              </div>
+            </div>
+          )
+        },
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+      {
+        id: 'price',
+        accessorKey: 'price',
+        header: () => {
+          return (
+            <figure className='flex items-center justify-center space-x-2'>
+              <span>Price</span>
+              <Image src={ic_alert} alt='icon alert' sizes='16' />
+            </figure>
+          )
+        },
+        cell: (info) => {
+          return (
+            <figure className='flex items-center justify-start space-x-2'>
+              <span>${Number(info.getValue()).toLocaleString()}</span>
+              {/* <Image src={ic_finger} alt='finger' /> */}
+            </figure>
+          )
+        },
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+      {
+        id: 'apy',
+        accessorKey: 'apy',
+        header: () => {
+          return (
+            <figure className='hidden items-center justify-center space-x-2 md:flex'>
+              <span>APY</span>
+              <Image src={ic_alert} alt='icon alert' sizes='16' />
+            </figure>
+          )
+        },
+        cell: (info) => {
+          return (
+            <div className='hidden md:block'>
+              <Dental percent={Number(info.getValue())} />
+            </div>
+          )
+        },
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+      {
+        id: 'ltv',
+        accessorKey: 'ltv',
+        header: () => {
+          return (
+            <figure className='flex items-center justify-center space-x-2'>
+              <span>LTV</span>
+              <Image src={ic_alert} alt='icon alert' sizes='16' />
+            </figure>
+          )
+        },
+        cell: (info) => <span className='flex items-center justify-start space-x-2'>{info.getValue() as string}%</span>,
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+      {
+        id: 'available',
+        accessorKey: 'available',
+        header: () => {
+          return (
+            <figure className='flex items-center justify-center space-x-2'>
+              <span>Available</span>
+              <Image src={ic_alert} alt='icon alert' sizes='16' />
+            </figure>
+          )
+        },
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+        ),
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+      {
+        id: 'total_borrow',
+        accessorKey: 'total_borrow',
+        header: () => {
+          return (
+            <figure className='flex items-center justify-center space-x-2'>
+              <span>Total Borrows</span>
+            </figure>
+          )
+        },
+        cell: (info) => {
+          return (
+            <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+          )
+        },
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+
+      {
+        id: 'utilization',
+        accessorKey: 'utilization',
+        header: () => {
+          return (
+            <figure className='flex items-center justify-center space-x-2'>
+              <span>Utilization</span>
+              <Image src={ic_alert} alt='icon alert' sizes='16' />
+            </figure>
+          )
+        },
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2'>${Number(info.getValue()).toFixed(2)}</span>
+        ),
+        enableSorting: false,
+        footer: (props) => props.column.id,
+      },
+
+      {
+        id: 'btn',
+        accessorKey: '',
+        header: '',
+        cell: (info) => {
+          return (
+            <div className=' '>
+              <BtnBorrow
+                onClick={() => {
+                  const data = info.row.original
+                  handleOpenModal({
+                    data: data,
+                    type: 'borrow',
                   })
                 }}
               />
@@ -238,6 +404,45 @@ const Loans = () => {
     },
   ]
 
+  const dataBorrow: GlobalPoolBorrow[] = [
+    {
+      asset: {
+        icon: ic_solana,
+        name: 'Solana',
+      },
+      price: 216.38,
+      apy: 0.13,
+      ltv: 65,
+      available: 300.77,
+      total_borrow: 10.29,
+      utilization: 0.0,
+    },
+    {
+      asset: {
+        icon: ic_bonk,
+        name: 'Bonk',
+      },
+      price: 216.38,
+      apy: 0.13,
+      ltv: 65,
+      available: 300.77,
+      total_borrow: 10.29,
+      utilization: 0.0,
+    },
+    {
+      asset: {
+        icon: ic_usdc,
+        name: 'USDC',
+      },
+      price: 216.38,
+      apy: 0.13,
+      ltv: 65,
+      available: 300.77,
+      total_borrow: 10.29,
+      utilization: 0.0,
+    },
+  ]
+
   return (
     <main className='mx-auto h-full w-full p-4 pt-10 lg:w-[1288px]'>
       <div className='h-full w-full lg:min-h-[728px]'>
@@ -245,16 +450,25 @@ const Loans = () => {
           {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
           <div className='absolute inset-0 backdrop-blur-[75px]'></div>
           <div className='relative flex flex-col gap-4 md:gap-0'>
-            <Filter />
+            <Filter selectAction={selectAction} setSelectAction={setSelectAction} />
             <div>
               <span className='block text-2xl font-medium text-[#FFF] md:my-4'>Global Pool</span>
               <div className='table-custom h-[236px] w-full overflow-y-auto'>
-                <Table
-                  hasResponsive
-                  columns={columns}
-                  data={data}
-                  className=' custom-table relative w-[1000px] lg:w-full'
-                />
+                {selectAction === 'Lend' ? (
+                  <Table
+                    hasResponsive
+                    columns={columns}
+                    data={data}
+                    className=' custom-table relative w-[1000px] lg:w-full'
+                  />
+                ) : (
+                  <Table
+                    hasResponsive
+                    columns={columnsBorrow}
+                    data={dataBorrow}
+                    className=' custom-table relative w-[1000px] lg:w-full'
+                  />
+                )}
               </div>
             </div>
           </div>

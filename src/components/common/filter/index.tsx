@@ -6,10 +6,16 @@ import vector from '@/icons/filters/vector.svg'
 
 import Image from 'next/image'
 import { useState } from 'react'
-const Filter = () => {
+
+type props = {
+  selectAction: string
+  setSelectAction: (select: string) => void
+}
+
+const Filter = ({ selectAction, setSelectAction }: props) => {
   const [isActive, setIsActive] = useState(false)
   const [isActiveUSD, setIsActiveUSD] = useState(false)
-  const [selectAction, setSelectAction] = useState('Lend')
+
   const [showSelection, setShowSelection] = useState(false)
   const [selectItem, setSelectItem] = useState('All pools')
 
@@ -93,7 +99,7 @@ const Filter = () => {
       </div>
 
       <div className='flex w-full flex-wrap-reverse  items-center gap-1 md:w-fit md:flex-row  md:flex-nowrap md:gap-4 '>
-        <div className='flex  w-full items-center justify-between gap-2 md:w-fit'>
+        <div className='flex w-full  flex-wrap items-center justify-between gap-2 md:w-fit'>
           <div className=' flex  items-center justify-start gap-1 bg-transparent '>
             <button
               className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
