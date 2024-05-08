@@ -16,6 +16,7 @@ import { useMemo, useState } from 'react'
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
+import CustomTooltip from '@/components/common/tooltip'
 const Loans = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
   const [selectAction, setSelectAction] = useState('Lend')
@@ -55,7 +56,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' id='customarlert' />
             </figure>
           )
         },
@@ -501,6 +502,7 @@ const Loans = () => {
       </div>
 
       <Modal {...modalProps} />
+      <CustomTooltip id='customarlert' content='Powered by Pyth and switchboard' />
     </main>
   )
 }
