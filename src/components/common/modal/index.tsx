@@ -262,33 +262,36 @@ export const Modal = ({
                 <span className='text-sm font-normal leading-[14px] text-[#8F9399]'>Setting</span>
               </button>
             </div>
-            {viewDetail && (
-              <div>
-                <div className='mt-2 w-full border-[1px] border-solid border-[#FFFFFF1F]'></div>
-                <div className='mt-2 flex flex-col gap-[6px]'>
-                  <div className='flex items-center justify-between'>
-                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Your amount</div>
-                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>0 SOL</div>
-                  </div>
-                  <div className='flex items-center justify-between'>
-                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Health</div>
-                    <div className='text-[14px] font-medium leading-[14px] text-[#00E585]'>100 %</div>
-                  </div>
-                  <div className='flex items-center justify-between'>
-                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Pool size</div>
-                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>842.54k</div>
-                  </div>
-                  <div className='flex items-center justify-between'>
-                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Type</div>
-                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>Global pool</div>
-                  </div>
-                  <div className='flex items-center justify-between'>
-                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Oracle</div>
-                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>Pyth</div>
-                  </div>
+
+            <div
+              className={`w-full overflow-hidden transition-all duration-300 ${
+                viewDetail ? 'h-fit min-[385px]:h-[145px] min-[530px]:h-[143px]' : 'h-0'
+              }`}
+            >
+              <div className='mt-2 w-full border-[1px] border-solid border-[#FFFFFF1F]'></div>
+              <div className='mt-2 flex flex-col gap-[6px]'>
+                <div className='flex items-center justify-between'>
+                  <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Your amount</div>
+                  <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>0 SOL</div>
+                </div>
+                <div className='flex items-center justify-between'>
+                  <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Health</div>
+                  <div className='text-[14px] font-medium leading-[14px] text-[#00E585]'>100 %</div>
+                </div>
+                <div className='flex items-center justify-between'>
+                  <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Pool size</div>
+                  <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>842.54k</div>
+                </div>
+                <div className='flex items-center justify-between'>
+                  <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Type</div>
+                  <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>Global pool</div>
+                </div>
+                <div className='flex items-center justify-between'>
+                  <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Oracle</div>
+                  <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>Pyth</div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </Dialog.Panel>
       </BaseModal>
