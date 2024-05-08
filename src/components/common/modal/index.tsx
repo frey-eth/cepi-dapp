@@ -1,10 +1,5 @@
 'use client'
 
-import { Dialog } from '@headlessui/react'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import './style.css'
-import ic_alert from '@/images/table/alert-circle-light.svg'
 import down from '@/images/modal/Down.svg'
 import group from '@/images/modal/Group.svg'
 import wallet from '@/images/modal/Wallet.png'
@@ -13,9 +8,14 @@ import background from '@/images/modal/backgroud.png'
 import eye from '@/images/modal/eye-open.png'
 import setting from '@/images/modal/settings.svg'
 import spinner from '@/images/modal/spinner.svg'
+import ic_alert from '@/images/table/alert-circle-light.svg'
+import { Dialog } from '@headlessui/react'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import SuccessModal from './SuccessModal'
 import { ModalProps } from './hook/useModal'
+import './style.css'
 
 import info from '@/images/modal/alert-circle-light.svg'
 import { useBalance } from '../../../../public/hook/useBalance'
@@ -324,19 +324,19 @@ export const Modal = ({
                   <div className='flex w-full flex-row items-center gap-[6px] text-[24px]'>
                     Set transaction priority{' '}
                     <div className='h-5 w-5'>
-                      <Image src={ic_alert} alt='arlet' objectFit='cover' />
+                      <Image src={ic_alert} alt='arlet' objectFit='cover' className=' text-white' />
                     </div>
                   </div>
 
                   <div className='flex h-[74px] flex-row items-center justify-between'>
                     {listPriority.map((priority, index) => (
                       <div
-                        className={`flex h-full w-[127px] cursor-pointer flex-col justify-center rounded-md border  bg-[#0D0F10] text-[14px] text-white ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
+                        className={`flex h-full w-[127px] cursor-pointer flex-col justify-center gap-3 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-white ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
                         key={index}
                         onClick={() => setPriority(priority.value)}
                       >
                         {priority.title}
-                        <div className='text-[16px] font-bold leading-4'>{priority.value} SOL</div>
+                        <div className='text-[16px] font-bold leading-[16px]'>{priority.value} SOL</div>
                       </div>
                     ))}
                   </div>
@@ -363,11 +363,11 @@ export const Modal = ({
                   >
                     <span
                       className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'
-                      style={{ scale: loading ? 0 : 1 }}
+                      // style={{ scale: loading ? 0 : 1 }}
                     >
-                      Save Setting
+                      Save Settings
                     </span>
-                    <Image
+                    {/* <Image
                       src={spinner}
                       alt='setting'
                       width={24}
@@ -376,7 +376,7 @@ export const Modal = ({
                       style={{
                         scale: loading ? 1 : 0,
                       }}
-                    />
+                    /> */}
                   </button>
                 </div>
               </div>
