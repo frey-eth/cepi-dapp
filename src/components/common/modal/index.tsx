@@ -321,10 +321,10 @@ export const Modal = ({
                 </Dialog.Title>
 
                 <div className='flex w-full flex-col gap-6'>
-                  <div className='flex w-full flex-row items-center gap-[6px]'>
+                  <div className='flex w-full flex-row items-center gap-[6px] text-[24px]'>
                     Set transaction priority{' '}
                     <div className='h-5 w-5'>
-                      <Image src={ic_alert} alt='arlet' />
+                      <Image src={ic_alert} alt='arlet' objectFit='cover' />
                     </div>
                   </div>
 
