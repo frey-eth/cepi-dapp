@@ -12,7 +12,6 @@ const DashBoard = () => {
             <Supply type='supply' />
             <Supply type='borrow' />
             <AssetsSupply />
-
             <AssetsToBorrow />
           </div>
         </section>

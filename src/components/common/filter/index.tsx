@@ -62,8 +62,8 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           className='relative flex  w-[180px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3  md:hidden md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >
-          <div className='flex  items-center justify-between gap-2'>
-            <button className='flex h-3 w-5 items-center justify-center md:h-5'>
+          <div className='flex items-center justify-between gap-2'>
+            <button className='flex h-3 w-3 items-center justify-center md:h-5 md:w-5'>
               <Image src={filter} alt='filter' />
             </button>
             <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>

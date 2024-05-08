@@ -53,7 +53,7 @@ export const Modal = ({
 
   const listPriority = [
     { title: 'Normal', value: 0 },
-    { title: 'Hight', value: 0.00005 },
+    { title: 'High', value: 0.00005 },
     { title: 'Mamas', value: 0.005 },
   ]
 
@@ -112,12 +112,12 @@ export const Modal = ({
                         {balance} {displayData?.currency}
                       </p>
                     </div>
-                    <button
+                    <div
                       onClick={() => setInputAmt(displayData ? displayData.walletBalance.toString() : '')}
-                      className='flex h-[34px] w-[62px] items-center justify-center rounded-[32px] border border-[#ffffff24] text-[#8F9399] hover:bg-[#ffffff05]'
+                      className='flex h-[34px] w-[62px] cursor-pointer items-center justify-center rounded-[32px] border border-[#ffffff24] text-[14px] leading-[14px] text-[#8F9399] hover:bg-[#ffffff05]'
                     >
-                      <div className='text-[14px] leading-[14px] '> MAX</div>
-                    </button>
+                      MAX
+                    </div>
                   </div>
                 </Dialog.Title>
 
@@ -325,21 +325,21 @@ export const Modal = ({
 
                 <div className='flex w-full flex-col gap-6'>
                   <div className='flex w-full flex-row items-center gap-[6px] text-[24px] leading-[24px]'>
-                    Set transaction priority{' '}
+                    Set transaction priority
                     <div className='h-5 w-5'>
-                      <Image src={ic_alert} alt='arlet' objectFit='cover' className=' text-white' />
+                      <Image src={ic_alert} alt='arlet' objectFit='cover' />
                     </div>
                   </div>
 
                   <div className='flex h-[74px] flex-row items-center justify-between'>
                     {listPriority.map((priority, index) => (
                       <div
-                        className={`flex h-full w-[127px] cursor-pointer flex-col justify-center gap-3 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-white ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
+                        className={`flex h-full w-[127px] cursor-pointer flex-col justify-center gap-3 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5] ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
                         key={index}
                         onClick={() => setPriority(priority.value)}
                       >
                         {priority.title}
-                        <div className='text-[16px] font-bold leading-[16px]'>{priority.value} SOL</div>
+                        <div className='text-[16px] font-bold leading-[16px] text-[#FFFFFF]'>{priority.value} SOL</div>
                       </div>
                     ))}
                   </div>
