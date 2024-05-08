@@ -33,11 +33,11 @@ const Loans = () => {
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} />
               </figure>
-              <span className='mt-[3px] hidden  font-helveticaNeue text-[14px] font-normal md:-mt-[1px] lg:block'>
+              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:-mt-[1px] lg:block'>
                 {name}
               </span>
               <div className='flex flex-col  font-normal lg:hidden'>
-                <div className='text-left'>{name}</div>
+                <div className='text-left text-[14px] leading-[14px]'>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />
                 </div>
@@ -62,7 +62,7 @@ const Loans = () => {
         cell: (info) => {
           return (
             <figure className='flex items-center justify-start space-x-2'>
-              <span>${Number(info.getValue()).toFixed(2)}</span>
+              <span className='text-[14px] font-normal leading-[14px]'>${Number(info.getValue()).toFixed(2)}</span>
               {/* <Image src={ic_finger} alt='finger' /> */}
             </figure>
           )
@@ -102,7 +102,11 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span className='flex items-center justify-start space-x-2'>{info.getValue() as string}%</span>,
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2 text-[14px] font-normal leading-[14px]'>
+            {info.getValue() as string}%
+          </span>
+        ),
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -119,7 +123,9 @@ const Loans = () => {
         },
         cell: (info) => {
           return (
-            <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+            <span className='flex items-center justify-start space-x-2 text-[14px] font-normal leading-[14px]'>
+              {kFormatter(Number(info.getValue()))}k
+            </span>
           )
         },
         enableSorting: false,
@@ -138,7 +144,9 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+          <span className='flex items-center justify-start space-x-2 text-[14px] leading-[14px]'>
+            {kFormatter(Number(info.getValue()))}k
+          </span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -154,7 +162,9 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span className='flex items-center justify-start space-x-2'>{info.getValue() as string}%</span>,
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2 leading-[14px]'>{info.getValue() as string}%</span>
+        ),
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -170,7 +180,9 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>${Number(info.getValue()).toFixed(2)}</span>
+          <span className='flex items-center justify-start space-x-2 leading-[14px]'>
+            ${Number(info.getValue()).toFixed(2)}
+          </span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -214,11 +226,11 @@ const Loans = () => {
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} />
               </figure>
-              <span className='mt-[3px] hidden  font-helveticaNeue text-[14px] font-normal md:-mt-[1px] lg:block'>
+              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:-mt-[1px] lg:block'>
                 {name}
               </span>
               <div className='flex flex-col  font-normal lg:hidden'>
-                <div className='text-left'>{name}</div>
+                <div className='text-left leading-[14px]'>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />
                 </div>
@@ -243,7 +255,7 @@ const Loans = () => {
         cell: (info) => {
           return (
             <figure className='flex items-center justify-start space-x-2'>
-              <span>${Number(info.getValue()).toFixed(2)}</span>
+              <span className='leading-[14px]'>${Number(info.getValue()).toFixed(2)}</span>
               {/* <Image src={ic_finger} alt='finger' /> */}
             </figure>
           )
@@ -283,7 +295,9 @@ const Loans = () => {
             </figure>
           )
         },
-        cell: (info) => <span className='flex items-center justify-start space-x-2'>{info.getValue() as string}%</span>,
+        cell: (info) => (
+          <span className='flex items-center justify-start space-x-2 leading-[14px]'>{info.getValue() as string}%</span>
+        ),
         enableSorting: false,
         footer: (props) => props.column.id,
       },
@@ -299,7 +313,9 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+          <span className='flex items-center justify-start space-x-2 leading-[14px]'>
+            {kFormatter(Number(info.getValue()))}k
+          </span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,
@@ -316,7 +332,9 @@ const Loans = () => {
         },
         cell: (info) => {
           return (
-            <span className='flex items-center justify-start space-x-2'>{kFormatter(Number(info.getValue()))}k</span>
+            <span className='flex items-center justify-start space-x-2 leading-[14px]'>
+              {kFormatter(Number(info.getValue()))}k
+            </span>
           )
         },
         enableSorting: false,
@@ -335,7 +353,9 @@ const Loans = () => {
           )
         },
         cell: (info) => (
-          <span className='flex items-center justify-start space-x-2'>${Number(info.getValue()).toFixed(2)}</span>
+          <span className='flex items-center justify-start space-x-2 leading-[14px]'>
+            ${Number(info.getValue()).toFixed(2)}
+          </span>
         ),
         enableSorting: false,
         footer: (props) => props.column.id,
