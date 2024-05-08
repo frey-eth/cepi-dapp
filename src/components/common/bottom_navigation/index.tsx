@@ -87,7 +87,7 @@ const navbars = [
 const BottomNavigation = () => {
   const [currentTab, setCurrentTab] = useState<number>(1)
   return (
-    <div className='fixed bottom-0 flex h-[64px] w-full justify-around bg-black px-2 py-[10px] text-white sm:hidden'>
+    <div className='fixed bottom-0 z-10 flex h-[64px] w-full justify-around bg-black px-2 py-[10px] text-white sm:hidden'>
       {navbars.map((item) => (
         <Link
           href={item.href}
