@@ -14,8 +14,20 @@ import { useMemo, useState } from 'react'
 import { AssetsBorrow } from '../../../types/table'
 import { Modal } from '../common/modal'
 import useModal from '../common/modal/hook/useModal'
+import CustomTooltip from '../common/tooltip'
 
 const AssetsToBorrow = () => {
+  const tooltipData = [
+    {
+      id: 'available',
+      content:
+        'This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached. ',
+    },
+    {
+      id: 'apy',
+      content: `Variable interest rate will fluctuate based on the market conditions. Recommended for short-term positions. `,
+    },
+  ]
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
 
   const columns = useMemo<ColumnDef<AssetsBorrow>[]>(
@@ -46,13 +58,8 @@ const AssetsToBorrow = () => {
             <figure className='flex items-center justify-start space-x-2'>
               <span>Available</span>
 
-              <div className='group'>
-                <Image src={ic_alert} alt='icon alert' sizes='16' />
-                <div className='absolute left-[83%] top-[23px] hidden h-2 w-2 -translate-x-1/2 -rotate-45 transform border-r-4 border-t-4 border-solid border-[#101828] group-hover:block md:left-[68%]  md:top-[24px]'></div>
-                <div className='absolute -left-20  top-7 z-50 hidden h-fit w-[362px] rounded-lg bg-[#101828] p-4 group-hover:block md:top-7'>
-                  This is the total amount available for you to borrow. You can borrow based on your collateral and
-                  until the borrow cap is reached
-                </div>
+              <div>
+                <Image src={ic_alert} alt='icon alert' sizes='16' id='available' />
               </div>
             </figure>
           )
@@ -82,7 +89,7 @@ const AssetsToBorrow = () => {
           return (
             <figure className='hidden items-center justify-end space-x-2 md:flex'>
               <span>APY, variable</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' id='apy' />
             </figure>
           )
         },
@@ -173,6 +180,9 @@ const AssetsToBorrow = () => {
         </div>
       </div>
       <Modal {...modalProps} />
+      {tooltipData.map((item, key) => (
+        <CustomTooltip id={item.id} key={key} content={item.content} />
+      ))}
     </>
   )
 }

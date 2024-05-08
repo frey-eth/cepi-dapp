@@ -74,5 +74,6 @@ html {
 
 .react-tooltip {
   background-color: #101828 !important  ;
+  border-radius: 8px !important;
   display: flex;
 }

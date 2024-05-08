@@ -108,15 +108,15 @@ export const Modal = ({
                   <div className='flex items-center gap-[16px]'>
                     <div className='flex items-center gap-[8px]'>
                       <Image src={wallet} width={20} height={20} alt='image' className='object-cover' />
-                      <p className='text-sm font-normal leading-[10px]'>
+                      <p className='mt-[2px] text-sm font-normal leading-[10px]'>
                         {balance} {displayData?.currency}
                       </p>
                     </div>
                     <div
                       onClick={() => setInputAmt(displayData ? displayData.walletBalance.toString() : '')}
-                      className='flex h-[34px] w-[62px] cursor-pointer items-center justify-center rounded-[32px] border border-[#ffffff24] text-[14px] leading-[14px] text-[#8F9399] hover:bg-[#ffffff05]'
+                      className=' flex h-[34px] w-[62px] cursor-pointer items-center justify-center rounded-[32px] border border-[#ffffff24] text-[14px] leading-[14px] text-[#8F9399] hover:bg-[#ffffff05]'
                     >
-                      MAX
+                      <div className='mt-[2px]'>MAX</div>
                     </div>
                   </div>
                 </Dialog.Title>
@@ -323,10 +323,10 @@ export const Modal = ({
                   Your {displayData?.title}
                 </Dialog.Title>
 
-                <div className='flex w-full flex-col gap-6'>
-                  <div className='flex w-full flex-row items-center gap-[6px] text-[24px] leading-[24px]'>
-                    Set transaction priority
-                    <div className='h-5 w-5'>
+                <div className='flex w-full flex-col items-center gap-6'>
+                  <div className='flex w-full flex-row  items-center gap-[6px] text-[24px] font-medium leading-[24px]'>
+                    <div>Set transaction priority</div>
+                    <div className='mt-[8px] h-5 w-5'>
                       <Image src={ic_alert} alt='arlet' objectFit='cover' />
                     </div>
                   </div>

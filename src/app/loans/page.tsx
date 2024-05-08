@@ -14,13 +14,52 @@ import Image from 'next/image'
 import { useMemo, useState } from 'react'
 
 import BtnBorrow from '@/components/common/button/btn-borrow'
+import CustomTooltip from '@/components/common/tooltip'
 import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/fortmat'
-import CustomTooltip from '@/components/common/tooltip'
 const Loans = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
   const [selectAction, setSelectAction] = useState('Lend')
-  const tooltipData = [{ id: 'lend_price', content: 'Duc dep trai' }]
+  const tooltipData = [
+    { id: 'lend_price', content: 'Powered by Pyth and Switchboard.' },
+    { id: 'apy', content: ` What you'll earn on deposits over a year. This includes compounding. ` },
+    {
+      id: 'weight',
+      content:
+        'How much your assets count for collateral, relative to their USD value. The higher the weight, the more collateral you can borrow against it.',
+    },
+    { id: 'deposit', content: 'Total marginfi deposits for each asset. Everything is denominated in native token.' },
+    {
+      id: 'utilization',
+      content:
+        'Each marginfi pool has global desposit and borrow limits, also known as caps. This is the total amount that all users combined can deposit or borrow a given token.',
+    },
+    {
+      id: 'globalLimit',
+      content:
+        'What percentage of supplied tokens have been borrowed. This helps determine interest rates. This is not based on the global pool limits, which can limit ultiization.',
+    },
+    { id: 'walletAmt', content: 'Powered by Pyth and Switchboard.' },
+  ]
+  const tooltipBorrowData = [
+    { id: 'price', content: 'Powered by Pyth and Switchboard.' },
+    { id: 'apy_borrow', content: `What you'll pay for your borrows over a year. This includes compounding.` },
+    {
+      id: 'ltv',
+      content:
+        'How much you can borrow against your free collateral. The higher the LTV, the more you can borrow your free collateral.',
+    },
+
+    {
+      id: 'available',
+      content: `The amount of tokens available to borrow for each asset. Calculated as the minimum of the asset's borrow limit and available liquidity that has not yet been borrowed.  `,
+    },
+    {
+      id: 'utilization_borrow',
+      content:
+        'What percentage of supplied tokens have been borrowed. This helps determine interest rates. This is not based on the global pool limits, which can limit ultiization.',
+    },
+  ]
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
       {
@@ -78,7 +117,7 @@ const Loans = () => {
           return (
             <figure className='hidden items-center justify-center space-x-2 md:flex'>
               <div>APY</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy' />
             </figure>
           )
         },
@@ -99,7 +138,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <div>Weight</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='weight' />
             </figure>
           )
         },
@@ -118,7 +157,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <div>Deposits</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='deposit' />
             </figure>
           )
         },
@@ -140,7 +179,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <div>Global limit</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='globalLimit' />
             </figure>
           )
         },
@@ -159,7 +198,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <div>Utilization</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='utilization' />
             </figure>
           )
         },
@@ -176,7 +215,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <div>Wallet Amt</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='walletAmt' />
             </figure>
           )
         },
@@ -249,7 +288,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='price' />
             </figure>
           )
         },
@@ -271,7 +310,7 @@ const Loans = () => {
           return (
             <figure className='hidden items-center justify-center space-x-2 md:flex'>
               <span>APY</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy_borrow' />
             </figure>
           )
         },
@@ -292,7 +331,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>LTV</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image id='ltv' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -309,7 +348,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Available</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image id='available' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -349,7 +388,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Utilization</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image id='utilization_borrow' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -503,6 +542,9 @@ const Loans = () => {
 
       <Modal {...modalProps} />
       {tooltipData.map((item, key) => (
+        <CustomTooltip id={item.id} key={key} content={item.content} />
+      ))}
+      {tooltipBorrowData.map((item, key) => (
         <CustomTooltip id={item.id} key={key} content={item.content} />
       ))}
     </main>
