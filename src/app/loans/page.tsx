@@ -264,7 +264,7 @@ const Loans = () => {
         },
         cell: (info) => {
           return (
-            <div className='hidden md:block'>
+            <div className='hidden leading-[14px] md:block'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
