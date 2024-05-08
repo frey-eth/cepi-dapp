@@ -73,10 +73,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`relative h-full min-h-screen font-mono ${monaSans.variable}`}>
-        <Image src={bgLayout} objectPosition='bottom' alt='background' fill priority />
+      <body className={`relative h-screen overflow-hidden font-mono ${monaSans.variable}`}>
+        <Image src={bgLayout} alt='background' fill priority />
         <SolanaProvider>
-          <main className='relative'>
+          <main className='relative h-full overflow-y-scroll'>
             <Header />
             <section className='h-fit lg:min-h-[calc(100vh-130px)]'>{children}</section>
             <Footer />
