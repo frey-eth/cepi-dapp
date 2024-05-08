@@ -341,7 +341,7 @@ export const Modal = ({
                     ))}
                   </div>
 
-                  <div className='flex w-full flex-col items-start gap-4'>
+                  <div className='flex w-full flex-col items-start gap-4 text-[14px]'>
                     Or set mannually
                     <div className='flex h-10 w-full flex-row items-center gap-2 overflow-hidden rounded-xl border-[0.6px] border-[#FFFFFF14]  bg-black p-3'>
                       <input
