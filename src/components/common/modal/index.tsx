@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import './style.css'
 
+import down from '@/images/modal/Down.svg'
 import group from '@/images/modal/Group.svg'
 import wallet from '@/images/modal/Wallet.png'
 import alert from '@/images/modal/alert-triangle-light.svg'
@@ -40,6 +41,8 @@ export const Modal = ({
   handleExit,
 }: ModalProps) => {
   const [inputAmt, setInputAmt] = useState<string>('')
+
+  const [viewDetail, setViewDetail] = useState(false)
 
   const [displayData, setDisplayData] = useState<DataDisplayType | undefined>()
   const { balance } = useBalance(displayData?.address_token)
@@ -96,9 +99,9 @@ export const Modal = ({
                 </div>
                 <button
                   onClick={() => setInputAmt(displayData ? displayData.walletBalance.toString() : '')}
-                  className='rounded-full border border-[#ffffff24] px-4 py-[10px] text-[#8F9399] hover:bg-[#ffffff05]'
+                  className='flex h-[34px] w-[62px] items-center justify-center rounded-[32px] border border-[#ffffff24] text-[#8F9399] hover:bg-[#ffffff05]'
                 >
-                  MAX
+                  <div className='text-[14px] leading-[14px] '> MAX</div>
                 </button>
               </div>
             </Dialog.Title>
@@ -239,17 +242,53 @@ export const Modal = ({
             {/*  */}
             <div className='mt-6 flex w-full items-center'>
               <div className='flex-1 text-start'>
-                <button className='flex items-center gap-2 rounded-full px-4 py-2'>
+                <button
+                  onClick={() => {
+                    setViewDetail(!viewDetail)
+                  }}
+                  className='flex items-center gap-2 rounded-full px-4 py-2'
+                >
                   <Image src={eye} alt='setting' width={20} height={20} className='object-cover' />
                   <span className='text-sm font-normal leading-[14px] text-[#848895]'>View details</span>
-                  <Image src={group} alt='setting' width={20} height={20} className='object-cover' />
+                  {viewDetail ? (
+                    <Image src={down} alt='setting' width={20} height={20} className='object-cover' />
+                  ) : (
+                    <Image src={group} alt='setting' width={20} height={20} className='object-cover' />
+                  )}
                 </button>
               </div>
-              <button className='flex items-center gap-2 rounded-full border border-[#FFFFFF24] px-3 py-2'>
+              <button className='flex h-[36px] w-[97px] items-center justify-center gap-2 rounded-full border border-[#FFFFFF24]'>
                 <Image src={setting} alt='setting' width={20} height={20} className='object-cover' />
                 <span className='text-sm font-normal leading-[14px] text-[#8F9399]'>Setting</span>
               </button>
             </div>
+            {viewDetail && (
+              <div>
+                <div className='mt-2 w-full border-[1px] border-solid border-[#FFFFFF1F]'></div>
+                <div className='mt-2 flex flex-col gap-[6px]'>
+                  <div className='flex items-center justify-between'>
+                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Your amount</div>
+                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>0 SOL</div>
+                  </div>
+                  <div className='flex items-center justify-between'>
+                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Health</div>
+                    <div className='text-[14px] font-medium leading-[14px] text-[#00E585]'>100 %</div>
+                  </div>
+                  <div className='flex items-center justify-between'>
+                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Pool size</div>
+                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>842.54k</div>
+                  </div>
+                  <div className='flex items-center justify-between'>
+                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Type</div>
+                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>Global pool</div>
+                  </div>
+                  <div className='flex items-center justify-between'>
+                    <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Oracle</div>
+                    <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>Pyth</div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </Dialog.Panel>
       </BaseModal>
