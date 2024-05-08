@@ -313,7 +313,10 @@ export const Modal = ({
               </>
             ) : (
               <div className='flex flex-col gap-6'>
-                <Dialog.Title as='div' className='flex w-full flex-row items-center gap-[6px] text-[14px]'>
+                <Dialog.Title
+                  as='div'
+                  className='flex w-full flex-row items-center gap-[6px] text-[14px] leading-[14px]'
+                >
                   <div className='h-4 w-4 cursor-pointer' onClick={() => setOpenSetting(false)}>
                     <Image src={ArrorBack} alt='arrow' objectFit='cover' />
                   </div>{' '}
@@ -321,7 +324,7 @@ export const Modal = ({
                 </Dialog.Title>
 
                 <div className='flex w-full flex-col gap-6'>
-                  <div className='flex w-full flex-row items-center gap-[6px] text-[24px]'>
+                  <div className='flex w-full flex-row items-center gap-[6px] text-[24px] leading-[24px]'>
                     Set transaction priority{' '}
                     <div className='h-5 w-5'>
                       <Image src={ic_alert} alt='arlet' objectFit='cover' className=' text-white' />
@@ -341,9 +344,9 @@ export const Modal = ({
                     ))}
                   </div>
 
-                  <div className='flex w-full flex-col items-start gap-4 text-[14px]'>
+                  <div className='flex w-full flex-col items-start gap-4 text-[14px] font-bold'>
                     Or set mannually
-                    <div className='flex h-10 w-full flex-row items-center gap-2 overflow-hidden rounded-xl border-[0.6px] border-[#FFFFFF14]  bg-black p-3'>
+                    <div className='flex h-10 w-full flex-row items-center gap-2 overflow-hidden rounded-xl border-[0.6px] border-[#FFFFFF14] bg-black  p-3 text-[16px] font-medium leading-[16px]'>
                       <input
                         type='number'
                         placeholder='0'
