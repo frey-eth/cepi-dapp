@@ -10,7 +10,7 @@ type CustomTooltipProps = {
 const CustomTooltip = ({ id, content }: CustomTooltipProps) => {
   return (
     <Tooltip anchorSelect={`#${id}`} place='top'>
-      <div className='flex w-[250px] flex-col text-ellipsis text-center'>{content}</div>
+      <div className='w-[250px] overflow-hidden text-wrap'>{content}</div>
     </Tooltip>
   )
 }
