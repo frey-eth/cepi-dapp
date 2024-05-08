@@ -20,7 +20,7 @@ import CustomTooltip from '@/components/common/tooltip'
 const Loans = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
   const [selectAction, setSelectAction] = useState('Lend')
-
+  const tooltipData = [{ id: 'lend_price', content: 'Duc dep trai' }]
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
       {
@@ -55,8 +55,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' id='customarlert' />
+              <div>Price</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='lend_price' />
             </figure>
           )
         },
@@ -77,8 +77,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='hidden items-center justify-center space-x-2 md:flex'>
-              <span>APY</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>APY</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -98,8 +98,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Weight</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Weight</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -117,8 +117,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Deposits</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Deposits</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -139,8 +139,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Global limit</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Global limit</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -158,8 +158,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Utilization</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Utilization</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -175,8 +175,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Wallet Amt</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Wallet Amt</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -249,7 +249,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -271,7 +271,7 @@ const Loans = () => {
           return (
             <figure className='hidden items-center justify-center space-x-2 md:flex'>
               <span>APY</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -292,7 +292,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>LTV</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -309,7 +309,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Available</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -349,7 +349,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Utilization</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -396,7 +396,7 @@ const Loans = () => {
       price: 154.08,
       apy: 0.14,
       weight: 65,
-      deposit: 552.5,
+      deposit: 552,
       globalLimit: 200,
       utilization: 10.55,
       walletAmt: 0.0,
@@ -409,8 +409,8 @@ const Loans = () => {
       price: 216.38,
       apy: 0.02,
       weight: 50,
-      deposit: 119.17,
-      globalLimit: 300.77,
+      deposit: 119,
+      globalLimit: 300,
       utilization: 10.29,
       walletAmt: 0.0,
     },
@@ -422,7 +422,7 @@ const Loans = () => {
       price: 1,
       apy: 8.63,
       weight: 100,
-      deposit: 61.21,
+      deposit: 61,
       globalLimit: 200,
       utilization: 83.87,
       walletAmt: 0.0,
@@ -438,8 +438,8 @@ const Loans = () => {
       price: 154.08,
       apy: 0.15,
       ltv: 65,
-      available: 300.77,
-      total_borrow: 10.29,
+      available: 300,
+      total_borrow: 10,
       utilization: 30.08,
     },
     {
@@ -450,8 +450,8 @@ const Loans = () => {
       price: 216.38,
       apy: 5.07,
       ltv: 77,
-      available: 333.14,
-      total_borrow: 166.87,
+      available: 333,
+      total_borrow: 166,
       utilization: 2.25,
     },
     {
@@ -463,7 +463,7 @@ const Loans = () => {
       apy: 12.03,
       ltv: 80,
       available: 988,
-      total_borrow: 10.29,
+      total_borrow: 10,
       utilization: 83.87,
     },
   ]
@@ -502,7 +502,9 @@ const Loans = () => {
       </div>
 
       <Modal {...modalProps} />
-      <CustomTooltip id='customarlert' content='Powered by Pyth and switchboard' />
+      {tooltipData.map((item, key) => (
+        <CustomTooltip id={item.id} key={key} content={item.content} />
+      ))}
     </main>
   )
 }

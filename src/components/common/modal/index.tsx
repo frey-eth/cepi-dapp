@@ -298,7 +298,7 @@ export const Modal = ({
                     </div>
                     <div className='flex items-center justify-between'>
                       <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Pool size</div>
-                      <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>842.54k</div>
+                      <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>842k</div>
                     </div>
                     <div className='flex items-center justify-between'>
                       <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Type</div>
