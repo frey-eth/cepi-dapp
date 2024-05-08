@@ -33,7 +33,9 @@ const AssetsSupply = () => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal md:mt-0 '>{name}</span>
+              <div className='mt-[3px] h-fit font-helveticaNeue text-[14px] font-normal leading-[14px] md:mt-0'>
+                {name}
+              </div>
             </div>
           )
         },
@@ -49,11 +51,11 @@ const AssetsSupply = () => {
         cell: (info) => {
           const { isError } = info.row.original
           return (
-            <figure className=''>
-              <p className='flex w-[70px] items-center justify-start space-x-2'>
+            <figure>
+              <div className='flex w-[70px] items-center justify-start space-x-2'>
                 <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
                 {isError && <Image src={ic_alert} alt='alert' />}
-              </p>
+              </div>
             </figure>
           )
         },
