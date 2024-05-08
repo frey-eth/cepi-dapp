@@ -312,7 +312,7 @@ export const Modal = ({
                 </div>
               </>
             ) : (
-              <div className='flex flex-col gap-6'>
+              <div className='flex flex-col gap-6 font-helveticaNeue'>
                 <Dialog.Title
                   as='div'
                   className='flex w-full flex-row items-center gap-[6px] text-[14px] leading-[14px]'
