@@ -54,8 +54,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Price</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -76,8 +76,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='hidden items-center justify-center space-x-2 md:flex'>
-              <span>APY</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>APY</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -97,8 +97,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Weight</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Weight</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -116,8 +116,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Deposits</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Deposits</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -138,8 +138,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Global limit</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Global limit</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -157,8 +157,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Utilization</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Utilization</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -174,8 +174,8 @@ const Loans = () => {
         header: () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
-              <span>Wallet Amt</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <div>Wallet Amt</div>
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -248,7 +248,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -270,7 +270,7 @@ const Loans = () => {
           return (
             <figure className='hidden items-center justify-center space-x-2 md:flex'>
               <span>APY</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -291,7 +291,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>LTV</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -308,7 +308,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Available</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -348,7 +348,7 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-center space-x-2'>
               <span>Utilization</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' />
+              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
