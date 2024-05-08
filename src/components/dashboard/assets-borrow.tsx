@@ -31,7 +31,7 @@ const AssetsToBorrow = () => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal '>{name}</span>
+              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal md:mt-0 '>{name}</span>
             </div>
           )
         },
@@ -61,9 +61,14 @@ const AssetsToBorrow = () => {
         cell: (info) => {
           return (
             <figure className='flex w-[70px] items-center justify-start space-x-2'>
-              <p>
+              <p className='flex flex-col items-start justify-start gap-1 text-left md:flex-row md:items-center'>
                 <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
-                <span className='text-[#8F9399]'>${Number(info.getValue()).toLocaleString()}</span>
+
+                <span className='flex text-[#8F9399]'>
+                  <span className='hidden md:block'>{'('}</span>
+                  <span>${Number(info.getValue()).toLocaleString()}</span>
+                  <span className='hidden md:block'>{')'}</span>
+                </span>
               </p>
             </figure>
           )
@@ -153,7 +158,7 @@ const AssetsToBorrow = () => {
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative py-4 pl-4 md:mx-auto md:px-4 md:py-2 '>
           <div className='flex h-[50px] flex-col justify-between lg:flex-row lg:items-center'>
-            <h2 className='text-xl font-medium text-[#fff]'>Assets to borrow</h2>
+            <h2 className='text-xl font-medium text-[#fff]'>Assets to Borrow</h2>
           </div>
 
           <div className='table-custom h-[230px] w-full overflow-y-auto lg:h-[240px]'>

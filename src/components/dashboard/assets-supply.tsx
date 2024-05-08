@@ -33,7 +33,7 @@ const AssetsSupply = () => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal '>{name}</span>
+              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal md:mt-0 '>{name}</span>
             </div>
           )
         },
@@ -148,7 +148,7 @@ const AssetsSupply = () => {
         <Image src={bgAssets} alt='background' fill priority />
         <div className='relative py-4 pl-4 md:mx-auto md:px-4 md:py-2'>
           <div className='flex flex-col justify-between md:h-[50px] lg:flex-row lg:items-center'>
-            <h2 className='text-xl font-medium text-[#fff]'>Assets to supply</h2>
+            <h2 className='text-xl font-medium text-[#fff]'>Assets to Supply</h2>
             <div className='my-4 flex items-center space-x-3'>
               <Checkbox checked={checked} setChecked={setChecked} />
               <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>

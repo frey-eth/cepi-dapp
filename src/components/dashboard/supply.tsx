@@ -24,7 +24,7 @@ const Supply = ({ type }: { type: string }) => {
               <figure>
                 <Image src={icon} alt='icon' />
               </figure>
-              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal '>{name}</span>
+              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal md:mt-0 '>{name}</span>
             </div>
           )
         },
@@ -77,7 +77,7 @@ const Supply = ({ type }: { type: string }) => {
     {
       asset: {
         icon: ic_solana,
-        name: 'Solana',
+        name: 'SOL',
       },
       balance: {
         amount: '0.0010000',
@@ -88,7 +88,7 @@ const Supply = ({ type }: { type: string }) => {
     {
       asset: {
         icon: ic_bonk,
-        name: 'Bonk',
+        name: 'BONK',
       },
       balance: {
         amount: '0.0010000',

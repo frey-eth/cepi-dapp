@@ -17,7 +17,7 @@ const BtnConnect = () => {
   return (
     <div
       onClick={connect}
-      className='w-[140px] cursor-pointer rounded-lg bg-gradient-connect px-2 py-2 text-center text-base text-[#fff] md:w-[161px] md:px-4'
+      className='w-[140px] cursor-pointer rounded-lg bg-gradient-connect px-2 py-2 text-center text-base text-[#000000] md:w-[161px] md:px-4'
     >
       {publicKey ? addressFormatter(publicKey.toBase58() as string) : 'Connect Wallet'}
     </div>

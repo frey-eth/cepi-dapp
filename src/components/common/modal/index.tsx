@@ -345,7 +345,7 @@ export const Modal = ({
                   </div>
 
                   <div className='flex w-full flex-col items-start gap-4 text-[14px] font-bold'>
-                    Or set mannually
+                    Or set manually
                     <div className='flex h-10 w-full flex-row items-center gap-2 overflow-hidden rounded-xl border-[0.6px] border-[#FFFFFF14] bg-black  p-3 text-[16px] font-medium leading-[16px]'>
                       <input
                         type='number'
