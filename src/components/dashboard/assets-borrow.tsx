@@ -39,11 +39,11 @@ const AssetsToBorrow = () => {
         cell: (info) => {
           const { icon, name } = info.row.original.asset
           return (
-            <div className='flex items-center justify-start space-x-3'>
+            <div className='flex items-center justify-start  space-x-3 '>
               <figure>
-                <Image src={icon} alt='icon' />
+                <Image src={icon} alt='icon' className='pt-[1px] md:pt-[1px]' />
               </figure>
-              <span className='mt-[3px] font-helveticaNeue text-[14px] font-normal md:mt-[1px] '>{name}</span>
+              <span className='mt-[1px] font-helveticaNeue text-[14px] font-normal md:mt-[1px] '>{name}</span>
             </div>
           )
         },
