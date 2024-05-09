@@ -31,9 +31,9 @@ const AssetsSupply = () => {
           return (
             <div className='flex items-center justify-start space-x-3'>
               <figure>
-                <Image src={icon} alt='icon' />
+                <Image src={icon} alt='icon' className='mb-[1px]' />
               </figure>
-              <div className='mt-[3px] h-fit font-helveticaNeue text-[14px] font-normal leading-[14px] md:mt-0'>
+              <div className='mt-[3px] h-fit font-helveticaNeue text-[14px] font-normal leading-[14px] md:mt-[1px]'>
                 {name}
               </div>
             </div>
