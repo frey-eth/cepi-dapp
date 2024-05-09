@@ -2,7 +2,7 @@
 import check from '@/icons/filters/check.svg'
 import eclipse from '@/icons/filters/ellipse.svg'
 import eclipseBlue from '@/icons/filters/ellipse_blue.svg'
-import filter from '@/icons/filters/filter.svg'
+import Icfilter from '@/icons/filters/icon-filter.svg'
 import vector from '@/icons/filters/vector.svg'
 
 import Image from 'next/image'
@@ -63,9 +63,8 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           onClick={handleAllPoolsClick}
         >
           <div className='flex items-center justify-between gap-2'>
-            <button className='flex h-3 w-3 items-center justify-center md:h-5 md:w-5'>
-              <Image src={filter} alt='filter' />
-            </button>
+            <Image src={Icfilter} alt='filter' />
+
             <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>
           </div>
           <button>
@@ -99,7 +98,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
       </div>
 
       <div className='flex w-full flex-wrap  items-center gap-1 md:w-fit md:flex-row  md:flex-nowrap md:gap-4 '>
-        <div className='flex w-full flex-row-reverse  flex-wrap items-center justify-between gap-2 md:w-fit md:flex-row'>
+        <div className='flex w-full flex-wrap  items-center  justify-between gap-2 min-[315px]:flex-row min-[414px]:flex-row-reverse md:w-fit md:flex-row'>
           <div className=' flex  items-center justify-start gap-1 bg-transparent '>
             <button
               className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
@@ -133,9 +132,8 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           onClick={handleAllPoolsClick}
         >
           <div className='flex  items-center justify-between gap-2'>
-            <button className='flex h-3 w-5 items-center justify-center md:h-5'>
-              <Image src={filter} alt='filter' />
-            </button>
+            <Image src={Icfilter} alt='filter' />
+
             <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>
           </div>
           <button>
