@@ -22,6 +22,7 @@ import { useBalance } from '../../../../public/hook/useBalance'
 import BaseModal from './BaseModal'
 
 import ArrorBack from '@/icons/arrow-back.svg'
+import CustomTooltip from '../tooltip'
 export type DataDisplayType = {
   title: 'supply' | 'borrow'
   walletBalance: number
@@ -327,7 +328,7 @@ export const Modal = ({
                   <div className='flex w-full flex-row items-center  gap-[6px] font-helveticaNeue text-[24px] font-medium leading-[24px]'>
                     <div>Set transaction priority</div>
                     <div className='mt-[8px] h-5 w-5'>
-                      <Image src={ic_alert} alt='arlet' objectFit='cover' />
+                      <Image src={ic_alert} alt='arlet' objectFit='cover' id='tooltip' />
                     </div>
                   </div>
 
@@ -394,6 +395,7 @@ export const Modal = ({
               </div>
             )}
           </div>
+          <CustomTooltip id='tooltip' content='This additional fee helps boost how a transaction is prioritized.' />
         </Dialog.Panel>
       </BaseModal>
 
