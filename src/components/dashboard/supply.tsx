@@ -126,25 +126,39 @@ const Supply = ({ type }: { type: string }) => {
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
-    <div className='relative flex h-[340px] max-h-[318px] w-full flex-col gap-4 overflow-y-auto rounded-lg border border-[#252B3D26] bg-[rgba(11,13,16,0.8)] p-4'>
+    <div
+      className={`relative ${type === 'supply' ? 'h-[340px]' : 'h-[220px] md:h-[340px]'} flex max-h-[318px] w-full flex-col  gap-4 overflow-y-auto rounded-lg  border border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:border-[#252B3D26]`}
+    >
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-xl font-medium leading-5 text-white'>
           {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
         </div>
         {type == 'supply' ? (
-          <div className='flex h-[26px] w-full flex-row items-center gap-2 leading-[14px] max-sm:justify-between'>
-            <p className='flex h-[26px] flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2 pb-[1px]  max-sm:w-[111px]'>
-              <span className=' text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>Balance</span>
-              <span className=' text-[14px] font-medium leading-4 text-white'>$3.31</span>
+          <div className='flex h-[26px] w-full flex-row items-center leading-[14px] max-sm:justify-between min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
+            <p className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[111px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+              <span className=' font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+                Balance
+              </span>
+              <span className=' font-medium leading-4 text-white min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+                $3.31
+              </span>
             </p>
-            <p className='flex h-[26px] flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2 pb-[1px]  max-sm:w-[111px]'>
-              <span className=' text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>APY</span>
-              <span className=' text-[14px] font-medium leading-4 text-white'>2.16%</span>
+            <p className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[111px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+              <span className=' font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+                APY
+              </span>
+              <span className=' font-medium leading-4 text-white min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+                2.16%
+              </span>
             </p>
-            <p className='flex h-[26px] flex-row items-center justify-center gap-x-[10px] rounded border border-[#3C3937] px-2 pb-[1px]  max-sm:w-[111px]'>
-              <span className=' text-[14px] font-normal leading-4 text-[#8F9399] max-sm:text-[12px]'>Collateral</span>
-              <span className=' text-[14px] font-medium leading-4 text-white'>$3.31</span>
+            <p className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[111px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+              <span className='font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+                Collateral
+              </span>
+              <span className='  font-medium leading-4 text-white min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+                $3.31
+              </span>
             </p>
           </div>
         ) : (

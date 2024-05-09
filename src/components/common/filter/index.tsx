@@ -59,10 +59,10 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           </button>
         </div>
         <div
-          className='relative flex  w-[180px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3  md:hidden md:w-[180px] md:px-4'
+          className='relative flex cursor-pointer  items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 min-[375px]:w-[155px] min-[414px]:w-[180px]  md:hidden md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >
-          <div className='flex items-center justify-between gap-2'>
+          <div className='flex items-center justify-between min-[375px]:gap-1 min-[414px]:gap-2 md:gap-2'>
             <Image src={Icfilter} alt='filter' />
 
             <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>
@@ -76,7 +76,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
                 borderRadius: '8px',
                 background: 'rgba(255, 255, 255, 0.10)',
               }}
-              className='backdropFilter absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2  md:w-[180px] '
+              className='backdropFilter absolute left-0 top-12 z-40 flex flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2 min-[375px]:w-[145px] min-[414px]:w-[180px]  md:w-[180px] '
             >
               {valueFilter.map((value, index) => (
                 <button
@@ -98,7 +98,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
       </div>
 
       <div className='flex w-full flex-wrap  items-center gap-1 md:w-fit md:flex-row  md:flex-nowrap md:gap-4 '>
-        <div className='flex w-full flex-wrap  items-center  justify-between gap-2 min-[315px]:flex-row min-[414px]:flex-row-reverse md:w-fit md:flex-row'>
+        <div className='flex w-full flex-wrap  items-center  justify-between gap-2 min-[315px]:flex-row min-[375px]:flex-row-reverse md:w-fit md:flex-row'>
           <div className=' flex  items-center justify-start gap-1 bg-transparent '>
             <button
               className='flex h-[20px] w-[36.67px] items-center rounded-[20px] bg-[#FFFFFF1A] '
@@ -112,7 +112,10 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
                 )}
               </div>
             </button>
-            <div className='w-fit text-end text-[14px] font-normal leading-[14px] text-white'>USD Denominated</div>
+
+            <div className='w-fit text-end font-normal leading-[14px] text-white min-[375px]:text-[13px] min-[414px]:text-[14px] md:text-[14px]'>
+              USD Denominated
+            </div>
           </div>
           <div className=' flex  items-center justify-start gap-1 bg-transparent '>
             <button
@@ -123,7 +126,9 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
                 {isActive ? <Image src={eclipseBlue} alt='switch_icon' /> : <Image src={eclipse} alt='switch_icon' />}
               </div>
             </button>
-            <div className='w-fit text-end text-[14px] font-normal leading-[14px] text-white'>Filter my positions</div>
+            <div className='w-fit text-end font-normal leading-[14px] text-white min-[375px]:text-[13px] min-[414px]:text-[14px] md:text-[14px]'>
+              Filter my positions
+            </div>
           </div>
         </div>
 

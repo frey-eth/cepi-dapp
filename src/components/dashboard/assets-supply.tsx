@@ -148,7 +148,7 @@ const AssetsSupply = () => {
     <>
       <div className='relative h-[340px] w-full font-helveticaNeue lg:h-[300px]'>
         <Image src={bgAssets} alt='background' fill priority />
-        <div className='relative py-4 pl-4 md:mx-auto md:px-4 md:py-2'>
+        <div className='relative rounded-lg border border-solid border-[#43434352] py-4 pl-4 md:mx-auto md:border-none md:px-4 md:py-2'>
           <div className='flex flex-col justify-between md:h-[50px] lg:flex-row lg:items-center'>
             <h2 className='text-xl font-medium text-[#fff]'>Assets to Supply</h2>
             <div className='my-4 flex items-center space-x-3'>
