@@ -39,23 +39,23 @@ html {
 }
 
 @font-face {
-  font-family: 'HelveticaNeue';
+  font-family: 'Helvetica Neue';
   font-weight: 400;
   src: url('/font/HelveticaNeue/HelveticaNeueRoman.otf') format('woff2');
 }
 @font-face {
-  font-family: 'HelveticaNeue';
+  font-family: 'Helvetica Neue';
   font-weight: 500;
   src: url('/font/HelveticaNeue/HelveticaNeueMedium.otf') format('woff2');
 }
 @font-face {
-  font-family: 'HelveticaNeue';
-  font-weight: 700;
+  font-family: 'Helvetica Neue';
+  font-weight: 600;
   src: url('/font/HelveticaNeue/HelveticaNeueHeavy.otf') format('woff2');
 }
 
 @font-face {
-  font-family: 'HelveticaNeue';
+  font-family: 'Helvetica Neue';
   font-weight: 700;
   src: url('/font/HelveticaNeue/HelveticaNeueBold.otf') format('woff2');
 }
