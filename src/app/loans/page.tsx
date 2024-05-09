@@ -73,7 +73,7 @@ const Loans = () => {
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} />
               </figure>
-              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-0 lg:block'>
+              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[1px] lg:block'>
                 {name}
               </span>
               <div className='flex flex-col  font-normal lg:hidden'>
