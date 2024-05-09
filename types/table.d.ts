@@ -11,7 +11,6 @@ export type GlobalPool = {
   deposit: number
   globalLimit: number
   utilization: number
-  walletAmt: number
 }
 
 export type GlobalPoolBorrow = {

@@ -261,7 +261,7 @@ export const Modal = ({
                       onClick={() => {
                         setViewDetail(!viewDetail)
                       }}
-                      className='flex items-center gap-2 rounded-full px-4 py-2'
+                      className='flex items-center gap-2 rounded-full  py-2'
                     >
                       <Image src={eye} alt='setting' width={20} height={20} className='object-cover' />
                       <span className='text-sm font-normal leading-[14px] text-[#848895]'>View details</span>
@@ -324,14 +324,14 @@ export const Modal = ({
                 </Dialog.Title>
 
                 <div className='flex w-full flex-col items-center gap-6'>
-                  <div className='flex w-full flex-row  items-center gap-[6px] text-[24px] font-medium leading-[24px]'>
+                  <div className='flex w-full flex-row items-center  gap-[6px] font-helveticaNeue text-[24px] font-medium leading-[24px]'>
                     <div>Set transaction priority</div>
                     <div className='mt-[8px] h-5 w-5'>
                       <Image src={ic_alert} alt='arlet' objectFit='cover' />
                     </div>
                   </div>
 
-                  <div className='flex h-[74px] flex-row items-center justify-between gap-2'>
+                  <div className='flex h-[74px] flex-row items-center justify-between gap-2 font-helveticaNeue'>
                     {listPriority.map((priority, index) => (
                       <div
                         className={`flex h-full w-[127px] cursor-pointer flex-col justify-center gap-3 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5] ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}

@@ -208,25 +208,7 @@ const Loans = () => {
         enableSorting: false,
         footer: (props) => props.column.id,
       },
-      {
-        id: 'walletAmt',
-        accessorKey: 'walletAmt',
-        header: () => {
-          return (
-            <figure className='flex items-center justify-center space-x-2'>
-              <div>Wallet Amt</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[2px]' id='walletAmt' />
-            </figure>
-          )
-        },
-        cell: (info) => (
-          <span className='flex items-center justify-start space-x-2 leading-[14px]'>
-            ${Number(info.getValue()).toFixed(2)}
-          </span>
-        ),
-        enableSorting: false,
-        footer: (props) => props.column.id,
-      },
+
       {
         id: 'btn',
         accessorKey: '',
@@ -438,7 +420,6 @@ const Loans = () => {
       deposit: 552,
       globalLimit: 200,
       utilization: 10.55,
-      walletAmt: 0.0,
     },
     {
       asset: {
@@ -451,7 +432,6 @@ const Loans = () => {
       deposit: 119,
       globalLimit: 300,
       utilization: 10.29,
-      walletAmt: 0.0,
     },
     {
       asset: {
@@ -464,7 +444,6 @@ const Loans = () => {
       deposit: 61,
       globalLimit: 200,
       utilization: 83.87,
-      walletAmt: 0.0,
     },
   ]
 
