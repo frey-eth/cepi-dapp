@@ -2,6 +2,7 @@
 
 import down from '@/images/modal/Down.svg'
 import group from '@/images/modal/Group.svg'
+import up from '@/images/modal/Up.svg'
 import wallet from '@/images/modal/Wallet.png'
 import alert from '@/images/modal/alert-triangle-light.svg'
 import background from '@/images/modal/backgroud.png'
@@ -267,9 +268,9 @@ export const Modal = ({
                       <Image src={eye} alt='setting' width={20} height={20} className='object-cover' />
                       <span className='text-sm font-normal leading-[14px] text-[#848895]'>View details</span>
                       {viewDetail ? (
-                        <Image src={down} alt='setting' width={20} height={20} className='object-cover' />
+                        <Image src={up} alt='setting' className='object-cover' />
                       ) : (
-                        <Image src={group} alt='setting' width={20} height={20} className='object-cover' />
+                        <Image src={down} alt='setting' className='object-cover' />
                       )}
                     </button>
                   </div>
