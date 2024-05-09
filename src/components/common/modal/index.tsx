@@ -351,6 +351,15 @@ export const Modal = ({
                         type='number'
                         placeholder='0'
                         className='flex-1 bg-transparent outline-none'
+                        onFocus={(e) =>
+                          e.target.addEventListener(
+                            'wheel',
+                            function (e) {
+                              e.preventDefault()
+                            },
+                            { passive: false }
+                          )
+                        }
                         onChange={(e) => setPriority(parseFloat(e.target.value))}
                       />
                       SOL
