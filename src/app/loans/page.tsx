@@ -71,9 +71,9 @@ const Loans = () => {
           return (
             <div className='flex items-center justify-start space-x-3'>
               <figure>
-                <Image src={icon} alt='icon' width={24} height={24} />
+                <Image src={icon} alt='icon' width={24} height={24} className='mb-[1px]' />
               </figure>
-              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[1px] lg:block'>
+              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[0px] lg:block'>
                 {name}
               </span>
               <div className='flex flex-col  font-normal lg:hidden'>
@@ -264,7 +264,7 @@ const Loans = () => {
           return (
             <div className='flex items-center justify-start space-x-3'>
               <figure>
-                <Image src={icon} alt='icon' width={24} height={24} />
+                <Image src={icon} alt='icon' width={24} height={24} className='mb-[1px]' />
               </figure>
               <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[0px] lg:block'>
                 {name}
