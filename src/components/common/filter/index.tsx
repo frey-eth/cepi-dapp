@@ -134,7 +134,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           <div className='flex  items-center justify-between gap-2'>
             <Image src={Icfilter} alt='filter' />
 
-            <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>
+            <div className='text-[14px]  font-medium leading-[100%]  text-white'> {selectItem}</div>
           </div>
           <button>
             <Image src={vector} alt='vector' />
