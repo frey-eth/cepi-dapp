@@ -69,7 +69,7 @@ const SuccessModal = ({
               <div className='mt-4'>
                 <button
                   type='button'
-                  className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
+                  className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 text-[#000000] hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
                   onClick={handleClose}
                 >
                   Done

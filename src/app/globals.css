@@ -51,13 +51,13 @@ html {
 @font-face {
   font-family: 'Helvetica Neue';
   font-weight: 600;
-  src: url('/font/HelveticaNeue/HelveticaNeueMedium.ttf') format('woff2');
+  src: url('/font/HelveticaNeue/HelveticaNeueBold.ttf') format('woff2');
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
   font-weight: 700;
-  src: url('/font/HelveticaNeue/HelveticaNeueMedium.ttf') format('woff2');
+  src: url('/font/HelveticaNeue/HelveticaNeueBold.ttf') format('woff2');
 }
 
 :root {
