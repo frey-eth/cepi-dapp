@@ -51,7 +51,7 @@ const AssetsSupply = () => {
           return (
             <figure>
               <div className='flex w-[70px] items-center justify-start space-x-2'>
-                <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
+                <span className='block text-left'>{Number(info.getValue())}</span>
                 {isError && <Image src={ic_alert} alt='alert' />}
               </div>
             </figure>
