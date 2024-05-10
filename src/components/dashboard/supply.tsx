@@ -127,7 +127,7 @@ const Supply = ({ type }: { type: string }) => {
 
   return (
     <div
-      className={`relative ${type === 'supply' ? 'h-[340px]' : 'h-[220px] md:h-[340px]'} flex max-h-[318px] w-full flex-col  gap-4 overflow-y-auto rounded-lg  border border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:border-[#252B3D26]`}
+      className={`relative ${type === 'supply' ? 'h-[340px] max-h-[318px]' : 'h-[220px] md:h-[340px]'} flex  w-full flex-col  gap-4 overflow-y-auto rounded-lg  border border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:border-[#252B3D26]`}
     >
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
@@ -164,7 +164,7 @@ const Supply = ({ type }: { type: string }) => {
         ) : (
           <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
         )}
-        <div className='table-custom h-[270px] w-full overflow-y-auto'>
+        <div className='table-custom h-[270px] w-full md:overflow-y-auto'>
           <Table
             className='w-full'
             columns={columns}
