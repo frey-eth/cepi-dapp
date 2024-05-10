@@ -69,11 +69,11 @@ const AssetsToBorrow = () => {
           return (
             <figure className='flex w-[70px] items-center justify-start space-x-2'>
               <p className='flex flex-col items-start justify-start gap-1 text-left md:flex-row md:items-center'>
-                <span className='block text-left'>{Number(info.getValue()).toLocaleString()}</span>
+                <span className='block text-left'>{Number(info.getValue())}</span>
 
                 <span className='flex text-[#8F9399]'>
                   <span className='hidden md:block'>{'('}</span>
-                  <span>${Number(info.getValue()).toLocaleString()}</span>
+                  <span>${Number(info.getValue())}</span>
                   <span className='hidden md:block'>{')'}</span>
                 </span>
               </p>

@@ -42,10 +42,10 @@ const Supply = ({ type }: { type: string }) => {
           return (
             <figure className='flex items-center justify-start'>
               <div className='flex flex-row items-center gap-[6px]'>
-                <div className='text-start'>{balanceAmount.toLocaleString()}</div>
+                <div className='text-start'>{balanceAmount}</div>
                 {balanceValue && (
                   <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
-                    {'('}${balanceValue?.toLocaleString()}
+                    {'('}${balanceValue}
                     {')'}
                   </div>
                 )}
