@@ -104,7 +104,7 @@ export const Modal = ({
             {!openSetting ? (
               <>
                 <Dialog.Title as='div' className='flex w-full items-center'>
-                  <h5 className='flex-1 text-start text-sm font-bold leading-[14px] text-[#ffffff99]'>
+                  <h5 className='flex-1 cursor-pointer text-start text-sm font-bold leading-[14px] text-[#ffffff99]'>
                     Your {displayData?.title}
                   </h5>
                   <div className='flex items-center gap-[16px]'>
@@ -318,11 +318,12 @@ export const Modal = ({
                 <Dialog.Title
                   as='div'
                   className='flex w-full flex-row items-center gap-[6px] text-[14px] leading-[14px]'
+                  onClick={() => setOpenSetting(false)}
                 >
-                  <div className='h-4 w-4 cursor-pointer' onClick={() => setOpenSetting(false)}>
+                  <div className='h-4 w-4 cursor-pointer'>
                     <Image src={ArrorBack} alt='arrow' objectFit='cover' />
-                  </div>{' '}
-                  Your {displayData?.title}
+                  </div>
+                  <div className='cursor-pointer'> Your {displayData?.title}</div>
                 </Dialog.Title>
 
                 <div className='flex w-full flex-col items-center gap-6'>
