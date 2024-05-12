@@ -43,7 +43,15 @@ const AssetsToBorrow = () => {
               <figure>
                 <Image src={icon} alt='icon' className='pt-[1px] md:pt-[1px]' />
               </figure>
-              <span className='mt-[1px] font-helveticaNeue text-[14px] font-normal md:mt-[1px] '>{name}</span>
+              <span className='mt-[1px] hidden font-helveticaNeue text-[14px] font-normal md:mt-[1px] md:block '>
+                {name}
+              </span>
+              <div className=' flex flex-col items-start justify-start  text-left lg:hidden'>
+                <div className='flex h-[20px] items-center pt-[2px] text-left text-[14px] leading-[14px]'>{name}</div>
+                <div className='pt-[1px] md:hidden'>
+                  <Dental percent={Number(info.row.original.apy)} />
+                </div>
+              </div>
             </div>
           )
         },
@@ -68,14 +76,14 @@ const AssetsToBorrow = () => {
         cell: (info) => {
           return (
             <figure className='flex w-[70px] items-center justify-start space-x-2'>
-              <p className='flex flex-col items-start justify-start gap-1 text-left md:flex-row md:items-center'>
+              <p className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-1'>
                 <span className='block text-left'>{Number(info.getValue())}</span>
 
-                <span className='flex text-[#8F9399]'>
-                  <span className='hidden md:block'>{'('}</span>
-                  <span>${Number(info.getValue())}</span>
-                  <span className='hidden md:block'>{')'}</span>
-                </span>
+                <div className='flex text-[#8F9399]'>
+                  <div className='hidden md:block'>{'('}</div>
+                  <div>${Number(info.getValue())}</div>
+                  <div className='hidden md:block'>{')'}</div>
+                </div>
               </p>
             </figure>
           )

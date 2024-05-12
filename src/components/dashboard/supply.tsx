@@ -41,7 +41,7 @@ const Supply = ({ type }: { type: string }) => {
 
           return (
             <figure className='flex items-center justify-start'>
-              <div className='flex flex-row items-center gap-[6px]'>
+              <div className='flex flex-col items-start justify-start md:flex-row md:items-center md:gap-[6px]'>
                 <div className='text-start'>{balanceAmount}</div>
                 {balanceValue && (
                   <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
@@ -135,28 +135,28 @@ const Supply = ({ type }: { type: string }) => {
           {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
         </div>
         {type == 'supply' ? (
-          <div className='flex h-[26px] w-full flex-row items-center leading-[14px] max-sm:justify-between min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
-            <p className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[111px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+          <div className='flex h-[26px] w-full flex-row items-center gap-1 leading-[14px] max-sm:justify-between min-[320px]:flex-wrap min-[375px]:flex-nowrap min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
+            <p className='flex h-[26px] flex-row  items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[118px] max-sm:justify-between  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
               <span className=' font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
                 Balance
               </span>
-              <span className=' font-medium leading-4 text-white min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+              <span className=' font-medium leading-4 text-white max-sm:text-[12px] min-[325px]:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
                 $3.31
               </span>
             </p>
-            <p className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[111px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
-              <span className=' font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+            <p className='flex h-[26px] flex-row  items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[118px] max-sm:justify-between min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+              <span className='font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
                 APY
               </span>
-              <span className=' font-medium leading-4 text-white min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+              <span className=' font-medium leading-4 text-white max-sm:text-[12px] min-[325px]:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
                 2.16%
               </span>
             </p>
-            <p className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[111px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+            <p className='flex h-[26px]  flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[118px] max-sm:justify-between min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
               <span className='font-normal leading-4 text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
                 Collateral
               </span>
-              <span className='  font-medium leading-4 text-white min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+              <span className=' font-medium leading-4 text-white max-sm:text-[12px] min-[325px]:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
                 $3.31
               </span>
             </p>

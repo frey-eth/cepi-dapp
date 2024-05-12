@@ -59,10 +59,10 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           </button>
         </div>
         <div
-          className='relative flex cursor-pointer  items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 min-[375px]:w-[155px] min-[414px]:w-[180px]  md:hidden md:w-[180px] md:px-4'
+          className='relative flex cursor-pointer  items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 min-[320px]:w-[180px] min-[375px]:w-[155px] min-[414px]:w-[180px]  md:hidden md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >
-          <div className='flex items-center justify-between min-[375px]:gap-1 min-[414px]:gap-2 md:gap-2'>
+          <div className='flex items-center justify-between min-[320px]:gap-2 min-[375px]:gap-1 min-[414px]:gap-2 md:gap-2'>
             <Image src={Icfilter} alt='filter' />
 
             <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>
@@ -76,7 +76,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
                 borderRadius: '8px',
                 background: 'rgba(255, 255, 255, 0.10)',
               }}
-              className='backdropFilter absolute left-0 top-12 z-40 flex flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2 min-[375px]:w-[155px] min-[414px]:w-[180px]  md:w-[180px] '
+              className='backdropFilter absolute left-0 top-12 z-40 flex flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2 min-[320px]:w-[180px] min-[375px]:w-[155px] min-[414px]:w-[180px]  md:w-[180px] '
             >
               {valueFilter.map((value, index) => (
                 <button
