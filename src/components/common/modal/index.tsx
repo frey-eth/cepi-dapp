@@ -327,17 +327,17 @@ export const Modal = ({
                 </Dialog.Title>
 
                 <div className='flex w-full flex-col items-center gap-6'>
-                  <div className='flex w-full flex-row items-center  gap-[6px] font-helveticaNeue text-[24px] font-medium leading-[24px]'>
+                  <div className='flex w-full flex-row items-center  gap-[6px] font-helveticaNeue font-medium leading-[24px] min-[320px]:text-[20px] min-[375px]:text-[24px]'>
                     <div>Set transaction priority</div>
                     <div className='mt-[8px] h-5 w-5'>
                       <Image src={ic_alert} alt='arlet' objectFit='cover' id='tooltip' />
                     </div>
                   </div>
 
-                  <div className='flex h-[74px] flex-row items-center justify-between gap-1 md:gap-4'>
+                  <div className='flex h-[74px] flex-row flex-wrap items-center justify-between gap-1 min-[375px]:flex-nowrap md:gap-4'>
                     {listPriority.map((priority, index) => (
                       <div
-                        className={`flex h-full cursor-pointer flex-col justify-center gap-2 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5] min-[375px]:w-[110px] min-[414px]:w-[115px] md:w-[127px] ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
+                        className={`flex h-full cursor-pointer flex-col justify-center gap-2 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5] min-[320px]:w-[115px] min-[375px]:w-[110px] min-[414px]:w-[115px] md:w-[127px] ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
                         key={index}
                         onClick={() => setPriority(priority.value)}
                       >
