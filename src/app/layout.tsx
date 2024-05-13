@@ -78,7 +78,7 @@ export default function RootLayout({
         <SolanaProvider>
           <main className='relative h-full overflow-y-scroll'>
             <Header />
-            <section className='h-fit lg:min-h-[calc(100vh-130px)]'>{children}</section>
+            <section className='h-fit max-sm:mb-[64px] lg:min-h-[calc(100vh-130px)]'>{children}</section>
             <Footer />
             <BottomNavigation />
           </main>

@@ -334,10 +334,11 @@ export const Modal = ({
                     </div>
                   </div>
 
-                  <div className='flex h-[74px] flex-row flex-wrap items-center justify-between gap-1 min-[375px]:flex-nowrap md:gap-4'>
+                  <div className='flex h-[74px] w-full flex-row flex-wrap items-center justify-between md:gap-2'>
                     {listPriority.map((priority, index) => (
                       <div
-                        className={`flex h-full cursor-pointer flex-col justify-center gap-2 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5] min-[320px]:w-[115px] min-[375px]:w-[110px] min-[414px]:w-[115px] md:w-[127px] ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
+                        style={{ width: 'calc(33.3333% - 8px)' }}
+                        className={`flex h-full cursor-pointer flex-col justify-center gap-2 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5]  ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
                         key={index}
                         onClick={() => setPriority(priority.value)}
                       >
