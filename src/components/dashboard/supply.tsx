@@ -131,7 +131,7 @@ const Supply = ({ type }: { type: string }) => {
     >
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
-        <div className='text-xl font-medium leading-5 text-white'>
+        <div className='text-[20px] font-medium leading-5 text-white'>
           {type == 'supply' ? 'Your Supplies' : 'Your Borrows'}
         </div>
         {type == 'supply' ? (
@@ -162,7 +162,7 @@ const Supply = ({ type }: { type: string }) => {
             </div>
           </div>
         ) : (
-          <div className='text-sm font-normal text-[#C6C6C6]'>Nothing borrowed yet</div>
+          <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div>
         )}
         <div className='table-custom h-[270px] w-full md:overflow-y-auto'>
           <Table
