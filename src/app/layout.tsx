@@ -6,7 +6,7 @@ import '@/styles/index.scss'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
-import BottomNavigation from '@/components/common/bottom_navigation'
+import BottomNavigation from '@/components/common/bottom-navigation'
 import Image from 'next/image'
 import './globals.css'
 const monaSans = localFont({
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
   applicationName: 'BlonkFi',
   title: 'Blonkfi',
   description: 'Blonkfi',
-  metadataBase: new URL(String(process.env.REACT_APP_HOST)),
+  metadataBase: new URL(String(process.env.NEXT_PUBLIC_APP_HOST)),
   openGraph: {
     title: 'Global pool',
     description: 'Global pool Blonkfi',
     siteName: 'Blonkfi',
-    url: String(process.env.REACT_APP_HOST),
+    url: String(process.env.NEXT_PUBLIC_APP_HOST),
     type: 'website',
   },
   manifest: './manifest.json',

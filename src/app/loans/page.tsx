@@ -16,7 +16,7 @@ import { useMemo, useState } from 'react'
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import CustomTooltip from '@/components/common/tooltip'
 import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
-import { kFormatter } from '../../../utils/libs/fortmat'
+import { kFormatter } from '../../../utils/libs/format'
 const Loans = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
   const [selectAction, setSelectAction] = useState('Lend')

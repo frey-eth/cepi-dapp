@@ -3,7 +3,7 @@ import logo from '@/images/header/Logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import BtnConnect from '../button/btnConnect'
+import BtnConnect from '../button/btn-connect'
 
 const navbars = [
   {

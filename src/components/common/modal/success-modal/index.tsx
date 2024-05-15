@@ -6,7 +6,7 @@ import share from '@/images/modal/share.svg'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
 import { DataDisplayType } from '..'
-import BaseModal from '../BaseModal'
+import BaseModal from '../base-modal'
 import '../style.css'
 
 const SuccessModal = ({
