@@ -76,7 +76,7 @@ const AssetsToBorrow = () => {
         cell: (info) => {
           return (
             <figure className='flex w-[70px] items-center justify-start space-x-2 pl-4'>
-              <p className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-1'>
+              <div className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-1'>
                 <span className='block text-left'>{Number(info.getValue())}</span>
 
                 <div className='flex text-[#8F9399]'>
@@ -84,7 +84,7 @@ const AssetsToBorrow = () => {
                   <div>${Number(info.getValue())}</div>
                   <div className='hidden md:block'>{')'}</div>
                 </div>
-              </p>
+              </div>
             </figure>
           )
         },
