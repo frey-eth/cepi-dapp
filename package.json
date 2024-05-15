@@ -1,6 +1,6 @@
 {
   "name": "blonkfi-dapp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "env-cmd -f .env/.env.development next dev --turbo",
