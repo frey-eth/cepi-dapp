@@ -70,12 +70,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                               {header.column.getCanSort() && header.column.getNextSortingOrder() === 'desc' && (
                                 <Image src={ic_denta} alt='icon' />
                               )}
-                              {/*  */}
                             </div>
-                            {/* <span
-                          className={`absolute left-0 top-0 z-10 h-full w-full rounded-lg bg-[rgba(0,0,0,0.32)]`}
-                        ></span> */}
-                            {/* // */}
                           </>
                         )}
                       </th>
@@ -93,7 +88,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                 const totalCells = visibleCells.length
 
                 const firstHalfCells = visibleCells.slice(0, hasResponsive ? totalCells - 1 : totalCells)
-                //const secondHalfCells = visibleCells.slice(-1)
+
                 return (
                   <>
                     <tr key={row.id} className=' h-[52px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>

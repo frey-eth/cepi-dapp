@@ -42,7 +42,6 @@ const useModal = (
   const handleSupply = () => {
     setIsLoading(true)
 
-    // TODO: call api
     supplyAction && supplyAction()
 
     setTimeout(() => {

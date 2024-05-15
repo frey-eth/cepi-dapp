@@ -100,7 +100,6 @@ export const Modal = ({
               backgroundRepeat: 'no-repeat',
             }}
           >
-            {/*  */}
             {!openSetting ? (
               <>
                 <Dialog.Title as='div' className='flex w-full items-center'>
@@ -123,10 +122,8 @@ export const Modal = ({
                   </div>
                 </Dialog.Title>
 
-                {/*  */}
                 <div className='mt-2'>
                   <label className='flex w-full items-center gap-2 rounded-xl border-[0.6px] border-[#FFFFFF14] bg-black p-[12px]'>
-                    {/*  */}
                     <div
                       className='flex h-[44px] w-[36%] min-w-[149px] items-center justify-center gap-2 rounded-lg px-4 py-[6px]'
                       style={{
@@ -159,7 +156,7 @@ export const Modal = ({
                         </p>
                       </div>
                     </div>
-                    {/*  */}
+
                     <div className='flex-1'>
                       <input
                         value={inputAmt}
@@ -189,7 +186,6 @@ export const Modal = ({
                   </label>
                 </div>
 
-                {/*  */}
                 {displayData?.title == 'supply' && (
                   <div
                     className={`w-full overflow-hidden transition-all duration-300 ${
@@ -211,7 +207,6 @@ export const Modal = ({
                   </div>
                 )}
 
-                {/*  */}
                 {displayData?.title == 'borrow' && (
                   <div className='w-full overflow-hidden transition-all duration-300'>
                     <div className='mt-6 flex w-full flex-col items-center gap-2'>
@@ -227,7 +222,6 @@ export const Modal = ({
                   </div>
                 )}
 
-                {/*  */}
                 <div className='mt-6'>
                   <button
                     type='button'
@@ -256,7 +250,6 @@ export const Modal = ({
                   </button>
                 </div>
 
-                {/*  */}
                 <div className='mt-6 flex w-full items-center'>
                   <div className='flex-1 text-start'>
                     <button

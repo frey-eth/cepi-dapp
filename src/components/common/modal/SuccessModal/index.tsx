@@ -33,18 +33,14 @@ const SuccessModal = ({
               backgroundRepeat: 'no-repeat',
             }}
           >
-            {/*  */}
             <div className='relative mt-[14px] flex w-full flex-col items-center'>
               <Image src={check} alt='check' width={80} height={80} />
-              {/* <div className='absolute left-0 top-[-88px] flex w-full items-center justify-center'>
-                <Image src={checkBlink} alt='check' width={235} height={235} className='object-cover' />
-              </div> */}
+
               <p className='absolute bottom-[-16px] left-0 w-full text-center text-base font-medium leading-4 text-white'>
                 Deposit Completed
               </p>
             </div>
 
-            {/*  */}
             <div className='mt-[42px] flex w-full items-center justify-center gap-4'>
               <p className='text-2xl font-bold leading-6 text-white'>
                 {Number(inputAmt)} {data?.currency}
@@ -52,7 +48,6 @@ const SuccessModal = ({
               <Image src={data?.assetIcon ?? solana} alt='solana' width={32} height={32} />
             </div>
 
-            {/*  */}
             <div className='mt-8 w-full '>
               <div className='flex w-full items-center justify-between border-t border-[#353535] pt-4 text-sm font-normal leading-[14px]'>
                 <p className='flex-1 text-start !text-[#8F9399] text-inherit'>APY</p>

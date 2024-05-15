@@ -278,7 +278,6 @@ const Loans = () => {
           return (
             <figure className='flex items-center justify-start space-x-2'>
               <span className='leading-[14px]'>${Number(info.getValue()).toFixed(2)}</span>
-              {/* <Image src={ic_finger} alt='finger' /> */}
             </figure>
           )
         },
@@ -490,7 +489,6 @@ const Loans = () => {
     <main className='mx-auto h-full w-full  p-4 pt-10  lg:w-[1288px]'>
       <div className='h-full w-full   lg:min-h-[728px]'>
         <section className='table-custom relative overflow-y-hidden rounded-[16px] border border-solid border-[#43434352] bg-[rgba(255,255,255,0.06)] min-[315px]:h-[450px] min-[320px]:p-4 min-[375px]:h-[380px] min-[375px]:p-2 min-[414px]:h-[400px] min-[414px]:p-4 md:h-[398px] md:overflow-hidden  md:rounded-2xl md:border-none md:p-6'>
-          {/* <Image src={bgGlobalPool} alt='bg' fill priority /> */}
           <div className='backdrop absolute inset-0 rounded-2xl'></div>
           <div className='relative flex flex-col gap-4 md:gap-0'>
             <Filter selectAction={selectAction} setSelectAction={setSelectAction} />

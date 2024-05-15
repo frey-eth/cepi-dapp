@@ -5,7 +5,7 @@ import SolanaProvider from '@/provider/solana-provider'
 import '@/styles/index.scss'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-// import Image from 'next/image'
+
 import BottomNavigation from '@/components/common/bottom_navigation'
 import Image from 'next/image'
 import './globals.css'

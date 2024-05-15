@@ -71,7 +71,7 @@ const AssetsSupply = () => {
       {
         id: 'isCollateral',
         accessorKey: 'isCollateral',
-        // enableSorting: false,
+
         header: () => {
           return <span>Can be collateral</span>
         },

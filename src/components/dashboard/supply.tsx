@@ -109,7 +109,6 @@ const Supply = ({ type }: { type: string }) => {
     },
   ]
 
-  // if data = [] use this!!!!!
   const nonData: ISupply[] = [
     {
       asset: {

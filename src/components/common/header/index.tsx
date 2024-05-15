@@ -45,7 +45,6 @@ const Header = () => {
           </nav>
         </section>
         <section className='flex items-center space-x-4'>
-          {/* <BtnCollectReward /> */}
           <BtnConnect />
         </section>
       </section>
