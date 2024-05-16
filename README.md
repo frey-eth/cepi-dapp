@@ -80,6 +80,7 @@ BLONKFI/
 ## Environment
 
 - [NEXT_PUBLIC_APP_HOST](#environment) - This is domain of project.
+- [NEXT_PUBLIC_APP_ENVIRONMENT](#environment) - Project environment.
 
 ## Version
 
