@@ -24,10 +24,10 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#installation">Installation</a> •
-  <a href="#author">Author</a> •
   <a href="#structure">Structure</a> •
   <a href="#environment">Environment</a> •
-  <a href="#version">Version</a>
+  <a href="#version">Version</a>•
+  <a href="#author">Author</a> 
 </p>
 
 ## Key Features
@@ -45,10 +45,6 @@
 1. Clone this repository.
 2. Run `yarn install` or `npm i`
 3. Run `yarn start:${env}` or `npm run start:${env}` (**dev/stag/prod**)
-
-## Author
-
-Esollabs
 
 ## Structure
 
@@ -85,6 +81,10 @@ BLONKFI/
 ## Version
 
 1.0.0
+
+## Author
+
+Esollabs
 
 ```
 
