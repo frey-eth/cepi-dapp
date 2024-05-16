@@ -12,8 +12,8 @@ import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { AssetsBorrow } from '../../../types/table'
 import { Modal } from '../common/modal'
-import useModal from '../common/modal/hook/useModal'
 import CustomTooltip from '../common/tooltip'
+import useModal from '../../hook/useModal'
 
 const AssetsToBorrow = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()

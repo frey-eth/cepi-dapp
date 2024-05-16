@@ -11,7 +11,7 @@ import { AssetSupply } from '../../../types/table'
 import Checkbox from '../checkbox'
 import BtnSupply from '../common/button/btn-supply'
 import { Modal } from '../common/modal'
-import useModal from '../common/modal/hook/useModal'
+import useModal from '../../hook/useModal'
 import Table from '../common/table'
 import Dental from '../common/table/dental'
 const AssetsSupply = () => {
