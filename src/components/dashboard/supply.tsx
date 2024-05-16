@@ -1,8 +1,4 @@
 'use client'
-import non_token from '@/icons/nonToken.svg'
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
-import ic_usdc from '@/images/global-pool/usdc.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -10,6 +6,9 @@ import { useMemo, useState } from 'react'
 import { ISupply } from '../../../types/table'
 import Dental from '../common/table/dental'
 import Table from '../common/table/index'
+
+import { nonSupplyData, supplyData } from '@/data/supply/supply-data'
+
 const Supply = ({ type }: { type: string }) => {
   const columns = useMemo<ColumnDef<ISupply>[]>(
     () => [
@@ -73,55 +72,6 @@ const Supply = ({ type }: { type: string }) => {
     []
   )
 
-  const data: ISupply[] = [
-    {
-      asset: {
-        icon: ic_solana,
-        name: 'SOL',
-      },
-      balance: {
-        amount: '0.0010000',
-        value: 3.31,
-      },
-      apy: 2.16,
-    },
-    {
-      asset: {
-        icon: ic_bonk,
-        name: 'BONK',
-      },
-      balance: {
-        amount: '0.0010000',
-        value: 3.31,
-      },
-      apy: 2.16,
-    },
-    {
-      asset: {
-        icon: ic_usdc,
-        name: 'USDC',
-      },
-      balance: {
-        amount: '0.0010000',
-        value: 3.31,
-      },
-      apy: 2.16,
-    },
-  ]
-
-  const nonData: ISupply[] = [
-    {
-      asset: {
-        icon: non_token,
-        name: '--',
-      },
-      balance: {
-        amount: '--',
-      },
-      apy: undefined,
-    },
-  ]
-
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
@@ -167,7 +117,7 @@ const Supply = ({ type }: { type: string }) => {
           <Table
             className='w-full'
             columns={columns}
-            data={type == 'supply' ? data : nonData}
+            data={type == 'supply' ? supplyData : nonSupplyData}
             sorting={sorting}
             setSorting={setSorting}
           />

@@ -41,7 +41,7 @@ html {
 @font-face {
   font-family: 'Helvetica Neue';
   font-weight: 400;
-  src: url('/font/HelveticaNeue/HelveticaNeueMedium.ttf') format('woff2');
+  src: url('/font/HelveticaNeue/HelveticaNeueRoman.otf') format('woff2');
 }
 @font-face {
   font-family: 'Helvetica Neue';
@@ -51,7 +51,7 @@ html {
 @font-face {
   font-family: 'Helvetica Neue';
   font-weight: 600;
-  src: url('/font/HelveticaNeue/HelveticaNeueBold.ttf') format('woff2');
+  src: url('/font/HelveticaNeue/HelveticaNeueHeavy.otf') format('woff2');
 }
 
 @font-face {

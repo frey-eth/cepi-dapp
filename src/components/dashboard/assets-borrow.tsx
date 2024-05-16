@@ -3,10 +3,9 @@ import BtnBorrow from '@/components/common/button/btn-borrow'
 import BtnDetail from '@/components/common/button/btn-detail'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
+import { dataBorrow } from '@/data/asset-borrow/asset-borrow'
+import tooltipData from '@/data/tooltip/tooltip-asset-borrow.json'
 import bgAssets from '@/images/portfolio/assets-supply.png'
-import ic_dai from '@/images/portfolio/dai.svg'
-import ic_usdc from '@/images/portfolio/usdc.svg'
-import ic_usdt from '@/images/portfolio/usdt.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -17,17 +16,6 @@ import useModal from '../common/modal/hook/useModal'
 import CustomTooltip from '../common/tooltip'
 
 const AssetsToBorrow = () => {
-  const tooltipData = [
-    {
-      id: 'available',
-      content:
-        'This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached. ',
-    },
-    {
-      id: 'apy',
-      content: `Variable interest rate will fluctuate based on the market conditions. Recommended for short-term positions. `,
-    },
-  ]
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
 
   const columns = useMemo<ColumnDef<AssetsBorrow>[]>(
@@ -141,32 +129,6 @@ const AssetsToBorrow = () => {
 
   const [sorting, setSorting] = useState<SortingState>([])
 
-  const data: AssetsBorrow[] = [
-    {
-      asset: {
-        icon: ic_usdt,
-        name: 'SOL',
-      },
-      available: 2.71,
-      apy: 7.03,
-    },
-    {
-      asset: {
-        icon: ic_dai,
-        name: 'BONK',
-      },
-      available: 2.71,
-      apy: 34.98,
-    },
-    {
-      asset: {
-        icon: ic_usdc,
-        name: 'USDC',
-      },
-      available: 2.71,
-      apy: 22.64,
-    },
-  ]
   return (
     <>
       <div className='relative h-fit max-h-[340px] w-full rounded-lg border border-solid border-[#43434352] font-helveticaNeue  md:border-none  lg:h-[300px] '>
@@ -180,7 +142,7 @@ const AssetsToBorrow = () => {
             <Table
               className='w-[350px] md:w-full'
               columns={columns}
-              data={data}
+              data={dataBorrow}
               sorting={sorting}
               setSorting={setSorting}
             />

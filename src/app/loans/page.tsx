@@ -5,9 +5,6 @@ import { Modal } from '@/components/common/modal'
 import useModal from '@/components/common/modal/hook/useModal'
 import Table from '@/components/common/table'
 import Dental from '@/components/common/table/dental'
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
-import ic_usdc from '@/images/portfolio/usdc.svg'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
@@ -15,51 +12,15 @@ import { useMemo, useState } from 'react'
 
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import CustomTooltip from '@/components/common/tooltip'
+import { data, dataBorrow } from '@/data/global-pool/global-pool-data'
+import tooltipBorrowData from '@/data/tooltip/tooltip-borrow.json'
+import tooltipData from '@/data/tooltip/tooltip.json'
 import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/format'
 const Loans = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()
   const [selectAction, setSelectAction] = useState('Lend')
-  const tooltipData = [
-    { id: 'lend_price', content: 'Powered by Pyth and Switchboard.' },
-    { id: 'apy', content: ` What you'll earn on deposits over a year. This includes compounding. ` },
-    {
-      id: 'weight',
-      content:
-        'How much your assets count for collateral, relative to their USD value. The higher the weight, the more collateral you can borrow against it.',
-    },
-    { id: 'deposit', content: 'Total marginfi deposits for each asset. Everything is denominated in native token.' },
-    {
-      id: 'utilization',
-      content:
-        'Each marginfi pool has global desposit and borrow limits, also known as caps. This is the total amount that all users combined can deposit or borrow a given token.',
-    },
-    {
-      id: 'globalLimit',
-      content:
-        'What percentage of supplied tokens have been borrowed. This helps determine interest rates. This is not based on the global pool limits, which can limit ultiization.',
-    },
-    { id: 'walletAmt', content: 'Powered by Pyth and Switchboard.' },
-  ]
-  const tooltipBorrowData = [
-    { id: 'price', content: 'Powered by Pyth and Switchboard.' },
-    { id: 'apy_borrow', content: `What you'll pay for your borrows over a year. This includes compounding.` },
-    {
-      id: 'ltv',
-      content:
-        'How much you can borrow against your free collateral. The higher the LTV, the more you can borrow your free collateral.',
-    },
 
-    {
-      id: 'available',
-      content: `The amount of tokens available to borrow for each asset. Calculated as the minimum of the asset's borrow limit and available liquidity that has not yet been borrowed.  `,
-    },
-    {
-      id: 'utilization_borrow',
-      content:
-        'What percentage of supplied tokens have been borrowed. This helps determine interest rates. This is not based on the global pool limits, which can limit ultiization.',
-    },
-  ]
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
       {
@@ -407,83 +368,6 @@ const Loans = () => {
     ],
     [handleOpenModal]
   )
-  const data: GlobalPool[] = [
-    {
-      asset: {
-        icon: ic_solana,
-        name: 'Solana',
-      },
-      price: 154.08,
-      apy: 0.14,
-      weight: 65,
-      deposit: 552,
-      globalLimit: 200,
-      utilization: 10.55,
-    },
-    {
-      asset: {
-        icon: ic_bonk,
-        name: 'Bonk',
-      },
-      price: 216.38,
-      apy: 0.02,
-      weight: 50,
-      deposit: 119,
-      globalLimit: 300,
-      utilization: 10.29,
-    },
-    {
-      asset: {
-        icon: ic_usdc,
-        name: 'USDC',
-      },
-      price: 1,
-      apy: 8.63,
-      weight: 100,
-      deposit: 61,
-      globalLimit: 200,
-      utilization: 83.87,
-    },
-  ]
-
-  const dataBorrow: GlobalPoolBorrow[] = [
-    {
-      asset: {
-        icon: ic_solana,
-        name: 'Solana',
-      },
-      price: 154.08,
-      apy: 0.15,
-      ltv: 65,
-      available: 300,
-      total_borrow: 10,
-      utilization: 30.08,
-    },
-    {
-      asset: {
-        icon: ic_bonk,
-        name: 'Bonk',
-      },
-      price: 216.38,
-      apy: 5.07,
-      ltv: 77,
-      available: 333,
-      total_borrow: 166,
-      utilization: 2.25,
-    },
-    {
-      asset: {
-        icon: ic_usdc,
-        name: 'USDC',
-      },
-      price: 1,
-      apy: 12.03,
-      ltv: 80,
-      available: 988,
-      total_borrow: 10,
-      utilization: 83.87,
-    },
-  ]
 
   return (
     <main className='mx-auto h-full w-full  p-4 pt-10  lg:w-[1288px]'>

@@ -1,10 +1,9 @@
 'use client'
+
+import { dataAssetSupply } from '@/data/asset-supply/asset-supply'
 import ic_alert from '@/icons/alert-triangle-light.svg'
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import icCheck from '@/images/portfolio/check.svg'
-import ic_usdc from '@/images/portfolio/usdc.svg'
 import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
@@ -111,37 +110,6 @@ const AssetsSupply = () => {
   )
   const [sorting, setSorting] = useState<SortingState>([])
 
-  const data: AssetSupply[] = [
-    {
-      asset: {
-        icon: ic_solana,
-        name: 'SOL',
-      },
-      walletBalance: 216.38,
-      apy: 2.16,
-      isCollateral: true,
-      isError: true,
-    },
-    {
-      asset: {
-        icon: ic_bonk,
-        name: 'BONK',
-      },
-      walletBalance: 216.38,
-      apy: -2.16,
-      isCollateral: false,
-    },
-    {
-      asset: {
-        icon: ic_usdc,
-        name: 'USDC',
-      },
-      walletBalance: 216.38,
-      apy: 2.15,
-      isCollateral: true,
-    },
-  ]
-
   return (
     <>
       <div className='relative h-[348px] w-full font-helveticaNeue lg:h-[300px]'>
@@ -159,7 +127,7 @@ const AssetsSupply = () => {
             <Table
               className='w-[576px] md:w-full'
               columns={columns}
-              data={data}
+              data={dataAssetSupply}
               sorting={sorting}
               setSorting={setSorting}
             />

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "available",
+    "content": "This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached. "
+  },
+  {
+    "id": "apy",
+    "content": "Variable interest rate will fluctuate based on the market conditions. Recommended for short-term positions. "
+  }
+]

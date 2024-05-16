@@ -1,0 +1,18 @@
+[
+  { "id": "lend_price", "content": "Powered by Pyth and Switchboard." },
+  { "id": "apy", "content": "What you'll earn on deposits over a year. This includes compounding." },
+  {
+    "id": "weight",
+    "content": "How much your assets count for collateral, relative to their USD value. The higher the weight, the more collateral you can borrow against it."
+  },
+  { "id": "deposit", "content": "Total marginfi deposits for each asset. Everything is denominated in native token." },
+  {
+    "id": "utilization",
+    "content": "Each marginfi pool has global desposit and borrow limits, also known as caps. This is the total amount that all users combined can deposit or borrow a given token."
+  },
+  {
+    "id": "globalLimit",
+    "content": "What percentage of supplied tokens have been borrowed. This helps determine interest rates. This is not based on the global pool limits, which can limit ultiization."
+  },
+  { "id": "walletAmt", "content": "Powered by Pyth and Switchboard." }
+]

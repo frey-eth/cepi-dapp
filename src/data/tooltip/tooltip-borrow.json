@@ -1,0 +1,17 @@
+[
+  { "id": "price", "content": "Powered by Pyth and Switchboard." },
+  { "id": "apy_borrow", "content": "What you'll pay for your borrows over a year. This includes compounding." },
+  {
+    "id": "ltv",
+    "content": "How much you can borrow against your free collateral. The higher the LTV, the more you can borrow your free collateral."
+  },
+
+  {
+    "id": "available",
+    "content": "The amount of tokens available to borrow for each asset. Calculated as the minimum of the asset's borrow limit and available liquidity that has not yet been borrowed.  "
+  },
+  {
+    "id": "utilization_borrow",
+    "content": "What percentage of supplied tokens have been borrowed. This helps determine interest rates. This is not based on the global pool limits, which can limit ultiization."
+  }
+]
