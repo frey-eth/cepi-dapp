@@ -2,7 +2,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
 import { useEffect, useMemo, useState } from 'react'
 
-export function useBalance(token_address?: string) {
+export function useBalance(tokenAddress?: string) {
   const [balance, setBalance] = useState(0)
   const [address, setAddress] = useState('')
 
@@ -10,24 +10,26 @@ export function useBalance(token_address?: string) {
   const { publicKey } = useWallet()
 
   useEffect(() => {
-    if (token_address) {
+    if (tokenAddress) {
       fetchTokenBalance()
     } else {
       fetchBalance()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [publicKey, token_address])
+  }, [publicKey, tokenAddress])
 
   const fetchBalance = async () => {
     if (publicKey) {
-      const balance = await connection.getBalance(publicKey)
-      setBalance(balance / LAMPORTS_PER_SOL)
+      const lamports = await connection.getBalance(publicKey)
+      setBalance(lamports / LAMPORTS_PER_SOL)
     }
   }
+
   const fetchTokenBalance = async () => {
-    if (token_address && publicKey) {
-      const balance = await connection.getTokenAccountBalance(new PublicKey(token_address))
-      setBalance((balance as any) / LAMPORTS_PER_SOL)
+    if (tokenAddress && publicKey) {
+      const tokenAccountPublicKey = new PublicKey(tokenAddress)
+      const balanceInfo = await connection.getTokenAccountBalance(tokenAccountPublicKey)
+      setBalance(parseFloat(balanceInfo.value.amount) / LAMPORTS_PER_SOL)
     }
   }
 
@@ -37,5 +39,5 @@ export function useBalance(token_address?: string) {
       address,
       setAddress,
     }
-  }, [balance])
+  }, [address, balance])
 }
