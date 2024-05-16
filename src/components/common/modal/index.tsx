@@ -18,12 +18,12 @@ import './style.css'
 import SuccessModal from './success-modal'
 
 import info from '@/images/modal/alert-circle-light.svg'
-import { useBalance } from '../../../hook/useBalance'
+import { useBalance } from '../../../hooks/useBalance'
 import BaseModal from './base-modal'
 
-import ArrorBack from '@/icons/arrow-back.svg'
+import ArrowBack from '@/icons/arrow-back.svg'
+import { ModalProps } from '../../../hooks/useModal'
 import CustomTooltip from '../tooltip'
-import { ModalProps } from '../../../hook/useModal'
 export type DataDisplayType = {
   title: 'supply' | 'borrow'
   walletBalance: number
@@ -314,7 +314,7 @@ export const Modal = ({
                   onClick={() => setOpenSetting(false)}
                 >
                   <div className='h-4 w-4 cursor-pointer'>
-                    <Image src={ArrorBack} alt='arrow' objectFit='cover' />
+                    <Image src={ArrowBack} alt='arrow' objectFit='cover' />
                   </div>
                   <div className='cursor-pointer'> Your {displayData?.title}</div>
                 </Dialog.Title>

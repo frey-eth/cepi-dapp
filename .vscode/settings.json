@@ -21,5 +21,16 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["blonkfi", "tailwindcss", "commitlint", "solana", "tanstack", "headlessui", "Solflare", "Solong"]
+  "cSpell.words": [
+    "blonkfi",
+    "tailwindcss",
+    "commitlint",
+    "solana",
+    "tanstack",
+    "headlessui",
+    "Solflare",
+    "Solong",
+    "checkmark",
+    "Devnet"
+  ]
 }

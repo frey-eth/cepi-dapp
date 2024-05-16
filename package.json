@@ -31,7 +31,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-tooltip": "^5.26.4",
-    "sass": "^1.74.1"
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
@@ -54,7 +54,8 @@
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
-    "webpack": "^5.91.0"
+    "webpack": "^5.91.0",
+    "sass": "^1.74.1"
   },
   "engines": {
     "node": "^18.18.0 || >=20.0.0"

@@ -11,9 +11,9 @@ import { ColumnDef, SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { AssetsBorrow } from '../../../types/table'
+import useModal from '../../hooks/useModal'
 import { Modal } from '../common/modal'
 import CustomTooltip from '../common/tooltip'
-import useModal from '../../hook/useModal'
 
 const AssetsToBorrow = () => {
   const { handleOpen: handleOpenModal, ...modalProps } = useModal()

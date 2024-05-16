@@ -15,7 +15,10 @@ import { clusterApiUrl } from '@solana/web3.js'
 import { useMemo } from 'react'
 
 const SolanaProvider = ({ children }: { children: React.ReactNode }) => {
-  const network = WalletAdapterNetwork.Devnet
+  const network =
+    process.env.NEXT_PUBLIC_APP_ENVIRONMENT === 'production'
+      ? WalletAdapterNetwork.Mainnet
+      : WalletAdapterNetwork.Devnet
   const endpoint = useMemo(() => clusterApiUrl(network), [network])
   const wallets = useMemo(
     () => [
@@ -29,6 +32,7 @@ const SolanaProvider = ({ children }: { children: React.ReactNode }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
   )
+
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
