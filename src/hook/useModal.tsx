@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { AssetSupply, AssetsBorrow, GlobalPool } from '../../../../../types/table'
+import { AssetsBorrow, AssetSupply, GlobalPool } from '../../types/table'
 
 export type DataModalType = { data: GlobalPool | AssetSupply | AssetsBorrow; type: 'supply' | 'borrow' }
 

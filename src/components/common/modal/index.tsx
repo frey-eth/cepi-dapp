@@ -14,7 +14,6 @@ import { Dialog } from '@headlessui/react'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { ModalProps } from './hook/useModal'
 import './style.css'
 import SuccessModal from './success-modal'
 
@@ -24,6 +23,7 @@ import BaseModal from './base-modal'
 
 import ArrorBack from '@/icons/arrow-back.svg'
 import CustomTooltip from '../tooltip'
+import { ModalProps } from '../../../hook/useModal'
 export type DataDisplayType = {
   title: 'supply' | 'borrow'
   walletBalance: number

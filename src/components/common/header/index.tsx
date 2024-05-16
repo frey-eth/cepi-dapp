@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BtnConnect from '../button/btn-connect'
 
-const navbars = [
+const Navbars = [
   {
     id: 1,
     title: 'Dashboard',
@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
 
           <nav className='hidden items-center space-x-4 lg:flex'>
-            {navbars.map((item, index) => {
+            {Navbars.map((item, index) => {
               return (
                 <Link href={item.href} key={index} className='group relative px-4 py-2'>
                   <span className='text-base font-medium text-[#FFFFFF]'>{item.title}</span>
