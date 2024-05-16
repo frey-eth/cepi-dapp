@@ -1,5 +1,5 @@
 'use client'
-import logo from '@/images/header/Logo.svg'
+import logo from '@/images/header/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

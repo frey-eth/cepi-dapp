@@ -1,4 +1,4 @@
-import non_token from '@/icons/nonToken.svg'
+import non_token from '@/icons/non-token.svg'
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_usdc from '@/images/portfolio/usdc.svg'

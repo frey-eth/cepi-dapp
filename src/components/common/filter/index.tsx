@@ -1,7 +1,7 @@
 'use client'
 import check from '@/icons/filters/check.svg'
+import eclipseBlue from '@/icons/filters/ellipse-blue.svg'
 import eclipse from '@/icons/filters/ellipse.svg'
-import eclipseBlue from '@/icons/filters/ellipse_blue.svg'
 import Icfilter from '@/icons/filters/icon-filter.svg'
 import vector from '@/icons/filters/vector.svg'
 
