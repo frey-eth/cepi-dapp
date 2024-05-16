@@ -1,5 +1,5 @@
 'use client'
-import bgGlobalPool from '@/images/global-pool/noise.png'
+import bgGlobalPool from '@/images/global-pool/noise-icon.png'
 import ic_solana from '@/images/global-pool/sol.svg'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import icCheck from '@/images/portfolio/check.svg'
