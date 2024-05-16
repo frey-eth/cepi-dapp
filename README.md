@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <br>
+  <a href="https://blonkfi.vertiree.com/"><img src="https://i.imgur.com/hxxwzrq.png" alt="Blonkfi" width="200"></a>
+  <br>
+  Blonkfi
+  <br>
+</h1>
 
-## Getting Started
+<h4 align="center"> A decentralized finance platform that allows users to lend, borrow, and earn interest on cryptocurrencies.</h4>
 
-First, run the development server:
+<p align="center">
+ <a href="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+      <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  </a>
+  <a href="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
+         alt="Gitter">
+  </a>
+  <a href="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
+ 
+ 
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#author">Author</a> •
+  <a href="#structure">Structure</a> •
+  <a href="#environment">Environment</a> •
+  <a href="#version">Version</a>
+</p>
+
+## Key Features
+
+- Borrowing and Lending Cryptocurrency Assets
+  - Lenders: Users can deposit cryptocurrency assets into liquidity pools to earn interest.
+  - Borrowers: Users can borrow assets from these liquidity pools by providing collateral of greater value than the borrowed amount.
+- Interest Rate Switching:
+  - Blonkfi allows users to choose between fixed and variable interest rates. Fixed rates provide stability for borrowing costs, while variable rates can take advantage of market fluctuations
+- Diverse Collateral Options:
+  - Blonkfi supports a wide variety of cryptocurrency assets as collateral, offering users more flexibility in their borrowing and lending choices.
+
+## Installation
+
+1. Clone this repository.
+2. Run `yarn install` or `npm i`
+3. Run `yarn start:${env}` or `npm run start:${env}` (**dev/stag/prod**)
+
+## Author
+
+Esollabs
+
+## Structure
+
+```plaintext
+BLONKFI/
+│
+├── .env
+├── .husky/
+├── .next/
+├── .vscode/
+├── node_modules/
+├── public/
+│   ├── fonts/
+│   ├── icons/
+│   ├── images/
+│   ├── styles/
+│
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── data/
+│   ├── hooks/
+│   ├── provider/
+│   ├── types/
+│   └── utils/
+├──
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [NEXT_PUBLIC_APP_HOST](#environment) - This is domain of project.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Version
 
-## Learn More
+1.0.0
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
