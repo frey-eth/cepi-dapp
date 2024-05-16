@@ -1,5 +1,5 @@
-import Footer from '@/components/common/footer'
-import Header from '@/components/common/header'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
 import bgLayout from '@/images/layout/bg-layout.png'
 import SolanaProvider from '@/provider/solana-provider'
 import '@/styles/index.scss'
