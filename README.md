@@ -70,7 +70,6 @@ BLONKFI/
 ├── .husky/
 ├── .next/
 ├── .vscode/
-├── node_modules/
 ├── public/
 │   ├── fonts/
 │   ├── icons/
@@ -90,8 +89,8 @@ BLONKFI/
 
 ## Environment
 
-- [NEXT_PUBLIC_APP_HOST : staging](#environment) - This is domain of project.
-- [NEXT_PUBLIC_APP_ENVIRONMENT : https://blonkfi.vertiree.com](#environment) - Project environment.
+- [NEXT_PUBLIC_APP_HOST : https://blonkfi.vertiree.com ](#environment) - This is domain of project.
+- [NEXT_PUBLIC_APP_ENVIRONMENT : staging](#environment) - Project environment.
 
 ## Version
 
