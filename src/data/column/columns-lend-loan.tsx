@@ -10,7 +10,7 @@ import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/format'
 
 const useColumnsLend = () => {
-  const { handleOpen: handleOpenModal, ...modalPropsLending } = useModal()
+  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -20,13 +20,12 @@ const useColumnsLend = () => {
         header: () => <p className='text-left'>Asset</p>,
         cell: (info) => {
           const { icon, name } = info.row.original.asset
-
           return (
             <div className='flex items-center justify-start space-x-3'>
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} className='mb-[1px]' />
               </figure>
-              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:-mt-[1px] md:flex'>
+              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:-mt-[1px] lg:block'>
                 {name}
               </span>
               <div className='flex flex-col  font-normal lg:hidden'>
@@ -172,7 +171,6 @@ const useColumnsLend = () => {
               <BtnSupply
                 onClick={() => {
                   const data = info.row.original
-
                   handleOpenModal({
                     data: data,
                     type: 'supply',
@@ -189,7 +187,7 @@ const useColumnsLend = () => {
     [handleOpenModal]
   )
 
-  return { columns, modalPropsLending }
+  return { columns, modalProps }
 }
 
 export default useColumnsLend

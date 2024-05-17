@@ -24,10 +24,10 @@ const useColumnsBorrow = () => {
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} className='mb-[1px]' />
               </figure>
-              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[-1px] md:flex'>
+              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[-1px] lg:block'>
                 {name}
               </span>
-              <div className='flex flex-col  font-normal md:hidden'>
+              <div className='flex flex-col  font-normal lg:hidden'>
                 <div className='text-left leading-[14px]'>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />

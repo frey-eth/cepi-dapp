@@ -10,6 +10,7 @@ import { nonSupplyData, supplyData } from '@/data/supply/supply-data'
 
 const Supply = ({ type }: { type: string }) => {
   const { columns } = useColumnsSupply()
+
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (

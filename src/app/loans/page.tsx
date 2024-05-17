@@ -11,10 +11,9 @@ import { data, dataBorrow } from '@/data/global-pool/global-pool-data'
 import tooltipBorrowData from '@/data/tooltip/tooltip-borrow.json'
 import tooltipData from '@/data/tooltip/tooltip.json'
 const Loans = () => {
-  const { columnsBorrow, modalPropsBorrowing } = useColumnsBorrow()
-  const { columns, modalPropsLending } = useColumnsLend()
-
   const [selectAction, setSelectAction] = useState('Lend')
+  const { columns, modalProps } = useColumnsLend()
+  const { columnsBorrow, modalPropsBorrowing } = useColumnsBorrow()
 
   return (
     <main className='mx-auto h-full w-full  p-4 pt-10  lg:w-[1288px]'>
@@ -47,7 +46,8 @@ const Loans = () => {
           </div>
         </section>
       </div>
-      {selectAction === 'Lend' ? <Modal {...modalPropsLending} /> : <Modal {...modalPropsBorrowing} />}
+
+      {selectAction === 'Lend' ? <Modal {...modalProps} /> : <Modal {...modalPropsBorrowing} />}
 
       {tooltipData.map((item, key) => (
         <CustomTooltip id={item.id} key={key} content={item.content} />

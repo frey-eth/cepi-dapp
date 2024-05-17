@@ -86,7 +86,7 @@ const useColumnsAssetBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <div className='hidden w-[70px] items-center justify-start space-x-2 md:flex'>
+            <div className='hidden w-[70px] items-center justify-start space-x-2 lg:block'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
