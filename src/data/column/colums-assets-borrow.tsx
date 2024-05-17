@@ -45,7 +45,7 @@ const useColumnsAssetBorrow = () => {
         accessorKey: 'available',
         header: () => {
           return (
-            <figure className='flex items-center justify-start space-x-2 pl-4'>
+            <figure className='flex items-center justify-start gap-2 pl-4'>
               <span>Available</span>
 
               <div>
@@ -57,14 +57,14 @@ const useColumnsAssetBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <figure className='flex w-[70px] items-center justify-start space-x-2 pl-4'>
-              <div className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-1'>
+            <figure className='flex w-[70px] items-center justify-start gap-2 pl-4'>
+              <div className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-2'>
                 <span className='block text-left'>{Number(info.getValue())}</span>
 
                 <div className='flex text-[#8F9399]'>
-                  <div className='hidden md:block'>{'('}</div>
+                  <div className='hidden md:flex'>{'('}</div>
                   <div>${Number(info.getValue())}</div>
-                  <div className='hidden md:block'>{')'}</div>
+                  <div className='hidden md:flex'>{')'}</div>
                 </div>
               </div>
             </figure>
@@ -77,7 +77,7 @@ const useColumnsAssetBorrow = () => {
         accessorKey: 'apy',
         header: () => {
           return (
-            <figure className='hidden items-center justify-end space-x-2 md:flex'>
+            <figure className='hidden items-center justify-end gap-2 md:flex'>
               <span>APY, variable</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' id='apy' />
             </figure>
@@ -86,7 +86,7 @@ const useColumnsAssetBorrow = () => {
         enableSorting: false,
         cell: (info) => {
           return (
-            <div className='hidden w-[70px] items-center justify-start space-x-2 lg:block'>
+            <div className='hidden w-[70px] items-center justify-start gap-2 lg:flex'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )

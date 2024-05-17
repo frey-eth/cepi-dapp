@@ -42,7 +42,7 @@ const useColumnsAssetSupply = () => {
           const { isError } = info.row.original
           return (
             <figure>
-              <div className='flex w-[70px] items-center justify-start space-x-2'>
+              <div className='flex w-[70px] items-center justify-start gap-2 space-x-2'>
                 <span className='block text-left'>{Number(info.getValue())}</span>
                 {isError && <Image src={ic_alert} alt='alert' />}
               </div>
