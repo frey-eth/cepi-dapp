@@ -90,17 +90,15 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                 const firstHalfCells = visibleCells.slice(0, hasResponsive ? totalCells - 1 : totalCells)
 
                 return (
-                  <>
-                    <tr key={row.id} className=' h-[52px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
-                      {firstHalfCells.map((cell) => {
-                        return (
-                          <td key={cell.id} className='  text-center text-sm font-medium text-[#fff]'>
-                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                          </td>
-                        )
-                      })}
-                    </tr>
-                  </>
+                  <tr key={row.id} className=' h-[52px] border-b-[1px] border-b-[rgba(255,255,255,0.16)]'>
+                    {firstHalfCells.map((cell) => {
+                      return (
+                        <td key={cell.id} className='  text-center text-sm font-medium text-[#fff]'>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </td>
+                      )
+                    })}
+                  </tr>
                 )
               })}
           </tbody>
