@@ -10,11 +10,10 @@ import useColumnsLend from '@/data/column/columns-lend-loan'
 import { data, dataBorrow } from '@/data/global-pool/global-pool-data'
 import tooltipBorrowData from '@/data/tooltip/tooltip-borrow.json'
 import tooltipData from '@/data/tooltip/tooltip.json'
-import useModal from '@/hooks/useModal'
 const Loans = () => {
-  const { columnsBorrow } = useColumnsBorrow()
-  const { columns } = useColumnsLend()
-  const { ...modalProps } = useModal()
+  const { columnsBorrow, modalPropsBorrowing } = useColumnsBorrow()
+  const { columns, modalPropsLending } = useColumnsLend()
+
   const [selectAction, setSelectAction] = useState('Lend')
 
   return (
@@ -48,8 +47,8 @@ const Loans = () => {
           </div>
         </section>
       </div>
+      {selectAction === 'Lend' ? <Modal {...modalPropsLending} /> : <Modal {...modalPropsBorrowing} />}
 
-      <Modal {...modalProps} />
       {tooltipData.map((item, key) => (
         <CustomTooltip id={item.id} key={key} content={item.content} />
       ))}

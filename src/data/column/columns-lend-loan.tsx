@@ -10,7 +10,7 @@ import { GlobalPool } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/format'
 
 const useColumnsLend = () => {
-  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
+  const { handleOpen: handleOpenModal, ...modalPropsLending } = useModal()
 
   const columns = useMemo<ColumnDef<GlobalPool>[]>(
     () => [
@@ -172,6 +172,7 @@ const useColumnsLend = () => {
               <BtnSupply
                 onClick={() => {
                   const data = info.row.original
+
                   handleOpenModal({
                     data: data,
                     type: 'supply',
@@ -188,7 +189,7 @@ const useColumnsLend = () => {
     [handleOpenModal]
   )
 
-  return { columns, modalProps }
+  return { columns, modalPropsLending }
 }
 
 export default useColumnsLend

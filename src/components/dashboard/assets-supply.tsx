@@ -1,113 +1,19 @@
 'use client'
 
 import { dataAssetSupply } from '@/data/asset-supply/asset-supply'
-import ic_alert from '@/icons/alert-triangle-light.svg'
+import useColumnsAssetSupply from '@/data/column/colums-assets-supply'
 import bgAssets from '@/images/portfolio/assets-supply.png'
-import icCheck from '@/images/portfolio/check.svg'
-import { ColumnDef, SortingState } from '@tanstack/react-table'
+import { SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
-import { useMemo, useState } from 'react'
-import { AssetSupply } from '../../../types/table'
-import useModal from '../../hooks/useModal'
-import BtnSupply from '../common/button/btn-supply'
+import { useState } from 'react'
 import Checkbox from '../common/checkbox'
 import { Modal } from '../common/modal'
 import Table from '../common/table'
-import Dental from '../common/table/dental'
 const AssetsSupply = () => {
   const [checked, setChecked] = useState(false)
 
-  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
+  const { columns, modalProps } = useColumnsAssetSupply()
 
-  const columns = useMemo<ColumnDef<AssetSupply>[]>(
-    () => [
-      {
-        id: 'assets',
-        accessorKey: 'assets',
-        header: () => <span className=' gap-2 text-left'>Asset</span>,
-        cell: (info) => {
-          const { icon, name } = info.row.original.asset
-          return (
-            <div className='flex items-center justify-start  space-x-3 '>
-              <figure>
-                <Image src={icon} alt='icon' className='pt-[1px] md:pt-[1px]' />
-              </figure>
-              <span className='mt-[1px] font-helveticaNeue text-[14px] font-normal md:mt-[1px] '>{name}</span>
-            </div>
-          )
-        },
-        sortingFn: (rowA, rowB) => rowB.original.asset.name.localeCompare(rowA.original.asset.name),
-        footer: (props) => props.column.id,
-      },
-      {
-        id: 'walletBalance',
-        accessorKey: 'walletBalance',
-        header: () => {
-          return <span>Wallet balance</span>
-        },
-        cell: (info) => {
-          const { isError } = info.row.original
-          return (
-            <figure>
-              <div className='flex w-[70px] items-center justify-start space-x-2'>
-                <span className='block text-left'>{Number(info.getValue())}</span>
-                {isError && <Image src={ic_alert} alt='alert' />}
-              </div>
-            </figure>
-          )
-        },
-        footer: (props) => props.column.id,
-      },
-      {
-        id: 'apy',
-        accessorKey: 'apy',
-        header: () => {
-          return <span>APY</span>
-        },
-        cell: (info) => <Dental percent={Number(info.getValue())} />,
-        footer: (props) => props.column.id,
-      },
-      {
-        id: 'isCollateral',
-        accessorKey: 'isCollateral',
-
-        header: () => {
-          return <span>Can be collateral</span>
-        },
-        cell: (info) => {
-          return (info.getValue() as boolean) ? (
-            <div className=' flex max-w-[100px] items-center justify-center'>
-              <Image src={icCheck} alt='check' />
-            </div>
-          ) : (
-            ''
-          )
-        },
-        footer: (props) => props.column.id,
-      },
-      {
-        id: 'btn',
-        accessorKey: '',
-        header: '',
-        enableSorting: false,
-        cell: (info) => {
-          return (
-            <BtnSupply
-              onClick={() => {
-                const data = info.row.original
-                handleOpenModal({
-                  data: data,
-                  type: 'supply',
-                })
-              }}
-            />
-          )
-        },
-        footer: (props) => props.column.id,
-      },
-    ],
-    [handleOpenModal]
-  )
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (

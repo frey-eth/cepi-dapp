@@ -9,7 +9,7 @@ import { GlobalPoolBorrow } from '../../../types/table'
 import { kFormatter } from '../../../utils/libs/format'
 
 const useColumnsBorrow = () => {
-  const { handleOpen: handleOpenModal, ...modalProps } = useModal()
+  const { handleOpen: handleOpenModal, ...modalPropsBorrowing } = useModal()
 
   const columnsBorrow = useMemo<ColumnDef<GlobalPoolBorrow>[]>(
     () => [
@@ -184,7 +184,7 @@ const useColumnsBorrow = () => {
     [handleOpenModal]
   )
 
-  return { columnsBorrow, modalProps }
+  return { columnsBorrow, modalPropsBorrowing }
 }
 
 export default useColumnsBorrow
