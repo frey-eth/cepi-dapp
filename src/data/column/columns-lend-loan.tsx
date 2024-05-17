@@ -25,10 +25,10 @@ const useColumnsLend = () => {
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} className='mb-[1px]' />
               </figure>
-              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:-mt-[1px] lg:block'>
+              <span className='mt-[3px] hidden font-helveticaNeue text-[14px] font-normal leading-[14px] md:-mt-[1px] md:flex'>
                 {name}
               </span>
-              <div className='flex flex-col  font-normal lg:hidden'>
+              <div className='flex flex-col font-normal md:hidden'>
                 <div className='text-left text-[14px] leading-[14px]'>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />
@@ -45,7 +45,7 @@ const useColumnsLend = () => {
         accessorKey: 'price',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <div>Price</div>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='lend_price' />
             </figure>
@@ -67,7 +67,7 @@ const useColumnsLend = () => {
         accessorKey: 'apy',
         header: () => {
           return (
-            <figure className='hidden items-center justify-center space-x-2 md:flex'>
+            <figure className='hidden items-center justify-center gap-2 md:flex'>
               <div>APY</div>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy' />
             </figure>
@@ -75,7 +75,7 @@ const useColumnsLend = () => {
         },
         cell: (info) => {
           return (
-            <div className='hidden leading-[14px] md:block'>
+            <div className='hidden leading-[14px] md:flex'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
@@ -88,7 +88,7 @@ const useColumnsLend = () => {
         accessorKey: 'weight',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <div>Weight</div>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='weight' />
             </figure>
@@ -107,7 +107,7 @@ const useColumnsLend = () => {
         accessorKey: 'deposit',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <div>Deposits</div>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='deposit' />
             </figure>
@@ -129,7 +129,7 @@ const useColumnsLend = () => {
         accessorKey: 'globalLimit',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <div>Global limit</div>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='globalLimit' />
             </figure>
@@ -148,7 +148,7 @@ const useColumnsLend = () => {
         accessorKey: 'utilization',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <div>Utilization</div>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='utilization' />
             </figure>

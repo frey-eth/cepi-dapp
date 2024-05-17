@@ -24,10 +24,10 @@ const useColumnsBorrow = () => {
               <figure>
                 <Image src={icon} alt='icon' width={24} height={24} className='mb-[1px]' />
               </figure>
-              <span className='mt-[3px] hidden font-helveticaNeue  text-[14px] font-normal leading-[14px] md:mt-[-1px] lg:block'>
+              <span className='mt-[3px] hidden font-helveticaNeue text-[14px] font-normal leading-[14px] md:mt-[-1px] md:flex'>
                 {name}
               </span>
-              <div className='flex flex-col  font-normal lg:hidden'>
+              <div className='flex flex-col  font-normal md:hidden'>
                 <div className='text-left leading-[14px]'>{name}</div>
                 <div className='md:hidden'>
                   <Dental percent={Number(info.row.original.apy)} />
@@ -44,7 +44,7 @@ const useColumnsBorrow = () => {
         accessorKey: 'price',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <span>Price</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='price' />
             </figure>
@@ -65,7 +65,7 @@ const useColumnsBorrow = () => {
         accessorKey: 'apy',
         header: () => {
           return (
-            <figure className='hidden items-center justify-center space-x-2 md:flex'>
+            <figure className='hidden items-center justify-center gap-2 md:flex'>
               <span>APY</span>
               <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy_borrow' />
             </figure>
@@ -73,7 +73,7 @@ const useColumnsBorrow = () => {
         },
         cell: (info) => {
           return (
-            <div className='hidden leading-[14px] md:block'>
+            <div className='hidden leading-[14px] md:flex'>
               <Dental percent={Number(info.getValue())} />
             </div>
           )
@@ -86,7 +86,7 @@ const useColumnsBorrow = () => {
         accessorKey: 'ltv',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <span>LTV</span>
               <Image id='ltv' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
@@ -103,7 +103,7 @@ const useColumnsBorrow = () => {
         accessorKey: 'available',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <span>Available</span>
               <Image id='available' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
@@ -122,7 +122,7 @@ const useColumnsBorrow = () => {
         accessorKey: 'total_borrow',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <span>Total Borrows</span>
             </figure>
           )
@@ -137,13 +137,12 @@ const useColumnsBorrow = () => {
         enableSorting: false,
         footer: (props) => props.column.id,
       },
-
       {
         id: 'utilization',
         accessorKey: 'utilization',
         header: () => {
           return (
-            <figure className='flex items-center justify-center space-x-2'>
+            <figure className='flex items-center justify-center gap-2'>
               <span>Utilization</span>
               <Image id='utilization_borrow' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>

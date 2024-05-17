@@ -33,17 +33,11 @@ const useColumnsSupply = () => {
         cell: (info) => {
           const balanceAmount = info.row.original.balance.amount
           const balanceValue = info.row.original.balance.value
-
           return (
             <figure className='flex items-center justify-start'>
-              <div className='flex flex-col items-start justify-start md:flex-row md:items-center md:gap-[6px]'>
-                <div className='text-start'>{balanceAmount}</div>
-                {balanceValue && (
-                  <div className='text-start text-sm font-normal leading-[14px] text-[#8F9399]'>
-                    {'('}${balanceValue}
-                    {')'}
-                  </div>
-                )}
+              <div className='flex flex-col items-start justify-center text-start text-sm font-normal leading-[14px] md:flex-row md:items-center md:justify-start md:gap-[6px]'>
+                <p>{balanceAmount}</p>
+                {balanceValue && <p className='text-[#8F9399]'>{`($${balanceValue})`}</p>}
               </div>
             </figure>
           )
