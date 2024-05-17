@@ -10,7 +10,7 @@
 
 <p align="center">
  <a href="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
-      <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+      <img src="https://strapi.dhiwise.com/uploads/Next_JS_Forms_and_Mutations_with_App_Router_OG_Image_e2f9eb6a40.webp" width =54 >
   </a>
   <a href="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
