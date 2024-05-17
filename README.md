@@ -23,6 +23,7 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
+  <a href="#tech-stack">TechStack</a> •
   <a href="#installation">Installation</a> •
   <a href="#structure">Structure</a> •
   <a href="#environment">Environment</a> •
@@ -39,6 +40,20 @@
   - Blonkfi allows users to choose between fixed and variable interest rates. Fixed rates provide stability for borrowing costs, while variable rates can take advantage of market fluctuations
 - Diverse Collateral Options:
   - Blonkfi supports a wide variety of cryptocurrency assets as collateral, offering users more flexibility in their borrowing and lending choices.
+
+## Tech Stack
+
+#### Languages
+
+- HTML
+- CSS
+- TypeScript
+
+#### Frameworks/Libraries
+
+- **React.js:** Used for building user interfaces with a component-based architecture.
+- **Next.js:** A React framework that provides server-side rendering, static site generation, and other features to enhance performance and SEO.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom user interfaces.
 
 ## Installation
 
@@ -75,8 +90,8 @@ BLONKFI/
 
 ## Environment
 
-- [NEXT_PUBLIC_APP_HOST](#environment) - This is domain of project.
-- [NEXT_PUBLIC_APP_ENVIRONMENT](#environment) - Project environment.
+- [NEXT_PUBLIC_APP_HOST : staging](#environment) - This is domain of project.
+- [NEXT_PUBLIC_APP_ENVIRONMENT : https://blonkfi.vertiree.com](#environment) - Project environment.
 
 ## Version
 
