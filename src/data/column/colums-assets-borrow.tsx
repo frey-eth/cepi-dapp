@@ -58,7 +58,7 @@ const useColumnsAssetBorrow = () => {
         cell: (info) => {
           return (
             <figure className='flex w-[70px] items-center justify-start gap-2 pl-4'>
-              <div className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-1.5'>
+              <div className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-2'>
                 <span className='block text-left'>{Number(info.getValue())}</span>
 
                 <div className='flex text-[#8F9399]'>
