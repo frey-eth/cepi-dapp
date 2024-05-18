@@ -59,7 +59,9 @@ Run the following command at the root path of the project
 yarn start:${env} or npm run start:${env}
 ```
 
-(**dev/stag/prod**)
+- **dev**: Development environment used during application development and testing.
+- **stag**: Staging environment serves as an intermediate environment between development and production.
+- **prod**: Production environment where the application runs in real-world scenarios serving end-users.
 
 ## 🔑 Key Features
 
