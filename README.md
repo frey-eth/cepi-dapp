@@ -22,16 +22,46 @@
 </p>
 
 <p align="center">
+  <a href="#getting-started">Getting started</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#tech-stack">TechStack</a> •
-  <a href="#installation">Installation</a> •
   <a href="#structure">Structure</a> •
   <a href="#environment">Environment</a> •
-  <a href="#version">Version</a>•
+  <a href="#version">Version</a> •
   <a href="#author">Author</a> 
 </p>
 
-## Key Features
+## 🚀 Getting Started
+
+#### ⚙️ Prepare the enviroment
+
+1. Make sure you have [nodejs](https://nodejs.org/) install with [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+2. Clone this repository.
+
+3. Install the dependencies
+
+```bash
+   yarn install
+```
+
+or
+
+```bash
+   npm install
+```
+
+#### 🏁 Run app in your browser
+
+Run the following command at the root path of the project
+
+```bash
+yarn start:${env} or npm run start:${env}
+```
+
+(**dev/stag/prod**)
+
+## 🔑 Key Features
 
 - Borrowing and Lending Cryptocurrency Assets
   - Lenders: Users can deposit cryptocurrency assets into liquidity pools to earn interest.
@@ -41,27 +71,21 @@
 - Diverse Collateral Options:
   - Blonkfi supports a wide variety of cryptocurrency assets as collateral, offering users more flexibility in their borrowing and lending choices.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-#### Languages
+#### 💻 Languages
 
 - HTML
 - CSS
 - TypeScript
 
-#### Frameworks/Libraries
+#### 📚 Frameworks/Libraries
 
 - **React.js:** Used for building user interfaces with a component-based architecture.
 - **Next.js:** A React framework that provides server-side rendering, static site generation, and other features to enhance performance and SEO.
 - **Tailwind CSS:** A utility-first CSS framework for rapidly building custom user interfaces.
 
-## Installation
-
-1. Clone this repository.
-2. Run `yarn install` or `npm i`
-3. Run `yarn start:${env}` or `npm run start:${env}` (**dev/stag/prod**)
-
-## Structure
+## 📁 Structure
 
 ```plaintext
 BLONKFI/
@@ -87,16 +111,16 @@ BLONKFI/
 ├──
 ```
 
-## Environment
+## 🌐 Environment
 
 - [NEXT_PUBLIC_APP_HOST : https://blonkfi.vertiree.com ](#environment) - This is domain of project.
 - [NEXT_PUBLIC_APP_ENVIRONMENT : staging](#environment) - Project environment.
 
-## Version
+## 📝 Version
 
 1.0.0
 
-## Author
+## 👤 Author
 
 Esollabs
 
