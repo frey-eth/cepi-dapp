@@ -130,7 +130,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                         return (
                           <td
                             key={cell.id}
-                            className='  py-[6px] text-center text-sm  font-medium text-[#fff] md:py-[4px] '
+                            className='  py-[6px] pl-4 text-center  text-sm font-medium text-[#fff]  md:py-[4px] '
                           >
                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                           </td>

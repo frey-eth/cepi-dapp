@@ -33,9 +33,9 @@
 
 ## 🚀 Getting Started
 
-#### ⚙️ Prepare the enviroment
+#### ⚙️ Prepare the environment
 
-1. Make sure you have [nodejs](https://nodejs.org/) install with [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+1. Make sure you have [Node.js](https://nodejs.org/) installed, preferably with [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/). Ensure that your Node.js version is **20.0.0 or higher**.
 
 2. Clone this repository.
 

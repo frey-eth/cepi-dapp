@@ -3,7 +3,7 @@ import icSolana from '@/images/global-pool/sol.svg'
 import icUsdc from '@/images/portfolio/usdc.svg'
 import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
 
-export const data: GlobalPool[] = [
+export const dataLending: GlobalPool[] = [
   {
     asset: {
       icon: icSolana,

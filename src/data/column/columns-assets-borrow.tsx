@@ -99,7 +99,7 @@ export const getDataColumnsAssetBorrow = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <div className=' flex items-center justify-end gap-2'>
+        <div className=' flex items-center justify-end gap-2 pl-0  md:pl-4'>
           <BtnBorrow
             onClick={() => {
               const data = info.row.original

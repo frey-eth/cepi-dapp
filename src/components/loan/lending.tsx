@@ -1,18 +1,40 @@
 'use client'
 import Table from '@/components/common/table'
 import CustomTooltip from '@/components/common/tooltip'
-import useColumnsLend from '@/data/column/columns-lend-loan'
-import { data } from '@/data/global-pool/global-pool-data'
+import { getDataColumnsLending } from '@/data/column/columns-lend-loan'
+import { dataLending } from '@/data/global-pool/global-pool-data'
 import tooltipData from '@/data/tooltip/tooltip.json'
-// import BorrowModal from '../common/modal/borrow-modal'
+import dynamic from 'next/dynamic'
+import { useCallback, useMemo, useState } from 'react'
+import { DataModalType } from '../../../types/modal'
+import { GlobalPool, Type } from '../../../types/table'
+
+const ModalSupply = dynamic(() => import('../common/modal/supply-modal'), {
+  ssr: false,
+})
 
 const Lending = () => {
-  const { columns } = useColumnsLend()
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [data, setData] = useState<DataModalType | undefined>()
+
+  const onClickSupply = useCallback(({ data, type }: { data: GlobalPool; type: Type }) => {
+    if (!data) return
+    setData({ data: data, type: type })
+    setIsOpen(true)
+  }, [])
+
+  const columnsData = useMemo(() => getDataColumnsLending({ onClickSupply }), [onClickSupply])
 
   return (
     <>
-      <Table hasResponsive columns={columns} data={data} className='custom-table relative w-[1000px] lg:w-full' />
-      {/* <BorrowModal {...modalProps} /> */}
+      <Table
+        hasResponsive
+        columns={columnsData}
+        data={dataLending}
+        className='custom-table relative w-[1000px] lg:w-full'
+      />
+
+      {isOpen && <ModalSupply isOpen={isOpen} data={data} setIsOpen={setIsOpen} />}
       {tooltipData.map((item, key) => (
         <CustomTooltip id={item.id} key={key} content={item.content} />
       ))}

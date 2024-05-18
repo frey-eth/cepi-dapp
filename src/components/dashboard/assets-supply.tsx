@@ -29,7 +29,6 @@ const AssetsSupply = () => {
   }, [])
 
   const columnsData = useMemo(() => getDataColumnsAssetSupply({ onClickSupply }), [onClickSupply])
-  console.log('Log - columnsData:', columnsData)
 
   return (
     <>
