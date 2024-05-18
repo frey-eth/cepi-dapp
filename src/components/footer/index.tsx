@@ -1,5 +1,4 @@
-'use client'
-import teleIcon from '@/icons/footer/telegram.svg'
+import telegramIcon from '@/icons/footer/telegram.svg'
 import xIcon from '@/icons/footer/x.svg'
 import Image from 'next/image'
 const Footer = () => {
@@ -11,7 +10,7 @@ const Footer = () => {
           <Image src={xIcon} alt='twitter icon' />
         </button>
         <button>
-          <Image src={teleIcon} alt='telegram icon' />
+          <Image src={telegramIcon} alt='telegram icon' />
         </button>
       </div>
     </div>

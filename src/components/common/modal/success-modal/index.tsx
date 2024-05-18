@@ -1,11 +1,11 @@
 import background from '@/images/modal/background.png'
 import check from '@/images/modal/check.gif'
-import confeti from '@/images/modal/confeti.gif'
+import confetti from '@/images/modal/confetti.gif'
 import share from '@/images/modal/share.svg'
 import solana from '@/images/modal/solana-icon.svg'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
-import { DataDisplayType } from '..'
+import { DataDisplayType } from '../../../../../types/modal'
 import BaseModal from '../base-modal'
 import '../style.css'
 
@@ -75,7 +75,7 @@ const SuccessModal = ({
         </Dialog.Panel>
 
         <div className='pointer-events-none absolute left-0 top-0 flex h-full w-full items-center justify-center'>
-          <Image src={confeti} alt='solana' fill className='object-contain' />
+          <Image src={confetti} alt='solana' fill className='object-contain' />
         </div>
       </div>
     </BaseModal>

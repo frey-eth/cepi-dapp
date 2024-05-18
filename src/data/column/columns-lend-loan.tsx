@@ -1,7 +1,7 @@
 import BtnSupply from '@/components/common/button/btn-supply'
 import Dental from '@/components/common/table/dental'
 import useModal from '@/hooks/useModal'
-import ic_alert from '@/images/table/alert-circle-light.svg'
+import icAlert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 
 import Image from 'next/image'
@@ -47,7 +47,7 @@ const useColumnsLend = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <div>Price</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='lend_price' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='lend_price' />
             </figure>
           )
         },
@@ -69,7 +69,7 @@ const useColumnsLend = () => {
           return (
             <figure className='hidden items-center justify-center gap-2 md:flex'>
               <div>APY</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy' />
             </figure>
           )
         },
@@ -90,7 +90,7 @@ const useColumnsLend = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <div>Weight</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='weight' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='weight' />
             </figure>
           )
         },
@@ -109,7 +109,7 @@ const useColumnsLend = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <div>Deposits</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='deposit' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='deposit' />
             </figure>
           )
         },
@@ -131,7 +131,7 @@ const useColumnsLend = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <div>Global limit</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='globalLimit' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='globalLimit' />
             </figure>
           )
         },
@@ -150,7 +150,7 @@ const useColumnsLend = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <div>Utilization</div>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='utilization' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='utilization' />
             </figure>
           )
         },

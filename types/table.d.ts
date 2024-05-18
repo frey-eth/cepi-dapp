@@ -1,10 +1,6 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
-export type GlobalPool = {
-  asset: {
-    icon: StaticImport | string
-    name: string
-  }
+export interface GlobalPool extends Asset {
   price: number
   apy: number
   weight: number
@@ -13,11 +9,7 @@ export type GlobalPool = {
   utilization: number
 }
 
-export type GlobalPoolBorrow = {
-  asset: {
-    icon: StaticImport | string
-    name: string
-  }
+export interface GlobalPoolBorrow extends Asset {
   price: number
   apy: number
   ltv: number
@@ -26,22 +18,14 @@ export type GlobalPoolBorrow = {
   utilization: number
 }
 
-export type AssetSupply = {
-  asset: {
-    icon: StaticImport | string
-    name: string
-  }
+export interface AssetSupply extends Asset {
   walletBalance: number
   apy: number
   isCollateral: boolean
   isError?: boolean
 }
 
-export type ISupply = {
-  asset: {
-    icon: StaticImport | string
-    name: string
-  }
+export interface ISupply extends Asset {
   balance: {
     amount: string
     value?: number
@@ -49,11 +33,15 @@ export type ISupply = {
   apy?: number
 }
 
-export type AssetsBorrow = {
+export interface AssetsBorrow extends Asset {
+  available: number
+  apy: number
+}
+
+export interface Asset {
   asset: {
     icon: StaticImport | string
     name: string
   }
-  available: number
-  apy: number
 }
+export type Type = 'borrow' | 'supply'

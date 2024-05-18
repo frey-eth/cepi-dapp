@@ -1,13 +1,13 @@
-import non_token from '@/icons/non-token.svg'
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
-import ic_usdc from '@/images/portfolio/usdc.svg'
+import nonToken from '@/icons/non-token.svg'
+import icBonk from '@/images/global-pool/bonk.svg'
+import icSolana from '@/images/global-pool/sol.svg'
+import icUsdc from '@/images/portfolio/usdc.svg'
 import { ISupply } from '../../../types/table'
 
 export const supplyData: ISupply[] = [
   {
     asset: {
-      icon: ic_solana,
+      icon: icSolana,
       name: 'SOL',
     },
     balance: {
@@ -18,7 +18,7 @@ export const supplyData: ISupply[] = [
   },
   {
     asset: {
-      icon: ic_bonk,
+      icon: icBonk,
       name: 'BONK',
     },
     balance: {
@@ -29,7 +29,7 @@ export const supplyData: ISupply[] = [
   },
   {
     asset: {
-      icon: ic_usdc,
+      icon: icUsdc,
       name: 'USDC',
     },
     balance: {
@@ -43,7 +43,7 @@ export const supplyData: ISupply[] = [
 export const nonSupplyData: ISupply[] = [
   {
     asset: {
-      icon: non_token,
+      icon: nonToken,
       name: '--',
     },
     balance: {

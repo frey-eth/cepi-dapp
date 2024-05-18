@@ -1,12 +1,12 @@
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
-import ic_usdc from '@/images/portfolio/usdc.svg'
+import icBonk from '@/images/global-pool/bonk.svg'
+import icSolana from '@/images/global-pool/sol.svg'
+import icUsdc from '@/images/portfolio/usdc.svg'
 import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
 
 export const data: GlobalPool[] = [
   {
     asset: {
-      icon: ic_solana,
+      icon: icSolana,
       name: 'Solana',
     },
     price: 154.08,
@@ -18,7 +18,7 @@ export const data: GlobalPool[] = [
   },
   {
     asset: {
-      icon: ic_bonk,
+      icon: icBonk,
       name: 'Bonk',
     },
     price: 216.38,
@@ -30,7 +30,7 @@ export const data: GlobalPool[] = [
   },
   {
     asset: {
-      icon: ic_usdc,
+      icon: icUsdc,
       name: 'USDC',
     },
     price: 1,
@@ -45,7 +45,7 @@ export const data: GlobalPool[] = [
 export const dataBorrow: GlobalPoolBorrow[] = [
   {
     asset: {
-      icon: ic_solana,
+      icon: icSolana,
       name: 'Solana',
     },
     price: 154.08,
@@ -57,7 +57,7 @@ export const dataBorrow: GlobalPoolBorrow[] = [
   },
   {
     asset: {
-      icon: ic_bonk,
+      icon: icBonk,
       name: 'Bonk',
     },
     price: 216.38,
@@ -69,7 +69,7 @@ export const dataBorrow: GlobalPoolBorrow[] = [
   },
   {
     asset: {
-      icon: ic_usdc,
+      icon: icUsdc,
       name: 'USDC',
     },
     price: 1,

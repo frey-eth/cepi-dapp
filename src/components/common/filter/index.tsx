@@ -2,7 +2,7 @@
 import check from '@/icons/filters/check.svg'
 import eclipseBlue from '@/icons/filters/ellipse-blue.svg'
 import eclipse from '@/icons/filters/ellipse.svg'
-import Icfilter from '@/icons/filters/icon-filter.svg'
+import icFilter from '@/icons/filters/icon-filter.svg'
 import vector from '@/icons/filters/vector.svg'
 
 import Image from 'next/image'
@@ -63,7 +63,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           onClick={handleAllPoolsClick}
         >
           <div className='flex items-center justify-between min-[320px]:gap-2 min-[375px]:gap-1 min-[414px]:gap-2 md:gap-2'>
-            <Image src={Icfilter} alt='filter' />
+            <Image src={icFilter} alt='filter' />
 
             <div className='text-[14px]  font-normal leading-[14px] text-white'> {selectItem}</div>
           </div>
@@ -137,7 +137,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           onClick={handleAllPoolsClick}
         >
           <div className='flex  items-center justify-between gap-2'>
-            <Image src={Icfilter} alt='filter' />
+            <Image src={icFilter} alt='filter' />
 
             <div className='text-[14px]  font-medium leading-[100%]  text-white'> {selectItem}</div>
           </div>

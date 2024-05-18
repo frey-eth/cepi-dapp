@@ -1,5 +1,6 @@
 import AssetsToBorrow from '@/components/dashboard/assets-borrow'
 import AssetsSupply from '@/components/dashboard/assets-supply'
+import Borrow from '@/components/dashboard/borrow'
 import Supply from '@/components/dashboard/supply'
 
 const DashBoard = () => {
@@ -9,8 +10,8 @@ const DashBoard = () => {
         <section className='relative h-full'>
           <h2 className='mb-6 text-2xl font-medium text-[#fff]'>Portfolio</h2>
           <div className='grid grid-cols-1 gap-6 lg:grid-cols-2'>
-            <Supply type='supply' />
-            <Supply type='borrow' />
+            <Supply />
+            <Borrow />
             <AssetsSupply />
             <AssetsToBorrow />
           </div>

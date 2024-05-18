@@ -1,20 +1,35 @@
 'use client'
 
 import { dataAssetSupply } from '@/data/asset-supply/asset-supply'
-import useColumnsAssetSupply from '@/data/column/colums-assets-supply'
+import { getDataColumnsAssetSupply } from '@/data/column/columns-assets-supply'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import { SortingState } from '@tanstack/react-table'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
+import { DataModalType } from '../../../types/modal'
+import { AssetSupply, Type } from '../../../types/table'
 import Checkbox from '../common/checkbox'
-import { Modal } from '../common/modal'
 import Table from '../common/table'
+
+const ModalSupply = dynamic(() => import('../common/modal/supply-modal'), {
+  ssr: false,
+})
+
 const AssetsSupply = () => {
-  const [checked, setChecked] = useState(false)
-
-  const { columns, modalProps } = useColumnsAssetSupply()
-
+  const [checked, setChecked] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [data, setData] = useState<DataModalType | undefined>()
   const [sorting, setSorting] = useState<SortingState>([])
+
+  const onClickSupply = useCallback(({ data, type }: { data: AssetSupply; type: Type }) => {
+    if (!data) return
+    setData({ data: data, type: type })
+    setIsOpen(true)
+  }, [])
+
+  const columnsData = useMemo(() => getDataColumnsAssetSupply({ onClickSupply }), [onClickSupply])
+  console.log('Log - columnsData:', columnsData)
 
   return (
     <>
@@ -32,7 +47,7 @@ const AssetsSupply = () => {
           <div className=' table-custom2 h-[230px] w-full overflow-y-auto lg:h-[240px]'>
             <Table
               className='w-[576px] md:w-full'
-              columns={columns}
+              columns={columnsData}
               data={dataAssetSupply}
               sorting={sorting}
               setSorting={setSorting}
@@ -40,7 +55,7 @@ const AssetsSupply = () => {
           </div>
         </div>
       </div>
-      <Modal {...modalProps} />
+      {isOpen && <ModalSupply isOpen={isOpen} data={data} setIsOpen={setIsOpen} />}
     </>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
-import ic_upDown from '@/icons/up.svg'
+import icUpDown from '@/icons/up.svg'
 
-import ic_denta from '@/images/portfolio/denta.svg'
+import icDental from '@/images/portfolio/dental.svg'
 import {
   ColumnDef,
   SortingState,
@@ -34,7 +34,6 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
     getSortedRowModel: getSortedRowModel(),
     debugTable: true,
   })
-
   return (
     <div className='flex'>
       <div className='table-custom   w-full overflow-y-auto'>
@@ -64,11 +63,11 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                             >
                               {flexRender(header.column.columnDef.header, header.getContext())}
                               {{
-                                asc: <Image src={ic_upDown} alt='icon' />,
-                                desc: <Image src={ic_upDown} className='rotate-180' alt='icon' />,
+                                asc: <Image src={icUpDown} alt='icon' />,
+                                desc: <Image src={icUpDown} className='rotate-180' alt='icon' />,
                               }[header.column.getIsSorted() as string] ?? null}
                               {header.column.getCanSort() && header.column.getNextSortingOrder() === 'desc' && (
-                                <Image src={ic_denta} alt='icon' />
+                                <Image src={icDental} alt='icon' />
                               )}
                             </div>
                           </>

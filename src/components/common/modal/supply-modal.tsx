@@ -1,5 +1,6 @@
 'use client'
 
+import ArrowBack from '@/icons/arrow-back.svg'
 import alert from '@/images/modal/alert-triangle-light.svg'
 import background from '@/images/modal/background.png'
 import down from '@/images/modal/down-icon.svg'
@@ -11,38 +12,22 @@ import up from '@/images/modal/up-icon.svg'
 import wallet from '@/images/modal/wallet-icon.png'
 import ic_alert from '@/images/table/alert-circle-light.svg'
 import { Dialog } from '@headlessui/react'
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import './style.css'
-import SuccessModal from './success-modal'
-
-import info from '@/images/modal/alert-circle-light.svg'
+import { memo, useCallback, useEffect, useState } from 'react'
+import { DataDisplayType, ModalProps } from '../../../../types/modal'
 import { useBalance } from '../../../hooks/useBalance'
-import BaseModal from './base-modal'
-
-import ArrowBack from '@/icons/arrow-back.svg'
-import { ModalProps } from '../../../hooks/useModal'
 import CustomTooltip from '../tooltip'
-export type DataDisplayType = {
-  title: 'supply' | 'borrow'
-  walletBalance: number
-  assetIcon: string | StaticImport
-  assetName: string
-  currency: string
-  apy: number
-  available: number
-  address_token?: string
-}
-export const Modal = ({
-  isOpen,
-  handleClose,
-  data,
-  isLoading: loading,
-  handleSupply,
-  isSuccess,
-  handleExit,
-}: ModalProps) => {
+import BaseModal from './base-modal'
+import './style.css'
+
+const SuccessModal = dynamic(() => import('./success-modal'), {
+  ssr: false,
+})
+
+const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const [inputAmt, setInputAmt] = useState<string>('')
 
   const [viewDetail, setViewDetail] = useState(false)
@@ -60,6 +45,30 @@ export const Modal = ({
   ]
 
   const [currentPriority, setPriority] = useState(listPriority[0].value)
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false)
+  }, [setIsOpen])
+
+  const handleExit = useCallback(() => {
+    setIsOpen(false)
+    setIsSuccess(false)
+  }, [setIsOpen])
+
+  const handleSupply = useCallback(() => {
+    try {
+      setIsLoading(true)
+      // TODO: handle logic supply
+    } catch (error) {
+      console.log('Log - error:', error)
+    } finally {
+      // state for ui loading
+      setTimeout(() => {
+        setIsLoading(false)
+        setIsSuccess(true)
+      }, 3000)
+    }
+  }, [])
 
   useEffect(() => {
     if (data) {
@@ -127,7 +136,7 @@ export const Modal = ({
                     <div
                       className='flex h-[44px] w-[36%] min-w-[149px] items-center justify-center gap-2 rounded-lg px-4 py-[6px]'
                       style={{
-                        backgroundColor: displayData?.title == 'supply' ? '#18181B' : 'transparent',
+                        backgroundColor: '#18181B',
                       }}
                     >
                       <Image
@@ -144,12 +153,7 @@ export const Modal = ({
                         <p
                           className='mt-[2px] w-full text-start text-xs font-normal leading-[14px]'
                           style={{
-                            color:
-                              displayData && displayData.apy < 0
-                                ? '#dc2626'
-                                : displayData?.title == 'supply'
-                                  ? '#00E585'
-                                  : '#FFD02B',
+                            color: displayData && displayData.apy < 0 ? '#dc2626' : '#00E585',
                           }}
                         >
                           {Math.abs(displayData?.apy ?? 0)}% APY
@@ -186,56 +190,37 @@ export const Modal = ({
                   </label>
                 </div>
 
-                {displayData?.title == 'supply' && (
-                  <div
-                    className={`w-full overflow-hidden transition-all duration-300 ${
-                      inputAmt === '' || parseFloat(inputAmt) === 0
-                        ? 'h-0'
-                        : 'h-[86px] min-[385px]:h-[72px] min-[530px]:h-[56px]'
-                    }`}
-                  >
-                    <div className='mt-4 flex w-full items-center gap-3 rounded-xl bg-[#BF83491A] px-4 py-3'>
-                      <Image src={alert} alt='setting' width={16} height={16} className='object-cover' />
-                      <div className='flex flex-1 flex-col items-start gap-1 text-start text-sm font-medium leading-[14px] text-[#BF8349] min-[530px]:flex-row min-[530px]:items-center'>
-                        <p className='text-inherit'>The oracle data for this bank is stale</p>
-                        <p className='hidden text-inherit min-[530px]:!block'> - </p>
-                        <a href='' className='text-inherit underline'>
-                          Read more
-                        </a>
-                      </div>
+                <div
+                  className={`w-full overflow-hidden transition-all duration-300 ${
+                    inputAmt === '' || parseFloat(inputAmt) === 0
+                      ? 'h-0'
+                      : 'h-[86px] min-[385px]:h-[72px] min-[530px]:h-[56px]'
+                  }`}
+                >
+                  <div className='mt-4 flex w-full items-center gap-3 rounded-xl bg-[#BF83491A] px-4 py-3'>
+                    <Image src={alert} alt='setting' width={16} height={16} className='object-cover' />
+                    <div className='flex flex-1 flex-col items-start gap-1 text-start text-sm font-medium leading-[14px] text-[#BF8349] min-[530px]:flex-row min-[530px]:items-center'>
+                      <p className='text-inherit'>The oracle data for this bank is stale</p>
+                      <p className='hidden text-inherit min-[530px]:!block'> - </p>
+                      <a href='' className='text-inherit underline'>
+                        Read more
+                      </a>
                     </div>
                   </div>
-                )}
-
-                {displayData?.title == 'borrow' && (
-                  <div className='w-full overflow-hidden transition-all duration-300'>
-                    <div className='mt-6 flex w-full flex-col items-center gap-2'>
-                      <div className='flex w-full items-center gap-4'>
-                        <div className='flex flex-1 items-center gap-2'>
-                          <p className='text-sm font-normal leading-[14px] text-white'>Available collateral</p>
-                          <Image src={info} alt='setting' width={16} height={16} className='object-cover' />
-                        </div>
-                        <p className='text-base font-medium leading-4 text-white'>${displayData?.available}</p>
-                      </div>
-                      <div className='h-2 w-full rounded-full bg-[#00E585]' />
-                    </div>
-                  </div>
-                )}
+                </div>
 
                 <div className='mt-6'>
                   <button
                     type='button'
                     className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 transition-all duration-300 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
-                    onClick={() => {
-                      handleSupply && handleSupply()
-                    }}
-                    disabled={loading || inputAmt === '' || parseFloat(inputAmt) === 0}
+                    onClick={handleSupply}
+                    disabled={isLoading || inputAmt === '' || parseFloat(inputAmt) === 0}
                   >
                     <span
                       className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'
-                      style={{ scale: loading ? 0 : 1 }}
+                      style={{ scale: isLoading ? 0 : 1 }}
                     >
-                      {displayData?.title == 'supply' ? 'Supply' : 'Borrow'}
+                      Supply
                     </span>
                     <Image
                       src={spinner}
@@ -244,7 +229,7 @@ export const Modal = ({
                       height={24}
                       className='animate-spin object-cover transition-all duration-300'
                       style={{
-                        scale: loading ? 1 : 0,
+                        scale: isLoading ? 1 : 0,
                       }}
                     />
                   </button>
@@ -370,22 +355,9 @@ export const Modal = ({
                       setOpenSetting(false)
                     }}
                   >
-                    <span
-                      className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'
-                      // style={{ scale: loading ? 0 : 1 }}
-                    >
+                    <span className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'>
                       Save Settings
                     </span>
-                    {/* <Image
-                      src={spinner}
-                      alt='setting'
-                      width={24}
-                      height={24}
-                      className='animate-spin object-cover transition-all duration-300'
-                      style={{
-                        scale: loading ? 1 : 0,
-                      }}
-                    /> */}
                   </button>
                 </div>
               </div>
@@ -395,7 +367,9 @@ export const Modal = ({
         </Dialog.Panel>
       </BaseModal>
 
-      <SuccessModal isOpen={isSuccess} handleClose={handleExit} data={displayData} inputAmt={inputAmt} />
+      {isSuccess && <SuccessModal isOpen={isSuccess} handleClose={handleExit} data={displayData} inputAmt={inputAmt} />}
     </>
   )
 }
+
+export default memo(SupplyModal)

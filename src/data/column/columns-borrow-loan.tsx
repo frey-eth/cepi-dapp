@@ -1,7 +1,7 @@
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import Dental from '@/components/common/table/dental'
 import useModal from '@/hooks/useModal'
-import ic_alert from '@/images/table/alert-circle-light.svg'
+import icAlert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useMemo } from 'react'
@@ -46,7 +46,7 @@ const useColumnsBorrow = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <span>Price</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='price' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='price' />
             </figure>
           )
         },
@@ -67,7 +67,7 @@ const useColumnsBorrow = () => {
           return (
             <figure className='hidden items-center justify-center gap-2 md:flex'>
               <span>APY</span>
-              <Image src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy_borrow' />
+              <Image src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' id='apy_borrow' />
             </figure>
           )
         },
@@ -88,7 +88,7 @@ const useColumnsBorrow = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <span>LTV</span>
-              <Image id='ltv' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image id='ltv' src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -105,7 +105,7 @@ const useColumnsBorrow = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <span>Available</span>
-              <Image id='available' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image id='available' src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
@@ -144,7 +144,7 @@ const useColumnsBorrow = () => {
           return (
             <figure className='flex items-center justify-center gap-2'>
               <span>Utilization</span>
-              <Image id='utilization_borrow' src={ic_alert} alt='icon alert' sizes='16' className='mb-[1px]' />
+              <Image id='utilization_borrow' src={icAlert} alt='icon alert' sizes='16' className='mb-[1px]' />
             </figure>
           )
         },
