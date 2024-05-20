@@ -8,7 +8,6 @@ import down from '@/images/modal/down-icon.svg'
 import eye from '@/images/modal/eye-open.png'
 import group from '@/images/modal/group-icon.svg'
 import setting from '@/images/modal/settings.svg'
-import spinner from '@/images/modal/spinner.svg'
 import up from '@/images/modal/up-icon.svg'
 import wallet from '@/images/modal/wallet-icon.png'
 import { Dialog } from '@headlessui/react'
@@ -20,13 +19,13 @@ import { useBalance } from '../../../../hooks/useBalance'
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
 import SettingModal from '../setting-modal'
+import SubmitButton from '../buttonSubmit'
 
 const SuccessModal = dynamic(() => import('../success-modal'), {
   ssr: false,
 })
 
 const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
-  const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [inputAmt, setInputAmt] = useState<string>('')
   const [viewDetail, setViewDetail] = useState(false)
@@ -53,26 +52,6 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
     setIsOpen(false)
     setIsSuccess(false)
   }, [setIsOpen])
-
-  const handleSupply = useCallback(() => {
-    try {
-      setIsLoading(true)
-    } catch (error) {
-      console.log('Log - error:', error)
-    } finally {
-      setTimeout(() => {
-        setIsLoading(false)
-        setIsSuccess(true)
-      }, 3000)
-    }
-  }, [])
-
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setInputAmt('')
-  //   }
-  // }, [isOpen])
-  // console.log('Supply')
 
   return (
     <>
@@ -188,29 +167,7 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                 </div>
 
                 <div className='mt-6'>
-                  <button
-                    type='button'
-                    className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 transition-all duration-300 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
-                    onClick={handleSupply}
-                    disabled={isLoading || inputAmt === '' || parseFloat(inputAmt) === 0}
-                  >
-                    <span
-                      className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'
-                      style={{ scale: isLoading ? 0 : 1 }}
-                    >
-                      Supply
-                    </span>
-                    <Image
-                      src={spinner}
-                      alt='setting'
-                      width={24}
-                      height={24}
-                      className='animate-spin object-cover transition-all duration-300'
-                      style={{
-                        scale: isLoading ? 1 : 0,
-                      }}
-                    />
-                  </button>
+                  <SubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} />
                 </div>
 
                 <div className='mt-6 flex w-full items-center'>
