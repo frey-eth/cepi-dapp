@@ -10,7 +10,6 @@ import { nonSupplyData } from '@/data/supply/supply-data'
 
 const Borrow = () => {
   const { columns } = useColumnsSupply()
-
   const [sorting, setSorting] = useState<SortingState>([])
 
   return (
@@ -18,7 +17,6 @@ const Borrow = () => {
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-[20px] font-medium leading-5 text-white'>Your Borrows</div>
-
         <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div>
         <div className='table-custom h-[270px] w-full md:overflow-y-auto'>
           <Table className='w-full' columns={columns} data={nonSupplyData} sorting={sorting} setSorting={setSorting} />

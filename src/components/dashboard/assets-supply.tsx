@@ -27,7 +27,6 @@ const AssetsSupply = () => {
     setData({ data: data, type: type })
     setIsOpen(true)
   }, [])
-
   const columnsData = useMemo(() => getDataColumnsAssetSupply({ onClickSupply }), [onClickSupply])
 
   return (

@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 const DashBoardIcon = () => {
@@ -60,7 +61,8 @@ const menus = [
 ]
 
 const BottomNavigation = () => {
-  const [currentTab, setCurrentTab] = useState<number>(1)
+  const pathName = usePathname()
+  const [currentTab, setCurrentTab] = useState<number>(pathName == '/' ? 1 : 2)
   return (
     <div className='fixed bottom-0 z-10 flex h-[64px] w-full justify-around bg-black px-2 py-[10px] text-white sm:hidden'>
       {menus.map((item) => (
