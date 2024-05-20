@@ -12,7 +12,7 @@ import { DataModalType } from '../../../types/modal'
 import { AssetsBorrow, Type } from '../../../types/table'
 import CustomTooltip from '../common/tooltip'
 
-const ModalBorrow = dynamic(() => import('../common/modal/borrow/borrow-modal'), {
+const ModalBorrow = dynamic(() => import('../common/modal/borrow'), {
   ssr: false,
 })
 

@@ -9,7 +9,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { DataModalType } from '../../../types/modal'
 import { GlobalPool, Type } from '../../../types/table'
 
-const ModalSupply = dynamic(() => import('../common/modal/supply/supply-modal'), {
+const ModalSupply = dynamic(() => import('../common/modal/supply'), {
   ssr: false,
 })
 
