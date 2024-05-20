@@ -45,13 +45,6 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
 
   const { balance } = useBalance(dData?.address_token)
 
-  // const listPriority = [
-  //   { title: 'Normal', value: 0 },
-  //   { title: 'High', value: 0.00005 },
-  //   { title: 'Mamas', value: 0.005 },
-  // ]
-  // const [currentPriority, setPriority] = useState(listPriority[0].value)
-
   const handleClose = useCallback(() => {
     setIsOpen(false)
   }, [setIsOpen])

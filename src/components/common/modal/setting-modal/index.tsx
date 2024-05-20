@@ -18,7 +18,6 @@ const listPriority = [
 
 const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
   const [currentPriority, setPriority] = useState(listPriority[0].value)
-  console.log('setting')
   return (
     <div className='flex flex-col gap-6 font-helveticaNeue'>
       <Dialog.Title
