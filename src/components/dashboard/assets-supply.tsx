@@ -12,7 +12,7 @@ import { AssetSupply, Type } from '../../../types/table'
 import Checkbox from '../common/checkbox'
 import Table from '../common/table'
 
-const ModalSupply = dynamic(() => import('../common/modal/supply-modal'), {
+const ModalSupply = dynamic(() => import('../common/modal/supply/supply-modal'), {
   ssr: false,
 })
 

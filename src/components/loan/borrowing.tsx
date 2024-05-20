@@ -9,7 +9,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { DataModalType } from '../../../types/modal'
 import { GlobalPoolBorrow, Type } from '../../../types/table'
 
-const ModalBorrow = dynamic(() => import('../common/modal/borrow-modal'), {
+const ModalBorrow = dynamic(() => import('../common/modal/borrow/borrow-modal'), {
   ssr: false,
 })
 const Borrowing = () => {
