@@ -9,7 +9,7 @@ export interface ModalProps {
 }
 
 export type DataDisplayType = {
-  title: 'supply' | 'borrow'
+  title: 'supply' | 'borrow' | undefined
   walletBalance: number
   assetIcon: string | StaticImport
   assetName: string

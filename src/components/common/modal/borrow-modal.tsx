@@ -33,10 +33,20 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
   const [viewDetail, setViewDetail] = useState(false)
 
   const [openSetting, setOpenSetting] = useState(false)
+  const d = data?.data
 
-  const [displayData, setDisplayData] = useState<DataDisplayType | undefined>()
+  const dData: DataDisplayType = {
+    title: data?.type || undefined,
+    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 10,
+    assetIcon: d?.asset?.icon ?? group,
+    assetName: d?.asset?.name,
+    currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
+    apy: d?.apy,
+    available: 'available' in d ? d?.available : 7.41,
+    address_token: '',
+  }
 
-  const { balance } = useBalance(displayData?.address_token)
+  const { balance } = useBalance(dData?.address_token)
 
   const listPriority = [
     { title: 'Normal', value: 0 },
@@ -71,26 +81,6 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
   }, [])
 
   useEffect(() => {
-    if (data) {
-      const d = data.data
-
-      const dData: DataDisplayType = {
-        title: data.type,
-        walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 10,
-        assetIcon: d?.asset?.icon ?? group,
-        assetName: d?.asset?.name,
-        currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
-        apy: d?.apy,
-        available: 'available' in d ? d?.available : 7.41,
-        address_token: '',
-      }
-      setDisplayData(dData)
-    } else {
-      setDisplayData(undefined)
-    }
-  }, [data])
-
-  useEffect(() => {
     if (isOpen) {
       setInputAmt('')
     }
@@ -113,17 +103,17 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
               <>
                 <Dialog.Title as='div' className='flex w-full items-center'>
                   <h5 className='flex-1 cursor-pointer text-start text-sm font-bold leading-[14px] text-[#ffffff99]'>
-                    Your {displayData?.title}
+                    Your {dData?.title}
                   </h5>
                   <div className='flex items-center gap-[16px]'>
                     <div className='flex items-center gap-[8px]'>
                       <Image src={wallet} width={20} height={20} alt='image' className='object-cover' />
                       <p className='mt-[2px] text-sm font-normal leading-[10px]'>
-                        {balance} {displayData?.currency}
+                        {balance} {dData?.currency}
                       </p>
                     </div>
                     <div
-                      onClick={() => setInputAmt(displayData ? displayData.walletBalance.toString() : '')}
+                      onClick={() => setInputAmt(dData ? dData.walletBalance.toString() : '')}
                       className=' flex h-[34px] w-[62px] cursor-pointer items-center justify-center rounded-[32px] border border-[#ffffff24] text-[14px] leading-[14px] text-[#8F9399] hover:bg-[#ffffff05]'
                     >
                       <div className='mt-[2px]'>MAX</div>
@@ -140,7 +130,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                       }}
                     >
                       <Image
-                        src={displayData?.assetIcon ?? group}
+                        src={dData?.assetIcon ?? group}
                         width={32}
                         height={32}
                         alt='image'
@@ -148,15 +138,15 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                       />
                       <div className='flex-1'>
                         <p className='w-full text-start text-sm font-medium leading-[14px] text-white'>
-                          {displayData?.assetName}
+                          {dData?.assetName}
                         </p>
                         <p
                           className='mt-[2px] w-full text-start text-xs font-normal leading-[14px]'
                           style={{
-                            color: displayData && displayData.apy < 0 ? '#dc2626' : '#FFD02B',
+                            color: dData && dData.apy < 0 ? '#dc2626' : '#FFD02B',
                           }}
                         >
-                          {Math.abs(displayData?.apy ?? 0)}% APY
+                          {Math.abs(dData?.apy ?? 0)}% APY
                         </p>
                       </div>
                     </div>
@@ -171,12 +161,12 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                             return
                           }
 
-                          if (!displayData) {
+                          if (!dData) {
                             return
                           }
 
-                          if (parseFloat(value) > displayData.walletBalance) {
-                            setInputAmt(displayData.walletBalance.toString())
+                          if (parseFloat(value) > dData.walletBalance) {
+                            setInputAmt(dData.walletBalance.toString())
                           } else {
                             setInputAmt(value)
                           }
@@ -197,7 +187,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                         <p className='text-sm font-normal leading-[14px] text-white'>Available collateral</p>
                         <Image src={info} alt='setting' width={16} height={16} className='object-cover' />
                       </div>
-                      <p className='text-base font-medium leading-4 text-white'>${displayData?.available}</p>
+                      <p className='text-base font-medium leading-4 text-white'>${dData?.available}</p>
                     </div>
                     <div className='h-2 w-full rounded-full bg-[#00E585]' />
                   </div>
@@ -295,7 +285,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                   <div className='h-4 w-4 cursor-pointer'>
                     <Image src={ArrowBack} alt='arrow' objectFit='cover' />
                   </div>
-                  <div className='cursor-pointer'> Your {displayData?.title}</div>
+                  <div className='cursor-pointer'> Your {dData?.title}</div>
                 </Dialog.Title>
 
                 <div className='flex w-full flex-col items-center gap-6'>
@@ -361,7 +351,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
         </Dialog.Panel>
       </BaseModal>
 
-      {isSuccess && <SuccessModal isOpen={isSuccess} handleClose={handleExit} data={displayData} inputAmt={inputAmt} />}
+      {isSuccess && <SuccessModal isOpen={isSuccess} handleClose={handleExit} data={dData} inputAmt={inputAmt} />}
     </>
   )
 }
