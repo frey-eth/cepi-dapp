@@ -1,5 +1,10 @@
 'use client'
 
+import './style.css'
+
+import { memo, useCallback, useEffect, useState } from 'react'
+import { DataDisplayType, ModalProps } from '../../../../types/modal'
+
 import ArrowBack from '@/icons/arrow-back.svg'
 import info from '@/images/modal/alert-circle-light.svg'
 import background from '@/images/modal/background.png'
@@ -10,16 +15,13 @@ import setting from '@/images/modal/settings.svg'
 import spinner from '@/images/modal/spinner.svg'
 import up from '@/images/modal/up-icon.svg'
 import wallet from '@/images/modal/wallet-icon.png'
-import ic_alert from '@/images/table/alert-circle-light.svg'
+import icAlert from '@/images/table/alert-circle-light.svg'
 import { Dialog } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { memo, useCallback, useEffect, useState } from 'react'
-import { DataDisplayType, ModalProps } from '../../../../types/modal'
 import { useBalance } from '../../../hooks/useBalance'
 import CustomTooltip from '../tooltip'
 import BaseModal from './base-modal'
-import './style.css'
 
 const SuccessModal = dynamic(() => import('./success-modal'), {
   ssr: false,
@@ -292,7 +294,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                   <div className='flex w-full flex-row items-center  gap-[6px] font-helveticaNeue font-medium leading-[24px] min-[320px]:text-[20px] min-[375px]:text-[24px]'>
                     <div>Set transaction priority</div>
                     <div className='mt-[8px] h-5 w-5'>
-                      <Image src={ic_alert} alt='arlet' objectFit='cover' id='tooltip' />
+                      <Image src={icAlert} alt='arlet' objectFit='cover' id='tooltip' />
                     </div>
                   </div>
 
