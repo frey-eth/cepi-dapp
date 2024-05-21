@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const SelfInfomation = () => {
   return (
-    <div className='flex w-full max-w-sm flex-col gap-6 rounded-2xl bg-[#0B0D10CC] p-6 font-helveticaNeue'>
+    <div className='flex h-fit w-full max-w-sm flex-col gap-6 rounded-2xl bg-[#0B0D10CC] p-6 font-helveticaNeue'>
       <h3 className='text-[16px] font-medium leading-[16px]'>Your info</h3>
       <div className='flex flex-col gap-6'>
         <div className='flex h-10 flex-row gap-2'>
