@@ -1,3 +1,4 @@
+import spinner from '@/images/modal/spinner.svg'
 import icAlert from '@/images/table/white-alert.svg'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -16,12 +17,14 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
   const handleApprove = () => {
     setIsLoading(true)
     setTimeout(() => {
-      setButtonText(`Repaying ${assetName}...`)
       setShowRepay(false)
       setTimeout(() => {
-        setIsLoading(false)
-        setIsSuccess(true)
-        setButtonText('Successfully repaid')
+        setButtonText(`Repaying ${assetName}...`)
+        setTimeout(() => {
+          setIsLoading(false)
+          setIsSuccess(true)
+          setButtonText('Successfully repaid')
+        }, 3000)
       }, 3000)
     }, 3000)
   }
@@ -36,7 +39,20 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
       >
         <span className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 text-center align-middle text-inherit'>
           {isLoading ? buttonText : `Approve ${assetName} to continue`}
-          <Image src={icAlert} alt='alert' width={16} height={16} />
+          {isLoading ? (
+            <Image
+              src={spinner}
+              alt='setting'
+              width={16}
+              height={16}
+              className='animate-spin object-cover transition-all duration-300'
+              style={{
+                scale: isLoading ? 1 : 0,
+              }}
+            />
+          ) : (
+            <Image src={icAlert} alt='alert' width={16} height={16} />
+          )}
         </span>
       </button>
 
