@@ -1,3 +1,4 @@
+import share from '@/icons/details/share.svg'
 import background from '@/images/modal/background.png'
 import check from '@/images/modal/check.gif'
 import confetti from '@/images/modal/confetti.gif'
@@ -46,13 +47,14 @@ const SuccessWithdrawModal = ({
             </div>
 
             <div className='mt-8 w-full '>
-              <div className='flex items-center justify-end'>
+              <div className='flex items-center justify-end gap-2'>
                 <div className='text-[14px] font-medium leading-[100%] text-[#A5A5B5]'>Review tx details</div>
+                <Image src={share} alt='share' width={14} height={14} />
               </div>
               <div className='mt-4'>
                 <button
                   type='button'
-                  className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 text-[#000000] hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
+                  className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 text-white hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
                   onClick={handleClose}
                 >
                   Ok, close

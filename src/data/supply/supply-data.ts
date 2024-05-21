@@ -52,3 +52,17 @@ export const nonSupplyData: ISupply[] = [
     apy: undefined,
   },
 ]
+
+export const borrowData: ISupply[] = [
+  {
+    asset: {
+      icon: icSolana,
+      name: 'SOL',
+    },
+    balance: {
+      amount: '0.0010000',
+      value: 3.31,
+    },
+    apy: 2.16,
+  },
+]

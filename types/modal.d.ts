@@ -6,6 +6,7 @@ export interface ModalProps {
   isOpen: boolean
   data?: DataModalType
   setIsOpen: Dispatch<SetStateAction<boolean>>
+  type: string
 }
 
 export type DataDisplayType = {

@@ -1,6 +1,6 @@
 'use client'
 import { getDataColumnsBorrowDashboard } from '@/data/column/columns-borrow-dashboard'
-import { nonSupplyData } from '@/data/supply/supply-data'
+import { borrowData } from '@/data/supply/supply-data'
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import { SortingState } from '@tanstack/react-table'
 import dynamic from 'next/dynamic'
@@ -31,16 +31,10 @@ const Borrow = () => {
         <div className='text-[20px] font-medium leading-5 text-white'>Your Borrows</div>
         <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div>
         <div className='table-custom h-[270px] w-full md:overflow-y-auto'>
-          <Table
-            className='w-full'
-            columns={columnsData}
-            data={nonSupplyData}
-            sorting={sorting}
-            setSorting={setSorting}
-          />
+          <Table className='w-full' columns={columnsData} data={borrowData} sorting={sorting} setSorting={setSorting} />
         </div>
       </div>
-      {isOpen && <ModalWithdraw isOpen={isOpen} data={data} setIsOpen={setIsOpen} />}
+      {isOpen && <ModalWithdraw isOpen={isOpen} data={data} setIsOpen={setIsOpen} type='repay' />}
     </div>
   )
 }

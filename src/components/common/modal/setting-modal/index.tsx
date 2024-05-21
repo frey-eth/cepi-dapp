@@ -35,7 +35,7 @@ const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
         <div className='flex w-full flex-row items-center  gap-[6px] font-medium leading-[24px] min-[320px]:text-[20px] min-[375px]:text-[24px]'>
           <div>Set transaction priority</div>
           <div className='mt-[8px] h-5 w-5'>
-            <Image src={icAlert} alt='arlet' objectFit='cover' id='tooltip' />
+            <Image src={icAlert} alt='alert' objectFit='cover' id='tooltip' />
           </div>
         </div>
 

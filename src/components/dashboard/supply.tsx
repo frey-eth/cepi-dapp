@@ -61,7 +61,7 @@ const Supply = () => {
           <Table className='w-full' columns={columnsData} data={supplyData} sorting={sorting} setSorting={setSorting} />
         </div>
       </div>
-      {isOpen && <ModalWithdraw isOpen={isOpen} data={data} setIsOpen={setIsOpen} />}
+      {isOpen && <ModalWithdraw isOpen={isOpen} data={data} setIsOpen={setIsOpen} type='withdraw' />}
     </div>
   )
 }
