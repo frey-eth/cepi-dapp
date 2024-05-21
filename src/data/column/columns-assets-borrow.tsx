@@ -9,8 +9,10 @@ import { AssetsBorrow, Type } from '../../../types/table'
 
 export const getDataColumnsAssetBorrow = ({
   onClickBorrow,
+  onClickDetails,
 }: {
   onClickBorrow: ({ data, type }: { data: AssetsBorrow; type: Type }) => void
+  onClickDetails: ({ data }: { data: AssetsBorrow }) => void
 }): ColumnDef<AssetsBorrow>[] => [
   {
     id: 'assets',
@@ -109,7 +111,14 @@ export const getDataColumnsAssetBorrow = ({
               })
             }}
           />
-          <BtnDetail />
+          <BtnDetail
+            onClick={() => {
+              const data = info.row.original
+              onClickDetails({
+                data: data,
+              })
+            }}
+          />
         </div>
       )
     },
