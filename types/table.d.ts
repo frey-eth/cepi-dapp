@@ -44,4 +44,4 @@ export interface Asset {
     name: string
   }
 }
-export type Type = 'borrow' | 'supply'
+export type Type = 'borrow' | 'supply' | 'withdraw' | 'repay'
