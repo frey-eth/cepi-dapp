@@ -1,6 +1,6 @@
 import { Type } from './table'
 
-export type DataModalType = { data: GlobalPool | AssetSupply | AssetsBorrow; type: Type }
+export type DataModalType = { data: GlobalPool | AssetSupply | AssetsBorrow | ISupply; type: Type }
 
 export interface ModalProps {
   isOpen: boolean
@@ -9,7 +9,7 @@ export interface ModalProps {
 }
 
 export type DataDisplayType = {
-  title: 'supply' | 'borrow' | undefined
+  title: 'supply' | 'borrow' | 'withdraw' | 'repay' | undefined
   walletBalance: number
   assetIcon: string | StaticImport
   assetName: string

@@ -2,16 +2,29 @@
 import bgAssets from '@/images/portfolio/assets-supply.png'
 import { SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import Table from '../common/table/index'
 
-import useColumnsSupply from '@/data/column/columns-supply'
+import { getDataColumnsWithdraw } from '@/data/column/columns-supply-dashboard'
 import { supplyData } from '@/data/supply/supply-data'
+import dynamic from 'next/dynamic'
+import { DataModalType } from '../../../types/modal'
+import { ISupply, Type } from '../../../types/table'
+
+const ModalWithdraw = dynamic(() => import('../common/modal/withdraw'), {
+  ssr: false,
+})
 
 const Supply = () => {
-  const { columns } = useColumnsSupply()
-
   const [sorting, setSorting] = useState<SortingState>([])
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [data, setData] = useState<DataModalType | undefined>()
+  const onClickWithdraw = useCallback(({ data, type }: { data: ISupply; type: Type }) => {
+    if (!data) return
+    setData({ data: data, type: type })
+    setIsOpen(true)
+  }, [])
+  const columnsData = useMemo(() => getDataColumnsWithdraw({ onClickWithdraw }), [onClickWithdraw])
 
   return (
     <div className='relative flex h-[340px]  w-full flex-col  gap-4 overflow-y-auto rounded-lg  border border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:border-[#252B3D26]'>
@@ -45,9 +58,10 @@ const Supply = () => {
           </div>
         </div>
         <div className='table-custom h-[270px] w-full md:overflow-y-auto'>
-          <Table className='w-full' columns={columns} data={supplyData} sorting={sorting} setSorting={setSorting} />
+          <Table className='w-full' columns={columnsData} data={supplyData} sorting={sorting} setSorting={setSorting} />
         </div>
       </div>
+      {isOpen && <ModalWithdraw isOpen={isOpen} data={data} setIsOpen={setIsOpen} />}
     </div>
   )
 }
