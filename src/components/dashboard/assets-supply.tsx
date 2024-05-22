@@ -44,7 +44,7 @@ const AssetsSupply = () => {
 
           <div className=' table-custom2 h-[230px] w-full overflow-y-auto lg:h-[240px]'>
             <Table
-              className='w-[576px] md:w-full'
+              className='w-[576px] min-[600px]:w-full md:w-full'
               columns={columnsData}
               data={dataAssetSupply}
               sorting={sorting}
