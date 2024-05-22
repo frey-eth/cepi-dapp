@@ -130,8 +130,8 @@ const BorrowInfo = () => {
               15.00%
             </div>
 
-            <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-              <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
+            <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px] text-[#A5A5B5]'>
+              <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] '>
                 Collector Contract
               </div>
               <div className='flex flex-row items-center gap-2'>
