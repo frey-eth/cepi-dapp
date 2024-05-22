@@ -15,6 +15,7 @@ export const dataLending: GlobalPool[] = [
     deposit: 552,
     globalLimit: 200,
     utilization: 10.55,
+    address_token: '',
   },
   {
     asset: {
@@ -27,6 +28,7 @@ export const dataLending: GlobalPool[] = [
     deposit: 119,
     globalLimit: 300,
     utilization: 10.29,
+    address_token: '6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES',
   },
   {
     asset: {
@@ -39,6 +41,7 @@ export const dataLending: GlobalPool[] = [
     deposit: 61,
     globalLimit: 200,
     utilization: 83.87,
+    address_token: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
   },
 ]
 
@@ -54,6 +57,7 @@ export const dataBorrow: GlobalPoolBorrow[] = [
     available: 300,
     total_borrow: 10,
     utilization: 30.08,
+    address_token: '',
   },
   {
     asset: {
@@ -66,6 +70,7 @@ export const dataBorrow: GlobalPoolBorrow[] = [
     available: 333,
     total_borrow: 166,
     utilization: 2.25,
+    address_token: '6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES',
   },
   {
     asset: {
@@ -78,5 +83,6 @@ export const dataBorrow: GlobalPoolBorrow[] = [
     available: 988,
     total_borrow: 10,
     utilization: 83.87,
+    address_token: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
   },
 ]

@@ -7,6 +7,7 @@ export interface GlobalPool extends Asset {
   deposit: number
   globalLimit: number
   utilization: number
+  address_token?: string
 }
 
 export interface GlobalPoolBorrow extends Asset {
@@ -16,6 +17,7 @@ export interface GlobalPoolBorrow extends Asset {
   available: number
   total_borrow: number
   utilization: number
+  address_token?: string
 }
 
 export interface AssetSupply extends Asset {
@@ -23,6 +25,7 @@ export interface AssetSupply extends Asset {
   apy: number
   isCollateral: boolean
   isError?: boolean
+  address_token?: string
 }
 
 export interface ISupply extends Asset {
@@ -36,6 +39,7 @@ export interface ISupply extends Asset {
 export interface AssetsBorrow extends Asset {
   available: number
   apy: number
+  address_token?: string
 }
 
 export interface Asset {

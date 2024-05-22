@@ -28,8 +28,12 @@ export function useBalance(tokenAddress?: string) {
   const fetchTokenBalance = async () => {
     if (tokenAddress && publicKey) {
       const tokenAccountPublicKey = new PublicKey(tokenAddress)
-      const balanceInfo = await connection.getTokenAccountBalance(tokenAccountPublicKey)
-      setBalance(parseFloat(balanceInfo.value.amount) / LAMPORTS_PER_SOL)
+      try {
+        const balanceInfo = (await connection.getTokenAccountBalance(tokenAccountPublicKey)) || 0
+        setBalance(parseFloat(balanceInfo.value.amount) / LAMPORTS_PER_SOL)
+      } catch (error) {
+        console.log('LOG: ERROR', error)
+      }
     }
   }
 

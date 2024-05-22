@@ -18,8 +18,8 @@ import { DataDisplayType, ModalProps } from '../../../../../types/modal'
 import { useBalance } from '../../../../hooks/useBalance'
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
-import SettingModal from '../setting-modal'
 import SubmitButton from '../buttonSubmit'
+import SettingModal from '../setting-modal'
 
 const SuccessModal = dynamic(() => import('../success-modal'), {
   ssr: false,
@@ -39,7 +39,7 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
     apy: d?.apy,
     available: 'available' in d ? d?.available : 7.41,
-    address_token: '',
+    address_token: d?.address_token,
   }
 
   const { balance } = useBalance(dData?.address_token)

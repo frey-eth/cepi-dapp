@@ -13,6 +13,7 @@ export const dataAssetSupply: AssetSupply[] = [
     apy: 2.16,
     isCollateral: true,
     isError: true,
+    address_token: '',
   },
   {
     asset: {
@@ -22,6 +23,7 @@ export const dataAssetSupply: AssetSupply[] = [
     walletBalance: 216.38,
     apy: -2.16,
     isCollateral: false,
+    address_token: '6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES',
   },
   {
     asset: {
@@ -31,5 +33,6 @@ export const dataAssetSupply: AssetSupply[] = [
     walletBalance: 216.38,
     apy: 2.15,
     isCollateral: true,
+    address_token: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
   },
 ]
