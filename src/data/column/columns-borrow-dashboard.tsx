@@ -31,7 +31,7 @@ export const getDataColumnsBorrowDashboard = ({
   {
     id: 'balance',
     accessorKey: 'balance',
-    header: () => <p className='text-center'>Balance</p>,
+    header: () => <p className='text-center'>Debt</p>,
     cell: (info) => {
       const balanceAmount = info.row.original.balance.amount
       const balanceValue = info.row.original.balance.value

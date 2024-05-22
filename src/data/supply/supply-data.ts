@@ -60,9 +60,9 @@ export const borrowData: ISupply[] = [
       name: 'SOL',
     },
     balance: {
-      amount: '0.0010000',
-      value: 3.31,
+      amount: '0.000500',
+      value: 1.655,
     },
-    apy: 2.16,
+    apy: 3,
   },
 ]

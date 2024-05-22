@@ -19,7 +19,7 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
     setTimeout(() => {
       setShowRepay(false)
       setTimeout(() => {
-        setButtonText(`Repaying ${assetName}...`)
+        setButtonText(`Repaying ${assetName}`)
         setTimeout(() => {
           setIsLoading(false)
           setIsSuccess(true)
@@ -30,7 +30,7 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
   }
 
   return (
-    <div>
+    <>
       <button
         type='button'
         className='relative flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
@@ -38,7 +38,12 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
         disabled={isLoading || inputAmt === '' || parseFloat(inputAmt) === 0}
       >
         <span className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 text-center align-middle text-inherit'>
-          {isLoading ? buttonText : `Approve ${assetName} to continue`}
+          {isLoading
+            ? buttonText
+            : inputAmt !== '' && parseFloat(inputAmt) > 0
+              ? `Approve ${assetName} to continue`
+              : `Enter an amount`}
+
           {isLoading ? (
             <Image
               src={spinner}
@@ -51,7 +56,7 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
               }}
             />
           ) : (
-            <Image src={icAlert} alt='alert' width={16} height={16} />
+            inputAmt !== '' && parseFloat(inputAmt) > 0 && <Image src={icAlert} alt='alert' width={16} height={16} />
           )}
         </span>
       </button>
@@ -66,7 +71,7 @@ const RepaySubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonPr
           </span>
         </button>
       )}
-    </div>
+    </>
   )
 }
 

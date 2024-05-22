@@ -2,6 +2,7 @@
 import { getDataColumnsBorrowDashboard } from '@/data/column/columns-borrow-dashboard'
 import { borrowData } from '@/data/supply/supply-data'
 import bgAssets from '@/images/portfolio/assets-supply.png'
+import icAlert from '@/images/table/alert-circle-light.svg'
 import { SortingState } from '@tanstack/react-table'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -29,8 +30,36 @@ const Borrow = () => {
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-[20px] font-medium leading-5 text-white'>Your Borrows</div>
-        <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div>
-        <div className='table-custom h-[270px] w-full md:overflow-y-auto'>
+        {/* <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div> */}
+        <div className='flex h-[26px] w-full flex-row items-center gap-1 leading-[14px] max-sm:justify-between min-[320px]:flex-wrap min-[375px]:flex-nowrap min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
+          <div className='flex h-[26px] flex-row  items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[118px]  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+            <span className=' font-normal leading-[100%] text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+              Balance
+            </span>
+            <span className=' font-medium leading-[100%] text-white max-sm:text-[12px] min-[325px]:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+              $19.99
+            </span>
+          </div>
+          <div className='flex h-[26px] flex-row items-center  justify-center rounded border border-[#3C3937] px-2 pb-[1px] leading-[14px] max-sm:w-[118px]  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+            <span className='font-normal leading-[100%] text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+              APY
+            </span>
+            <span className=' font-medium leading-[100%] text-white max-sm:text-[12px] min-[325px]:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+              5.47%
+            </span>
+            <Image src={icAlert} alt='icAlert' width={14} height={14} className='mb-[1px]' />
+          </div>
+          <div className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] leading-[14px] max-sm:w-[118px]  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+            <span className='font-normal leading-[100%] text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
+              Borrow power used
+            </span>
+            <span className=' font-medium leading-[100%] text-white max-sm:text-[12px] min-[325px]:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[14px] md:text-[14px]'>
+              11.24%
+            </span>
+            <Image src={icAlert} alt='icAlert' width={14} height={14} className='mb-[1px]' />
+          </div>
+        </div>
+        <div className='table-custom mb-[2px] h-[270px] w-full md:overflow-y-auto'>
           <Table className='w-full' columns={columnsData} data={borrowData} sorting={sorting} setSorting={setSorting} />
         </div>
       </div>
