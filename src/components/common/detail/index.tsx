@@ -108,7 +108,7 @@ const ViewDetail = () => {
 
       <div className='flex w-full flex-row gap-4 max-sm:flex-col-reverse'>
         <TotalDetails />
-        <SelfInfomation />
+        <SelfInfomation data={data} />
       </div>
 
       {tooltipDetailsData.map((item, index) => (

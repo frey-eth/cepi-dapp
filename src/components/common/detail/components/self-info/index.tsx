@@ -5,8 +5,9 @@ import ic_wallet from '@/icons/details/wallet.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 
 import Image from 'next/image'
+import { AssetsBorrow } from '../../../../../../types/table'
 
-const SelfInfomation = () => {
+const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
   const { balance } = useBalance()
   return (
     <div className='flex h-fit w-full max-w-sm flex-col gap-6 rounded-2xl bg-[#0B0D10CC] p-6 font-helveticaNeue'>
@@ -20,7 +21,8 @@ const SelfInfomation = () => {
           <div className='flex flex-col gap-2 font-helveticaNeue text-[14px] font-light leading-[14px]'>
             Wallet balance
             <p className=' flex flex-row gap-[6px] text-[16px] font-medium leading-[16px] text-[#A5A5B5]'>
-              <span className='text-white'>{balance}</span>USDC
+              <span className='text-white'>{balance}</span>
+              {data?.asset.name}
             </p>
           </div>
         </div>
@@ -36,7 +38,7 @@ const SelfInfomation = () => {
                 </div>
                 <div className='flex flex-col gap-[6px]'>
                   <div className='flex flex-row items-center gap-[6px] text-[16px] font-semibold leading-[16px] text-[#A5A5B5]'>
-                    <span className='text-white'>0</span> USDC
+                    <span className='text-white'>0</span> {data?.asset.name}
                   </div>
                   <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>$ 0</p>
                 </div>
@@ -51,7 +53,7 @@ const SelfInfomation = () => {
                 </div>
                 <div className='flex flex-col gap-[6px]'>
                   <div className='flex flex-row items-center gap-[6px] text-[16px] font-semibold leading-[16px] text-[#A5A5B5]'>
-                    <span className='text-white'>0</span> USDC
+                    <span className='text-white'>0</span> {data?.asset.name}
                   </div>
                   <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>$ 0</p>
                 </div>
