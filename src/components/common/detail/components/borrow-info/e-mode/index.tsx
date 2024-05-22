@@ -7,7 +7,7 @@ const Emode = () => {
       <h3 className=' text-[14px] font-medium leading-[14px]'>Borrow info</h3>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>E-Mode Category</h3>
-        <div className='flex flex-row gap-4'>
+        <div className='flex flex-row gap-4 max-sm:flex-col'>
           <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
             <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
               Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />

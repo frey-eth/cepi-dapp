@@ -35,7 +35,7 @@ const SupplyInfo = () => {
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>Supply info</h3>
-        <div className='flex flex-row items-center gap-10'>
+        <div className='flex flex-row gap-10 max-sm:flex-col max-sm:gap-4 sm:items-center'>
           <div
             className='flex h-[82px] w-[82px] items-center justify-center rounded-full p-[6px]'
             style={{ background: `conic-gradient(#00E585 ${(360 * 75) / 100}deg, white 0deg)` }}
@@ -88,18 +88,18 @@ const SupplyInfo = () => {
           </div>
         </div>
 
-        <div className='h-[88px] w-full text-[12px] leading-[12px] text-[#A5A5B5]'>
+        <div className='h-[88px] w-full text-[12px] leading-[12px] text-[#A5A5B5] max-sm:h-[100px]'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
               data={data}
               margin={{
                 top: 5,
-                right: 30,
+                right: 5,
                 bottom: 5,
               }}
             >
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis axisLine={false} tickLine={false} />
+              <YAxis width={40} axisLine={false} tickLine={false} />
               <Line type='monotone' dataKey='apr' stroke='#00E585' strokeWidth={2} dot={false} />
               <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>
@@ -114,21 +114,21 @@ const SupplyInfo = () => {
             </div>
           </div>
 
-          <div className='flex flex-row items-center gap-4'>
-            <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
+          <div className='flex w-full flex-row flex-wrap gap-4 max-sm:flex-col sm:h-[54px] sm:items-center'>
+            <div className='flex h-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />
               </div>
               78.50%
             </div>
 
-            <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
+            <div className='flex h-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_threshold' />
               </div>
               81.00%{' '}
             </div>
-            <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
+            <div className='flex  h-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_penalty' />
               </div>

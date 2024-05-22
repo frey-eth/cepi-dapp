@@ -81,7 +81,7 @@ const InterestRateModel = () => {
               data={data}
               margin={{
                 top: 5,
-                right: 30,
+                right: 5,
                 bottom: 5,
               }}
             >
@@ -91,7 +91,7 @@ const InterestRateModel = () => {
               />
 
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis axisLine={false} tickLine={false} />
+              <YAxis width={40} axisLine={false} tickLine={false} />
               <Line dot={false} dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
               <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>

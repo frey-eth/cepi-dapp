@@ -26,7 +26,7 @@ const ViewDetail = () => {
   }, [query])
 
   return (
-    <div className='flex flex-col gap-10 text-white'>
+    <div className='flex flex-col gap-10 text-white '>
       <div className='flex flex-col gap-6'>
         <div className='flex h-8 flex-row gap-4'>
           <Link
@@ -46,7 +46,7 @@ const ViewDetail = () => {
           </div>
         </div>
 
-        <div className='flex h-[46px] flex-row items-center gap-10'>
+        <div className='flex flex-row items-center gap-10 max-sm:flex-col max-sm:items-start sm:h-[46px]'>
           <div className='flex h-full flex-row items-center gap-6'>
             <div className='h-[46px] w-[46px] '>
               <Image src={data.asset.icon} alt='icon' className='h-[46px] w-[46px] object-cover' />
@@ -67,7 +67,7 @@ const ViewDetail = () => {
             </div>
           </div>
 
-          <div className='h-full border border-[#FFFFFF1A]' />
+          <div className='h-full border border-[#FFFFFF1A] max-sm:hidden' />
 
           <div className='flex h-10 flex-row items-center gap-6 font-helveticaNeue'>
             <div className='flex h-[36px] flex-col gap-[6px] text-[14px] font-medium leading-[14px] text-[#A5A5B5]'>
@@ -106,7 +106,7 @@ const ViewDetail = () => {
         </div>
       </div>
 
-      <div className='flex w-full flex-row gap-4'>
+      <div className='flex w-full flex-row gap-4 max-sm:flex-col-reverse'>
         <TotalDetails />
         <SelfInfomation />
       </div>

@@ -37,7 +37,7 @@ const BorrowInfo = () => {
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>Borrow info</h3>
-        <div className='flex flex-row items-center gap-10'>
+        <div className='flex flex-row gap-10 max-sm:flex-col max-sm:gap-4 sm:items-center'>
           <div
             className='flex h-[82px] w-[82px] items-center justify-center rounded-full p-[6px]'
             style={{ background: `conic-gradient(#00E585 ${(360 * 26) / 100}deg, white 0deg)` }}
@@ -46,7 +46,7 @@ const BorrowInfo = () => {
               26.60%
             </div>
           </div>
-          <div className='flex h-[60px] flex-row items-center gap-[26px]'>
+          <div className='flex flex-row gap-[26px] sm:h-[60px] sm:items-center'>
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Total borrowed <Image src={icAlert} alt='icon alert' sizes='16' id='total_borrow' />
@@ -101,18 +101,18 @@ const BorrowInfo = () => {
           </div>
         </div>
 
-        <div className='h-[88px] w-full text-[12px] leading-[12px] text-[#A5A5B5]'>
+        <div className='h-[88px] w-full text-[12px] leading-[12px] text-[#A5A5B5] max-sm:h-[100px]'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
               data={data}
               margin={{
                 top: 5,
-                right: 30,
+                right: 5,
                 bottom: 5,
               }}
             >
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis axisLine={false} tickLine={false} />
+              <YAxis width={40} axisLine={false} tickLine={false} />
               <Line dot={false} type='monotone' dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
               <CartesianGrid strokeDasharray='3 3' stroke='#FFFFFF1A' vertical={false} />
             </LineChart>
