@@ -1,6 +1,6 @@
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import bgLayout from '@/images/layout/bg-layout.png'
+import bgLayout from '@/images/layout/bg.svg'
 import SolanaProvider from '@/provider/solana-provider'
 import '@/styles/index.scss'
 import type { Metadata, Viewport } from 'next'
@@ -74,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`relative h-screen overflow-hidden font-mono ${monaSans.variable}`}>
-        <Image src={bgLayout} alt='background' fill priority />
+        <Image src={bgLayout} alt='background' objectFit='cover' fill priority />
         <SolanaProvider>
           <main className='relative h-full overflow-y-scroll'>
             <Header />

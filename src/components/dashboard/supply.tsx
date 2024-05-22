@@ -1,5 +1,5 @@
 'use client'
-import bgAssets from '@/images/portfolio/assets-supply.png'
+import bgAssets from '@/images/table/bg-table.svg'
 import { SortingState } from '@tanstack/react-table'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -15,7 +15,7 @@ const Supply = () => {
 
   return (
     <div className='relative flex h-[340px]  w-full flex-col  gap-4 overflow-y-auto rounded-lg  border border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:border-[#252B3D26]'>
-      <Image src={bgAssets} alt='background' fill />
+      <Image src={bgAssets} alt='background' fill objectFit='cover' />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-[20px] font-medium leading-5 text-white'>Your Supplies</div>
         <div className='flex h-[26px] w-full flex-row items-center gap-1 leading-[14px] max-sm:justify-between min-[320px]:flex-wrap min-[375px]:flex-nowrap min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
