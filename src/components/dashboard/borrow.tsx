@@ -26,12 +26,12 @@ const Borrow = () => {
   const columnsData = useMemo(() => getDataColumnsBorrowDashboard({ onClickRepay }), [onClickRepay])
 
   return (
-    <div className='relative flex h-[220px] w-full  flex-col gap-4  overflow-y-auto rounded-lg border  border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:h-[340px] md:border-[#252B3D26]'>
+    <div className='relative flex h-[260px] w-full  flex-col gap-4  overflow-y-auto rounded-lg border  border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:h-[340px] md:border-[#252B3D26]'>
       <Image src={bgAssets} alt='background' fill />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-[20px] font-medium leading-5 text-white'>Your Borrows</div>
         {/* <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div> */}
-        <div className='flex h-[26px] w-full flex-row items-center gap-1 leading-[14px] max-sm:justify-between min-[320px]:flex-wrap min-[375px]:flex-nowrap min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
+        <div className='flex h-[26px] w-full flex-row flex-wrap items-center gap-1 leading-[14px]  min-[320px]:flex-wrap  min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
           <div className='flex h-[26px] flex-row  items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[118px]  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
             <span className=' font-normal leading-[100%] text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
               Balance
@@ -49,7 +49,7 @@ const Borrow = () => {
             </span>
             <Image src={icAlert} alt='icAlert' width={14} height={14} className='mb-[1px]' />
           </div>
-          <div className='flex h-[26px] flex-row items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] leading-[14px] max-sm:w-[118px]  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
+          <div className='flex h-[26px] flex-row items-center  justify-center gap-x-[10px] rounded border border-[#3C3937] px-2 pb-[1px]   leading-[14px]'>
             <span className='font-normal leading-[100%] text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
               Borrow power used
             </span>
@@ -59,7 +59,7 @@ const Borrow = () => {
             <Image src={icAlert} alt='icAlert' width={14} height={14} className='mb-[1px]' />
           </div>
         </div>
-        <div className='table-custom mb-[2px] h-[270px] w-full md:overflow-y-auto'>
+        <div className='table-custom mb-[2px] mt-6 h-[270px] w-full md:mt-0 md:overflow-y-auto'>
           <Table className='w-full' columns={columnsData} data={borrowData} sorting={sorting} setSorting={setSorting} />
         </div>
       </div>
