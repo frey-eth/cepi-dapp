@@ -11,6 +11,8 @@ import { DataModalType } from '../../../types/modal'
 import { AssetSupply, Type } from '../../../types/table'
 import Checkbox from '../common/checkbox'
 import Table from '../common/table'
+import useUrlParams from '@/hooks/useSearchParams'
+import { usePathname, useRouter } from 'next/navigation'
 
 const ModalSupply = dynamic(() => import('../common/modal/supply'), {
   ssr: false,
@@ -21,13 +23,27 @@ const AssetsSupply = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [data, setData] = useState<DataModalType | undefined>()
   const [sorting, setSorting] = useState<SortingState>([])
+  const { createQueryString } = useUrlParams()
+  const router = useRouter()
+  const pathName = usePathname()
 
   const onClickSupply = useCallback(({ data, type }: { data: AssetSupply; type: Type }) => {
     if (!data) return
     setData({ data: data, type: type })
     setIsOpen(true)
   }, [])
-  const columnsData = useMemo(() => getDataColumnsAssetSupply({ onClickSupply }), [onClickSupply])
+  const onClickDetails = useCallback(
+    ({ data }: { data: AssetSupply }) => {
+      if (!data) return
+      const query = createQueryString('details', data.asset.name)
+      router.push(pathName + '?' + query)
+    },
+    [createQueryString, pathName, router]
+  )
+  const columnsData = useMemo(
+    () => getDataColumnsAssetSupply({ onClickSupply, onClickDetails }),
+    [onClickSupply, onClickDetails]
+  )
 
   return (
     <>

@@ -6,11 +6,14 @@ import icCheck from '@/images/portfolio/check.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 import { AssetSupply, Type } from '../../../types/table'
+import BtnDetail from '@/components/common/button/btn-detail'
 
 export const getDataColumnsAssetSupply = ({
   onClickSupply,
+  onClickDetails,
 }: {
   onClickSupply: ({ data, type }: { data: AssetSupply; type: Type }) => void
+  onClickDetails: ({ data }: { data: AssetSupply }) => void
 }): ColumnDef<AssetSupply>[] => [
   {
     id: 'assets',
@@ -83,15 +86,25 @@ export const getDataColumnsAssetSupply = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <BtnSupply
-          onClick={() => {
-            const data = info.row.original
-            onClickSupply({
-              data: data,
-              type: 'supply',
-            })
-          }}
-        />
+        <div style={{ justifyContent: 'end' }} className=' flex items-center justify-end gap-2 '>
+          <BtnSupply
+            onClick={() => {
+              const data = info.row.original
+              onClickSupply({
+                data: data,
+                type: 'supply',
+              })
+            }}
+          />
+          <BtnDetail
+            onClick={() => {
+              const data = info.row.original
+              onClickDetails({
+                data: data,
+              })
+            }}
+          />
+        </div>
       )
     },
     footer: (props) => props.column.id,
