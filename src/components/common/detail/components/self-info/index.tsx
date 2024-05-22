@@ -1,11 +1,13 @@
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import BtnSupply from '@/components/common/button/btn-supply'
+import { useBalance } from '@/hooks/useBalance'
 import ic_wallet from '@/icons/details/wallet.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 
 import Image from 'next/image'
 
 const SelfInfomation = () => {
+  const { balance } = useBalance()
   return (
     <div className='flex h-fit w-full max-w-sm flex-col gap-6 rounded-2xl bg-[#0B0D10CC] p-6 font-helveticaNeue'>
       <h3 className='text-[16px] font-medium leading-[16px]'>Your info</h3>
@@ -18,7 +20,7 @@ const SelfInfomation = () => {
           <div className='flex flex-col gap-2 font-helveticaNeue text-[14px] font-light leading-[14px]'>
             Wallet balance
             <p className=' flex flex-row gap-[6px] text-[16px] font-medium leading-[16px] text-[#A5A5B5]'>
-              <span className='text-white'>0</span>USDC
+              <span className='text-white'>{balance}</span>USDC
             </p>
           </div>
         </div>
@@ -30,7 +32,7 @@ const SelfInfomation = () => {
             <div className='flex h-[58px] w-full flex-row items-center justify-between'>
               <div className='flex flex-col gap-2'>
                 <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px]'>
-                  Available to supply <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                  Available to supply <Image src={icAlert} alt='icon alert' sizes='16' id='available_supply' />
                 </div>
                 <div className='flex flex-col gap-[6px]'>
                   <div className='flex flex-row items-center gap-[6px] text-[16px] font-semibold leading-[16px] text-[#A5A5B5]'>
@@ -45,7 +47,7 @@ const SelfInfomation = () => {
             <div className='flex h-[58px] w-full flex-row items-center justify-between'>
               <div className='flex flex-col gap-2'>
                 <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px]'>
-                  Available to borrow <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                  Available to borrow <Image src={icAlert} alt='icon alert' sizes='16' id='available_borrow' />
                 </div>
                 <div className='flex flex-col gap-[6px]'>
                   <div className='flex flex-row items-center gap-[6px] text-[16px] font-semibold leading-[16px] text-[#A5A5B5]'>
@@ -58,9 +60,11 @@ const SelfInfomation = () => {
             </div>
           </div>
 
-          <div className='h-[30px] w-full gap-[10px] rounded-md bg-[#BF83491A] p-2 font-helveticaNeue text-[12px] font-normal leading-[14px] text-[#FFC53D]'>
-            Your Solana wallet is empty. Purchase or transfer assets.
-          </div>
+          {balance == 0 && (
+            <div className='h-[30px] w-full gap-[10px] rounded-md bg-[#BF83491A] p-2 font-helveticaNeue text-[12px] font-normal leading-[14px] text-[#FFC53D]'>
+              Your Solana wallet is empty. Purchase or transfer assets.
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const data = [
   },
   {
     name: 'Apr 28',
-    apr: 0.1,
+    apr: 0.2,
   },
   {
     name: 'May 05',
@@ -23,7 +23,7 @@ const data = [
   },
   {
     name: 'May 12',
-    apr: 0.1,
+    apr: 0.4,
   },
   {
     name: 'May 19',
@@ -49,7 +49,7 @@ const BorrowInfo = () => {
           <div className='flex h-[60px] flex-row items-center gap-[26px]'>
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Total borrowed <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Total borrowed <Image src={icAlert} alt='icon alert' sizes='16' id='total_borrow' />
               </div>
               <div className='font-helveticaNeue text-[16px] font-medium leading-[16px] text-white'>
                 6,624.88 of 24,000.00
@@ -64,7 +64,7 @@ const BorrowInfo = () => {
 
             <div className='flex h-full flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                APY, Variable
+                APY, Variable <Image src={icAlert} alt='icon alert' sizes='16' id='apy_variable' />
               </div>
               <div className='font-helveticaNeue text-[16px] font-medium leading-[16px] text-white'>{`< 0.01%`}</div>
             </div>
@@ -93,7 +93,7 @@ const BorrowInfo = () => {
               <div
                 key={index}
                 onClick={() => setTime(item)}
-                className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white ${time == item && 'shadow-button'}`}
+                className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A] shadow-[1px_1px_0px_0px_rgba(255,255,255,0.16)_inset,_0px_0px_8px_0px_rgba(255,255,255,0.08)_inset]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white `}
               >
                 {item}
               </div>
@@ -114,7 +114,7 @@ const BorrowInfo = () => {
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
               <YAxis axisLine={false} tickLine={false} />
               <Line dot={false} type='monotone' dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
-              <CartesianGrid strokeDasharray='3 3' stroke='#FFFFFF1A' />
+              <CartesianGrid strokeDasharray='3 3' stroke='#FFFFFF1A' vertical={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -125,14 +125,14 @@ const BorrowInfo = () => {
           <div className='flex flex-row items-center gap-4'>
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Reserve factor <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Reserve factor <Image src={icAlert} alt='icon alert' sizes='16' id='reserve_factor' />
               </div>
               15.00%
             </div>
 
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Collector Contract <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Collector Contract
               </div>
               <div className='flex flex-row items-center gap-2'>
                 View contract

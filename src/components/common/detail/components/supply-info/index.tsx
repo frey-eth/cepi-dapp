@@ -47,7 +47,7 @@ const SupplyInfo = () => {
           <div className='flex h-[60px] flex-row items-center gap-[26px]'>
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Total supplied <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Total supplied <Image src={icAlert} alt='icon alert' sizes='16' id='total_supply' />
               </div>
               <div className='font-helveticaNeue text-[16px] font-medium leading-[16px] text-white'>
                 996.99k of 1.25M
@@ -80,7 +80,7 @@ const SupplyInfo = () => {
               <div
                 key={index}
                 onClick={() => setTime(item)}
-                className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white ${time == item && 'shadow-button'}`}
+                className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A] shadow-[1px_1px_0px_0px_rgba(255,255,255,0.16)_inset,_0px_0px_8px_0px_rgba(255,255,255,0.08)_inset]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white`}
               >
                 {item}
               </div>
@@ -101,7 +101,7 @@ const SupplyInfo = () => {
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
               <YAxis axisLine={false} tickLine={false} />
               <Line type='monotone' dataKey='apr' stroke='#00E585' strokeWidth={2} dot={false} />
-              <CartesianGrid strokeDasharray='3 3' stroke='#FFFFFF1A' />
+              <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -117,20 +117,20 @@ const SupplyInfo = () => {
           <div className='flex flex-row items-center gap-4'>
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />
               </div>
               78.50%
             </div>
 
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_threshold' />
               </div>
               81.00%{' '}
             </div>
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+                Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_penalty' />
               </div>
               6.00%{' '}
             </div>

@@ -1,6 +1,17 @@
 import ic_share from '@/icons/details/share.svg'
 import Image from 'next/image'
-import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+
+type TooltipType = {
+  value: number
+  color: string
+  name: string
+  dataKey: string
+  payload: {
+    name: string
+    apr: string
+  }
+}
 
 const data = [
   {
@@ -24,6 +35,19 @@ const data = [
     apr: 0.02,
   },
 ]
+
+const CustomTooltip = ({ active, payload }: { active: boolean; payload?: TooltipType[] }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className='custom-tooltip'>
+        <p className='label text-[12px] leading-[12px] text-[#A5A5B5]'>{`Current : ${payload[0].value}`}</p>
+      </div>
+    )
+  }
+
+  return null
+}
+
 const InterestRateModel = () => {
   return (
     <div className='flex flex-col gap-4'>
@@ -61,10 +85,15 @@ const InterestRateModel = () => {
                 bottom: 5,
               }}
             >
+              <Tooltip
+                content={<CustomTooltip active />}
+                cursor={{ stroke: '#5D61BCCC', strokeWidth: 1, strokeDasharray: '3 3' }}
+              />
+
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
               <YAxis axisLine={false} tickLine={false} />
               <Line dot={false} dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
-              <CartesianGrid strokeDasharray='3 3' stroke='#FFFFFF1A' />
+              <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>
           </ResponsiveContainer>
         </div>

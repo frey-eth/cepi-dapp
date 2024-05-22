@@ -10,19 +10,19 @@ const Emode = () => {
         <div className='flex flex-row gap-4'>
           <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
             <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-              Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+              Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />
             </div>
             90.00%{' '}
           </div>
           <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
             <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-              Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+              Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_threshold' />
             </div>
             15.00%
           </div>
           <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
             <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-              Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
+              Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_penalty' />
             </div>
             2.00%
           </div>
