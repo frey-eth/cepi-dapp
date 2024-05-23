@@ -7,6 +7,7 @@ import background from '@/images/modal/background.png'
 import close from '@/images/modal/close-circle.svg'
 import gas from '@/images/modal/gas.svg'
 import group from '@/images/modal/group-icon.svg'
+import wallet from '@/images/modal/wallet-icon.png'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import { Dialog } from '@headlessui/react'
 import dynamic from 'next/dynamic'
@@ -26,18 +27,18 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
   const [inputAmt, setInputAmt] = useState<string>('')
   const [isApproved, setIsApproved] = useState(false)
   const d = data?.data
+  const { balance } = useBalance(d?.address_token)
   const dData: DataDisplayType = {
     title: data?.type || undefined,
-    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 10,
+    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : balance,
     assetIcon: d?.asset?.icon ?? group,
     assetName: d?.asset?.name,
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
     apy: d?.apy,
     available: 'available' in d ? d?.available : 7.41,
+    balance: d?.balance?.amount,
     address_token: d?.address_token,
   }
-
-  const { balance } = useBalance(dData?.address_token)
 
   const handleClose = useCallback(() => {
     setIsOpen(false)
@@ -83,10 +84,29 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                 <div className='flex items-center justify-between'>
                   <div className='text-[14px] font-medium leading-[100%] text-[#A5A5B5] '>Amount</div>
                   <div className='flex items-center gap-4'>
-                    <div className='text-[14px] font-medium leading-[100%] text-[#A5A5B5]'>
-                      Supply balance <span className='text-white'>{balance}</span>
-                    </div>
-                    <div className='flex items-center justify-center gap-[10px] rounded-[32px] border border-solid border-[rgba(255,255,255,0.14)] bg-[rgba(0,0,0,0.10)] px-4 py-2 text-[14px] font-medium leading-[100%] text-[#8F9399] backdrop-blur-[8px] '>
+                    {type === 'withdraw' ? (
+                      <div className='text-[14px] font-medium leading-[100%] text-[#A5A5B5]'>
+                        Supply balance <span className='text-white'>{balance}</span>
+                      </div>
+                    ) : (
+                      <div className='flex items-center gap-[8px]'>
+                        <Image src={wallet} width={20} height={20} alt='image' className='object-cover' />
+                        <p className='mt-[2px] text-sm font-normal leading-[10px]'>
+                          {dData?.balance} {dData?.currency}
+                        </p>
+                      </div>
+                    )}
+
+                    <div
+                      onClick={() => {
+                        if (type === 'withdraw') {
+                          setInputAmt(dData ? dData.walletBalance.toString() : '')
+                        } else {
+                          setInputAmt(dData ? (dData.balance as string) : '')
+                        }
+                      }}
+                      className='flex cursor-pointer items-center justify-center gap-[10px] rounded-[32px] border border-solid border-[rgba(255,255,255,0.14)] bg-[rgba(0,0,0,0.10)] px-4 py-2 text-[14px] font-medium leading-[100%] text-[#8F9399] backdrop-blur-[8px] '
+                    >
                       MAX
                     </div>
                   </div>
@@ -121,10 +141,18 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                           return
                         }
 
-                        if (parseFloat(value) > dData.walletBalance) {
-                          setInputAmt(dData.walletBalance.toString())
+                        if (type === 'withdraw') {
+                          if (parseFloat(value) > dData.walletBalance) {
+                            setInputAmt(dData.walletBalance.toString())
+                          } else {
+                            setInputAmt(value)
+                          }
                         } else {
-                          setInputAmt(value)
+                          if (parseFloat(value) > parseFloat(dData.balance as string)) {
+                            setInputAmt(dData.balance as string)
+                          } else {
+                            setInputAmt(value)
+                          }
                         }
                       }}
                       type='text'
@@ -142,7 +170,12 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                     <div className='flex w-full items-center justify-between rounded-[12px] border border-solid border-[rgba(255,255,255,0.08)] bg-black p-3'>
                       <div className='text-[12px] font-medium leading-[100%] text-white'>Remaining supply</div>
                       <div className='text-[14px] font-medium leading-[100%] text-white'>
-                        100.00 <span className='text-[text-[12px] text-white] font-medium leading-[100%]'>SOL</span>
+                        {isNaN(parseFloat(inputAmt))
+                          ? balance
+                          : Math.round((balance - parseFloat(inputAmt)) * 100) / 100}{' '}
+                        <span className='text-[text-[12px] text-white] font-medium leading-[100%]'>
+                          {dData?.assetName}
+                        </span>
                       </div>
                     </div>
                   ) : (
@@ -151,7 +184,9 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                         <div className='text-[12px] font-medium leading-[100%] text-[#FFFFFF]'>Remaining debt</div>
                         <div className='flex flex-col items-end gap-[6px]'>
                           <div className='flex items-center gap-[6px] text-[14px] font-medium leading-[100%] text-white'>
-                            <div>20.000 SOL</div>
+                            <div>
+                              {dData?.balance} {dData?.assetName}
+                            </div>
                             <svg
                               xmlns='http://www.w3.org/2000/svg'
                               width='12'
@@ -164,7 +199,12 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                                 fill='white'
                               />
                             </svg>
-                            <div>20.000 SOL</div>
+                            <div>
+                              {isNaN(parseFloat(inputAmt))
+                                ? (dData?.balance as string)
+                                : parseFloat(dData?.balance as string) - parseFloat(inputAmt)}{' '}
+                              {dData?.assetName}
+                            </div>
                           </div>
                           <div className='flex items-center gap-[6px] text-[12px] font-medium leading-[100%] text-[#A5A5B5]'>
                             <div>$ 19.99</div>

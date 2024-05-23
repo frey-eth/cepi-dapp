@@ -23,6 +23,7 @@ const Borrow = () => {
     setData({ data: data, type: type })
     setIsOpen(true)
   }, [])
+
   const columnsData = useMemo(() => getDataColumnsBorrowDashboard({ onClickRepay }), [onClickRepay])
 
   return (

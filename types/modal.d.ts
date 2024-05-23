@@ -17,5 +17,6 @@ export type DataDisplayType = {
   currency: string
   apy: number
   available: number
+  balance?: string
   address_token?: string
 }
