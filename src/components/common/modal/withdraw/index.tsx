@@ -17,11 +17,11 @@ import RepaySubmitButton from '../../button/btn-submit-repay'
 import WithdrawSubmitButton from '../../button/btn-submit-withdraw'
 import BaseModal from '../base-modal'
 
-const WidthdrawModal = dynamic(() => import('../withdraw-modal'), {
+const SuccessWithdrawRepayModal = dynamic(() => import('../success-wr-modal'), {
   ssr: false,
 })
 
-const WithdrawModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
+const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [inputAmt, setInputAmt] = useState<string>('')
 
@@ -34,7 +34,7 @@ const WithdrawModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
     apy: d?.apy,
     available: 'available' in d ? d?.available : 7.41,
-    address_token: '',
+    address_token: d?.address_token,
   }
 
   const { balance } = useBalance(dData?.address_token)
@@ -235,9 +235,17 @@ const WithdrawModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
         </BaseModal>
       )}
 
-      {isSuccess && <WidthdrawModal isOpen={isSuccess} handleClose={handleExit} data={dData} inputAmt={inputAmt} />}
+      {isSuccess && (
+        <SuccessWithdrawRepayModal
+          type={type}
+          isOpen={isSuccess}
+          handleClose={handleExit}
+          data={dData}
+          inputAmt={inputAmt}
+        />
+      )}
     </>
   )
 }
 
-export default memo(WithdrawModal)
+export default memo(WithdrawRepayModal)

@@ -8,16 +8,18 @@ import { DataDisplayType } from '../../../../../types/modal'
 import BaseModal from '../base-modal'
 import '../style.css'
 
-const SuccessWithdrawModal = ({
+const SuccessWithdrawRepayModal = ({
   isOpen,
   handleClose,
   data,
   inputAmt,
+  type,
 }: {
   isOpen: boolean
   handleClose: () => void
   data: DataDisplayType | undefined
   inputAmt: string
+  type?: string
 }) => {
   return (
     <BaseModal isOpen={isOpen} handleClose={handleClose}>
@@ -42,7 +44,8 @@ const SuccessWithdrawModal = ({
 
             <div className='mt-[32px] flex w-full items-center justify-center gap-4'>
               <p className='text-[16px] font-normal leading-[16px] text-[#A5A5B5] '>
-                Your withdraw <span className='text-white'>{Number(inputAmt)}</span> {data?.currency}
+                Your {type === 'withdraw' ? 'withdraw' : 'repay'} <span className='text-white'>{Number(inputAmt)}</span>{' '}
+                {data?.currency}
               </p>
             </div>
 
@@ -72,4 +75,4 @@ const SuccessWithdrawModal = ({
   )
 }
 
-export default SuccessWithdrawModal
+export default SuccessWithdrawRepayModal
