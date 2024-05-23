@@ -7,11 +7,12 @@ type SubmitButtonProps = {
   inputAmt: string
   assetName: string
   setIsSuccess: (value: boolean) => void
+  isApproved: boolean
+  setIsApproved: (value: boolean) => void
 }
 
-const WithdrawSubmitButton = ({ inputAmt, setIsSuccess, assetName }: SubmitButtonProps) => {
+const WithdrawSubmitButton = ({ inputAmt, setIsSuccess, assetName, isApproved, setIsApproved }: SubmitButtonProps) => {
   const [isLoading, setIsLoading] = useState(false)
-  const [isApproved, setIsApproved] = useState(false)
 
   const handleApprove = () => {
     setIsLoading(true)

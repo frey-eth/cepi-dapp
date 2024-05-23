@@ -24,7 +24,7 @@ const SuccessWithdrawRepayModal = dynamic(() => import('../success-wr-modal'), {
 const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [inputAmt, setInputAmt] = useState<string>('')
-
+  const [isApproved, setIsApproved] = useState(false)
   const d = data?.data
   const dData: DataDisplayType = {
     title: data?.type || undefined,
@@ -108,6 +108,7 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
 
                   <div className='flex-1'>
                     <input
+                      readOnly={isApproved}
                       value={inputAmt}
                       onChange={(e) => {
                         const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')
@@ -225,9 +226,21 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
 
               <div className='mt-6'>
                 {type === 'withdraw' ? (
-                  <WithdrawSubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} assetName={dData?.assetName} />
+                  <WithdrawSubmitButton
+                    inputAmt={inputAmt}
+                    setIsSuccess={setIsSuccess}
+                    assetName={dData?.assetName}
+                    isApproved={isApproved}
+                    setIsApproved={setIsApproved}
+                  />
                 ) : (
-                  <RepaySubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} assetName={dData?.assetName} />
+                  <RepaySubmitButton
+                    isApproved={isApproved}
+                    setIsApproved={setIsApproved}
+                    inputAmt={inputAmt}
+                    setIsSuccess={setIsSuccess}
+                    assetName={dData?.assetName}
+                  />
                 )}
               </div>
             </div>
