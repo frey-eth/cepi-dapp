@@ -73,7 +73,7 @@ export const getDataColumnsBorrowDashboard = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <div style={{ justifyContent: 'end', padding: '10px' }} className='flex items-center  '>
+        <div style={{ justifyContent: 'end' }} className='flex items-center  '>
           <BtnRepay
             onClick={() => {
               const data = info.row.original
