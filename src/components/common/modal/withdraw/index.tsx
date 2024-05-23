@@ -99,10 +99,12 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
 
                     <div
                       onClick={() => {
-                        if (type === 'withdraw') {
-                          setInputAmt(dData ? dData.walletBalance.toString() : '')
-                        } else {
-                          setInputAmt(dData ? (dData.balance as string) : '')
+                        if (balance > 0) {
+                          if (type === 'withdraw') {
+                            setInputAmt(dData ? dData.walletBalance.toString() : '')
+                          } else {
+                            setInputAmt(dData ? (dData.balance as string) : '')
+                          }
                         }
                       }}
                       className='flex cursor-pointer items-center justify-center gap-[10px] rounded-[32px] border border-solid border-[rgba(255,255,255,0.14)] bg-[rgba(0,0,0,0.10)] px-4 py-2 text-[14px] font-medium leading-[100%] text-[#8F9399] backdrop-blur-[8px] '
@@ -128,7 +130,7 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
 
                   <div className='flex-1'>
                     <input
-                      readOnly={isApproved}
+                      readOnly={isApproved || balance === 0}
                       value={inputAmt}
                       onChange={(e) => {
                         const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')

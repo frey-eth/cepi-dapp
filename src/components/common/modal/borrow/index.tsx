@@ -1,8 +1,5 @@
 'use client'
 
-import '../style.css'
-import { memo, useCallback, useState } from 'react'
-import { DataDisplayType, ModalProps } from '../../../../../types/modal'
 import info from '@/images/modal/alert-circle-light.svg'
 import background from '@/images/modal/background.png'
 import down from '@/images/modal/down-icon.svg'
@@ -14,11 +11,14 @@ import wallet from '@/images/modal/wallet-icon.png'
 import { Dialog } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { memo, useCallback, useState } from 'react'
+import { DataDisplayType, ModalProps } from '../../../../../types/modal'
 import { useBalance } from '../../../../hooks/useBalance'
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
-import SettingModal from '../setting-modal'
 import SubmitButton from '../buttonSubmit'
+import SettingModal from '../setting-modal'
+import '../style.css'
 
 const SuccessModal = dynamic(() => import('../success-modal'), {
   ssr: false,
