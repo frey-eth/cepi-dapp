@@ -152,7 +152,14 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                     <div className='flex w-full items-center gap-4'>
                       <div className='flex flex-1 items-center gap-2'>
                         <p className='text-sm font-normal leading-[14px] text-white'>Available collateral</p>
-                        <Image src={info} alt='setting' width={16} height={16} className='object-cover' />
+                        <Image
+                          src={info}
+                          alt='setting'
+                          id='borrow-info'
+                          width={16}
+                          height={16}
+                          className='object-cover'
+                        />
                       </div>
                       <p className='text-base font-medium leading-4 text-white'>${dData?.available}</p>
                     </div>
@@ -225,6 +232,10 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
             )}
           </div>
           <CustomTooltip id='tooltip' content='This additional fee helps boost how a transaction is prioritized.' />
+          <CustomTooltip
+            id='borrow-info'
+            content='This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached.'
+          />
         </Dialog.Panel>
       </BaseModal>
 
