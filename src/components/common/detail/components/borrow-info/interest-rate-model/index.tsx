@@ -1,7 +1,7 @@
 import ic_share from '@/icons/details/share.svg'
 import Image from 'next/image'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-
+import { rate_mode_data } from '@/data/detail/detail_data'
 type TooltipType = {
   value: number
   color: string
@@ -12,29 +12,6 @@ type TooltipType = {
     apr: string
   }
 }
-
-const data = [
-  {
-    name: '0%',
-    apr: 0,
-  },
-  {
-    name: '25%',
-    apr: 0,
-  },
-  {
-    name: '50%',
-    apr: 0,
-  },
-  {
-    name: '75%',
-    apr: 0,
-  },
-  {
-    name: '100%',
-    apr: 0.02,
-  },
-]
 
 const CustomTooltip = ({ active, payload }: { active: boolean; payload?: TooltipType[] }) => {
   if (active && payload && payload.length) {
@@ -78,7 +55,7 @@ const InterestRateModel = () => {
         <div className='h-[144px] w-full text-[12px] leading-[12px] text-[#A5A5B5]'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
-              data={data}
+              data={rate_mode_data}
               margin={{
                 top: 5,
                 right: 5,

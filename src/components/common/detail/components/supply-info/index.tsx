@@ -4,30 +4,9 @@ import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
 import { useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { supply_info_data } from '@/data/detail/detail_data'
 
 const timeData = ['1m', '6m', '1y']
-const data = [
-  {
-    name: 'Apr 21',
-    apr: 0,
-  },
-  {
-    name: 'Apr 28',
-    apr: 0.1,
-  },
-  {
-    name: 'May 05',
-    apr: 0,
-  },
-  {
-    name: 'May 12',
-    apr: 0.1,
-  },
-  {
-    name: 'May 19',
-    apr: 0.02,
-  },
-]
 
 const SupplyInfo = () => {
   const [time, setTime] = useState(timeData[0])
@@ -91,7 +70,7 @@ const SupplyInfo = () => {
         <div className='h-[88px] w-full text-[12px] leading-[12px] text-[#A5A5B5] max-sm:h-[100px]'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
-              data={data}
+              data={supply_info_data}
               margin={{
                 top: 5,
                 right: 5,
