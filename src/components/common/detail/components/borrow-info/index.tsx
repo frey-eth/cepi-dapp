@@ -2,37 +2,65 @@
 import ic_share from '@/icons/details/share.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
-import { useState } from 'react'
-import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import React, { useMemo, useState } from 'react'
+import {
+  CartesianGrid,
+  Label,
+  Line,
+  LineChart,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
 import Emode from './e-mode'
 import InterestRateModel from './interest-rate-model'
 
 const timeData = ['1m', '6m', '1y']
-const data = [
-  {
-    name: 'Apr 21',
-    apr: 0,
-  },
-  {
-    name: 'Apr 28',
-    apr: 0.2,
-  },
-  {
-    name: 'May 05',
-    apr: 0,
-  },
-  {
-    name: 'May 12',
-    apr: 0.4,
-  },
-  {
-    name: 'May 19',
-    apr: 0.02,
-  },
-]
+
+const AverageLabel = ({ value }: { value: number }) => {
+  return (
+    <foreignObject x={100} y={15} width={72} height={18}>
+      <div className='flex h-[18px] w-[72px] items-center justify-center rounded-full bg-white px-[6px] py-1 font-helveticaNeue text-[12px] font-semibold leading-[12px] text-[#262626]'>
+        Avg {Math.round(value * 100) / 100}%
+      </div>
+    </foreignObject>
+  )
+}
 
 const BorrowInfo = () => {
   const [time, setTime] = useState(timeData[0])
+  const data = useMemo(() => {
+    return [
+      {
+        name: 'Apr 21',
+        apr: 0,
+      },
+      {
+        name: 'Apr 28',
+        apr: 0.2,
+      },
+      {
+        name: 'May 05',
+        apr: 0,
+      },
+      {
+        name: 'May 12',
+        apr: 0.4,
+      },
+      {
+        name: 'May 19',
+        apr: 0.02,
+      },
+    ]
+  }, [])
+
+  const averageAPR = useMemo(() => {
+    const totalAPR = data.reduce((sum, entry) => sum + entry.apr, 0)
+    return totalAPR / data.length
+  }, [data])
+
   return (
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
@@ -114,6 +142,10 @@ const BorrowInfo = () => {
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
               <YAxis width={40} axisLine={false} tickLine={false} />
               <Line dot={false} type='monotone' dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
+              <ReferenceLine y={averageAPR} stroke='#FFFFFF99' strokeDasharray='4 5'>
+                <Label position={'top'} content={<AverageLabel value={averageAPR} />} />
+                <Tooltip />
+              </ReferenceLine>
               <CartesianGrid strokeDasharray='3 3' stroke='#FFFFFF1A' vertical={false} />
             </LineChart>
           </ResponsiveContainer>
