@@ -185,7 +185,7 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                       <div className='flex w-full items-start justify-between'>
                         <div className='text-[12px] font-medium leading-[100%] text-[#FFFFFF]'>Remaining debt</div>
                         <div className='flex flex-col items-end gap-[6px]'>
-                          <div className='flex items-center gap-[6px] text-[14px] font-medium leading-[100%] text-white'>
+                          <div className='flex items-center gap-[6px] font-medium  leading-[100%] text-white min-[375px]:text-[10px] min-[390px]:text-[12px] md:text-[14px]'>
                             <div>
                               {dData?.balance} {dData?.assetName}
                             </div>
