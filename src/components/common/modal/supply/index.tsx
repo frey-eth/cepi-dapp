@@ -30,10 +30,12 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
   const [inputAmt, setInputAmt] = useState<string>('')
   const [viewDetail, setViewDetail] = useState(false)
   const [openSetting, setOpenSetting] = useState(false)
+
   const d = data?.data
+  const { balance } = useBalance(d?.address_token)
   const dData: DataDisplayType = {
     title: data?.type || undefined,
-    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 10,
+    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : balance,
     assetIcon: d?.asset?.icon ?? group,
     assetName: d?.asset?.name,
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
@@ -41,8 +43,6 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
     available: 'available' in d ? d?.available : 7.41,
     address_token: d?.address_token,
   }
-
-  const { balance } = useBalance(dData?.address_token)
 
   const handleClose = useCallback(() => {
     setIsOpen(false)
@@ -167,7 +167,7 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                 </div>
 
                 <div className='mt-6'>
-                  <SubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} />
+                  <SubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} label='Supply' />
                 </div>
 
                 <div className='mt-6 flex w-full items-center'>

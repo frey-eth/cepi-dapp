@@ -1,13 +1,14 @@
+import spinner from '@/images/modal/spinner.svg'
 import Image from 'next/image'
 import { useState } from 'react'
-import spinner from '@/images/modal/spinner.svg'
 
 type SubmitButtonProps = {
   inputAmt: string
+  label: string
 
   setIsSuccess: (value: boolean) => void
 }
-const SubmitButton = ({ inputAmt, setIsSuccess }: SubmitButtonProps) => {
+const SubmitButton = ({ inputAmt, setIsSuccess, label }: SubmitButtonProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const handleSubmit = () => {
     try {
@@ -33,7 +34,7 @@ const SubmitButton = ({ inputAmt, setIsSuccess }: SubmitButtonProps) => {
         className='absolute left-0 top-0 flex size-full items-center justify-center text-center align-middle text-inherit transition-all duration-300'
         style={{ scale: isLoading ? 0 : 1 }}
       >
-        Supply
+        {label}
       </span>
       <Image
         src={spinner}

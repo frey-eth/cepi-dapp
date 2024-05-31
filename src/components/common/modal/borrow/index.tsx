@@ -33,7 +33,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
 
   const dData: DataDisplayType = {
     title: data?.type || undefined,
-    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 10,
+    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 0.05,
     assetIcon: d?.asset?.icon ?? group,
     assetName: d?.asset?.name,
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
@@ -168,7 +168,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                 </div>
 
                 <div className='mt-6'>
-                  <SubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} />
+                  <SubmitButton inputAmt={inputAmt} setIsSuccess={setIsSuccess} label='Borrow' />
                 </div>
 
                 <div className='mt-6 flex w-full items-center'>
