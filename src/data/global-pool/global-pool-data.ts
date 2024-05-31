@@ -70,7 +70,7 @@ export const dataBorrow: GlobalPoolBorrow[] = [
     available: 333,
     total_borrow: 166,
     utilization: 2.25,
-    address_token: '6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES',
+    address_token: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263',
   },
   {
     asset: {

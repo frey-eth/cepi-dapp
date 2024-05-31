@@ -34,6 +34,7 @@ export interface ISupply extends Asset {
     value?: number
   }
   apy?: number
+  address_token?: string
 }
 
 export interface AssetsBorrow extends Asset {

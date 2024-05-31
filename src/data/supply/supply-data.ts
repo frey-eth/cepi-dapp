@@ -15,6 +15,7 @@ export const supplyData: ISupply[] = [
       value: 3.31,
     },
     apy: 2.16,
+    address_token: '',
   },
   {
     asset: {
@@ -26,6 +27,7 @@ export const supplyData: ISupply[] = [
       value: 3.31,
     },
     apy: 2.16,
+    address_token: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263',
   },
   {
     asset: {
@@ -37,6 +39,7 @@ export const supplyData: ISupply[] = [
       value: 3.31,
     },
     apy: 2.16,
+    address_token: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
   },
 ]
 
@@ -64,5 +67,6 @@ export const borrowData: ISupply[] = [
       value: 1.655,
     },
     apy: 3,
+    address_token: '',
   },
 ]
