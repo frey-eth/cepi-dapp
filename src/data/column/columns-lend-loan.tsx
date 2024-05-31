@@ -53,7 +53,6 @@ export const getDataColumnsLending = ({
       return (
         <figure className='flex items-center justify-start space-x-2'>
           <span className='text-[14px] font-normal leading-[14px]'>${Number(info.getValue()).toFixed(2)}</span>
-          {/* <Image src={ic_finger} alt='finger' /> */}
         </figure>
       )
     },

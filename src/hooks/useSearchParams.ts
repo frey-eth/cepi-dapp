@@ -4,7 +4,6 @@ import { useCallback, useMemo } from 'react'
 const useUrlParams = () => {
   const searchParams = useSearchParams()
 
-  ///Create new search params string by merging current
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString())

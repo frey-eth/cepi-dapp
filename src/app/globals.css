@@ -29,12 +29,12 @@ html {
 }
 
 .backdrop {
-  -webkit-backdrop-filter: blur(75px); /* Add this line first, it fixes blur for Safari*/
+  -webkit-backdrop-filter: blur(75px);
   backdrop-filter: blur(75px);
 }
 
 .backdropFilter {
-  -webkit-backdrop-filter: blur(20px); /* Add this line first, it fixes blur for Safari*/
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
 }
 
