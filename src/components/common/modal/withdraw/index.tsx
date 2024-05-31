@@ -255,7 +255,7 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                 </div>
                 <div className='flex items-center gap-2 py-2 leading-[14px]'>
                   <Image src={gas} alt='gas' width={16} height={16} />
-                  {parseFloat(inputAmt) > 0 && inputAmt !== '' ? (
+                  {parseFloat(inputAmt) > 0 && inputAmt !== '' && isApproved ? (
                     <div className='flex items-center gap-1'>
                       <div className='mt-[1px] text-[14px] font-medium leading-[100%] text-[#A5A5B5]'> {'<$'} 0.01</div>
                       <Image src={icAlert} alt='alert' />
