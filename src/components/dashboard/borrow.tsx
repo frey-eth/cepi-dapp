@@ -32,7 +32,7 @@ const Borrow = () => {
       <Image src={bgAssets} alt='background' fill objectFit='cover' />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-[20px] font-medium leading-5 text-white'>Your Borrows</div>
-        {/* <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div> */}
+
         <div className='flex h-[26px] w-full flex-row flex-wrap items-center gap-1 leading-[14px]  min-[320px]:flex-wrap  min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
           <div className='flex h-[26px] flex-row  items-center justify-center rounded border border-[#3C3937] px-2 pb-[1px] max-sm:w-[118px]  min-[320px]:gap-x-[10px] min-[375px]:gap-x-[6px] min-[414px]:gap-x-[10px]  md:gap-x-[10px]'>
             <span className=' font-normal leading-[100%] text-[#8F9399] max-sm:text-[12px] min-[375px]:text-[12px] min-[414px]:text-[12px] md:text-[14px]'>
