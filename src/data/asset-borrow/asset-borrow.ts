@@ -11,6 +11,7 @@ export const dataBorrow: AssetsBorrow[] = [
     },
     available: 2.71,
     apy: 7.03,
+    address_token: '',
   },
   {
     asset: {
@@ -19,6 +20,7 @@ export const dataBorrow: AssetsBorrow[] = [
     },
     available: 2.71,
     apy: 34.98,
+    address_token: '6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES',
   },
   {
     asset: {
@@ -27,5 +29,6 @@ export const dataBorrow: AssetsBorrow[] = [
     },
     available: 2.71,
     apy: 22.64,
+    address_token: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
   },
 ]

@@ -3,7 +3,7 @@ import Table from '@/components/common/table'
 import { dataBorrow } from '@/data/asset-borrow/asset-borrow'
 import { getDataColumnsAssetBorrow } from '@/data/column/columns-assets-borrow'
 import tooltipData from '@/data/tooltip/tooltip-asset-borrow.json'
-import bgAssets from '@/images/portfolio/assets-supply.png'
+import bgAssets from '@/images/table/bg-table.svg'
 import { SortingState } from '@tanstack/react-table'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -48,16 +48,16 @@ const AssetsToBorrow = () => {
 
   return (
     <>
-      <div className='relative h-fit max-h-[340px] w-full rounded-lg border border-solid border-[#43434352] font-helveticaNeue md:border-none lg:h-[300px] '>
-        <Image src={bgAssets} alt='background' fill priority />
-        <div className='relative   py-4 pl-4 md:mx-auto  md:px-4 md:py-2'>
-          <div className='flex h-[50px] flex-col justify-between lg:flex-row lg:items-center'>
+      <div className='relative h-[348px] w-full overflow-hidden rounded-lg border border-solid  border-[#43434352] bg-[rgba(11,13,16,0.8)] font-helveticaNeue md:border-[#252B3D26] lg:h-[300px]'>
+        <Image src={bgAssets} alt='background' fill priority objectFit='cover' />
+        <div className='relative rounded-lg border border-solid border-[#43434352] py-4 pl-4 md:mx-auto md:border-none md:px-4 md:py-2'>
+          <div className='flex flex-col justify-between md:h-[50px] lg:flex-row lg:items-center'>
             <h2 className='text-xl font-medium text-[#fff]'>Assets to Borrow</h2>
           </div>
 
           <div className='table-custom h-[230px] w-full overflow-y-auto lg:h-[240px]'>
             <Table
-              className='w-[350px] md:w-full'
+              className='w-[350px] min-[500px]:w-full md:w-full'
               columns={columnsData}
               data={dataBorrow}
               sorting={sorting}

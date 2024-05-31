@@ -1,5 +1,5 @@
 import Dental from '@/components/common/table/dental'
-import icAlert from '@/icons/alert-triangle-light.svg'
+// import icAlert from '@/icons/alert-triangle-light.svg'
 
 import BtnSupply from '@/components/common/button/btn-supply'
 import icCheck from '@/images/portfolio/check.svg'
@@ -40,12 +40,12 @@ export const getDataColumnsAssetSupply = ({
       return <span>Wallet balance</span>
     },
     cell: (info) => {
-      const { isError } = info.row.original
+      // const { isError } = info.row.original
       return (
         <figure>
           <div className='flex w-[70px] items-center justify-start gap-2 space-x-2'>
             <span className='block text-left'>{Number(info.getValue())}</span>
-            {isError && <Image src={icAlert} alt='alert' />}
+            {/* {isError && <Image src={icAlert} alt='alert' />} */}
           </div>
         </figure>
       )

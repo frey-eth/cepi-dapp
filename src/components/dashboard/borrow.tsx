@@ -1,8 +1,9 @@
 'use client'
 import { getDataColumnsBorrowDashboard } from '@/data/column/columns-borrow-dashboard'
 import { borrowData } from '@/data/supply/supply-data'
-import bgAssets from '@/images/portfolio/assets-supply.png'
+
 import icAlert from '@/images/table/alert-circle-light.svg'
+import bgAssets from '@/images/table/bg-table.svg'
 import { SortingState } from '@tanstack/react-table'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -27,8 +28,8 @@ const Borrow = () => {
   const columnsData = useMemo(() => getDataColumnsBorrowDashboard({ onClickRepay }), [onClickRepay])
 
   return (
-    <div className='relative flex h-[260px] w-full  flex-col gap-4  overflow-y-auto rounded-lg border  border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:h-[340px] md:border-[#252B3D26]'>
-      <Image src={bgAssets} alt='background' fill />
+    <div className='relative flex h-[220px] w-full  flex-col gap-4  overflow-y-auto rounded-lg border  border-solid border-[#43434352] bg-[rgba(11,13,16,0.8)] p-4 md:h-[340px] md:border-[#252B3D26]'>
+      <Image src={bgAssets} alt='background' fill objectFit='cover' />
       <div className='relative flex h-full w-full flex-col gap-4 overflow-hidden font-helveticaNeue'>
         <div className='text-[20px] font-medium leading-5 text-white'>Your Borrows</div>
         {/* <div className='h-[30px] text-[14px] font-normal leading-[14px] text-[#C6C6C6]'>Nothing borrowed yet</div> */}

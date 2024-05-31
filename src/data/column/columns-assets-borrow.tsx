@@ -86,7 +86,7 @@ export const getDataColumnsAssetBorrow = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <div className='hidden w-[70px] items-center justify-start gap-2 lg:flex'>
+        <div className='hidden w-[70px] items-center justify-start gap-2  md:flex'>
           <Dental percent={Number(info.getValue())} />
         </div>
       )
@@ -101,7 +101,7 @@ export const getDataColumnsAssetBorrow = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <div style={{ justifyContent: 'end' }} className=' flex items-center justify-end gap-2 '>
+        <div style={{ justifyContent: 'end', paddingRight: '6px' }} className=' flex items-center justify-end gap-2 '>
           <BtnBorrow
             onClick={() => {
               const data = info.row.original

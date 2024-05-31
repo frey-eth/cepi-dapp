@@ -162,17 +162,15 @@ export const getDataColumnsBorrowing = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <div className=' flex items-center justify-end gap-2'>
-          <BtnBorrow
-            onClick={() => {
-              const data = info.row.original
-              onClickBorrow({
-                data: data,
-                type: 'borrow',
-              })
-            }}
-          />
-        </div>
+        <BtnBorrow
+          onClick={() => {
+            const data = info.row.original
+            onClickBorrow({
+              data: data,
+              type: 'borrow',
+            })
+          }}
+        />
       )
     },
     footer: (props) => props.column.id,
