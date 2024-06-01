@@ -16,6 +16,7 @@ import { memo, useCallback, useState } from 'react'
 import { DataDisplayType, ModalProps } from '../../../../../types/modal'
 import RepaySubmitButton from '../../button/btn-submit-repay'
 import WithdrawSubmitButton from '../../button/btn-submit-withdraw'
+import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
 
 const SuccessWithdrawRepayModal = dynamic(() => import('../success-wr-modal'), {
@@ -258,13 +259,19 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                   {parseFloat(inputAmt) > 0 && inputAmt !== '' && isApproved ? (
                     <div className='flex items-center gap-1'>
                       <div className='mt-[1px] text-[14px] font-medium leading-[100%] text-[#A5A5B5]'> {'<$'} 0.01</div>
-                      <Image src={icAlert} alt='alert' />
+                      <Image src={icAlert} alt='alert' id='gas_fee' />
                     </div>
                   ) : (
                     <div className='text-[14px] font-medium leading-[100%] text-white'>-</div>
                   )}
                 </div>
               </div>
+              <CustomTooltip
+                id={'gas_fee'}
+                content={
+                  'This gas calculation is only an estimation. Your wallet will set the price of the transaction. You can modify the gas settings directly from your wallet provider.'
+                }
+              />
 
               <div className='mt-6'>
                 {type === 'withdraw' ? (
