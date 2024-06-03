@@ -29,7 +29,7 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
   const [isApproved, setIsApproved] = useState(false)
   const priceUSD = useTokenPrices()
   const d = data?.data
-  const { balance } = useBalance(d?.address_token)
+  const { balance } = useBalance(d?.addressToken)
   const dData: DataDisplayType = {
     title: data?.type || undefined,
     walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : balance,
@@ -39,7 +39,7 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
     apy: d?.apy,
     available: 'available' in d ? d?.available : 7.41,
     balance: d?.balance?.amount,
-    address_token: d?.address_token,
+    addressToken: d?.addressToken,
   }
 
   const handleClose = useCallback(() => {

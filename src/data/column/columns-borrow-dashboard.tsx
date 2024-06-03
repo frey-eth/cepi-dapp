@@ -13,7 +13,7 @@ export const getDataColumnsBorrowDashboard = ({
   {
     id: 'assets',
     accessorKey: 'assets',
-    header: () => <span className=' gap-2 text-left '>Asset</span>,
+    header: () => <span className=' gap-2 text-left font-medium leading-[14px] '>Asset</span>,
     cell: (info) => {
       const { icon, name } = info.row.original.asset
       return (
@@ -31,7 +31,7 @@ export const getDataColumnsBorrowDashboard = ({
   {
     id: 'balance',
     accessorKey: 'balance',
-    header: () => <p className='text-center'>Debt</p>,
+    header: () => <p className='text-center font-medium leading-[14px]'>Debt</p>,
     cell: (info) => {
       const balanceAmount = info.row.original.balance.amount
       const balanceValue = info.row.original.balance.value
@@ -56,7 +56,7 @@ export const getDataColumnsBorrowDashboard = ({
   {
     id: 'apy',
     accessorKey: 'apy',
-    header: () => <p>APY</p>,
+    header: () => <p className='font-medium leading-[14px]'>APY</p>,
     cell: (info) => {
       return info.getValue() ? (
         <Dental percent={Number(info.getValue())} />

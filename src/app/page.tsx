@@ -6,7 +6,7 @@ import Supply from '@/components/dashboard/supply'
 
 const DashBoard = () => {
   return (
-    <main className='mx-auto h-full w-full p-4 lg:mb-10 lg:w-[1288px] lg:py-5'>
+    <main className='mx-auto h-full w-full p-4 font-helveticaNeue lg:mb-10 lg:w-[1288px] lg:py-5'>
       <section className='relative h-full w-full overflow-hidden rounded-2xl md:bg-[rgba(255,255,255,0.06)] md:p-4 md:backdrop-blur-[75px] lg:p-6'>
         <section className='relative h-full'>
           <>

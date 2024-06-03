@@ -18,5 +18,5 @@ export type DataDisplayType = {
   apy: number
   available: number
   balance?: string
-  address_token?: string
+  addressToken?: string
 }

@@ -39,10 +39,10 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
     apy: d?.apy,
     available: 'available' in d ? d?.available : 7.41,
-    address_token: d?.address_token,
+    addressToken: d?.addressToken,
   }
 
-  const { balance } = useBalance(dData?.address_token)
+  const { balance } = useBalance(dData?.addressToken)
 
   const handleClose = useCallback(() => {
     setIsOpen(false)
