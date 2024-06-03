@@ -106,7 +106,7 @@ const ViewDetail = () => {
         </div>
       </div>
 
-      <div className='flex w-full flex-row gap-4 max-sm:flex-col-reverse'>
+      <div className='flex w-full flex-row gap-4 max-[1024px]:flex-col-reverse'>
         <TotalDetails />
         <SelfInfomation data={data} />
       </div>
