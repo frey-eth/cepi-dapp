@@ -90,7 +90,7 @@ const BorrowInfo = () => {
 
             <div className='h-5 border border-[#FFFFFF1A]' />
 
-            <div className='flex h-full flex-col gap-2'>
+            <div className='flex  flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 APY, Variable <Image src={icAlert} alt='icon alert' sizes='16' id='apy_variable' />
               </div>
@@ -154,7 +154,7 @@ const BorrowInfo = () => {
         <div className='flex flex-col gap-4'>
           <div className='flex flex-row items-center gap-3'>Collector Info</div>
 
-          <div className='flex flex-row items-center gap-4'>
+          <div className='flex flex-row items-center gap-4 '>
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Reserve factor <Image src={icAlert} alt='icon alert' sizes='16' id='reserve_factor' />

@@ -93,21 +93,21 @@ const SupplyInfo = () => {
             </div>
           </div>
 
-          <div className='flex w-full flex-row flex-wrap gap-4 max-sm:flex-col sm:h-[54px] sm:items-center'>
-            <div className='flex h-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
+          <div className='flex w-full flex-row flex-wrap gap-4 max-[1024px]:flex-col sm:items-center'>
+            <div className='flex w-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />
               </div>
               78.50%
             </div>
 
-            <div className='flex h-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
+            <div className='flex w-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_threshold' />
               </div>
               81.00%{' '}
             </div>
-            <div className='flex  h-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
+            <div className='flex  w-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_penalty' />
               </div>
