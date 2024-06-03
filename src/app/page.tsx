@@ -3,6 +3,7 @@ import AssetsToBorrow from '@/components/dashboard/assets-borrow'
 import AssetsSupply from '@/components/dashboard/assets-supply'
 import Borrow from '@/components/dashboard/borrow'
 import Supply from '@/components/dashboard/supply'
+
 const DashBoard = () => {
   return (
     <main className='mx-auto h-full w-full p-4 lg:mb-10 lg:w-[1288px] lg:py-5'>
