@@ -8,6 +8,7 @@ import localFont from 'next/font/local'
 
 import BottomNavigation from '@/components/common/bottom-navigation'
 import Image from 'next/image'
+import { Suspense } from 'react'
 import './globals.css'
 const monaSans = localFont({
   src: [
@@ -78,7 +79,9 @@ export default function RootLayout({
         <SolanaProvider>
           <main className='relative h-full overflow-y-scroll'>
             <Header />
-            <section className='h-fit max-sm:mb-[64px] lg:min-h-[calc(100vh-130px)]'>{children}</section>
+            <section className='h-fit max-sm:mb-[64px] lg:min-h-[calc(100vh-130px)]'>
+              <Suspense>{children}</Suspense>
+            </section>
             <Footer />
             <BottomNavigation />
           </main>
