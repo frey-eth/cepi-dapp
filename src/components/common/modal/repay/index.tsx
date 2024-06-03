@@ -3,6 +3,7 @@
 import '../style.css'
 
 import { useBalance } from '@/hooks/useBalance'
+import useTokenPrices from '@/hooks/useTokenPriceUSD'
 import background from '@/images/modal/background.png'
 import close from '@/images/modal/close-circle.svg'
 import gas from '@/images/modal/gas.svg'
@@ -26,6 +27,7 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [inputAmt, setInputAmt] = useState<string>('')
   const [isApproved, setIsApproved] = useState(false)
+  const priceUSD = useTokenPrices()
   const d = data?.data
   const { balance } = useBalance(d?.address_token)
   const dData: DataDisplayType = {
@@ -53,6 +55,9 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
       .split(' ')
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ')
+  const transferTokenToUSD = (token: string, balance: Number) => {
+    return (Number(priceUSD[token]) * Number(balance)).toFixed(3)
+  }
   return (
     <>
       {!isSuccess && (
@@ -180,7 +185,9 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                           </div>
                         </div>
                         <div className='flex items-center gap-[6px] text-[12px] font-medium leading-[100%] text-[#A5A5B5]'>
-                          <div>$ 19.99</div>
+                          <div>
+                            $ {priceUSD && dData && transferTokenToUSD(dData?.assetName, Number(dData?.balance))}
+                          </div>
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
                             width='12'
@@ -193,7 +200,13 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                               fill='#A5A5B5'
                             />
                           </svg>
-                          <div>$ 19.99</div>
+                          <div>
+                            $
+                            {priceUSD &&
+                              dData &&
+                              Number(transferTokenToUSD(dData?.assetName, Number(dData?.balance))) -
+                                Number(transferTokenToUSD(dData?.assetName, Number(inputAmt)))}
+                          </div>
                         </div>
                       </div>
                     </div>
