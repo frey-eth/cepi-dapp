@@ -63,7 +63,7 @@ const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
           </div>
 
           {balance == 0 && (
-            <div className='h-[30px] w-full gap-[10px] rounded-md bg-[#BF83491A] p-2 font-helveticaNeue text-[12px] font-normal leading-[14px] text-[#FFC53D]'>
+            <div className=' gap-[10px] rounded-md bg-[#BF83491A] p-2 font-helveticaNeue text-[12px] font-normal leading-[14px] text-[#FFC53D]'>
               Your Solana wallet is empty. Purchase or transfer assets.
             </div>
           )}
