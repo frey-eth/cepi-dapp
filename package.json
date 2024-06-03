@@ -32,6 +32,7 @@
     "react-dom": "^18",
     "react-tooltip": "^5.26.4",
     "recharts": "^2.12.7",
+    "rpc-websockets": "7.10.0",
     "sharp": "^0.33.3"
   },
   "devDependencies": {
