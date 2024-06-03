@@ -12,7 +12,7 @@ import { DataModalType } from '../../../types/modal'
 import { AssetsBorrow, Type } from '../../../types/table'
 import CustomTooltip from '../common/tooltip'
 import useUrlParams from '@/hooks/useSearchParams'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const ModalBorrow = dynamic(() => import('../common/modal/borrow'), {
   ssr: false,
@@ -24,7 +24,6 @@ const AssetsToBorrow = () => {
   const [sorting, setSorting] = useState<SortingState>([])
   const { createQueryString } = useUrlParams()
   const router = useRouter()
-  const pathName = usePathname()
 
   const onClickBorrow = useCallback(({ data, type }: { data: AssetsBorrow; type: Type }) => {
     if (!data) return
@@ -35,10 +34,10 @@ const AssetsToBorrow = () => {
   const onClickDetails = useCallback(
     ({ data }: { data: AssetsBorrow }) => {
       if (!data) return
-      const query = createQueryString('details', data.asset.name)
-      router.push(pathName + '?' + query)
+      const query = createQueryString('asset', data.asset.name)
+      router.push('detail/' + '?' + query)
     },
-    [createQueryString, pathName, router]
+    [createQueryString, router]
   )
 
   const columnsData = useMemo(

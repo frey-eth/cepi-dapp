@@ -12,7 +12,7 @@ import { AssetSupply, Type } from '../../../types/table'
 import Checkbox from '../common/checkbox'
 import Table from '../common/table'
 import useUrlParams from '@/hooks/useSearchParams'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const ModalSupply = dynamic(() => import('../common/modal/supply'), {
   ssr: false,
@@ -25,7 +25,6 @@ const AssetsSupply = () => {
   const [sorting, setSorting] = useState<SortingState>([])
   const { createQueryString } = useUrlParams()
   const router = useRouter()
-  const pathName = usePathname()
 
   const onClickSupply = useCallback(({ data, type }: { data: AssetSupply; type: Type }) => {
     if (!data) return
@@ -35,10 +34,10 @@ const AssetsSupply = () => {
   const onClickDetails = useCallback(
     ({ data }: { data: AssetSupply }) => {
       if (!data) return
-      const query = createQueryString('details', data.asset.name)
-      router.push(pathName + '?' + query)
+      const query = createQueryString('asset', data.asset.name)
+      router.push('detail/' + '?' + query)
     },
-    [createQueryString, pathName, router]
+    [createQueryString, router]
   )
   const columnsData = useMemo(
     () => getDataColumnsAssetSupply({ onClickSupply, onClickDetails }),

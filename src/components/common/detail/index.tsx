@@ -18,8 +18,8 @@ const ViewDetail = () => {
   const [data, setData] = useState<AssetsBorrow>(dataBorrow[0])
   const { query } = useUrlParams()
   useEffect(() => {
-    if (query('details')) {
-      const assetName = query('details')
+    if (query('asset')) {
+      const assetName = query('asset')
       const asset = dataBorrow.find((item) => item.asset.name === assetName)
       if (asset) setData(asset)
     }
