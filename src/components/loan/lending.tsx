@@ -6,6 +6,7 @@ import { dataLending } from '@/data/global-pool/global-pool-data'
 import tooltipData from '@/data/tooltip/tooltip.json'
 import { DataModalType } from '@/types/modal'
 import { GlobalPool, Type } from '@/types/table'
+
 import dynamic from 'next/dynamic'
 import { useCallback, useMemo, useState } from 'react'
 

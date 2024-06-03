@@ -9,9 +9,9 @@ import { getDataColumnsWithdraw } from '@/data/column/columns-supply-dashboard'
 import { supplyData } from '@/data/supply/supply-data'
 import dynamic from 'next/dynamic'
 
-import TopInformation from '../common/top-information'
 import { DataModalType } from '@/types/modal'
 import { ISupply, Type } from '@/types/table'
+import TopInformation from '../common/top-information'
 
 const ModalWithdraw = dynamic(() => import('../common/modal/withdraw'), {
   ssr: false,

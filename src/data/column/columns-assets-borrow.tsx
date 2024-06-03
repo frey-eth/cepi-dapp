@@ -4,6 +4,7 @@ import { ColumnDef } from '@tanstack/react-table'
 
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import BtnDetail from '@/components/common/button/btn-detail'
+
 import { AssetsBorrow, Type } from '@/types/table'
 import Image from 'next/image'
 

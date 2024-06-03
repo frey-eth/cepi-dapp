@@ -26,7 +26,6 @@
       "@/component/*": ["./components/*"],
       "@/hook/*": ["./hooks/*"],
       "@/providers/*": ["./src/provider/*"],
-      "@/hooks/*": ["./src/hooks/*"],
       "@/types/*": ["./types/*"],
       "@/utils/*": ["./utils/*"]
     }

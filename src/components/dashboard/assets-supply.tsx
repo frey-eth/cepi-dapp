@@ -8,12 +8,13 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useCallback, useMemo, useState } from 'react'
 
-import Checkbox from '../common/checkbox'
-import Table from '../common/table'
 import useUrlParams from '@/hooks/useSearchParams'
 import { useRouter } from 'next/navigation'
+
 import { DataModalType } from '@/types/modal'
 import { AssetSupply, Type } from '@/types/table'
+import Checkbox from '../common/checkbox'
+import Table from '../common/table'
 
 const ModalSupply = dynamic(() => import('../common/modal/supply'), {
   ssr: false,
