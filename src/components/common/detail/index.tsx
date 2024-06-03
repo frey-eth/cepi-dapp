@@ -69,7 +69,7 @@ const ViewDetail = () => {
 
           <div className='h-full border border-[#FFFFFF1A] max-sm:hidden' />
 
-          <div className='flex h-10 flex-row items-center gap-6 font-helveticaNeue'>
+          <div className='flex flex-wrap items-center gap-6 whitespace-nowrap font-helveticaNeue'>
             <div className='flex h-[36px] flex-col gap-[6px] text-[14px] font-medium leading-[14px] text-[#A5A5B5]'>
               Reserve Size
               <div className='flex flex-row items-center gap-1 text-[16px] leading-[16px] text-white'>

@@ -14,7 +14,7 @@ const SupplyInfo = () => {
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>Supply info</h3>
-        <div className='flex flex-row gap-10 max-sm:flex-col max-sm:gap-4 sm:items-center'>
+        <div className='flex flex-row items-center gap-10 max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-4'>
           <div
             className='flex h-[82px] w-[82px] items-center justify-center rounded-full p-[6px]'
             style={{ background: `conic-gradient(#00E585 ${(360 * 75) / 100}deg, white 0deg)` }}

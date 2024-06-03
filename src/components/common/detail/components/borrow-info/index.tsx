@@ -22,7 +22,7 @@ const timeData = ['1m', '6m', '1y']
 const AverageLabel = ({ value }: { value: number }) => {
   return (
     <foreignObject x={100} y={15} width={72} height={18}>
-      <div className='flex h-[18px] w-[72px] items-center justify-center rounded-full bg-white px-[6px] py-1 font-helveticaNeue text-[12px] font-semibold leading-[12px] text-[#262626]'>
+      <div className='flex h-[18px] w-[72px] items-center justify-center whitespace-nowrap rounded-full bg-white px-[6px] py-1 font-helveticaNeue text-[11px] font-semibold leading-[11px] text-[#262626]'>
         Avg {Math.round(value * 100) / 100}%
       </div>
     </foreignObject>
@@ -65,16 +65,16 @@ const BorrowInfo = () => {
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>Borrow info</h3>
-        <div className='flex flex-row gap-10 max-sm:flex-col max-sm:gap-4 sm:items-center'>
+        <div className='flex flex-row items-center gap-10 max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-4'>
           <div
-            className='flex h-[82px] w-[82px] items-center justify-center rounded-full p-[6px]'
+            className='flex h-[82px] w-[82px] items-center  justify-center rounded-full p-[6px]'
             style={{ background: `conic-gradient(#00E585 ${(360 * 26) / 100}deg, white 0deg)` }}
           >
             <div className='flex h-full w-full items-center justify-center rounded-full bg-[#0B0D10]  font-helveticaNeue text-[14px] font-medium leading-[14px]'>
               26.60%
             </div>
           </div>
-          <div className='flex flex-row gap-[26px] sm:h-[60px] sm:items-center'>
+          <div className='flex flex-wrap items-center gap-[26px] max-[1024px]:items-start'>
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
                 Total borrowed <Image src={icAlert} alt='icon alert' sizes='16' id='total_borrow' />
