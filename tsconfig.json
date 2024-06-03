@@ -25,7 +25,10 @@
       "@/font/*": ["./public/fonts/*"],
       "@/component/*": ["./components/*"],
       "@/hook/*": ["./hooks/*"],
-      "@/providers/*": ["./src/provider/*"]
+      "@/providers/*": ["./src/provider/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/types/*": ["./types/*"],
+      "@/utils/*": ["./utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

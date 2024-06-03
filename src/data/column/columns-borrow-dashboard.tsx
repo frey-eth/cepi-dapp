@@ -2,8 +2,8 @@ import Dental from '@/components/common/table/dental'
 import { ColumnDef } from '@tanstack/react-table'
 
 import BtnRepay from '@/components/common/button/btn-repay'
+import { ISupply, Type } from '@/types/table'
 import Image from 'next/image'
-import { ISupply, Type } from '../../../types/table'
 
 export const getDataColumnsBorrowDashboard = ({
   onClickRepay,

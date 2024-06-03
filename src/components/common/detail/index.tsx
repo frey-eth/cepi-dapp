@@ -5,13 +5,14 @@ import ic_wallet from '@/icons/details/wallet.svg'
 import Image from 'next/image'
 
 import { dataBorrow } from '@/data/asset-borrow/asset-borrow'
-import TotalDetails from './components/total-details'
-import SelfInfomation from './components/self-info'
 import { useEffect, useState } from 'react'
-import { AssetsBorrow } from '../../../../types/table'
-import useUrlParams from '@/hooks/useSearchParams'
-import Link from 'next/link'
+import SelfInfomation from './components/self-info'
+import TotalDetails from './components/total-details'
+
 import tooltipDetailsData from '@/data/tooltip/details.json'
+import useUrlParams from '@/hooks/useSearchParams'
+import { AssetsBorrow } from '@/types/table'
+import Link from 'next/link'
 import CustomTooltip from '../tooltip'
 
 const ViewDetail = () => {

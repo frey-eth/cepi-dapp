@@ -1,9 +1,9 @@
 import ArrowBack from '@/icons/arrow-back.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
+import { DataDisplayType } from '@/types/modal'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
 import { useState } from 'react'
-import { DataDisplayType } from '../../../../../types/modal'
 
 type SettingModalType = {
   setOpenSetting: (value: boolean) => void

@@ -4,10 +4,10 @@ import CustomTooltip from '@/components/common/tooltip'
 import { getDataColumnsLending } from '@/data/column/columns-lend-loan'
 import { dataLending } from '@/data/global-pool/global-pool-data'
 import tooltipData from '@/data/tooltip/tooltip.json'
+import { DataModalType } from '@/types/modal'
+import { GlobalPool, Type } from '@/types/table'
 import dynamic from 'next/dynamic'
 import { useCallback, useMemo, useState } from 'react'
-import { DataModalType } from '../../../types/modal'
-import { GlobalPool, Type } from '../../../types/table'
 
 const ModalSupply = dynamic(() => import('../common/modal/supply'), {
   ssr: false,

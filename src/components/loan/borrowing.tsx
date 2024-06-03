@@ -4,10 +4,10 @@ import CustomTooltip from '@/components/common/tooltip'
 import { getDataColumnsBorrowing } from '@/data/column/columns-borrow-loan'
 import { dataBorrow } from '@/data/global-pool/global-pool-data'
 import tooltipBorrowData from '@/data/tooltip/tooltip-borrow.json'
+import { DataModalType } from '@/types/modal'
+import { GlobalPoolBorrow, Type } from '@/types/table'
 import dynamic from 'next/dynamic'
 import { useCallback, useMemo, useState } from 'react'
-import { DataModalType } from '../../../types/modal'
-import { GlobalPoolBorrow, Type } from '../../../types/table'
 
 const ModalBorrow = dynamic(() => import('../common/modal/borrow'), {
   ssr: false,

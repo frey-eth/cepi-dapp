@@ -1,11 +1,11 @@
 import BtnSupply from '@/components/common/button/btn-supply'
 import Dental from '@/components/common/table/dental'
 import icAlert from '@/images/table/alert-circle-light.svg'
+import { GlobalPool, Type } from '@/types/table'
+import { kFormatter } from '@/utils/libs/format'
 import { ColumnDef } from '@tanstack/react-table'
 
 import Image from 'next/image'
-import { GlobalPool, Type } from '../../../types/table'
-import { kFormatter } from '../../../utils/libs/format'
 
 export const getDataColumnsLending = ({
   onClickSupply,

@@ -8,11 +8,12 @@ import { SortingState } from '@tanstack/react-table'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useCallback, useMemo, useState } from 'react'
-import { DataModalType } from '../../../types/modal'
-import { AssetsBorrow, Type } from '../../../types/table'
+
 import CustomTooltip from '../common/tooltip'
 import useUrlParams from '@/hooks/useSearchParams'
 import { useRouter } from 'next/navigation'
+import { DataModalType } from '@/types/modal'
+import { AssetsBorrow, Type } from '@/types/table'
 
 const ModalBorrow = dynamic(() => import('../common/modal/borrow'), {
   ssr: false,

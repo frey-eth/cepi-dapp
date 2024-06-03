@@ -3,8 +3,9 @@ import Dental from '@/components/common/table/dental'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
-import { GlobalPoolBorrow, Type } from '../../../types/table'
-import { kFormatter } from '../../../utils/libs/format'
+
+import { GlobalPoolBorrow, Type } from '@/types/table'
+import { kFormatter } from '@/utils/libs/format'
 
 export const getDataColumnsBorrowing = ({
   onClickBorrow,

@@ -5,7 +5,8 @@ import share from '@/images/modal/share.svg'
 import solana from '@/images/modal/solana-icon.svg'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
-import { DataDisplayType } from '../../../../../types/modal'
+
+import { DataDisplayType } from '@/types/modal'
 import BaseModal from '../base-modal'
 import '../style.css'
 

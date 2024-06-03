@@ -1,7 +1,7 @@
 import ic_bonk from '@/images/global-pool/bonk.svg'
 import ic_solana from '@/images/global-pool/sol.svg'
 import ic_usdc from '@/images/portfolio/usdc.svg'
-import { AssetSupply } from '../../../types/table'
+import { AssetSupply } from '@/types/table'
 
 export const dataAssetSupply: AssetSupply[] = [
   {

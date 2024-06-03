@@ -1,7 +1,7 @@
 import icBonk from '@/images/global-pool/bonk.svg'
 import icSolana from '@/images/global-pool/sol.svg'
 import icUsdc from '@/images/portfolio/usdc.svg'
-import { GlobalPool, GlobalPoolBorrow } from '../../../types/table'
+import { GlobalPool, GlobalPoolBorrow } from '@/types/table'
 
 export const dataLending: GlobalPool[] = [
   {

@@ -2,7 +2,7 @@ import nonToken from '@/icons/non-token.svg'
 import icBonk from '@/images/global-pool/bonk.svg'
 import icSolana from '@/images/global-pool/sol.svg'
 import icUsdc from '@/images/portfolio/usdc.svg'
-import { ISupply } from '../../../types/table'
+import { ISupply } from '@/types/table'
 
 export const supplyData: ISupply[] = [
   {

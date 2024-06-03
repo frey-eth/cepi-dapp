@@ -3,9 +3,9 @@ import BtnSupply from '@/components/common/button/btn-supply'
 import { useBalance } from '@/hooks/useBalance'
 import ic_wallet from '@/icons/details/wallet.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
+import { AssetsBorrow } from '@/types/table'
 
 import Image from 'next/image'
-import { AssetsBorrow } from '../../../../../../types/table'
 
 const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
   const { balance } = useBalance()

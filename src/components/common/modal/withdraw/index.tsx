@@ -12,10 +12,11 @@ import { Dialog } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { memo, useCallback, useState } from 'react'
-import { DataDisplayType, ModalProps } from '../../../../../types/modal'
+
 import WithdrawSubmitButton from '../../button/btn-submit-withdraw'
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
+import { DataDisplayType, ModalProps } from '@/types/modal'
 
 const SuccessWithdrawRepayModal = dynamic(() => import('../success-wr-modal'), {
   ssr: false,

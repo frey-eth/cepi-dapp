@@ -1,7 +1,7 @@
 import ic_usdc from '@/images/global-pool/usdc.svg'
 import ic_dai from '@/images/portfolio/dai.svg'
 import ic_usdt from '@/images/portfolio/usdt.svg'
-import { AssetsBorrow } from '../../../types/table'
+import { AssetsBorrow } from '@/types/table'
 
 export const dataBorrow: AssetsBorrow[] = [
   {

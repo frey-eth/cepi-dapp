@@ -5,8 +5,9 @@ import BtnSupply from '@/components/common/button/btn-supply'
 import icCheck from '@/images/portfolio/check.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
-import { AssetSupply, Type } from '../../../types/table'
+
 import BtnDetail from '@/components/common/button/btn-detail'
+import { AssetSupply, Type } from '@/types/table'
 
 export const getDataColumnsAssetSupply = ({
   onClickSupply,

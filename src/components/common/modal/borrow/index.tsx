@@ -12,13 +12,15 @@ import { Dialog } from '@headlessui/react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { memo, useCallback, useState } from 'react'
-import { DataDisplayType, ModalProps } from '../../../../../types/modal'
-import { useBalance } from '../../../../hooks/useBalance'
+
+import { DataDisplayType, ModalProps } from '@/types/modal'
+
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
 import SubmitButton from '../buttonSubmit'
 import SettingModal from '../setting-modal'
 import '../style.css'
+import { useBalance } from '@/hooks/useBalance'
 
 const SuccessModal = dynamic(() => import('../success-modal'), {
   ssr: false,

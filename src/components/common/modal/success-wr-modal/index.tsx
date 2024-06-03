@@ -4,7 +4,8 @@ import check from '@/images/modal/check.gif'
 import confetti from '@/images/modal/confetti.gif'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
-import { DataDisplayType } from '../../../../../types/modal'
+
+import { DataDisplayType } from '@/types/modal'
 import BaseModal from '../base-modal'
 import '../style.css'
 
