@@ -11,7 +11,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { DataModalType } from '../../../types/modal'
 import { ISupply, Type } from '../../../types/table'
 import Table from '../common/table'
-const ModalWithdraw = dynamic(() => import('../common/modal/withdraw'), {
+const ModalRepay = dynamic(() => import('../common/modal/repay'), {
   ssr: false,
 })
 const Borrow = () => {
@@ -65,7 +65,7 @@ const Borrow = () => {
           <Table className='w-full' columns={columnsData} data={borrowData} sorting={sorting} setSorting={setSorting} />
         </div>
       </div>
-      {isOpen && <ModalWithdraw isOpen={isOpen} data={data} setIsOpen={setIsOpen} type='repay' />}
+      {isOpen && <ModalRepay isOpen={isOpen} data={data} setIsOpen={setIsOpen} type='repay' />}
     </div>
   )
 }
