@@ -80,7 +80,11 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                       </p>
                     </div>
                     <div
-                      onClick={() => setInputAmt(dData ? dData.walletBalance.toString() : '')}
+                      onClick={() => {
+                        if (balance > 0) {
+                          setInputAmt(dData ? balance.toString() : '')
+                        }
+                      }}
                       className=' flex h-[34px] w-[62px] cursor-pointer items-center justify-center rounded-[32px] border border-[#ffffff24] text-[14px] leading-[14px] text-[#8F9399] hover:bg-[#ffffff05]'
                     >
                       <div className='mt-[2px]'>MAX</div>
@@ -120,6 +124,7 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
 
                     <div className='flex-1'>
                       <input
+                        readOnly={balance === 0}
                         value={inputAmt}
                         onChange={(e) => {
                           const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')

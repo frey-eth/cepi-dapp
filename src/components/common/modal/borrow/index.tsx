@@ -33,7 +33,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
 
   const dData: DataDisplayType = {
     title: data?.type || undefined,
-    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 0.05,
+    walletBalance: 'walletBalance' in d ? Number(d?.walletBalance.toFixed(3)) : 0.21,
     assetIcon: d?.asset?.icon ?? group,
     assetName: d?.asset?.name,
     currency: 'currency' in d ? (d?.currency as string) : d.asset?.name,
@@ -76,11 +76,15 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                     <div className='flex items-center gap-[8px]'>
                       <Image src={wallet} width={20} height={20} alt='image' className='object-cover' />
                       <p className='mt-[2px] text-sm font-normal leading-[10px]'>
-                        {balance} {dData?.currency}
+                        {dData?.walletBalance.toString()} LST
                       </p>
                     </div>
                     <div
-                      onClick={() => setInputAmt(dData ? dData.walletBalance.toString() : '')}
+                      onClick={() => {
+                        if (balance > 0) {
+                          setInputAmt(dData ? dData.walletBalance.toString() : '')
+                        }
+                      }}
                       className=' flex h-[34px] w-[62px] cursor-pointer items-center justify-center rounded-[32px] border border-[#ffffff24] text-[14px] leading-[14px] text-[#8F9399] hover:bg-[#ffffff05]'
                     >
                       <div className='mt-[2px]'>MAX</div>
@@ -121,6 +125,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                     <div className='flex-1'>
                       <input
                         value={inputAmt}
+                        readOnly={balance === 0}
                         onChange={(e) => {
                           const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')
                           if (value === '') {
