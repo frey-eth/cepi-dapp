@@ -1,7 +1,7 @@
+import { rate_mode_data } from '@/data/detail/detail-data'
 import ic_share from '@/icons/details/share.svg'
 import Image from 'next/image'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { rate_mode_data } from '@/data/detail/detail_data'
 type TooltipType = {
   value: number
   color: string

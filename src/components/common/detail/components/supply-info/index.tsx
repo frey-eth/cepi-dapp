@@ -1,10 +1,10 @@
 'use client'
+import { supply_info_data } from '@/data/detail/detail-data'
 import ic_tick from '@/icons/details/tick.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
 import { useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
-import { supply_info_data } from '@/data/detail/detail_data'
 
 const timeData = ['1m', '6m', '1y']
 
