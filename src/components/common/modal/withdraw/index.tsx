@@ -53,9 +53,16 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
     <>
       {!isSuccess && (
         <BaseModal isOpen={isOpen} handleClose={handleClose}>
-          <Dialog.Panel className='modal-border w-full max-w-xl  transform overflow-hidden rounded-3xl font-helveticaNeue shadow-xl transition-all md:max-w-[462px]'>
+          <Dialog.Panel className=' relative w-full  max-w-xl transform overflow-hidden rounded-3xl p-[1px] font-helveticaNeue  shadow-xl transition-all md:max-w-[462px]'>
+            <div className='absolute left-1/2 top-1/2 z-0 flex aspect-square w-[150%] -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
+              <div className='  flex size-full animate-[spin_10s_linear_infinite] flex-col'>
+                <div className='linear-bg h-[30%]'></div>
+                <div className='flex-1'></div>
+                <div className='linear-whitebg h-[30%] '></div>
+              </div>
+            </div>
             <div
-              className='w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white'
+              className='relative z-20 w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white '
               style={{
                 backgroundImage: `url(${background.src})`,
                 backgroundSize: 'cover',
