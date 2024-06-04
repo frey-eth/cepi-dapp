@@ -20,7 +20,8 @@ const TopInformation = ({ title, value, tooltip_content, tooltip_id }: ITopInfor
         </span>
         {tooltip_id && <Image src={icAlert} alt='icAlert' width={14} height={14} className='mb-[1px]' />}
       </div>
-      {tooltip_id && <CustomTooltip id={tooltip_id} content={tooltip_content as string} />}
+
+      {tooltip_id && <CustomTooltip id={tooltip_id} content={String(tooltip_content)} />}
     </>
   )
 }

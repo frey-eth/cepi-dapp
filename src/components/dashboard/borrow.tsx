@@ -8,10 +8,10 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useCallback, useMemo, useState } from 'react'
 
-import Table from '../common/table'
-import TopInformation from '../common/top-information'
 import { DataModalType } from '@/types/modal'
 import { ISupply, Type } from '@/types/table'
+import Table from '../common/table'
+import TopInformation from '../common/top-information'
 const ModalRepay = dynamic(() => import('../common/modal/repay'), {
   ssr: false,
 })
@@ -36,8 +36,18 @@ const Borrow = () => {
 
         <div className='flex h-[26px] w-full flex-row flex-wrap items-center gap-1 leading-[14px]  min-[320px]:flex-wrap  min-[375px]:gap-[6px] min-[414px]:gap-2 md:gap-2'>
           <TopInformation title='Balance' value='$19.99' />
-          <TopInformation title='APY' value='5.47%' tooltip_id='borrow_apy' tooltip_content='' />
-          <TopInformation title='Borrow power used' value='11.24%' tooltip_id='borrow_power' tooltip_content='' />
+          <TopInformation
+            title='APY'
+            value='5.47%'
+            tooltip_id='borrowapy'
+            tooltip_content='The weighted average of APY for all borrowed assets, including incentives.'
+          />
+          <TopInformation
+            title='Borrow power used'
+            value='11.24%'
+            tooltip_id='borrowpower'
+            tooltip_content='The % of your total borrowing power used. This is based on the amount of your collateral supplied and the total amount that you can borrow.'
+          />
         </div>
         <div className='table-custom mb-[2px] mt-6 h-[270px] w-full md:mt-0 md:overflow-y-auto'>
           <Table className='w-full' columns={columnsData} data={borrowData} sorting={sorting} setSorting={setSorting} />
