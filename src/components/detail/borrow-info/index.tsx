@@ -29,6 +29,8 @@ const AverageLabel = ({ value }: { value: number }) => {
   )
 }
 
+const yAxisTickFormatter = (value: number) => `${value}%`
+
 const BorrowInfo = () => {
   const [time, setTime] = useState(timeData[0])
   const data = useMemo(() => {
@@ -140,7 +142,7 @@ const BorrowInfo = () => {
               }}
             >
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis width={40} axisLine={false} tickLine={false} />
+              <YAxis width={50} axisLine={false} tickLine={false} tickFormatter={yAxisTickFormatter} />
               <Line dot={false} type='monotone' dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
               <ReferenceLine y={averageAPR} stroke='#FFFFFF99' strokeDasharray='4 5'>
                 <Label position={'top'} content={<AverageLabel value={averageAPR} />} />

@@ -6,14 +6,14 @@ import Image from 'next/image'
 
 import { dataBorrow } from '@/data/asset-borrow/asset-borrow'
 import { useEffect, useState } from 'react'
-import SelfInfomation from './components/self-info'
-import TotalDetails from './components/total-details'
+import SelfInfomation from './self-info'
+import TotalDetails from './total-details'
 
 import tooltipDetailsData from '@/data/tooltip/details.json'
 import useUrlParams from '@/hooks/useSearchParams'
 import { AssetsBorrow } from '@/types/table'
 import Link from 'next/link'
-import CustomTooltip from '../tooltip'
+import CustomTooltip from '../common/tooltip'
 
 const ViewDetail = () => {
   const [data, setData] = useState<AssetsBorrow>(dataBorrow[0])
@@ -27,7 +27,7 @@ const ViewDetail = () => {
   }, [query])
 
   return (
-    <div className='flex flex-col gap-10 text-white '>
+    <div className='flex flex-col gap-10 font-helveticaNeue text-white'>
       <div className='flex flex-col gap-6'>
         <div className='flex h-8 flex-row gap-4'>
           <Link

@@ -1,12 +1,21 @@
-const BtnSupply = ({ onClick, className }: { onClick?: () => void; className?: string }) => {
+const BtnBorrow = ({
+  onClick,
+  className,
+  disabled,
+}: {
+  onClick?: () => void
+  className?: string
+  disabled?: boolean
+}) => {
   return (
     <button
       onClick={onClick}
-      className={`rounded-lg bg-gradient-btn px-4 py-[10px] text-[14px] font-medium leading-[14px] text-[#000000] ${className}`}
+      disabled={disabled || false}
+      className={`rounded-lg bg-gradient-btn px-4 py-[10px] font-helveticaNeue text-[14px] font-medium leading-[14px] text-[#262626] ${className}`}
     >
       Supply
     </button>
   )
 }
 
-export default BtnSupply
+export default BtnBorrow

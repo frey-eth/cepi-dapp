@@ -5,11 +5,19 @@ import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
 import { useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import DataPercent from '../common/data_percent'
 
 const timeData = ['1m', '6m', '1y']
+const DataPercentInFo = [
+  { title: 'Max LTV', percent: 78.5, id: 'supply_ltv' },
+  { title: 'Liquidation threshold', percent: 81, id: 'supply_liq_threshold' },
+  { title: 'Liquidation penalty', percent: 6, id: 'supply_liq_penalty' },
+]
 
 const SupplyInfo = () => {
   const [time, setTime] = useState(timeData[0])
+  const yAxisTickFormatter = (value: number) => `${value}%`
+
   return (
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
@@ -55,9 +63,9 @@ const SupplyInfo = () => {
             <div className='h-[10px] w-[10px] rounded-full bg-[#00E585]' /> Supply APR
           </div>
           <div className='flex flex-row rounded-[8px] bg-[#18181B52] p-[6px]'>
-            {timeData.map((item, index) => (
+            {timeData.map((item) => (
               <div
-                key={index}
+                key={item}
                 onClick={() => setTime(item)}
                 className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A] shadow-[1px_1px_0px_0px_rgba(255,255,255,0.16)_inset,_0px_0px_8px_0px_rgba(255,255,255,0.08)_inset]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white`}
               >
@@ -78,7 +86,7 @@ const SupplyInfo = () => {
               }}
             >
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis width={40} axisLine={false} tickLine={false} />
+              <YAxis width={50} axisLine={false} tickLine={false} tickFormatter={yAxisTickFormatter} />
               <Line type='monotone' dataKey='apr' stroke='#00E585' strokeWidth={2} dot={false} />
               <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>
@@ -94,25 +102,9 @@ const SupplyInfo = () => {
           </div>
 
           <div className='flex w-full flex-row flex-wrap gap-4 max-[1024px]:flex-col sm:items-center'>
-            <div className='flex w-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-              <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />
-              </div>
-              78.50%
-            </div>
-
-            <div className='flex w-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-              <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_threshold' />
-              </div>
-              81.00%{' '}
-            </div>
-            <div className='flex  w-full flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-              <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-                Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_penalty' />
-              </div>
-              6.00%{' '}
-            </div>
+            {DataPercentInFo.map((item) => (
+              <DataPercent key={item.id} title={item.title} percent={item.percent} id={item.id} />
+            ))}
           </div>
         </div>
       </div>

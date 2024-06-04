@@ -13,7 +13,7 @@ type TooltipType = {
   }
 }
 
-const CustomTooltip = ({ active, payload }: { active: boolean; payload?: TooltipType[] }) => {
+const ChartToolTip = ({ active, payload }: { active: boolean; payload?: TooltipType[] }) => {
   if (active && payload && payload.length) {
     return (
       <div className='custom-tooltip'>
@@ -25,10 +25,12 @@ const CustomTooltip = ({ active, payload }: { active: boolean; payload?: Tooltip
   return null
 }
 
+const yAxisTickFormatter = (value: number) => `${value}%`
+
 const InterestRateModel = () => {
   return (
     <div className='flex flex-col gap-4'>
-      <h3 className=' text-[14px] font-medium leading-[14px]'>Borrow info</h3>
+      <h3 className=' text-[14px] font-medium leading-[14px]'>Interest rate model</h3>
       <div className='flex flex-col gap-4'>
         <div className='flex flex-row items-center justify-between'>
           <div className='flex flex-col gap-2 font-helveticaNeue text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
@@ -63,12 +65,12 @@ const InterestRateModel = () => {
               }}
             >
               <Tooltip
-                content={<CustomTooltip active />}
+                content={<ChartToolTip active />}
                 cursor={{ stroke: '#5D61BCCC', strokeWidth: 1, strokeDasharray: '3 3' }}
               />
 
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis width={40} axisLine={false} tickLine={false} />
+              <YAxis width={50} axisLine={false} tickLine={false} tickFormatter={yAxisTickFormatter} />
               <Line dot={false} dataKey='apr' stroke='#EE0D85' strokeWidth={2} />
               <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>

@@ -1,5 +1,3 @@
-'use client'
-
 import BorrowInfo from '../borrow-info'
 import SupplyInfo from '../supply-info'
 
