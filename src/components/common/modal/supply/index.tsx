@@ -57,7 +57,7 @@ const SupplyModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
   return (
     <>
       <BaseModal isOpen={isOpen} handleClose={handleClose}>
-        <Dialog.Panel className='modal-border w-full max-w-xl  transform overflow-hidden rounded-3xl font-helveticaNeue shadow-xl transition-all md:max-w-[462px]'>
+        <Dialog.Panel className='modal-border  w-full max-w-xl  transform overflow-hidden rounded-3xl font-helveticaNeue shadow-xl transition-all md:max-w-[462px]'>
           <div
             className='w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white'
             style={{

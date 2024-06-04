@@ -9,7 +9,7 @@ type CustomTooltipProps = {
 const CustomTooltip = ({ id, content }: CustomTooltipProps) => {
   return (
     <Tooltip anchorSelect={`#${id}`} place='top'>
-      <div className='backdrop w-fit max-w-[330px] overflow-hidden text-wrap text-center text-[12px]'>{content}</div>
+      <div className={`backdrop w-fit max-w-[330px] overflow-hidden text-wrap text-center text-[12px] `}>{content}</div>
     </Tooltip>
   )
 }

@@ -16,6 +16,32 @@
       #ef1481 319.37deg,
       rgba(0, 0, 0, 0) 416.77deg
     );
+
+  animation: border-animation 1s ease-in-out forwards;
+}
+
+@keyframes border-animation {
+  from {
+    border-image-source: none;
+  }
+  to {
+    border-image-source: linear-gradient(
+        270deg,
+        rgba(61, 53, 78, 0) 28.87%,
+        #3d354e 45.39%,
+        #3d354e 53.54%,
+        rgba(61, 53, 78, 0) 70.06%
+      ),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+      conic-gradient(
+        from 192.42deg at 48.42% 61.76%,
+        #ef1481 -40.63deg,
+        rgba(0, 0, 0, 0) 56.77deg,
+        rgba(254, 215, 16, 0) 260.58deg,
+        #ef1481 319.37deg,
+        rgba(0, 0, 0, 0) 416.77deg
+      );
+  }
 }
 
 input::-webkit-outer-spin-button,

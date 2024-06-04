@@ -41,12 +41,10 @@ export const getDataColumnsAssetSupply = ({
       return <span className='font-medium leading-[14px]'>Wallet balance</span>
     },
     cell: (info) => {
-      // const { isError } = info.row.original
       return (
         <figure>
           <div className='flex w-[70px] items-center justify-start gap-2 space-x-2'>
             <span className='block text-left'>{Number(info.getValue())}</span>
-            {/* {isError && <Image src={icAlert} alt='alert' />} */}
           </div>
         </figure>
       )
