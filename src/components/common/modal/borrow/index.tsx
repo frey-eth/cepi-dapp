@@ -15,12 +15,12 @@ import { memo, useCallback, useState } from 'react'
 
 import { DataDisplayType, ModalProps } from '@/types/modal'
 
+import { useBalance } from '@/hooks/useBalance'
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
 import SubmitButton from '../buttonSubmit'
 import SettingModal from '../setting-modal'
 import '../style.css'
-import { useBalance } from '@/hooks/useBalance'
 
 const SuccessModal = dynamic(() => import('../success-modal'), {
   ssr: false,
@@ -58,7 +58,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
   return (
     <>
       <BaseModal isOpen={isOpen} handleClose={handleClose}>
-        <Dialog.Panel className='modal-border w-full  max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-[462px]'>
+        <Dialog.Panel className='modal-border w-full max-w-xl  transform overflow-hidden rounded-3xl font-helveticaNeue shadow-xl transition-all md:max-w-[462px]'>
           <div
             className='w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white'
             style={{
@@ -70,7 +70,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
           >
             {!openSetting ? (
               <>
-                <Dialog.Title as='div' className='flex w-full items-center'>
+                <Dialog.Title as='div' className='flex w-full items-center font-helveticaNeue'>
                   <h5 className='flex-1 cursor-pointer text-start text-sm font-bold leading-[14px] text-[#ffffff99]'>
                     Your {dData?.title}
                   </h5>
@@ -187,7 +187,9 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                       className='flex items-center gap-2 rounded-full  py-2'
                     >
                       <Image src={eye} alt='setting' width={20} height={20} className='object-cover' />
-                      <span className='text-sm font-normal leading-[14px] text-[#848895]'>View details</span>
+                      <span className='font-helveticaNeue text-sm font-normal leading-[14px] text-[#848895]'>
+                        View details
+                      </span>
                       {viewDetail ? (
                         <Image src={up} alt='setting' className='object-cover' />
                       ) : (
@@ -200,17 +202,19 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                     onClick={() => setOpenSetting(true)}
                   >
                     <Image src={setting} alt='setting' width={20} height={20} className='object-cover' />
-                    <span className='text-sm font-normal leading-[14px] text-[#8F9399]'>Setting</span>
+                    <span className='font-helveticaNeue  text-sm font-normal leading-[14px] text-[#8F9399]'>
+                      Setting
+                    </span>
                   </button>
                 </div>
 
                 <div
-                  className={`w-full overflow-hidden transition-all duration-300 ${
+                  className={`w-full overflow-hidden font-helveticaNeue  transition-all duration-300 ${
                     viewDetail ? 'h-fit min-[385px]:h-[145px] min-[530px]:h-[143px]' : 'h-0'
                   }`}
                 >
                   <div className='mt-2 w-full border-[1px] border-solid border-[#FFFFFF1F]'></div>
-                  <div className='mt-2 flex flex-col gap-[6px]'>
+                  <div className='mt-2 flex flex-col gap-[6px] font-helveticaNeue'>
                     <div className='flex items-center justify-between'>
                       <div className='leading-[14px font-normal] text-[14px] text-[#8F9399]'>Your amount</div>
                       <div className='text-[14px] font-medium leading-[14px] text-[#FFFFFF]'>0 SOL</div>

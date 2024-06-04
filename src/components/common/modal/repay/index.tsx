@@ -51,11 +51,6 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
     setIsOpen(false)
     setIsSuccess(false)
   }, [setIsOpen])
-  const capitalizeWords = (str: string): string =>
-    str
-      .split(' ')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ')
   const transferTokenToUSD = (token: string, balance: Number) => {
     return (Number(priceUSD[token]) * Number(balance)).toFixed(3)
   }
@@ -63,7 +58,7 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
     <>
       {!isSuccess && (
         <BaseModal isOpen={isOpen} handleClose={handleClose}>
-          <Dialog.Panel className='modal-border w-full  max-w-xl transform overflow-hidden rounded-3xl shadow-xl transition-all md:max-w-[462px]'>
+          <Dialog.Panel className='modal-border w-full max-w-xl  transform overflow-hidden rounded-3xl font-helveticaNeue shadow-xl transition-all md:max-w-[462px]'>
             <div
               className='w-full rounded-3xl bg-black px-6 pb-10 pt-7 text-white'
               style={{
@@ -75,8 +70,8 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
             >
               <Dialog.Title as='div' className='flex w-full items-center font-helveticaNeue'>
                 <div className='flex w-full items-center justify-between '>
-                  <div className=' cursor-pointer text-[20px] font-medium leading-[100%] text-white '>
-                    {capitalizeWords(dData?.title as string)} {dData?.currency}
+                  <div className=' cursor-pointer text-[20px] font-medium capitalize leading-[100%] text-white '>
+                    {dData?.title} {dData?.currency}
                   </div>
 
                   <button onClick={handleClose}>

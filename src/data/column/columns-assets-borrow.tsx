@@ -18,7 +18,7 @@ export const getDataColumnsAssetBorrow = ({
   {
     id: 'assets',
     accessorKey: 'assets',
-    header: () => <span className=' gap-2 text-left'>Asset</span>,
+    header: () => <span className=' gap-2 text-left font-medium leading-[14px]'>Asset</span>,
     cell: (info) => {
       const { icon, name } = info.row.original.asset
       return (
@@ -47,7 +47,7 @@ export const getDataColumnsAssetBorrow = ({
     header: () => {
       return (
         <figure className='flex items-center justify-start gap-2 pl-4'>
-          <span>Available</span>
+          <span className='font-medium leading-[14px]'>Available</span>
 
           <div>
             <Image src={icAlert} alt='icon alert' sizes='16' id='available' />
@@ -62,10 +62,10 @@ export const getDataColumnsAssetBorrow = ({
           <div className='flex flex-col items-start justify-start text-left md:flex-row md:items-center md:gap-2'>
             <span className='block text-left'>{Number(info.getValue())}</span>
 
-            <div className='flex text-[#8F9399]'>
-              <div className='hidden md:flex'>{'('}</div>
-              <div>${Number(info.getValue())}</div>
-              <div className='hidden md:flex'>{')'}</div>
+            <div className='flex text-[12px] font-normal leading-[14.32px] text-[#8F9399]'>
+              <div className='hidden leading-[14.32px] md:flex'>{'('}</div>
+              <div className='leading-[14.32px]'>${Number(info.getValue())}</div>
+              <div className='hidden leading-[14.32px] md:flex'>{')'}</div>
             </div>
           </div>
         </figure>
@@ -79,7 +79,7 @@ export const getDataColumnsAssetBorrow = ({
     header: () => {
       return (
         <figure className='hidden items-center justify-end gap-2 md:flex'>
-          <span>APY, variable</span>
+          <span className='font-medium leading-[14px]'>APY, variable</span>
           <Image src={icAlert} alt='icon alert' sizes='16' id='apy' />
         </figure>
       )

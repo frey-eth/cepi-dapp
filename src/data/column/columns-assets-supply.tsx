@@ -19,7 +19,7 @@ export const getDataColumnsAssetSupply = ({
   {
     id: 'assets',
     accessorKey: 'assets',
-    header: () => <span className=' gap-2 text-left'>Asset</span>,
+    header: () => <span className=' gap-2 text-left font-medium leading-[14px]'>Asset</span>,
     cell: (info) => {
       const { icon, name } = info.row.original.asset
       return (
@@ -38,7 +38,7 @@ export const getDataColumnsAssetSupply = ({
     id: 'walletBalance',
     accessorKey: 'walletBalance',
     header: () => {
-      return <span>Wallet balance</span>
+      return <span className='font-medium leading-[14px]'>Wallet balance</span>
     },
     cell: (info) => {
       // const { isError } = info.row.original
@@ -57,7 +57,7 @@ export const getDataColumnsAssetSupply = ({
     id: 'apy',
     accessorKey: 'apy',
     header: () => {
-      return <span>APY</span>
+      return <span className='font-medium leading-[14px]'>APY</span>
     },
     cell: (info) => <Dental percent={Number(info.getValue())} />,
     footer: (props) => props.column.id,
@@ -67,7 +67,7 @@ export const getDataColumnsAssetSupply = ({
     accessorKey: 'isCollateral',
 
     header: () => {
-      return <span>Can be collateral</span>
+      return <span className='font-medium leading-[14px]'>Can be collateral</span>
     },
     cell: (info) => {
       return (info.getValue() as boolean) ? (
