@@ -10,6 +10,7 @@ export const dataAssetSupply: AssetSupply[] = [
       name: 'SOL',
     },
     walletBalance: 216.38,
+
     apy: 2.16,
     isCollateral: true,
     isError: true,

@@ -41,6 +41,7 @@ export interface AssetsBorrow extends Asset {
   available: number
   apy: number
   addressToken?: string
+  balanceValue?: number
 }
 
 export interface Asset {

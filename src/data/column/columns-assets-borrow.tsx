@@ -64,7 +64,7 @@ export const getDataColumnsAssetBorrow = ({
 
             <div className='flex text-[12px] font-normal leading-[14.32px] text-[#8F9399]'>
               <div className='hidden leading-[14.32px] md:flex'>{'('}</div>
-              <div className='leading-[14.32px]'>${Number(info.getValue())}</div>
+              <div className='leading-[14.32px]'>${Number(info.row.original.balanceValue)}</div>
               <div className='hidden leading-[14.32px] md:flex'>{')'}</div>
             </div>
           </div>

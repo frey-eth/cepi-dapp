@@ -12,7 +12,7 @@ export const supplyData: ISupply[] = [
     },
     balance: {
       amount: '0.0010000',
-      value: 3.31,
+      value: 0.17,
     },
     apy: 2.16,
     addressToken: '',
@@ -23,8 +23,8 @@ export const supplyData: ISupply[] = [
       name: 'BONK',
     },
     balance: {
-      amount: '0.0010000',
-      value: 3.31,
+      amount: '2.00',
+      value: 0.000064,
     },
     apy: 2.16,
     addressToken: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263',
@@ -36,7 +36,7 @@ export const supplyData: ISupply[] = [
     },
     balance: {
       amount: '0.0010000',
-      value: 3.31,
+      value: 0.001,
     },
     apy: 2.16,
     addressToken: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
