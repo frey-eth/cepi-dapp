@@ -3,8 +3,7 @@ import icAlert from '@/images/table/alert-circle-light.svg'
 
 const Emode = () => {
   return (
-    <div className='flex flex-col gap-6'>
-      <h3 className=' text-[14px] font-medium leading-[14px]'>Borrow info</h3>
+    <div className='flex flex-col gap-6 font-helveticaNeue'>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>E-Mode Category</h3>
         <div className='flex flex-row gap-4 whitespace-nowrap max-[1024px]:flex-col'>
@@ -27,7 +26,7 @@ const Emode = () => {
             2.00%
           </div>
         </div>
-        <p className='text-[12px] font-light leading-[12px] text-[#A5A5B5]'>
+        <p className='text-[12px] font-light leading-[16px] text-[#A5A5B5]'>
           E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will
           have higher borrowing power over assets of the same E-mode category which are defined by BlonkFi. You can
           enter E-Mode from your Dashboard. To learn more about E-Mode and applied restrictions in FAQ or BlonkFi.

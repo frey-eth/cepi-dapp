@@ -10,6 +10,8 @@ const timeData = ['1m', '6m', '1y']
 
 const SupplyInfo = () => {
   const [time, setTime] = useState(timeData[0])
+  const yAxisTickFormatter = (value: number) => `${value}%`
+
   return (
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
@@ -78,7 +80,7 @@ const SupplyInfo = () => {
               }}
             >
               <XAxis axisLine={false} dataKey='name' tickLine={false} />
-              <YAxis width={40} axisLine={false} tickLine={false} />
+              <YAxis width={50} axisLine={false} tickLine={false} tickFormatter={yAxisTickFormatter} />
               <Line type='monotone' dataKey='apr' stroke='#00E585' strokeWidth={2} dot={false} />
               <CartesianGrid vertical={false} strokeDasharray='3 3' stroke='#FFFFFF1A' />
             </LineChart>

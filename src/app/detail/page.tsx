@@ -1,4 +1,4 @@
-import ViewDetail from '@/components/common/detail'
+import ViewDetail from '@/components/detail'
 
 export default function Detail() {
   return (

@@ -1,14 +1,26 @@
+'use client'
 import BtnBorrow from '@/components/common/button/btn-borrow'
 import BtnSupply from '@/components/common/button/btn-supply'
 import { useBalance } from '@/hooks/useBalance'
+import useTokenPrices from '@/hooks/useTokenPriceUSD'
 import ic_wallet from '@/icons/details/wallet.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
+import { DataModalType } from '@/types/modal'
 import { AssetsBorrow } from '@/types/table'
-
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { useState } from 'react'
 
-const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
-  const { balance } = useBalance()
+const SupplyModal = dynamic(() => import('../../common/modal/supply'), { ssr: false })
+const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
+  const { balance } = useBalance(data.addressToken)
+  const prices = useTokenPrices()
+  const [openSupply, setOpenSupply] = useState(false)
+
+  const modalData: DataModalType = {
+    data: data,
+    type: 'supply',
+  }
   return (
     <div className='flex h-fit w-full flex-col gap-6 rounded-2xl bg-[#0B0D10CC] p-6 font-helveticaNeue lg:max-w-sm'>
       <h3 className='text-[16px] font-medium leading-[16px]'>Your info</h3>
@@ -22,7 +34,7 @@ const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
             Wallet balance
             <p className=' flex flex-row gap-[6px] text-[16px] font-medium leading-[16px] text-[#A5A5B5]'>
               <span className='text-white'>{balance}</span>
-              {data?.asset.name}
+              {data.asset.name}
             </p>
           </div>
         </div>
@@ -38,12 +50,20 @@ const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
                 </div>
                 <div className='flex flex-col gap-[6px]'>
                   <div className='flex flex-row items-center gap-[6px] text-[16px] font-semibold leading-[16px] text-[#A5A5B5]'>
-                    <span className='text-white'>0</span> {data?.asset.name}
+                    <span className='text-white'>{balance}</span> {data.asset.name}
                   </div>
-                  <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>$ 0</p>
+                  <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>
+                    $ {(prices[data.asset.name] * balance).toFixed(4)}
+                  </p>
                 </div>
               </div>
-              <BtnSupply className=' opacity-50' />
+              <BtnSupply
+                className={`${balance == 0 && 'opacity-50'}`}
+                disabled={balance == 0}
+                onClick={() => {
+                  setOpenSupply(true)
+                }}
+              />
             </div>
 
             <div className='flex h-[58px] w-full flex-row items-center justify-between'>
@@ -58,7 +78,12 @@ const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
                   <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>$ 0</p>
                 </div>
               </div>
-              <BtnBorrow className=' opacity-50' />
+              <BtnBorrow
+                className={`opacity-50`}
+                onClick={() => {
+                  console.log('Borrow')
+                }}
+              />
             </div>
           </div>
 
@@ -69,6 +94,7 @@ const SelfInfomation = ({ data }: { data?: AssetsBorrow }) => {
           )}
         </div>
       </div>
+      {openSupply && <SupplyModal isOpen={openSupply} setIsOpen={setOpenSupply} data={modalData} />}
     </div>
   )
 }
