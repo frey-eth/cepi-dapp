@@ -12,7 +12,6 @@ export const dataBorrow: AssetsBorrow[] = [
     available: 2.71,
     balanceValue: 451.09,
     apy: 7.03,
-    addressToken: '',
   },
   {
     asset: {

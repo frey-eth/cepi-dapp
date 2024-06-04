@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import icAlert from '@/images/table/alert-circle-light.svg'
+import DataPercent from '../../common/data_percent'
 
 const Emode = () => {
   return (
@@ -7,24 +6,9 @@ const Emode = () => {
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>E-Mode Category</h3>
         <div className='flex flex-row gap-4 whitespace-nowrap max-[1024px]:flex-col'>
-          <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-            <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-              Max LTV <Image src={icAlert} alt='icon alert' sizes='16' id='supply_ltv' />
-            </div>
-            90.00%{' '}
-          </div>
-          <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-            <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-              Liquidation threshold <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_threshold' />
-            </div>
-            15.00%
-          </div>
-          <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>
-            <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
-              Liquidation penalty <Image src={icAlert} alt='icon alert' sizes='16' id='supply_liq_penalty' />
-            </div>
-            2.00%
-          </div>
+          <DataPercent title='Max LTV' percent={90} id='supply_ltv' />
+          <DataPercent title='Liquidation threshold' percent={93} id='supply_liq_threshold' />
+          <DataPercent title='Liquidation penalty' percent={2} id='supply_liq_penalty' />
         </div>
         <p className='text-[12px] font-light leading-[16px] text-[#A5A5B5]'>
           E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will

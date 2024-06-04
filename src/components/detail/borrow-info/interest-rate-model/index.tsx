@@ -13,7 +13,7 @@ type TooltipType = {
   }
 }
 
-const CustomTooltip = ({ active, payload }: { active: boolean; payload?: TooltipType[] }) => {
+const ChartToolTip = ({ active, payload }: { active: boolean; payload?: TooltipType[] }) => {
   if (active && payload && payload.length) {
     return (
       <div className='custom-tooltip'>
@@ -65,7 +65,7 @@ const InterestRateModel = () => {
               }}
             >
               <Tooltip
-                content={<CustomTooltip active />}
+                content={<ChartToolTip active />}
                 cursor={{ stroke: '#5D61BCCC', strokeWidth: 1, strokeDasharray: '3 3' }}
               />
 
