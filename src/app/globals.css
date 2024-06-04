@@ -60,6 +60,17 @@ html {
   src: url('/font/HelveticaNeue/HelveticaNeueBold.ttf') format('woff2');
 }
 
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  src: url('/font/Inter/Inter-Medium.ttf') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  src: url('/font/Inter/Inter-Regular.ttf') format('woff2');
+}
+
 :root {
   --rt-color-white: #fff;
   --rt-color-dark: #222;
