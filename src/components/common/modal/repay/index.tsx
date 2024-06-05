@@ -207,8 +207,11 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                             $
                             {priceUSD &&
                               dData &&
-                              Number(transferTokenToUSD(dData?.assetName, Number(dData?.balance))) -
-                                Number(transferTokenToUSD(dData?.assetName, Number(inputAmt)))}
+                              Math.round(
+                                (Number(transferTokenToUSD(dData?.assetName, Number(dData?.balance))) -
+                                  Number(transferTokenToUSD(dData?.assetName, Number(inputAmt)))) *
+                                  1e6
+                              ) / 1e6}
                           </div>
                         </div>
                       </div>
