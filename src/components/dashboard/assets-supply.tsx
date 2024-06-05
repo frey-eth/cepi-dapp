@@ -55,7 +55,7 @@ const AssetsSupply = () => {
             <h2 className='text-xl font-medium text-[#fff]'>Assets to Supply</h2>
             <div className='my-4 flex items-center space-x-3'>
               <Checkbox checked={checked} setChecked={setChecked} />
-              <span className='text-sm font-normal text-[#8F9399]'>Show assets with 0 balance</span>
+              <span className='text-sm font-medium leading-[14px] text-[#8F9399]'>Show assets with 0 balance</span>
             </div>
           </div>
 

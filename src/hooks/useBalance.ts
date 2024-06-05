@@ -31,7 +31,7 @@ export function useBalance(tokenAddress?: string) {
         const balanceInfo = (await connection.getTokenAccountBalance(tokenAccountPublicKey)) || 0
         setBalance(parseFloat(balanceInfo.value.amount) / LAMPORTS_PER_SOL)
       } catch (error) {
-        console.log('LOG: ERROR', error)
+        setBalance(0)
       }
     }
   }

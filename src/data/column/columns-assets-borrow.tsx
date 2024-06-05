@@ -58,11 +58,11 @@ export const getDataColumnsAssetBorrow = ({
     enableSorting: false,
     cell: (info) => {
       return (
-        <figure className=' mb-1 flex w-[70px] items-center justify-start  gap-2  pl-4'>
+        <figure style={{ marginBottom: '3px' }} className='  flex w-[70px] items-center justify-start  gap-[6px]  pl-4'>
           <div className='flex flex-col items-start justify-start gap-1 text-left md:flex-row md:gap-2  lg:items-center'>
             <div className=' text-left'>{Number(info.getValue())}</div>
 
-            <div className=' flex text-[14px] font-normal leading-[14px] text-[#8F9399] md:pt-[2px] md:text-[12px]'>
+            <div className=' flex text-[12px]  font-normal leading-[14px] text-[#8F9399] md:pt-[2px] lg:text-[12px]'>
               <div className='hidden leading-[14px] md:flex'>{'('}</div>
               <div className='leading-[14px]'>${Number(info.row.original.balanceValue)}</div>
               <div className='hidden leading-[14px] md:flex'>{')'}</div>

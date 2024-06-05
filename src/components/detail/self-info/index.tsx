@@ -14,6 +14,7 @@ import { useState } from 'react'
 const SupplyModal = dynamic(() => import('../../common/modal/supply'), { ssr: false })
 const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
   const { balance } = useBalance(data?.addressToken)
+
   const prices = useTokenPrices()
   const [openSupply, setOpenSupply] = useState(false)
 
@@ -53,7 +54,7 @@ const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
                     <span className='text-white'>{balance}</span> {data.asset.name}
                   </div>
                   <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>
-                    $ {(prices[data.asset.name] * balance).toFixed(8)}
+                    $ {isNaN(prices[data.asset.name] * balance) ? 0 : (prices[data.asset.name] * balance).toFixed(8)}
                   </p>
                 </div>
               </div>
