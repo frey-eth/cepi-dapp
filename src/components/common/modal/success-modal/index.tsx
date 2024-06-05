@@ -24,7 +24,7 @@ const SuccessModal = ({
   return (
     <BaseModal isOpen={isOpen} handleClose={handleClose}>
       <div className='w-full'>
-        <Dialog.Panel className=' mx-auto  w-full max-w-xl transform overflow-hidden rounded-3xl p-[1px] shadow-xl transition-all md:max-w-[462px]'>
+        <Dialog.Panel className=' mx-auto  w-full max-w-xl transform overflow-hidden rounded-3xl p-[2px] shadow-xl transition-all md:max-w-[462px]'>
           <div className='absolute left-1/2 top-1/2 z-0 flex aspect-square w-[150%] -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
             <div className='  flex size-full animate-[spin_10s_linear_infinite] flex-col'>
               <div className='linear-bg h-[30%]'></div>

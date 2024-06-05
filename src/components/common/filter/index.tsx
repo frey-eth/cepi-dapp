@@ -13,6 +13,8 @@ type props = {
   setSelectAction: (select: string) => void
 }
 
+const valueFilter = ['All pools', 'Isolated pools', 'Stablecoins', 'SOL/LST']
+
 const Filter = ({ selectAction, setSelectAction }: props) => {
   const [isActive, setIsActive] = useState(false)
   const [isActiveUSD, setIsActiveUSD] = useState(false)
@@ -57,8 +59,6 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
     }
   }, [showSelection])
 
-  const valueFilter = ['All pools', 'Isolated pools', 'Stablecoins', 'SOL/LST']
-
   return (
     <div className='relative flex w-full flex-wrap items-center justify-between gap-3 font-helveticaNeue md:h-[50px] md:w-full md:flex-row'>
       <div className='flex w-full flex-wrap items-center justify-between md:w-fit'>
@@ -100,9 +100,9 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
               }}
               className='backdropFilter absolute left-0 top-12 z-40 flex flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2 min-[320px]:w-[180px] min-[375px]:w-[155px] min-[414px]:w-[180px] md:w-[180px]'
             >
-              {valueFilter.map((value, index) => (
+              {valueFilter.map((value) => (
                 <button
-                  key={index}
+                  key={value}
                   onClick={() => handleFilterItemClick(value)}
                   className={`${selectItem === value ? 'bg-[#FFFFFF1A]' : ''} flex w-full justify-between rounded-md p-2 text-left text-[14px] font-normal leading-[14px] text-white`}
                 >
@@ -174,9 +174,9 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
               }}
               className='absolute left-0 top-12 z-40 flex w-[180px] flex-col items-center justify-between rounded-[8px] bg-[#FFFFFF1A] p-2 md:w-[180px]'
             >
-              {valueFilter.map((value, index) => (
+              {valueFilter.map((value) => (
                 <button
-                  key={index}
+                  key={value}
                   onClick={() => handleFilterItemClick(value)}
                   className={`${
                     selectItem === value ? 'bg-[#FFFFFF1A]' : ''
