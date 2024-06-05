@@ -12,9 +12,9 @@ type SettingModalType = {
 }
 
 const listPriority = [
-  { title: 'Normal', value: 0 },
-  { title: 'High', value: 0.00005 },
-  { title: 'Mamas', value: 0.005 },
+  { title: 'Normal', value: '0' },
+  { title: 'High', value: '0.00005' },
+  { title: 'Mamas', value: '0.005' },
 ]
 
 const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
@@ -58,20 +58,19 @@ const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
           Or set manually
           <div className='flex h-10 w-full flex-row items-center gap-2 overflow-hidden rounded-xl border-[0.6px] border-[#FFFFFF14] bg-black  p-3 text-[16px] font-medium leading-[16px]'>
             <input
-              type='number'
+              value={currentPriority}
+              onChange={(e) => {
+                const value = e.target.value.replace(/[^0-9.]/g, '').replace(/\.(?=.*\.)/g, '')
+                if (value === '') {
+                  setPriority('')
+                  return
+                }
+                setPriority(value)
+              }}
+              type='text'
               pattern='[0-9\/]*'
+              className='w-full bg-transparent text-base font-medium leading-4 text-white focus:outline-none'
               placeholder='0'
-              className='flex-1 bg-transparent outline-none'
-              onFocus={(e) =>
-                e.target.addEventListener(
-                  'wheel',
-                  function (e) {
-                    e.preventDefault()
-                  },
-                  { passive: false }
-                )
-              }
-              onChange={(e) => setPriority(parseFloat(e.target.value))}
             />
             SOL
           </div>
