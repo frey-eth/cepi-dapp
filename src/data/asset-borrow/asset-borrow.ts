@@ -1,12 +1,12 @@
-import ic_usdc from '@/images/global-pool/usdc.svg'
-import ic_dai from '@/images/portfolio/dai.svg'
-import ic_usdt from '@/images/portfolio/usdt.svg'
+import ic_bonk from '@/images/global-pool/bonk.svg'
+import ic_solana from '@/images/global-pool/sol.svg'
+import ic_usdc from '@/images/portfolio/usdc.svg'
 import { AssetsBorrow } from '@/types/table'
 
 export const dataBorrow: AssetsBorrow[] = [
   {
     asset: {
-      icon: ic_usdt,
+      icon: ic_solana,
       name: 'SOL',
     },
     available: 2.71,
@@ -15,7 +15,7 @@ export const dataBorrow: AssetsBorrow[] = [
   },
   {
     asset: {
-      icon: ic_dai,
+      icon: ic_bonk,
       name: 'BONK',
     },
     available: 2.71,
