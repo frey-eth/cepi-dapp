@@ -244,16 +244,15 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                     </div>
                   </div>
                 </div>
+                <CustomTooltip
+                  id='borrow-info'
+                  content='This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached.'
+                />
               </>
             ) : (
               <SettingModal setOpenSetting={setOpenSetting} dData={dData} />
             )}
           </div>
-          <CustomTooltip id='tooltip' content='This additional fee helps boost how a transaction is prioritized.' />
-          <CustomTooltip
-            id='borrow-info'
-            content='This is the total amount available for you to borrow. You can borrow based on your collateral and until the borrow cap is reached.'
-          />
         </Dialog.Panel>
       </BaseModal>
 

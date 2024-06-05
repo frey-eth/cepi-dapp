@@ -2,7 +2,7 @@
 import ic_share from '@/icons/details/share.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   CartesianGrid,
   Label,
@@ -132,7 +132,7 @@ const BorrowInfo = () => {
         </div>
 
         <div className='flex flex-col gap-4'>
-          <div className='flex flex-row items-center gap-3'>Collector Info</div>
+          <div className='flex flex-row items-center gap-3 text-[14px] font-medium leading-[14px]'>Collector Info</div>
 
           <div className='flex flex-row items-center gap-4 '>
             <div className='flex  h-[54px] flex-1 flex-col justify-center gap-[6px] rounded-lg border border-[#43434352] p-[8px] text-[16px] font-medium leading-[16px]'>

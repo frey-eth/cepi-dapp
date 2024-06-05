@@ -4,6 +4,7 @@ import { DataDisplayType } from '@/types/modal'
 import { Dialog } from '@headlessui/react'
 import Image from 'next/image'
 import { useState } from 'react'
+import CustomTooltip from '../../tooltip'
 
 type SettingModalType = {
   setOpenSetting: (value: boolean) => void
@@ -88,6 +89,7 @@ const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
           </span>
         </button>
       </div>
+      <CustomTooltip id='tooltip' content='This additional fee helps boost how a transaction is prioritized.' />
     </div>
   )
 }

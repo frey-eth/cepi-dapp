@@ -13,7 +13,8 @@ const Emode = () => {
         <p className='text-[12px] font-light leading-[16px] text-[#A5A5B5]'>
           E-Mode increases your LTV for a selected category of assets, meaning that when E-mode is enabled, you will
           have higher borrowing power over assets of the same E-mode category which are defined by BlonkFi. You can
-          enter E-Mode from your Dashboard. To learn more about E-Mode and applied restrictions in FAQ or BlonkFi.
+          enter E-Mode from your <span className='cursor-pointer underline'>Dashboard</span>. To learn more about E-Mode
+          and applied restrictions in <span className='cursor-pointer underline'>FAQ</span> or BlonkFi.
         </p>
       </div>
     </div>

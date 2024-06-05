@@ -95,9 +95,9 @@ const SupplyInfo = () => {
         </div>
 
         <div className='flex flex-col gap-4'>
-          <div className='flex flex-row items-center gap-3'>
+          <div className='flex flex-row items-center gap-3 text-[14px] font-medium leading-[14px]'>
             Collateral
-            <div className='flex flex-row items-center gap-[6px] font-helveticaNeue text-[14px] font-medium leading-[14px] text-[#00E585]'>
+            <div className='flex flex-row items-center gap-[6px] text-[#00E585]'>
               <Image src={ic_tick} alt='tick' /> Can be collateral
             </div>
           </div>
