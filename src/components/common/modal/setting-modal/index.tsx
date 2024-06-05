@@ -58,6 +58,7 @@ const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
           <div className='flex h-10 w-full flex-row items-center gap-2 overflow-hidden rounded-xl border-[0.6px] border-[#FFFFFF14] bg-black  p-3 text-[16px] font-medium leading-[16px]'>
             <input
               type='number'
+              pattern='[0-9\/]*'
               placeholder='0'
               className='flex-1 bg-transparent outline-none'
               onFocus={(e) =>

@@ -1,11 +1,11 @@
 'use client'
-import { supply_info_data } from '@/data/detail/detail-data'
 import ic_tick from '@/icons/details/tick.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import DataPercent from '../common/data_percent'
+import { generateFakeAPRData } from '@/data/detail/detail-data'
 
 const timeData = ['1m', '6m', '1y']
 const DataPercentInFo = [
@@ -16,6 +16,7 @@ const DataPercentInFo = [
 
 const SupplyInfo = () => {
   const [time, setTime] = useState(timeData[0])
+  const data = useMemo(() => generateFakeAPRData(time), [time])
   const yAxisTickFormatter = (value: number) => `${value}%`
 
   return (
@@ -78,7 +79,7 @@ const SupplyInfo = () => {
         <div className='h-[88px] w-full text-[12px] leading-[12px] text-[#A5A5B5] max-sm:h-[100px]'>
           <ResponsiveContainer width='100%' height='100%'>
             <LineChart
-              data={supply_info_data}
+              data={data}
               margin={{
                 top: 5,
                 right: 5,

@@ -16,6 +16,7 @@ import {
 } from 'recharts'
 import Emode from './e-mode'
 import InterestRateModel from './interest-rate-model'
+import { generateFakeAPRData } from '@/data/detail/detail-data'
 
 const timeData = ['1m', '6m', '1y']
 
@@ -33,30 +34,7 @@ const yAxisTickFormatter = (value: number) => `${value}%`
 
 const BorrowInfo = () => {
   const [time, setTime] = useState(timeData[0])
-  const data = useMemo(() => {
-    return [
-      {
-        name: 'Apr 21',
-        apr: 0,
-      },
-      {
-        name: 'Apr 28',
-        apr: 0.2,
-      },
-      {
-        name: 'May 05',
-        apr: 0,
-      },
-      {
-        name: 'May 12',
-        apr: 0.4,
-      },
-      {
-        name: 'May 19',
-        apr: 0.02,
-      },
-    ]
-  }, [])
+  const data = useMemo(() => generateFakeAPRData(time), [time])
 
   const averageAPR = useMemo(() => {
     const totalAPR = data.reduce((sum, entry) => sum + entry.apr, 0)
