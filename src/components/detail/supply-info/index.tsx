@@ -1,12 +1,12 @@
 'use client'
+import { generateFakeAPRData } from '@/data/detail/detail-data'
 import ic_tick from '@/icons/details/tick.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import CircleChart from '../../common/circle-chart/index.jsx'
 import DataPercent from '../common/data_percent'
-import { generateFakeAPRData } from '@/data/detail/detail-data'
-import CircleChart from '../../common/circle-chart.tsx'
 const timeData = ['1m', '6m', '1y']
 const DataPercentInFo = [
   { title: 'Max LTV', percent: 78.5, id: 'supply_ltv' },

@@ -1,4 +1,6 @@
 'use client'
+import CircleChart from '@/components/common/circle-chart'
+import { generateFakeAPRData } from '@/data/detail/detail-data'
 import ic_share from '@/icons/details/share.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
@@ -16,8 +18,6 @@ import {
 } from 'recharts'
 import Emode from './e-mode'
 import InterestRateModel from './interest-rate-model'
-import { generateFakeAPRData } from '@/data/detail/detail-data'
-import CircleChart from '@/components/common/circle-chart.tsx'
 
 const timeData = ['1m', '6m', '1y']
 
