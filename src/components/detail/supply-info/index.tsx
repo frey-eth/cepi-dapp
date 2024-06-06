@@ -6,7 +6,7 @@ import { useMemo, useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import DataPercent from '../common/data_percent'
 import { generateFakeAPRData } from '@/data/detail/detail-data'
-
+import CircleChart from '../../common/circle-chart.tsx'
 const timeData = ['1m', '6m', '1y']
 const DataPercentInFo = [
   { title: 'Max LTV', percent: 78.5, id: 'supply_ltv' },
@@ -18,20 +18,12 @@ const SupplyInfo = () => {
   const [time, setTime] = useState(timeData[0])
   const data = useMemo(() => generateFakeAPRData(time), [time])
   const yAxisTickFormatter = (value: number) => `${value}%`
-
   return (
     <div className='flex flex-col gap-8'>
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>Supply info</h3>
         <div className='flex flex-row items-center gap-10 max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-4'>
-          <div
-            className='flex h-[82px] w-[82px] items-center justify-center rounded-full p-[6px]'
-            style={{ background: `conic-gradient(#00E585 ${(360 * 75) / 100}deg, white 0deg)` }}
-          >
-            <div className='flex h-full w-full items-center justify-center rounded-full bg-[#0B0D10]  font-helveticaNeue text-[14px] font-medium leading-[14px]'>
-              79.76%
-            </div>
-          </div>
+          <CircleChart value={75.6} />
           <div className='flex h-[60px] flex-row items-center gap-[26px]'>
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
