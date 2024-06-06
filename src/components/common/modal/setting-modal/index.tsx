@@ -23,6 +23,7 @@ const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
     <div className='flex flex-col gap-6 font-helveticaNeue'>
       <Dialog.Title
         as='div'
+        role='button'
         className='flex w-full flex-row items-center gap-[6px] text-[14px] leading-[14px]'
         onClick={() => setOpenSetting(false)}
       >
@@ -46,6 +47,7 @@ const SettingModal = ({ setOpenSetting, dData }: SettingModalType) => {
               style={{ width: 'calc(33.3333% - 8px)' }}
               className={`flex h-full cursor-pointer flex-col justify-center gap-2 rounded-md border bg-[#0D0F10] text-[14px] leading-[14px] text-[#A5A5B5]  ${currentPriority == priority.value ? 'border-[#ED9B3C]' : 'border-transparent'}`}
               key={index}
+              role='button'
               onClick={() => setPriority(priority.value)}
             >
               {priority.title}

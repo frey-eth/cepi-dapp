@@ -81,6 +81,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
           </button>
         </div>
         <div
+          role='button'
           className='relative flex cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 min-[320px]:w-[180px] min-[375px]:w-[155px] min-[414px]:w-[180px] md:hidden md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >
@@ -154,6 +155,7 @@ const Filter = ({ selectAction, setSelectAction }: props) => {
         </div>
 
         <div
+          role='button'
           className='relative hidden w-[180px] cursor-pointer items-center justify-between rounded-[8px] bg-[#FFFFFF1A] px-2 py-3 md:flex md:w-[180px] md:px-4'
           onClick={handleAllPoolsClick}
         >

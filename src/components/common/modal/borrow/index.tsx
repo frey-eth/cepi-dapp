@@ -89,6 +89,7 @@ const BorrowModal = ({ isOpen, data, setIsOpen }: ModalProps) => {
                       </p>
                     </div>
                     <div
+                      role='button'
                       onClick={() => {
                         if (balance > 0) {
                           setInputAmt(dData ? dData.walletBalance.toString() : '')

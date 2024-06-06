@@ -100,6 +100,7 @@ const ModalRepay = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
                     </div>
 
                     <div
+                      role='button'
                       onClick={() => {
                         if (balance > 0) {
                           setInputAmt(dData ? (dData.balance as string) : '')

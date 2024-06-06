@@ -1,4 +1,5 @@
 'use client'
+import CircleChart from '@/components/common/circle-chart'
 import { generateFakeAPRData } from '@/data/detail/detail-data'
 import ic_tick from '@/icons/details/tick.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
@@ -6,7 +7,6 @@ import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import DataPercent from '../common/data_percent'
-import CircleChart from '@/components/common/circle-chart'
 const timeData = ['1m', '6m', '1y']
 const DataPercentInFo = [
   { title: 'Max LTV', percent: 78.5, id: 'supply_ltv' },
@@ -58,6 +58,7 @@ const SupplyInfo = () => {
           <div className='flex flex-row rounded-[8px] bg-[#18181B52] p-[6px]'>
             {timeData.map((item) => (
               <div
+                role='button'
                 key={item}
                 onClick={() => setTime(item)}
                 className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A] shadow-[1px_1px_0px_0px_rgba(255,255,255,0.16)_inset,_0px_0px_8px_0px_rgba(255,255,255,0.08)_inset]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white`}

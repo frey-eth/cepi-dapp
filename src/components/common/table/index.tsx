@@ -49,6 +49,7 @@ const Table = <T,>({ data, columns, sorting, setSorting, className, hasResponsiv
                         {header.isPlaceholder ? null : (
                           <>
                             <div
+                              role='button'
                               className={`relative z-10 flex items-center gap-2 text-sm font-normal text-[#C6C6C6] ${header.column.getCanSort() ? 'cursor-pointer' : ''}`}
                               onClick={header.column.getToggleSortingHandler()}
                               title={

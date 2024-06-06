@@ -93,6 +93,7 @@ const BorrowInfo = () => {
           <div className='flex flex-row rounded-[8px] bg-[#18181B52] p-[6px]'>
             {timeData.map((item, index) => (
               <div
+                role='button'
                 key={index}
                 onClick={() => setTime(item)}
                 className={`rounded-[4px] ${time == item && 'bg-[#FFFFFF0A] shadow-[1px_1px_0px_0px_rgba(255,255,255,0.16)_inset,_0px_0px_8px_0px_rgba(255,255,255,0.08)_inset]'} cursor-pointer p-2 font-helveticaNeue text-[14px] font-medium leading-[14px] text-white `}
