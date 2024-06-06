@@ -11,7 +11,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const SupplyModal = dynamic(() => import('../../common/modal/supply'), { ssr: false })
-const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
+const SelfInformation = ({ data }: { data: AssetsBorrow }) => {
   const { balance } = useBalance(data?.addressToken)
 
   const prices = useTokenPrices()
@@ -95,4 +95,4 @@ const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
   )
 }
 
-export default SelfInfomation
+export default SelfInformation

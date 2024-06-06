@@ -1,4 +1,4 @@
-import DataPercent from '../../common/data_percent'
+import DataPercent from '../../common/data-percent'
 
 const Emode = () => {
   return (

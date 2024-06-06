@@ -6,7 +6,6 @@ import Image from 'next/image'
 
 import { dataBorrow } from '@/data/asset-borrow/asset-borrow'
 import { useEffect, useState } from 'react'
-import SelfInfomation from './self-info'
 import TotalDetails from './total-details'
 
 import tooltipDetailsData from '@/data/tooltip/details.json'
@@ -14,6 +13,8 @@ import useUrlParams from '@/hooks/useSearchParams'
 import { AssetsBorrow } from '@/types/table'
 import Link from 'next/link'
 import CustomTooltip from '../common/tooltip'
+import TopInfo from './common/top-info'
+import SelfInformation from './self-info'
 
 const ViewDetail = () => {
   const [data, setData] = useState<AssetsBorrow>(dataBorrow[0])
@@ -71,45 +72,17 @@ const ViewDetail = () => {
           <div className='h-full border border-[#FFFFFF1A] max-sm:hidden' />
 
           <div className='flex flex-wrap items-center gap-6 whitespace-nowrap font-helveticaNeue'>
-            <div className='flex h-[36px] flex-col gap-[6px] text-[14px] font-medium leading-[14px] text-[#A5A5B5]'>
-              Reserve Size
-              <div className='flex flex-row items-center gap-1 text-[16px] leading-[16px] text-white'>
-                <span className='text-[#A5A5B5]'>$</span>3.36B
-              </div>
-            </div>
-
-            <div className='flex h-[36px] flex-col gap-[6px] text-[14px] font-medium leading-[14px] text-[#A5A5B5]'>
-              Available liquidity{' '}
-              <div className='flex flex-row items-center gap-1 text-[16px] leading-[16px] text-white'>
-                <span className='text-[#A5A5B5]'>$</span>63.06M
-              </div>
-            </div>
-
-            <div className='flex h-[36px] flex-col gap-[6px] text-[14px] font-medium leading-[14px] text-[#A5A5B5]'>
-              Utilization Rate{' '}
-              <div className='flex flex-row items-center  text-[16px] leading-[16px] text-white'>
-                0.66 <span className='text-[#A5A5B5]'>%</span>
-              </div>
-            </div>
-
-            <div className='flex h-[36px] flex-col gap-[6px] text-[14px] font-medium leading-[14px] text-[#A5A5B5]'>
-              Oracle price{' '}
-              <div className='flex flex-row items-center gap-2'>
-                <div className='flex flex-row items-center gap-1 text-[16px] leading-[16px] text-white'>
-                  <span className='text-[#A5A5B5]'>$</span>3.36B
-                </div>
-                <div className='flex h-5 w-5 items-center justify-center gap-[8px] overflow-hidden rounded-full bg-[#FFFFFF1A] p-[1px]'>
-                  <Image src={ic_share} alt='share' objectFit='cover' className='h-[11px] w-[11px]' />
-                </div>
-              </div>
-            </div>
+            <TopInfo title='Reserve Size' symbol='$' value='3.36B' />
+            <TopInfo title='Available liquidity' symbol='$' value='63.06M' />
+            <TopInfo title='Utilization Rate' symbol='%' value='0.66' />
+            <TopInfo title='Oracle price' symbol='$' value='3.36B' link='#' />
           </div>
         </div>
       </div>
 
       <div className='flex w-full flex-row gap-4 max-[1024px]:flex-col-reverse'>
         <TotalDetails />
-        <SelfInfomation data={data} />
+        <SelfInformation data={data} />
       </div>
 
       {tooltipDetailsData.map((item, index) => (

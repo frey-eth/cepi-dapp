@@ -6,7 +6,7 @@ import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
-import DataPercent from '../common/data_percent'
+import DataPercent from '../common/data-percent'
 const timeData = ['1m', '6m', '1y']
 const DataPercentInFo = [
   { title: 'Max LTV', percent: 78.5, id: 'supply_ltv' },
