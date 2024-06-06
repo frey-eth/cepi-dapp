@@ -10,7 +10,7 @@ const Footer = () => {
         <Link href={`https://x.com/BlonkFi`}>
           <Image src={xIcon} alt='twitter icon' />
         </Link>
-        <Link href={`#`}>
+        <Link href={`https://t.me/blonkfinance`}>
           <Image src={telegramIcon} alt='telegram icon' />
         </Link>
       </div>
