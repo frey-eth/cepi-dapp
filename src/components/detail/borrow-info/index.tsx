@@ -1,4 +1,6 @@
 'use client'
+import CircleChart from '@/components/common/circle-chart'
+import { generateFakeAPRData } from '@/data/detail/detail-data'
 import ic_share from '@/icons/details/share.svg'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
@@ -16,7 +18,6 @@ import {
 } from 'recharts'
 import Emode from './e-mode'
 import InterestRateModel from './interest-rate-model'
-import { generateFakeAPRData } from '@/data/detail/detail-data'
 
 const timeData = ['1m', '6m', '1y']
 
@@ -46,14 +47,7 @@ const BorrowInfo = () => {
       <div className='flex flex-col gap-4'>
         <h3 className=' text-[14px] font-medium leading-[14px]'>Borrow info</h3>
         <div className='flex flex-row items-center gap-10 max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-4'>
-          <div
-            className='flex h-[82px] w-[82px] items-center  justify-center rounded-full p-[6px]'
-            style={{ background: `conic-gradient(#00E585 ${(360 * 26) / 100}deg, white 0deg)` }}
-          >
-            <div className='flex h-full w-full items-center justify-center rounded-full bg-[#0B0D10]  font-helveticaNeue text-[14px] font-medium leading-[14px]'>
-              26.60%
-            </div>
-          </div>
+          <CircleChart value={26.7} />
           <div className='flex flex-wrap items-center gap-[26px] max-[1024px]:items-start'>
             <div className='flex flex-col gap-2'>
               <div className='flex flex-row items-center gap-2 text-[14px] font-light leading-[14px] text-[#A5A5B5]'>
