@@ -5,8 +5,8 @@ import icAlert from '@/images/table/alert-circle-light.svg'
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
-import CircleChart from '../../common/circle-chart/index.jsx'
 import DataPercent from '../common/data_percent'
+import CircleChart from '@/components/common/circle-chart'
 const timeData = ['1m', '6m', '1y']
 const DataPercentInFo = [
   { title: 'Max LTV', percent: 78.5, id: 'supply_ltv' },
