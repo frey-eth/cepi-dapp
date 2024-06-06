@@ -1,7 +1,7 @@
 'use client'
+import { addressFormatter } from '@/utils/libs/format'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useWalletModal } from '@solana/wallet-adapter-react-ui'
-import { addressFormatter } from '../../../../utils/libs/format'
 
 const BtnConnect = () => {
   const { setVisible } = useWalletModal()

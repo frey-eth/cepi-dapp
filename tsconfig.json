@@ -27,7 +27,8 @@
       "@/hook/*": ["./hooks/*"],
       "@/providers/*": ["./src/provider/*"],
       "@/types/*": ["./types/*"],
-      "@/utils/*": ["./utils/*"]
+      "@/utils/*": ["./utils/*"],
+      "@/public/*": ["./public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/common/circle-chart"],
