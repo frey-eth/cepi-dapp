@@ -1,4 +1,4 @@
-const BtnBorrow = ({
+const BtnSupply = ({
   onClick,
   className,
   disabled,
@@ -18,4 +18,4 @@ const BtnBorrow = ({
   )
 }
 
-export default BtnBorrow
+export default BtnSupply
