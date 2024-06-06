@@ -9,9 +9,19 @@ type SubmitButtonProps = {
   setIsSuccess: (value: boolean) => void
   isApproved: boolean
   setIsApproved: (value: boolean) => void
+  title?: string
+  titleLoading?: string
 }
 
-const WithdrawSubmitButton = ({ inputAmt, setIsSuccess, assetName, isApproved, setIsApproved }: SubmitButtonProps) => {
+const ButtonSubmit = ({
+  inputAmt,
+  setIsSuccess,
+  assetName,
+  isApproved,
+  setIsApproved,
+  title,
+  titleLoading,
+}: SubmitButtonProps) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleApprove = () => {
@@ -22,7 +32,7 @@ const WithdrawSubmitButton = ({ inputAmt, setIsSuccess, assetName, isApproved, s
     }, 3000)
   }
 
-  const handleWithdraw = () => {
+  const handleRepay = () => {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
@@ -60,11 +70,11 @@ const WithdrawSubmitButton = ({ inputAmt, setIsSuccess, assetName, isApproved, s
         <button
           type='button'
           className='relative mt-1 flex h-10 w-full items-center justify-center rounded-lg bg-[linear-gradient(90deg,_#EB1088_0%,_#FF6517_100%)] py-3 hover:opacity-80 disabled:opacity-50 disabled:hover:opacity-50'
-          onClick={handleWithdraw}
+          onClick={handleRepay}
           disabled={isLoading || !isApproved}
         >
           <span className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 text-center align-middle text-inherit'>
-            {isLoading && isApproved ? 'Withdrawing' : 'Withdraw'} {assetName}
+            {isLoading && isApproved ? `${titleLoading}` : `${title}`} {assetName}
             {isLoading && isApproved && (
               <Image
                 src={spinner}
@@ -91,4 +101,4 @@ const WithdrawSubmitButton = ({ inputAmt, setIsSuccess, assetName, isApproved, s
   )
 }
 
-export default WithdrawSubmitButton
+export default ButtonSubmit

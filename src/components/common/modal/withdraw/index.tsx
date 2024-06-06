@@ -14,7 +14,7 @@ import Image from 'next/image'
 import { memo, useCallback, useState } from 'react'
 
 import { DataDisplayType, ModalProps } from '@/types/modal'
-import WithdrawSubmitButton from '../../button/btn-submit-withdraw'
+import WithdrawSubmitButton from '../../button/btn-submit'
 import CustomTooltip from '../../tooltip'
 import BaseModal from '../base-modal'
 
@@ -182,6 +182,8 @@ const WithdrawRepayModal = ({ isOpen, data, setIsOpen, type }: ModalProps) => {
 
               <div className='mt-6'>
                 <WithdrawSubmitButton
+                  title='Withdraw'
+                  titleLoading='Withdrawing'
                   inputAmt={inputAmt}
                   setIsSuccess={setIsSuccess}
                   assetName={dData?.assetName}

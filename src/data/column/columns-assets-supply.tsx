@@ -1,12 +1,12 @@
 import Dental from '@/components/common/table/dental'
 // import icAlert from '@/icons/alert-triangle-light.svg'
 
-import BtnSupply from '@/components/common/button/btn-supply'
 import icCheck from '@/images/portfolio/check.svg'
 import { ColumnDef } from '@tanstack/react-table'
 import Image from 'next/image'
 
 import BtnDetail from '@/components/common/button/btn-detail'
+import BtnMain from '@/components/common/button/btn-main'
 import { AssetSupply, Type } from '@/types/table'
 
 export const getDataColumnsAssetSupply = ({
@@ -86,7 +86,8 @@ export const getDataColumnsAssetSupply = ({
     cell: (info) => {
       return (
         <div style={{ justifyContent: 'end' }} className=' flex items-center justify-end gap-2 '>
-          <BtnSupply
+          <BtnMain
+            title='Supply'
             onClick={() => {
               const data = info.row.original
               onClickSupply({

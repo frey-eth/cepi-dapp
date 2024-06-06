@@ -1,4 +1,4 @@
-import BtnBorrow from '@/components/common/button/btn-borrow'
+import BtnBorrow from '@/components/common/button/btn-main'
 import Dental from '@/components/common/table/dental'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
@@ -164,6 +164,7 @@ export const getDataColumnsBorrowing = ({
     cell: (info) => {
       return (
         <BtnBorrow
+          title='Borrow'
           onClick={() => {
             const data = info.row.original
             onClickBorrow({

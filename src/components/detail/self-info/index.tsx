@@ -1,6 +1,5 @@
 'use client'
-import BtnBorrow from '@/components/common/button/btn-borrow'
-import BtnSupply from '@/components/common/button/btn-supply'
+import { default as BtnBorrow, default as BtnMain } from '@/components/common/button/btn-main'
 import { useBalance } from '@/hooks/useBalance'
 import useTokenPrices from '@/hooks/useTokenPriceUSD'
 import ic_wallet from '@/icons/details/wallet.svg'
@@ -58,7 +57,8 @@ const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
                   </p>
                 </div>
               </div>
-              <BtnSupply
+              <BtnMain
+                title='Supply'
                 className={`${balance == 0 && 'opacity-50'}`}
                 disabled={balance == 0}
                 onClick={() => {
@@ -79,12 +79,7 @@ const SelfInfomation = ({ data }: { data: AssetsBorrow }) => {
                   <p className='flex flex-row text-[12px] leading-[12px] text-[#A5A5B5]'>$ 0</p>
                 </div>
               </div>
-              <BtnBorrow
-                className={`opacity-50`}
-                onClick={() => {
-                  console.log('Borrow')
-                }}
-              />
+              <BtnBorrow title='Borrow' className={`opacity-50`} />
             </div>
           </div>
 

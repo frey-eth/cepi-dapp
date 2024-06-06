@@ -1,8 +1,7 @@
 import Dental from '@/components/common/table/dental'
 import { ColumnDef } from '@tanstack/react-table'
 
-import BtnRepay from '@/components/common/button/btn-repay'
-
+import BtnMain from '@/components/common/button/btn-main'
 import { ISupply, Type } from '@/types/table'
 import Image from 'next/image'
 
@@ -75,7 +74,8 @@ export const getDataColumnsBorrowDashboard = ({
     cell: (info) => {
       return (
         <div style={{ justifyContent: 'end' }} className='flex items-center  '>
-          <BtnRepay
+          <BtnMain
+            title='Repay'
             onClick={() => {
               const data = info.row.original
               onClickRepay({

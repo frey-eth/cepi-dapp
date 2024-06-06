@@ -2,8 +2,8 @@ import Dental from '@/components/common/table/dental'
 import icAlert from '@/images/table/alert-circle-light.svg'
 import { ColumnDef } from '@tanstack/react-table'
 
-import BtnBorrow from '@/components/common/button/btn-borrow'
 import BtnDetail from '@/components/common/button/btn-detail'
+import BtnBorrow from '@/components/common/button/btn-main'
 
 import { AssetsBorrow, Type } from '@/types/table'
 import Image from 'next/image'
@@ -104,6 +104,7 @@ export const getDataColumnsAssetBorrow = ({
       return (
         <div style={{ justifyContent: 'end', paddingRight: '6px' }} className=' flex items-center justify-end gap-2 '>
           <BtnBorrow
+            title='Borrow'
             onClick={() => {
               const data = info.row.original
               onClickBorrow({
