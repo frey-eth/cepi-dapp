@@ -27,13 +27,18 @@
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.91.4",
     "@tanstack/react-table": "^8.15.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.482.0",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
     "react-tooltip": "^5.26.4",
     "recharts": "^2.12.7",
     "rpc-websockets": "7.10.0",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.3",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",

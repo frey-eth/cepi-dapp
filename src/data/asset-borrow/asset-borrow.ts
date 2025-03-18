@@ -1,22 +1,23 @@
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
+import ic_cepi from '@/images/header/cepi.png'
+import ic_pi from '@/images/portfolio/pitoken.jpg'
 import ic_usdc from '@/images/portfolio/usdc.svg'
 import { AssetsBorrow } from '@/types/table'
 
 export const dataBorrow: AssetsBorrow[] = [
   {
     asset: {
-      icon: ic_solana,
-      name: 'SOL',
+      icon: ic_cepi,
+      name: 'CEPI',
     },
     available: 2.71,
     balanceValue: 451.09,
     apy: 7.03,
+    addressToken: '',
   },
   {
     asset: {
-      icon: ic_bonk,
-      name: 'BONK',
+      icon: ic_pi,
+      name: 'PI',
     },
     available: 2.71,
     balanceValue: 0.000087,

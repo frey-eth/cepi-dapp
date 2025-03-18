@@ -1,5 +1,5 @@
 'use client'
-import logo from '@/images/header/logo-header.svg'
+import logo from '@/images/header/cepi.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -27,7 +27,7 @@ const Header = () => {
         <section className='flex w-[752px] items-center gap-x-10'>
           <Link href={'/'}>
             <figure>
-              <Image src={logo} alt='logo' />
+              <Image src={logo} alt='logo' width={44} height={44} />
             </figure>
           </Link>
 

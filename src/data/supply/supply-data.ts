@@ -1,14 +1,13 @@
 import nonToken from '@/icons/non-token.svg'
-import icBonk from '@/images/global-pool/bonk.svg'
-import icSolana from '@/images/global-pool/sol.svg'
+import ic_cepi from '@/images/header/cepi.png'
+import ic_pi from '@/images/portfolio/pitoken.jpg'
 import icUsdc from '@/images/portfolio/usdc.svg'
 import { ISupply } from '@/types/table'
-
 export const supplyData: ISupply[] = [
   {
     asset: {
-      icon: icSolana,
-      name: 'SOL',
+      icon: ic_cepi,
+      name: 'CEPI',
     },
     balance: {
       amount: '0.0010000',
@@ -19,8 +18,8 @@ export const supplyData: ISupply[] = [
   },
   {
     asset: {
-      icon: icBonk,
-      name: 'BONK',
+      icon: ic_pi,
+      name: 'PI',
     },
     balance: {
       amount: '2.00',
@@ -59,8 +58,8 @@ export const nonSupplyData: ISupply[] = [
 export const borrowData: ISupply[] = [
   {
     asset: {
-      icon: icSolana,
-      name: 'SOL',
+      icon: ic_pi,
+      name: 'PI',
     },
     balance: {
       amount: '0.000500',

@@ -1,13 +1,13 @@
-import ic_bonk from '@/images/global-pool/bonk.svg'
-import ic_solana from '@/images/global-pool/sol.svg'
+import ic_cepi from '@/images/header/cepi.png'
+import ic_pi from '@/images/portfolio/pitoken.jpg'
 import ic_usdc from '@/images/portfolio/usdc.svg'
 import { AssetSupply } from '@/types/table'
 
 export const dataAssetSupply: AssetSupply[] = [
   {
     asset: {
-      icon: ic_solana,
-      name: 'SOL',
+      icon: ic_cepi,
+      name: 'CEPI',
     },
     walletBalance: 216.38,
 
@@ -18,8 +18,8 @@ export const dataAssetSupply: AssetSupply[] = [
   },
   {
     asset: {
-      icon: ic_bonk,
-      name: 'BONK',
+      icon: ic_pi,
+      name: 'PI',
     },
     walletBalance: 216.38,
     apy: -2.16,

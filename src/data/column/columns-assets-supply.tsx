@@ -24,9 +24,9 @@ export const getDataColumnsAssetSupply = ({
       const { icon, name } = info.row.original.asset
       return (
         <div className='flex items-center justify-start  space-x-3 '>
-          <figure>
-            <Image src={icon} alt='icon' className='pt-[1px] md:pt-[1px]' />
-          </figure>
+          <div className='relative h-6 w-6 overflow-hidden rounded-full'>
+            <Image src={icon} alt='icon' fill objectFit='cover' />
+          </div>
           <span className='mt-[1px] font-helveticaNeue text-[14px] font-normal md:mt-[1px] '>{name}</span>
         </div>
       )

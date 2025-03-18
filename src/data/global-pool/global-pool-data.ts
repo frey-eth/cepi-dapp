@@ -1,13 +1,12 @@
-import icBonk from '@/images/global-pool/bonk.svg'
-import icSolana from '@/images/global-pool/sol.svg'
+import ic_cepi from '@/images/header/cepi.png'
+import ic_pi from '@/images/portfolio/pitoken.jpg'
 import icUsdc from '@/images/portfolio/usdc.svg'
 import { GlobalPool, GlobalPoolBorrow } from '@/types/table'
-
 export const dataLending: GlobalPool[] = [
   {
     asset: {
-      icon: icSolana,
-      name: 'Solana',
+      icon: ic_cepi,
+      name: 'CEPI',
     },
     price: 154.08,
     apy: 0.14,
@@ -19,8 +18,8 @@ export const dataLending: GlobalPool[] = [
   },
   {
     asset: {
-      icon: icBonk,
-      name: 'Bonk',
+      icon: ic_pi,
+      name: 'PI',
     },
     price: 216.38,
     apy: 0.02,
@@ -48,8 +47,8 @@ export const dataLending: GlobalPool[] = [
 export const dataBorrow: GlobalPoolBorrow[] = [
   {
     asset: {
-      icon: icSolana,
-      name: 'Solana',
+      icon: ic_cepi,
+      name: 'CEPI',
     },
     price: 154.08,
     apy: 0.15,
@@ -61,8 +60,8 @@ export const dataBorrow: GlobalPoolBorrow[] = [
   },
   {
     asset: {
-      icon: icBonk,
-      name: 'Bonk',
+      icon: ic_pi,
+      name: 'PI',
     },
     price: 216.38,
     apy: 5.07,
